@@ -1,0 +1,106 @@
+.contact-form {
+	.field {
+		position: relative;
+		// background: rgba($white, .1);
+		margin-bottom: 1.25rem;
+		> span {
+			display: block;
+			padding-top: .5rem;
+			span[role='alert'] {
+		    display: block;
+		    position: absolute;
+		    width: 100%;
+		    height: 2px;
+		    background: $alert;
+		    text-indent: -999px;
+		    overflow: hidden;
+		    bottom: 0px;
+		    z-index: 2;
+			}
+		}
+		input,
+		textarea {
+			width: 100%;
+			font-size: .875rem;
+			font-family: $main-font;
+			border: none;
+			border-bottom: 1px solid $main-color;
+			border-radius: 0;
+			background: transparent;
+			line-height: $btn-height * .85;
+			color: $white;
+			padding: 0;
+			height: $btn-height * .85;
+			overflow: hidden;
+			position: relative;
+			z-index: 2;
+			@include respond($md) {
+				height: $btn-height;
+				height: $btn-height * .85;
+			}
+			&:hover {
+				color: $white;
+				background: transparent;
+				border-bottom: 1px solid lighten($main-color, 15%);
+			}
+			&:valid {
+				~ label {
+					transform: translate3d(0, -.75rem, 0) scale(.625);
+					color: lighten($main-color, 15%);
+				}
+			}
+			&:focus {
+				color: $white;
+				background: transparent;
+				border-bottom: 1px solid $white;
+				~ label {
+					transform: translate3d(0, -.75rem, 0) scale(.625);
+					color: lighten($main-color, 15%);
+				}
+			}
+		}
+		textarea {
+			line-height: $base-line-height;
+			padding-top: 8px;
+			padding-bottom: 4px;
+		}
+		label {
+			font-size: 14px;
+			font-family: $main-font;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			line-height: $btn-height * .85 - 1px;
+			padding-top: .5rem;
+			text-transform: uppercase;
+			letter-spacing: $tracked-out;
+			transform-origin: top center;
+			z-index: 1;
+			transition: transform $md-speed $ease, color $md-speed $ease;
+			@include respond($md) {
+				line-height: $btn-height - 1px;
+			}
+			@include respond($lg) {
+				transform-origin: top left;
+			}
+		}
+	}
+}
+
+// Contact Form 7 Styles
+.wpcf7 {
+	.wpcf7-not-valid-tip, .wpcf7-response-output{
+		display: inline-block;
+		margin-top: 10px;
+	}
+	.screen-reader-response{
+		display: none;
+	}
+}
+
+div.wpcf7-response-output {
+  margin: $gutter 0 0 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}

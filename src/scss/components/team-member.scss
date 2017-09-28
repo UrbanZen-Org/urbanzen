@@ -1,0 +1,155 @@
+.team-member-takeover {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	z-index: 10;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	background: $bg-color;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility $md-speed $ease, opacity $md-speed $ease;
+	
+	// Make visible for styling
+	// visibility: visible !important;
+	// opacity: 1 !important;
+	// .container {
+	// 	opacity: 1 !important;
+	// 	transform: none !important;
+	// }
+	@include respond($md) {
+		background: rgba($white, .9);
+	}
+	&.open {
+		visibility: visible;
+		opacity: 1;
+		.container {
+			opacity: 1;
+			transform: none;
+		}
+	}
+	.container {
+		padding-top: 66px;
+		padding-bottom: 0;
+		margin: auto;
+		opacity: 0;
+		transform-origin: center;
+		transform: translate3d(0, 1.5rem, 0);
+		transition: opacity $md-speed $ease, transform $md-speed $ease;
+		@include respond($md) {
+			padding-top: calc(66px + #{$mobile-margin});
+			padding-bottom: 66px;
+		}
+		@include respond($xlg) {
+			padding-top: $wide-gutter;
+			padding-bottom: $wide-gutter;
+		}
+	}
+	.nav-padding{
+		margin-top: $gutter;
+		height: 56px;
+	}
+	.nav-area{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+	}
+	.team-member-slide{
+		.col-6.right{
+			min-height: 500px;
+		}
+	}
+	.nav {
+		@include respond-smaller-than($lg) {
+			box-shadow: 0 -15px 30px 15px rgba($text-color, .15);
+			text-align: center;
+			position: fixed;
+			background: $true-white;
+			top: 0;
+			right: 0;
+			left: 0;
+			margin: 0;
+			padding: 10px $mobile-margin;
+			button {
+				&:not(.disabled):not(.loading):hover {
+					background: transparent;
+					color: $main-color;
+				}
+				&.next {
+					border-right: none;
+					border-top: none;
+					border-bottom: none;
+					border-radius: 0;
+					margin-left: 0;
+				}
+				&.prev {
+					border: none;
+					border-radius: 0;
+				}
+			}
+		}
+		button {
+			margin-right: -.25rem;
+			margin-left: 1.5rem;
+			@include respond-smaller-than($xlg) {
+	      height: $btn-large-height - 14px;
+	      line-height: $btn-large-height - 14px;
+	      font-size: 10px;
+	      margin-left: .75rem;
+	    }
+	    &.circle,
+	    &.square {
+	    	@include respond-smaller-than($xlg) {
+	        min-width: $btn-large-height - 14px;
+	        max-width: $btn-large-height - 14px;
+	      	padding: 0;
+	      }
+	    }
+			&:first-child {
+				margin-left: -.25rem;
+				margin-right: -.5rem;
+			}
+			&.close-team-member {
+				min-width: 0;
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+			}
+			&.next,
+			&.prev {
+				text-indent: -999px;
+				overflow: hidden;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-30%, -50%) rotate(45deg);
+					width: 1rem;
+					height: 1rem;
+					border-bottom: 1px solid currentcolor;
+					border-left: 1px solid currentcolor;
+				}
+			}
+			&.prev {
+				@include respond-smaller-than($lg) {
+					margin-right: -.25rem;
+					margin-left: -2rem;
+				}
+			}
+			&.next {
+				&:before {
+					transform: translate(-70%, -50%) rotate(-135deg);
+				}
+			}
+		}
+	}
+}

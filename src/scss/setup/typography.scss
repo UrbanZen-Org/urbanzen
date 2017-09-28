@@ -1,0 +1,269 @@
+body,
+html {
+	font-family: $main-font;
+	line-height: $base-line-height;
+	font-size: calc(#{$base-font-size} - 2px);
+	color: $text-color;
+	letter-spacing: $base-letter-spacing;
+	// @include font-smooth();
+	@include respond($lg) {
+		font-size: $base-font-size;
+	}
+}
+
+// * p:first-child,
+// * h1:first-child,
+// * h2:first-child,
+// * h3:first-child,
+// * h4:first-child,
+// * h5:first-child,
+// * h6:first-child {
+//   margin-top: 0;
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// margin-top: 1rem;
+	// margin-bottom: 1rem;
+}
+
+h1,
+*.h1 {
+	font-size: $h1-font-size;
+	font-weight: $h1-font-weight;
+	line-height: $h1-line-height;
+	letter-spacing: $h1-letter-spacing;
+	text-transform: $h1-text-transform;
+	@include respond-smaller-than($xlg) {
+		font-size: $h1-font-size * .75;
+	}
+	@include respond-smaller-than($sm) {
+		font-size: 1.5rem;
+	}
+}
+
+h2,
+*.h2 {
+	font-size: $h2-font-size;
+	font-weight: $h2-font-weight;
+	line-height: $h2-line-height;
+	letter-spacing: $h2-letter-spacing;
+	text-transform: $h2-text-transform;
+	@include respond-smaller-than($xlg) {
+		font-size: $h2-font-size * .75;
+	}
+}
+
+h3,
+*.h3 {
+	font-size: $h3-font-size;
+	font-weight: $h3-font-weight;
+	line-height: $h3-line-height;
+	letter-spacing: $h3-letter-spacing;
+	text-transform: $h3-text-transform;
+	@include respond-smaller-than($xlg) {
+		font-size: $h3-font-size * .75;
+	}
+}
+
+h4,
+*.h4 {
+	font-size: $h4-font-size;
+	font-weight: $h4-font-weight;
+	line-height: $h4-line-height;
+	letter-spacing: $h4-letter-spacing;
+	text-transform: $h4-text-transform;
+	@include respond-smaller-than($md) {
+		font-size: .85rem;
+	}
+}
+
+h5,
+*.h5 {
+	font-size: $h5-font-size;
+	font-weight: $h5-font-weight;
+	line-height: $h5-line-height;
+	letter-spacing: $h5-letter-spacing;
+	text-transform: $h4-text-transform;
+}
+
+h6,
+*.h6 {
+	@include small-caps();
+}
+
+.max-width p {
+	max-width: 30em;
+}
+
+p,
+*.p {
+	font-size: $p-font-size;
+	line-height: $base-line-height;
+	letter-spacing: $base-letter-spacing;
+	font-weight: $normal;
+	font-family: $secondary-font;
+	text-transform: none;
+	&.max-width {
+		max-width: 30em;
+	}
+	&.centered {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.sm &,
+	.small &,
+	&.sm,
+	&.small,
+	&.caption {
+		font-size: .875rem;
+	}
+	&.caption {
+		max-width: 30em;
+		color: $light-text-color;
+	}
+	.lg &,
+	.large &,
+	&.lg,
+	&.large {
+		font-size: 2.1875rem;
+		font-weight: $light;
+		line-height: $short-line-height;
+		letter-spacing: 0;
+		font-family: $main-font;
+	}
+	.md &,
+	.medium &,
+	&.md,
+	&.medium {
+		font-size: 1.5rem;
+		font-weight: $light;
+		line-height: $short-line-height;
+		letter-spacing: $base-letter-spacing * .75;
+		font-family: $main-font;
+	}
+	.light &,
+	&.light-text-color {
+		color: $light-text-color;
+		a {
+			color: inherit;
+			&:hover {
+				color: $main-color;
+			}
+		}
+	}
+}
+
+strong,
+.bold,
+b {
+	font-weight: $bold;
+}
+
+.small-caps {
+	@include all-caps();
+}
+
+.tiny-caps {
+	@include tiny-caps();
+}
+
+.light-text-color {
+	color: $light-text-color;
+}
+
+a {
+	&.underlined {
+		&.light-text-color {
+			border-bottom: 2px solid lighten($light-text-color, 50%);
+			padding-bottom: .15em;
+			&:hover {
+				border-color: $text-color;
+			}
+		}
+	}
+}
+
+.text-color {
+	color: $text-color;
+}
+
+.bg-color {
+	color: $bg-color;
+}
+
+.main-color {
+	color: $main-color;
+}
+
+.success-color {
+	color: $success;
+}
+
+.alert-color {
+	color: $alert;
+}
+
+.notify-color {
+	color: $notify;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+hr {
+	border: none;
+	border-top: $hr-styles;
+	margin: $base-line-height 0;
+	&.text-color {
+		border-color: $text-color;
+	}
+	&.main-color {
+		border-color: $main-color;
+	}
+	&.no-space {
+		margin: 0;
+	}
+	&.bg-color {
+		border-color: $bg-color;
+	}
+}
+
+::selection {
+  background: $main-color;
+  color: $bg-color;
+}
+::-moz-selection {
+  background: $main-color;
+  color: $bg-color;
+}
+
+.small-caps {
+	@include small-caps();
+}
+
+.tiny-caps {
+	@include tiny-caps();
+}
+
+.underlined-link {
+	@include small-caps();
+	border-bottom: 1px solid currentcolor;
+	color: currentcolor;
+	display: inline-block;
+	cursor: pointer;
+	transition: opacity $md-speed $ease, color $md-speed $ease, border $md-speed $ease, background $md-speed $ease, transform $md-speed $ease;
+}

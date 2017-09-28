@@ -1,0 +1,40 @@
+# Logfile created on 2017-09-28 13:33:23 -0400 by logger.rb/54362
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-28 13:33:23 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b4165236] Running /usr/bin/env mkdir -p /tmp as root@50.28.12.201
+ DEBUG [b4165236] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b4165236] Finished in 0.517 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Josh-production-steve.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Josh-production-steve.sh 100.0%
+  INFO [648dbfdc] Running /usr/bin/env chmod 700 /tmp/git-ssh-Josh-production-steve.sh as root@50.28.12.201
+ DEBUG [648dbfdc] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Josh-production-steve.sh
+  INFO [648dbfdc] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [1175ee2a] Running /usr/bin/env git ls-remote --heads git@gitlab.com:backforwardpunch/josh.git as root@50.28.12.201
+ DEBUG [1175ee2a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Josh-production-steve.sh" ; /usr/bin/env git ls-remote --heads git@gitlab.com:backforwardpunch/josh.git )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-28 13:35:34 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9542c3e9] Running /usr/bin/env mkdir -p /tmp as root@50.28.12.201
+ DEBUG [9542c3e9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9542c3e9] Finished in 0.442 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-uz-production-steve.sh 0.0%
+  INFO Uploading /tmp/git-ssh-uz-production-steve.sh 100.0%
+  INFO [9844b53f] Running /usr/bin/env chmod 700 /tmp/git-ssh-uz-production-steve.sh as root@50.28.12.201
+ DEBUG [9844b53f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-uz-production-steve.sh
+  INFO [9844b53f] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [eae1f486] Running /usr/bin/env git ls-remote --heads 50.28.12.201 as root@50.28.12.201
+ DEBUG [eae1f486] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uz-production-steve.sh" ; /usr/bin/env git ls-remote --heads 50.28.12.201 )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-28 13:36:46 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7335cf59] Running /usr/bin/env mkdir -p /tmp as root@50.28.12.201
+ DEBUG [7335cf59] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7335cf59] Finished in 0.441 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-uz-production-steve.sh 0.0%
+  INFO Uploading /tmp/git-ssh-uz-production-steve.sh 100.0%
+  INFO [474605a2] Running /usr/bin/env chmod 700 /tmp/git-ssh-uz-production-steve.sh as root@50.28.12.201
+ DEBUG [474605a2] Command: /usr/bin/env chmod 700 /tmp/git-ssh-uz-production-steve.sh
+  INFO [474605a2] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [90682461] Running /usr/bin/env git ls-remote --heads 50.28.12.201 as root@50.28.12.201
+ DEBUG [90682461] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uz-production-steve.sh" ; /usr/bin/env git ls-remote --heads 50.28.12.201 )

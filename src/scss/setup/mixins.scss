@@ -1,0 +1,126 @@
+// Media Queries
+@mixin respond($breakpoint) {
+  @media only screen and (min-width: $breakpoint + px) { @content; }
+}
+
+@mixin respond-smaller-than($breakpoint) {
+  @media only screen and (max-width: $breakpoint + px) { @content; }
+}
+
+// Greyscale/ Color
+@mixin greyscale() {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray; /* IE 6-9 */
+}
+
+@mixin fullcolor() {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: grayscale(0%);
+  filter: url(grayscale.svg); /* Firefox 4+ */
+  filter: none; /* IE 6-9 */;
+}
+
+@mixin font-smooth() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin clearfix() {
+  *zoom:1;
+  &:before, 
+  &:after {
+    content: ""; 
+    display: table; 
+  }
+  &:after {
+    clear: both; 
+  }
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+@mixin all-caps () {
+  text-transform: uppercase;
+  letter-spacing: $tracked-out;
+  font-size: .875rem;
+  font-weight: $bold;
+  font-family: $main-font;
+  line-height: $base-line-height;
+}
+
+@mixin small-caps () {
+  @include all-caps();
+  // font-size: $sm-font-size;
+  font-size: 12px;
+  @include respond($xlg) {
+    font-size: .875rem;
+  }
+}
+
+@mixin tiny-caps () {
+  @include all-caps();
+  font-size: 11px;
+  font-weight: $medium;
+}
+
+// Placeholders
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+      @content;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+      @content;
+  }
+  &::-moz-placeholder {  /* Firefox 19+ */
+      @content;
+  }
+  &:-ms-input-placeholder {
+      @content;
+  }
+}
+@mixin placeholder-focus {
+  &:focus::-webkit-input-placeholder {
+      @content;
+  }
+  &:focus:-moz-placeholder { /* Firefox 18- */
+      @content;
+  }
+  &:focus::-moz-placeholder {  /* Firefox 19+ */
+      @content;
+  }
+  &:focus:-ms-input-placeholder {
+      @content;
+  }
+}
+
+@mixin material-icons-style() {
+  color: currentcolor;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;  /* Preferred icon size */
+  line-height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  @include font-smooth();
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}

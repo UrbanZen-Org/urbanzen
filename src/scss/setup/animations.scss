@@ -1,0 +1,141 @@
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes transition-in {
+	100% {
+		opacity: 1;
+		transform: none;
+		visibility: visible;
+	}
+}
+
+$stagger-time : .1s;
+$stagger-delay : .5s;
+
+.stagger-in-items {
+	> * {
+		opacity: 0;
+		transform: translate3d(0, 1.5rem, 0);
+		animation: transition-in .75s ease forwards;
+		animation-delay: $stagger-delay;
+		&:nth-child(2) {
+			animation-delay: $stagger-delay + $stagger-time * 1;
+		}
+		&:nth-child(2) {
+			animation-delay: $stagger-delay + $stagger-time * 2;
+		}
+		&:nth-child(3) {
+			animation-delay: $stagger-delay + $stagger-time * 3;
+		}
+		&:nth-child(4) {
+			animation-delay: $stagger-delay + $stagger-time * 4;
+		}
+		&:nth-child(5) {
+			animation-delay: $stagger-delay + $stagger-time * 5;
+		}
+		&:nth-child(6) {
+			animation-delay: $stagger-delay + $stagger-time * 6;
+		}
+		&:nth-child(7) {
+			animation-delay: $stagger-delay + $stagger-time * 7;
+		}
+		&:nth-child(8) {
+			animation-delay: $stagger-delay + $stagger-time * 8;
+		}
+		&:nth-child(9) {
+			animation-delay: $stagger-delay + $stagger-time * 9;
+		}
+		&:nth-child(10) {
+			animation-delay: $stagger-delay + $stagger-time * 10;
+		}
+	}
+}
+
+.stagger-in-slideshow-items {
+	> * {
+		opacity: 0;
+		transform: translate3d(0, 1.5rem, 0);
+	}
+	.slick-current & > * {
+		animation: transition-in .75s ease forwards;
+		animation-delay: $stagger-delay;
+		&:nth-child(2) {
+			animation-delay: $stagger-delay + $stagger-time * 1;
+		}
+		&:nth-child(2) {
+			animation-delay: $stagger-delay + $stagger-time * 2;
+		}
+		&:nth-child(3) {
+			animation-delay: $stagger-delay + $stagger-time * 3;
+		}
+		&:nth-child(4) {
+			animation-delay: $stagger-delay + $stagger-time * 4;
+		}
+		&:nth-child(5) {
+			animation-delay: $stagger-delay + $stagger-time * 5;
+		}
+		&:nth-child(6) {
+			animation-delay: $stagger-delay + $stagger-time * 6;
+		}
+		&:nth-child(7) {
+			animation-delay: $stagger-delay + $stagger-time * 7;
+		}
+		&:nth-child(8) {
+			animation-delay: $stagger-delay + $stagger-time * 8;
+		}
+		&:nth-child(9) {
+			animation-delay: $stagger-delay + $stagger-time * 9;
+		}
+		&:nth-child(10) {
+			animation-delay: $stagger-delay + $stagger-time * 10;
+		}
+	}
+}
+
+.stagger-in-1 {
+	opacity: 0;
+	transform: translate3d(0, 1.5rem, 0);
+	animation: transition-in .75s ease forwards;
+	animation-delay: $stagger-delay/2 + $stagger-time * 1;
+}
+
+.stagger-in-2 {
+	opacity: 0;
+	transform: translate3d(0, 1.5rem, 0);
+	animation: transition-in .75s ease forwards;
+	animation-delay: $stagger-delay/2 + $stagger-time * 2;
+}
+
+.stagger-in-3 {
+	opacity: 0;
+	transform: translate3d(0, 1.5rem, 0);
+	animation: transition-in .75s ease forwards;
+	animation-delay: $stagger-delay/2 + $stagger-time * 3;
+}
+
+.stagger-in-4 {
+	opacity: 0;
+	transform: translate3d(0, 1.5rem, 0);
+	animation: transition-in .75s ease forwards;
+	animation-delay: $stagger-delay/2 + $stagger-time * 4;
+}
+
+.stagger-in-5 {
+	opacity: 0;
+	transform: translate3d(0, 1.5rem, 0);
+	animation: transition-in .75s ease forwards;
+	animation-delay: $stagger-delay/2 + $stagger-time * 5;
+}
+
+.fancy-entrance {
+	opacity: 0;
+	transform: translate3d(0, 4rem, 0);
+	transition: opacity $slow-speed $ease, transform $slow-speed $ease;
+	&.entered {
+		opacity: 1;
+		transform: none;
+	}
+}

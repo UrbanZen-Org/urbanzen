@@ -1,0 +1,332 @@
+.card {
+	background: $white;
+	border-radius: $base-border-radius;
+	overflow: hidden;
+	min-height: 300px;
+	position: relative;
+	z-index: 1;
+	&.grey {
+		background: $bg-color;
+	}
+	+ .card {
+		margin-top: $wide-gutter;
+	}
+	&.not-rounded {
+		border-radius: 0;
+		.hide-overflow {
+			border-radius: 0;
+		}
+	}
+	&.shadowed {
+		transition: box-shadow $md-speed $ease;
+		box-shadow: 0 6.25rem 6.875rem -5.625rem rgba($text-color, .3);
+	}
+	.padded-area {
+		padding: $mobile-margin;
+		@include respond($md) {
+			padding: ($gutter * 1.5);
+		}
+		&.no-top-padding {
+			padding-top: 0;
+		}
+	}
+	.lightly-padded-area {
+		padding: ($gutter * .65) $mobile-margin;
+		@include respond($md) {
+			padding: ($gutter * .65) $gutter;
+		}
+		&.no-top-padding {
+			padding-top: 0;
+		}
+	}
+	.card-header,
+	.card-filters {
+		padding: 2rem $mobile-margin;
+		@include respond($md) {
+			padding: 2rem ($gutter * 1.5);
+		}
+	}
+	.card-header {
+		border-bottom: 1px solid $bg-color;
+		padding-top: 0;
+		padding-bottom: 0;
+		&.center-mobile {
+			@include respond-smaller-than($md) {
+				text-align: center;
+				a {
+					font-size: 10px;
+				    margin-right: 1.25rem;
+				}
+			}
+		}
+		&.wide {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+		.title {
+			padding-top: $gutter * .85;
+			padding-bottom: $gutter * .75;
+			line-height: 1em;
+			font-size: $h5-font-size;
+			@include ellipsis();
+			@include respond($xlg) {
+				font-size: $h4-font-size;
+			}
+		}
+		&.short {
+			border-bottom: 0;
+			flex-grow: 0;
+			flex-shrink: 0;
+			padding-left: $gutter/2;
+			padding-right: $gutter/2;
+			a,
+			> label {
+				padding: $gutter*.75 $gutter/2;
+				margin: 0;
+				border: none;
+				margin-right: -.25rem;
+				&.active {
+					border: none;
+				}
+			}
+		}
+		a,
+		> label {
+			display: inline-block;
+			vertical-align: bottom;
+			padding: 2rem 0 1.8rem;
+			margin-right: 2rem;
+			border-bottom: 1px solid transparent;
+			margin-bottom: -1px;
+			@include tiny-caps();
+			color: $light-text-color;
+			&:hover {
+				color: $text-color;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			&.active {
+				border-color: $main-color;
+				color: $main-color;
+			}
+		}
+	}
+	.card-filters {
+		font-size: 14px;
+		font-family: $secondary-font;
+		padding-top: 1.805rem;
+		padding-bottom: 1.82rem;
+		@include respond-smaller-than($sm) {
+			text-align: center;
+			line-height: 1.75em;
+			.align-right {
+				text-align: center;
+			}
+		}
+		a {
+			color: $text-color;
+			.icon {
+				color: $main-color;
+				margin-top: -2px;
+				margin-left: 3px;
+				transform: rotate(180deg);
+				&.flipped {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+	.img-wrap {
+		transition: transform $md-speed $ease;
+		&.has-loader {
+			position: relative;
+			&:before {
+				z-index: 1;
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 2rem;
+				height: 2rem;
+				margin: -1rem;
+				border-radius: 50%;
+				border: 2px solid rgba($text-color, .15);
+				border-top-color: rgba($text-color, .4);
+				border-right-color: rgba($text-color, .4);
+				animation: rotate 1s linear infinite;
+			}
+			img {
+				position: relative;
+				z-index: 2;
+			}
+		}
+	}
+	.info-overlay {
+		@include respond($xlg) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding-top: 9rem;
+			background: linear-gradient(to bottom, rgba($white, 0) 0%,rgba($white , .9) 50%);
+		}
+		.rich-text {
+			max-width: 40rem;
+		}
+	}
+	*[class^="col"],
+	.col {
+		.cover-area {
+			left: 0;
+			right: 0;
+			@include respond-smaller-than($lg) {
+				position: static;
+				img {
+					position: static;
+				}
+			}
+		}
+	}
+	&.full-width-mobile {
+		@include respond-smaller-than($md) {
+			border-radius: 0;
+			margin-left: $mobile-margin * -1.2;
+			margin-right: $mobile-margin * -1.2;
+		}
+	}
+}
+
+.padded-bottom {
+	.card {
+		&.full-width-mobile {
+			@include respond-smaller-than($md) {
+				margin-bottom: $mobile-margin * -1.2;
+			}
+		}
+	}
+}
+
+a.card {
+	color: inherit;
+	display: block;
+	.hide-overflow {
+		overflow: hidden;
+		margin-left: -2px;
+		margin-right: -2px;
+		transform: translateZ(0);
+		border-radius: $base-border-radius $base-border-radius 0 0;
+		.img-wrap {
+			// transform: translateZ(0);
+			// width: calc(100% + 8px);
+			// margin: 0 -4px;
+		}
+	}
+	&:hover {
+		&.shadowed {
+			box-shadow: 0 3.25rem 3.875rem -3.625rem rgba($text-color, .4);
+		}
+		.img-wrap {
+			transform: scale(1.05);
+			transform-origin: center;
+		}
+	}
+}
+
+.property-card {
+	.price {
+		margin-top: .5rem;
+	}
+}
+
+.light-bg {
+	.card {
+		background: $bg-color;
+	}
+}
+
+.card {
+	&.wide,
+	&.video-card {
+		.image-area {
+			position: relative;
+			overflow: hidden;
+		}
+		.play-btn {
+			width: 5rem;
+			height: 5rem;
+			border: none;
+			border-radius: 50%;
+			background: $true-white;
+			min-width: 0;
+			padding: 0;
+			line-height: 5rem;
+			text-align: center;
+			position: absolute;
+			z-index: 3;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			&:not(.disabled):not(.loading):hover {
+				border: none;
+			}
+			svg.play {
+				width: 29px;
+		    height: 30px;
+		    display: inline-block;
+		    vertical-align: middle;
+		    transform: translateX(11%);
+			}
+		}
+		@include respond-smaller-than($md) {
+			margin-bottom: 0;
+			background: transparent;
+			border-radius: 0;
+			margin-left: $mobile-margin * -1.25;
+			margin-right: $mobile-margin * -1.25;
+			text-align: center;
+			box-shadow: none;
+			.padded-area {
+				padding-bottom: $mobile-margin * 1.5;
+			}
+		}
+	}
+	.card.video-card {
+		@include respond-smaller-than($md) {
+			margin-bottom: -$wide-gutter;
+		}
+	}
+}
+
+section.padded {
+	.card.wide {
+		@include respond-smaller-than($md) {
+			margin-top: $mobile-margin * -1.2;
+		}
+	}
+}
+
+.pagination {
+	text-align: center;
+	.button{
+		margin-right: .2rem;
+		&:last-child {
+			margin-right: 0;
+		}
+		&:not(.square) {
+			min-width: 0;
+			padding-left: .75rem;
+			padding-right: .75rem;
+		}
+		&.hidden{
+			display: none;
+		}
+	}
+	.elipsis-icon {
+		color: $light-text-color;
+		letter-spacing: .4em;
+		padding: 0 .25rem;
+		font-size: 10px;
+	}
+}

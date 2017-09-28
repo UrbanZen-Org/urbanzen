@@ -1,0 +1,79 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	color: $white;
+	padding: 1rem 0;
+	box-shadow: 0 -30px 0px 0px transparent;
+	z-index: 7;
+	transition: padding $md-speed $ease, background $md-speed $ease, color $md-speed $ease, box-shadow $md-speed $ease;
+	@include respond($md) {
+		padding: 1.5rem 0;
+	}
+	svg {
+		transition: opacity $md-speed $ease, transform $md-speed $ease;
+		* {
+			transition: fill $md-speed $ease;
+		}
+		&.logo {
+			transform-origin: left center;
+			@include respond-smaller-than($md) {
+				height: 40px;
+		    width: 114px;
+			}
+		}
+	}
+	a svg * {
+		fill: $white;
+	}
+	.scrolled &,
+	&.solid {
+		color: $main-color;
+		background: $white;
+		box-shadow: 0 -15px 30px 15px rgba($text-color, .15) !important;
+		@include respond($md) {
+			padding: .75rem 0;
+			.logo {
+				transform: scale(.75);
+			}
+		}
+		a svg * {
+			fill: $main-color;
+		}
+	}
+	.solid-header & {
+		color: $main-color;
+		background: $white;
+		box-shadow: 0 1px 0 0 $bg-color;
+		a svg * {
+			fill: $main-color;
+		}
+	}
+	.menu-link {
+		position: relative;
+		z-index: 99;
+	}
+	.button.light {
+		background: $bg-color;
+		margin-right: .5rem;
+		height: 48px;
+		line-height: 48px;
+		vertical-align: middle;
+		margin-top: 2px;
+		&:not(.disabled):not(.loading):hover { 
+			background: darken($bg-color, 5%);
+			border-color: darken($bg-color, 5%);
+		}
+	}
+}
+
+.solid-header {
+	#content {
+		padding-top: calc(40px + 2rem);
+		@include respond($md) {
+			padding-top: calc(53px + 3rem);
+		}
+	}
+}

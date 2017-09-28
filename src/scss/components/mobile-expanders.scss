@@ -1,0 +1,101 @@
+.mobile-expander {
+	border: 1px solid rgba($text-color, .07);
+	@include small-caps();
+	color: $main-color;
+	padding: 1.5rem;
+	display: block;
+	position: relative;
+	&.on-grey {
+		border-color: $white;
+		background: $white;
+	}
+	&.mobile-space-after {
+		margin-bottom: $mobile-margin * 1.2;
+	}
+	@include respond($lg) {
+		display: none;
+	}
+	.icon {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		right: $tight-gutter;
+		width: 23px;
+		height: 1px;
+		background: lighten($text-color, 60%);
+		transition: transform $md-speed $ease;
+		transform: rotate(90deg);
+		&:after {
+			content: '';
+			display: block;
+			background: lighten($text-color, 60%);
+			position: absolute;
+			left: 11px;
+			top: -11px;
+			height: 23px;
+			width: 1px;
+			transform-origin: center;
+			transform: rotate(0deg);
+	    	transition: transform $md-speed $ease;
+		}
+	}
+}
+
+.panel-header {
+	@include respond($lg) {
+		display: none;
+	}
+}
+
+.mobile-collapsed {
+	@include respond-smaller-than($lg) {
+		// height: 0;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		z-index: 999;
+		// background: $white;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility $slow-speed $ease, opacity $slow-speed $ease, background $slow-speed $ease;
+		.scrollable-area {
+			position: absolute;
+			z-index: 1;
+			overflow-x: hidden;
+			overlflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+			top: 46px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			transform: translate3d(0, 100vh, 0);
+			transition: transform $slow-speed $ease;
+			box-shadow: 0 1 0 0 rgba($bg-color, 1);
+		}
+		.panel-header {
+			top: 0;
+			right: 0;
+			left: 0;
+			background: $white;
+			position: relative;
+			z-index: 2;
+			transition: transform $slow-speed $ease;
+			box-shadow: 0 -15px 30px 15px rgba($text-color, .15);
+			transform: translate3d(0, -100%, 0);
+			padding: 0 $tight-gutter;
+		}
+		&.open {
+			visibility: visible;
+			opacity: 1;
+			background: $white;
+			> * {
+				transform: none;
+			}
+		}
+		.card {
+			border-radius: 0;
+		}
+	}
+}

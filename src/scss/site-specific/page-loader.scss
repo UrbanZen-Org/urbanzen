@@ -1,0 +1,25 @@
+.page-loader {
+	position: fixed;
+	width: 54px;
+	height: 54px;
+	z-index: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity $md-speed $ease, visibility $md-speed $ease;
+}
+
+* {
+	&:not(.fade-in):not(.fade-out) {
+		.page-loader {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
+.animsition {
+	z-index: 1;
+}

@@ -1,0 +1,8 @@
+
+<ul class="nav">
+	{% for item in header_menu.items %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a href="{{ item.link }}" class="transition-link h2" title="{{ item.title }}">{{ item.title }}</a>
+		</li>
+	{% endfor %}
+</ul>

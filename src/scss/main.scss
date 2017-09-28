@@ -1,0 +1,42 @@
+// Setup
+@import 'setup/reset';
+@import 'setup/variables';
+@import 'setup/mixins';
+// @import 'setup/round-numbers';
+@import 'setup/grid';
+@import 'setup/fonts';
+@import 'setup/spacing';
+@import 'setup/typography';
+@import 'setup/icons';
+@import 'setup/animations';
+// @import 'setup/tooltips';
+
+// Components
+@import 'components/global';
+@import 'components/header';
+@import 'components/menu';
+@import 'components/footer';
+@import 'components/buttons';
+// @import 'components/tabs';
+@import 'components/rich-text';
+@import 'components/inputs';
+@import 'components/loaders';
+// @import 'components/endless-loader';
+// @import 'components/ui-kit';
+@import 'components/top-area';
+@import 'components/cards';
+@import 'components/slick';
+@import 'components/contact-form';
+@import 'components/mobile-expanders';
+@import 'components/fancy-menu-icon';
+@import 'site-specific/page-loader';
+@import 'site-specific/animsition';
+
+// Pages
+@import 'site-specific/home';
+@import 'site-specific/buy';
+@import 'site-specific/search';
+// @import 'site-specific/sell';
+@import 'site-specific/property';
+@import 'site-specific/about';
+	@import 'components/team-member';

@@ -3,7 +3,7 @@
 
 # base
 set :application, 'uz'
-set :repo_url, '50.28.12.201'
+set :repo_url, 'git@github.com:UrbanZen-Org/urbanzen.git'
 set :linked_dirs, fetch(:linked_dirs, []).push('log')
 
 # git

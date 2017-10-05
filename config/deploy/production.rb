@@ -1,12 +1,10 @@
-server "50.28.12.201", roles: [:app, :web, :db], :primary => true,
-user: 'root',
-ssh_options: {
-	forward_agent: true
-}
-set :user, 'root'
+server "50.28.12.201", user: 'root', roles: [:app, :web, :db], :primary => true
+
+set :ssh_options, { :forward_agent => true }
+set :use_sudo, true
 set :tmp_dir, "/tmp" 
 set :deploy_to, "/srv/uz"
-set :branch, 'master'
+set :branch, "master"
 
 namespace :fix do
 	
@@ -20,4 +18,4 @@ namespace :fix do
 		
 end
 
-after 'deploy', 'fix:symlinks'
+#after 'deploy', 'fix:symlinks'

@@ -1,0 +1,54 @@
+.home-landing{
+	.home-banner{
+		position: relative;
+		h1{
+			color: white;
+		}
+	}
+	.home-categories{
+		max-width: none;
+		margin: 0 auto;
+		padding: 20px;
+		.home-category{
+			position: relative;
+			margin-bottom: 10px;
+			min-height: 200px;
+			background-size: cover;
+			background-position: center center;
+			@include transition((min-height .3s ease-in-out));
+			@include respond-min(1400)
+			{
+				min-height: 340px;
+			}
+			h2{
+				color: white;
+				text-transform: none;
+				font-weight: 300;
+				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		    font-size: 30px;
+		    line-height: 1em;
+		    letter-spacing: 0;
+		    text-transform: none;
+		    text-align: center;
+			}
+			&.half-width{
+				@include respond-min($tablet-portrait)
+				{
+					display: inline-block;
+					width: calc(50% - 5px);
+					margin-right: -.25em;
+					&:nth-child(odd){
+						margin-right: calc(10px - .25em);
+					}
+				}
+			}
+			
+			.title-overlay{
+				background-color: black;
+				&.visible{
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}

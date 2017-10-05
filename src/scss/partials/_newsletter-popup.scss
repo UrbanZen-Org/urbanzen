@@ -1,0 +1,116 @@
+.newsletter_popup{
+	z-index: 99999;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0,0,0,.7);
+	opacity: 0;
+	visibility: hidden;
+	@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));
+	&.open{
+		opacity: 1;
+		visibility: visible;
+	}
+	.popup-body{
+		position: relative;
+		background: black;
+		padding: 20px;
+		.popup-text{
+			padding: 20px 20px 20px 85px;
+			@include respond-min($tablet-portrait)
+			{
+				padding: 20px;
+			}
+			p{
+				padding-left: 113px;
+				@include respond-min($tablet-portrait)
+				{	
+					padding-left: 0;
+				}
+			}
+		}
+		.close{
+			color: white;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			cursor: pointer;
+			z-index: 2;
+		}
+	}
+
+}
+// OLD CRAP
+.newsletter_popup img {
+    margin-bottom: 20px;
+    display: block;
+}
+.newsletter_popup input.contact_email {
+    color: #f5f1e1;
+    border-bottom: 1px solid #f5f1e1;
+    font-weight: bold;
+    font-size: 18px;
+    width: 72%;
+    margin-right: 3%;
+    float: left;
+    padding-left: 5px;
+    @media all and (max-width: 1023px) {
+        width: 100%;
+    }
+}
+.newsletter_popup #mdiv {
+    top: 20px;
+    right: 20px !important;
+}
+.newsletter_popup .sign_up {
+    box-sizing: border-box;
+    float: right;
+    background: none;
+    color: #f5f1e1;
+    border: 1px solid #f5f1e1;
+    margin-top: 0;
+    @media all and (max-width: 1023px) {
+        width: 100% !important;
+    }
+}
+.newsletter_popup .sign_up:hover {
+    background: #000;
+    color: #f5f1e1;
+}
+.newsletter_popup button.cta-button {
+    width: 25% !important;
+    @media all and (max-width: 1023px) {
+        width: 100% !important;
+    }
+}
+.popup-text {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    max-width: 55%;
+    text-align: left;
+    @media all and (max-width: 1023px) {
+        max-width: 80% !important;
+        left: 10px;
+        top: 10px;
+    }
+}
+.popup-text.right {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    left: inherit;
+    max-width: 55%;
+    text-align: right;
+    @media all and (max-width: 1023px) {
+        max-width: 100% !important;
+        left: inherit;
+        right: 20px;
+        top: 30px;
+    }
+}

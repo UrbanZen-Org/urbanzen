@@ -1,0 +1,104 @@
+.homepage-slides{
+	text-align: center;
+	.slides li{
+		@include animation('fadeIn .3s');
+		background-position: center center;
+		&:first-child{
+			.slide-info{
+				@include respond-min(1024)
+	    	{
+	    		h2,h3{
+	    			color: #d39a53;
+	    		}
+					top: 90%;
+					opacity: 0;
+					@include animation('fadeIn .3s linear 6s forwards');
+				}
+			}
+		}
+	}
+	.slide-info{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    left: 50%;
+    display: block;
+    -webkit-transform: translate3d(-50%, -50%, 0) translateZ(0px) scale(1, 1);
+    transform: translate3d(-50%, -50%, 0) translateZ(0px) scale(1, 1);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    max-width: 650px;
+    z-index: 9;
+		.slide-title{
+	    font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	    font-size: 30px;
+	    line-height: 1em;
+	    letter-spacing: 0;
+	    text-transform:uppercase;
+	    display: block;
+	    color: $ivory;
+	    @include respond-min(1024)
+	    {    	
+	    	font-size: 50px;
+	    }
+	    &.large{
+	      font-size: 50px;
+	      text-transform: uppercase;
+	    }
+	  }
+	  .slide-subtitle{
+			font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif;
+			font-size:15px;
+			text-transform: uppercase;
+			letter-spacing: .025em;
+			color: $ivory;
+			margin-bottom: 6px;
+		  @include respond-min(1024)
+		  {
+		  	font-size: 27px;	
+		  }
+	  }
+	}
+}
+.mobile-slides.homepage-slides{
+	margin-top: 49px;
+	.mobile-slide{
+		background-position: center top;
+		.fp-tableCell{
+			background-color: black;
+			@include transition((background-color .2s ease-in-out));
+			&:first-child{
+				@include transition((background-color .1s ease-in-out));
+				.text{
+					@include transition((opacity .1s ease-in-out));
+					*{
+						@include transition((transform .1s ease-in-out, -webkit-transform .1s ease-in-out));
+						@include transform(translateY(30px));
+					}
+				}
+			}
+			.slide-info{
+				@include transition((opacity .2s ease-in-out));
+				opacity: 0;
+				*{
+					@include transition((transform .2s ease-in-out, -webkit-transform .2s ease-in-out));
+					@include transform(translateY(30px));
+				}
+			}
+			&.visible{
+				background: transparent;
+				.slide-info{
+					*{
+						@include transform(translateY(0));
+					}
+					@include animation('fadeIn .2s linear .3s forwards');
+				}
+			}
+		}
+	}
+}

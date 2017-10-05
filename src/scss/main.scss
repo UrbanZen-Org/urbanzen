@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import 'mixins';
+@import 'variables';
+
 // Setup
 @import 'setup/reset';
 @import 'setup/variables';
@@ -11,32 +15,19 @@
 @import 'setup/animations';
 // @import 'setup/tooltips';
 
-// Components
-@import 'components/global';
-@import 'components/header';
-@import 'components/menu';
-@import 'components/footer';
-@import 'components/buttons';
-// @import 'components/tabs';
-@import 'components/rich-text';
-@import 'components/inputs';
-@import 'components/loaders';
-// @import 'components/endless-loader';
-// @import 'components/ui-kit';
-@import 'components/top-area';
-@import 'components/cards';
-@import 'components/slick';
-@import 'components/contact-form';
-@import 'components/mobile-expanders';
-@import 'components/fancy-menu-icon';
-@import 'site-specific/page-loader';
-@import 'site-specific/animsition';
-
-// Pages
-@import 'site-specific/home';
-@import 'site-specific/buy';
-@import 'site-specific/search';
-// @import 'site-specific/sell';
-@import 'site-specific/property';
-@import 'site-specific/about';
-	@import 'components/team-member';
+@import 'global';
+@import 'pages/stores';
+@import 'pages/homepage';
+@import 'pages/homepage-fall';
+@import 'pages/community/super-saturday.scss';
+@import 'collections/home';
+@import 'collections/accessories';
+@import 'pages/beauty-landing';
+@import 'pages/shop-by-look';
+@import 'pages/orient-express-fall';
+@import 'pages/our-story';
+@import 'pages/fall17-runway';
+@import 'pages/past-collections';
+@import 'pages/campaign';
+@import 'pages/video-styles';
+@import 'slick';

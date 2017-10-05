@@ -1,7 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-  filename: "wp-content/themes/heider/assets/css/[name].css",
+  filename: "wp-content/themes/uz2017/assets/css/[name].css",
   allChunks: true
 });
 
@@ -15,7 +15,7 @@ const config = {
 		'./src/js/main.js'
 	],
 	output: {
-		filename: 'wp-content/themes/heider/assets/js/[name].js'
+		filename: 'wp-content/themes/uz2017/assets/js/[name].js'
 	},
 	plugins: [
 		extractSass
@@ -56,7 +56,9 @@ const config = {
       path.resolve(__dirname, 'node_modules')
     ],
     alias: {
-      'waypoints': 'waypoints/lib'
+      'waypoints': 'waypoints/lib',
+      'unveilhooks': 'lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js',
+
     },
     extensions: ['.js', '.json', '.jpg', '.png', '.svg', '.sass', '.scss', '.css'],
   }

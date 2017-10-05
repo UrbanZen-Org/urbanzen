@@ -1,0 +1,25 @@
+// Colors
+$ivory : #f5f1e1;
+$gold : #d39a53;
+$tablet-landscape : 1024;
+$tablet-portrait : 768;
+$mobile : 640;
+$helvetica-neue-lt-ex: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$helvetica-neue-lt-roman: 'HelveticaNeueLTStd-Roman','Helvetica Neue Roman', Helvetica, Arial, sans-serif;
+$helvetica-neue-lt-med: 'HelveticaNeueLTStd-Md','Helvetica Neue Medium', Helvetica, Arial, sans-serif;
+@include keyframes(fadeIn)
+{
+	0%{ opacity: 0; visibility: hidden;}
+	100%{ opacity: 1; visibility: visible;}
+}
+@include keyframes(fadeOut)
+{
+	0%{ opacity: 1; visibility: visible;}
+	100%{ opacity: 0; visibility: hidden;}
+}
+@include keyframes (fadeInOut) {
+  0% {opacity: 0;visibility: hidden;}
+  20%{opacity: 1;visibility: visible;}
+  70% {opacity: 1;visibility: visible;}
+  100% {opacity: 0;visibility: hidden;}
+}

@@ -1,0 +1,145 @@
+.index{
+	header{
+		opacity: 0;
+		@include animation('fadeInMenu .5s linear 4s forwards');
+		@include keyframes (fadeInMenu) {
+	    0% {opacity: 0;}
+	    100% {opacity: 1;}
+		}
+	}
+	.drawer-nav{
+		background: transparent;
+	}
+	.drawer-contents{
+		margin-left: 0!important;
+	}
+}
+.homepage-fall{
+	@include respond-min($tablet-portrait)
+	{
+		height: 100vh;
+	}
+	.sound-controls{
+		background: transparent;
+		position: absolute;
+		right: 5%;
+		bottom: 10%;
+		z-index: 9999;
+		opacity: 0;
+		visibility: hidden;
+		@include respond-min($tablet-portrait)
+		{
+			@include animation('fadeIn .5s linear 4s forwards');
+		}
+		.material-icons{
+			cursor: pointer;
+			color: #926d40;
+			display: block;
+			padding: 10px;
+			&:after{
+				content: 'volume_off';
+			}
+		}
+		&.unmuted{
+			.material-icons{
+				&:after{
+					content: 'volume_up';
+				}	
+			}
+		}
+	}
+	.opening-logos{
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 99;
+		@include respond-max($tablet-portrait)
+		{
+			height: 100vh;
+			background: black;
+			animation: fadeOut 1s linear 3.5s forwards;
+		}
+		.opening-content{
+			width: 100%;
+			background: transparent;
+			color: #926d40;
+			position: relative;
+			text-align: center;
+			img{
+				opacity: 0;
+				visibility: hidden;
+				width: 80%;
+				max-width: 750px;
+				animation: fadeInOut 3.0s linear .5s forwards;
+			}
+			.opening-text{
+				position: relative;
+				margin-top: 20px;
+				height: 130px;
+			}
+			span{
+				width: 100%;
+				display: inline-block;
+				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 18px;
+				line-height: 20px;
+				letter-spacing: .15em;
+				text-transform: uppercase;
+				text-align: center;
+				@include respond-min($tablet-portrait)
+				{
+					font-size: 38px;
+					line-height: 42px;
+					letter-spacing: .2em;
+				}
+				.hash{
+					margin-top: 5%;
+					font-family: 'HelveticaNeueLTStd-Md','Helvetica Neue Medium', Helvetica, Arial, sans-serif;
+					font-size: 20px;
+					@include respond-min($tablet-portrait)
+					{
+						font-size: 30px;
+						margin-top: 80px;
+						
+					}
+				}
+			}
+			.part-1,.part-2{
+				position: absolute;
+				top: 0;
+				opacity: 0;
+				visibility: hidden;
+				width: 100%;
+			}
+			.part-1{
+				animation: fadeInOut 3s linear .5s forwards;
+			}
+
+		}
+	}
+	.full-slideshow{
+		@include respond-min($tablet-portrait)
+		{
+			overflow: hidden;
+		}
+		.slick-arrow{
+			display: none!important;
+		}
+		.slides{
+			@include respond-max($tablet-portrait)
+			{
+				padding-top: 50px;
+			}
+			.slide:first-child{
+				.slide-cover .slide-info{
+					@include animation('fadeInSlide .3s linear 4.5s forwards');
+				}
+			}
+		}
+	}
+}

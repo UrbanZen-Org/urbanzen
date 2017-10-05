@@ -1,0 +1,43 @@
+.home-landing{
+	.home-banner{
+		position: relative;
+		h1{
+			color: white;
+		}
+	}
+	.home-categories{
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 20px;
+		.home-category{
+			position: relative;
+			margin-bottom: 10px;
+			h2{
+				color: white;
+				text-transform: none;
+				font-weight: 300;
+			}
+			&.half-width{
+				@include respond-min(640)
+				{
+					display: inline-block;
+					width: calc(50% - 5px);
+					margin-right: -.25em;
+					&:nth-child(odd){
+						padding-right: 10px;
+						.title-overlay{
+							right: 10px;
+						}
+					}
+				}
+			}
+			
+			.title-overlay{
+				background-color: black;
+				&.visible{
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}

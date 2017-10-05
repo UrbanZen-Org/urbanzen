@@ -1,4 +1,4 @@
-var hyper = {
+window.uz = {
   modules : [],
   init : function(){
     this.modules.forEach(function(item, i){
@@ -30,15 +30,21 @@ var hyper = {
     });
   }
 }
+window.uz.modules.push(require('./global/global'));
+window.uz.modules.push(require('./global/cart'));
+window.uz.modules.push(require('./pages/home'));
+window.uz.modules.push(require('./pages/homepage-fall'));
+window.uz.modules.push(require('./pages/super-saturday'));
+window.uz.modules.push(require('./pages/orient-express'));
+window.uz.modules.push(require('./collections/home-landing'));
+window.uz.modules.push(require('./collections/accessories'));
+window.uz.modules.push(require('./collections/beauty'));
+window.uz.modules.push(require('./pages/shop/shop-by-look'));
+window.uz.modules.push(require('./pages/our-story'));
+window.uz.modules.push(require('./pages/fall17-runway'));
+window.uz.modules.push(require('./pages/video-styles'));
 
-hyper.modules.push(require('./global'));
-hyper.modules.push(require('./homepage'));
-hyper.modules.push(require('./about'));
-hyper.modules.push(require('./buy'));
-hyper.modules.push(require('./property'));
-hyper.modules.push(require('./search'));
-
-hyper.init(hyper);
-document.addEventListener('DOMContentLoaded', hyper.ready.bind(hyper));
-document.addEventListener('scroll', hyper.scroll.bind(hyper));
-window.addEventListener('resize', hyper.resize.bind(hyper));
+window.uz.init(window.uz);
+document.addEventListener('DOMContentLoaded', window.uz.ready.bind(window.uz));
+document.addEventListener('scroll', window.uz.scroll.bind(window.uz));
+window.addEventListener('resize', window.uz.resize.bind(window.uz));

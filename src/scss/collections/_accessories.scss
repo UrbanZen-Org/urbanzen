@@ -1,0 +1,49 @@
+.accessories-landing{
+	.accessories-banner{
+		position: relative;
+		h1{
+			color: white;
+		}
+	}
+	.accessories-categories{
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 20px;
+		@include respond-min($tablet-portrait)
+		{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 20px 15px;
+		}
+		.accessories-category{
+			position: relative;
+			margin-bottom: 10px;
+			text-align: left;
+			img{
+				width: 100%;
+			}
+			@include respond-min($tablet-portrait)
+			{
+				width: calc(33.334% - 6.667px);
+			}
+			h2{
+				color: white;
+				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		    font-size: 30px;
+		    line-height: 1em;
+		    letter-spacing: 0;
+		    text-transform: none;
+		    text-align: center;
+			}
+			&.half-width{
+				@include respond-min($tablet-portrait)
+				{
+					width: calc(50% - 5px);	
+				}
+			}
+		}
+	}
+}

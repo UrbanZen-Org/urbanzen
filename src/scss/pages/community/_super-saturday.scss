@@ -1,0 +1,46 @@
+.mobile-video{
+	position: relative;
+	.play-icon{
+		color: #e8e8e8;
+		position: absolute;
+    bottom: 0px;
+    top: 0;
+    right: 0;
+    left: 0;
+		background: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		i{
+			max-width: 84px;
+			max-height: 84px;
+			font-size: 60px;
+			background-color: rgba(0,0,0,.7);
+			border-radius: 50%;
+			border: 2px solid #e8e8e8;
+			padding: 10px;
+			opacity: 0;
+			@include animation('fadeInButton .3s linear .3s forwards');
+			@include keyframes (fadeInButton) {
+	      0% {opacity: 0;}
+	      100% {opacity: 1;}
+			}
+         
+ 
+		}
+	}
+	
+}
+.saturdaySlider{
+	.flex-direction-nav{
+		display: block;
+	}
+}
+.parallax-image{
+	position: relative;
+	height: 500px;
+	overflow: hidden;
+	background-position: center center;
+	background-attachment: fixed;
+}
+

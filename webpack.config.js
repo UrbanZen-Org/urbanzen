@@ -23,6 +23,10 @@ const config = {
 	module: {
     loaders: [
       {
+        test: /\.scss$/,
+        loader: 'style!css!sass!resolve-url!sass?sourceMap'
+      },
+      {
         test: /\.(otf|eot|ttf|woff|woff2)$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
       },

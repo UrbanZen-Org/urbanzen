@@ -49,46 +49,46 @@ var homepage = {
         fade: true,
         appendDots: '.full-slideshow-nav',
         arrows : false,
-        slide: '.slide',
         autoplay: 1,
         autoplaySpeed: 4000,
         speed: 0,
         pauseOnHover: false,
-        pauseOnFocus: false
+        pauseOnFocus: false,
+        rows:0
       };
-      $('.full-slideshow .slides').slick(options);
-       $('.full-slideshow .slides').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    
-      var slideClasses = slick.$slides[nextSlide].className;
-      
-        if(slideClasses.indexOf('video') !== -1){
-          var video = $(slick.$slides[nextSlide]).find('video')[0];
-          if ( video.readyState === 4 ) {
-            $(slick.$slides[nextSlide]).addClass('loaded');
-              video.play();
-          }
-        }
-      
-      });
       $('.full-slideshow .slides').on('init', function(event,slick){
         var slideClasses = slick.$slides[0].className;
           if(slideClasses.indexOf('video') !== -1){
             var video = $(slick.$slides[0]).find('video')[0];
-            
-              $(slick.$slides[0]).addClass('loaded');
-              video.play();         
-            
+            $(slick.$slides[0]).addClass('loaded');
+            video.play();
+
           }
       });
-        $('.full-slideshow .slides').on('afterChange', function(event, slick, currentSlide, nextSlide){
-          var lastSlide = (currentSlide != 0 ) ? parseInt(currentSlide-1) : parseInt(slick.$slides.length - 1);
-          console.log(lastSlide);
-          var currentSlideClasses = slick.$slides[lastSlide].className;
-          if(currentSlideClasses.indexOf('video') !== -1){
-            var video = $(slick.$slides[lastSlide ]).find('video')[0];
-            video.pause();
-            video.currentTime = 0;    
+      $('.full-slideshow .slides').slick(options);
+
+      $('.full-slideshow .slides').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var slideClasses = slick.$slides[nextSlide].className;
+        
+          if(slideClasses.indexOf('video') !== -1){
+            var video = $(slick.$slides[nextSlide]).find('video')[0];
+            if ( video.readyState === 4 ) {
+              $(slick.$slides[nextSlide]).addClass('loaded');
+                video.play();
+            }
           }
+        
+        });
+
+      $('.full-slideshow .slides').on('afterChange', function(event, slick, currentSlide, nextSlide){
+        var lastSlide = (currentSlide != 0 ) ? parseInt(currentSlide-1) : parseInt(slick.$slides.length - 1);
+        //console.log(lastSlide);
+        var currentSlideClasses = slick.$slides[lastSlide].className;
+        if(currentSlideClasses.indexOf('video') !== -1){
+          var video = $(slick.$slides[lastSlide ]).find('video')[0];
+          video.pause();
+          video.currentTime = 0;    
+        }
       });
     } 
   },

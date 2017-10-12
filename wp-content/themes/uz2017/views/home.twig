@@ -20,62 +20,31 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="slides">
-				<div class="slide video">
-					<div class="slide-cover mobile-only">
-						
-						<div class="slide-info">
-							<h2> ORIENT EXPRESS</h2> 
-							<H3>COLLECTION</h3>
-							<a class="cta-button gold" href="https://www.urbanzen.com/pages/orient-express-collection">Discover</a>
+			
+			{% set slides = get_field('slides') %}
+			
+			{% if slides %}
+				<div class="slides">
+					{% for slide in slides %}
+						<div class="slide video">
+							<div class="slide-cover mobile-only">						
+								<div class="slide-info">
+									<h2>{{ slide.title }}</h2> 
+									<h3>{{ slide.subtext }}</h3>
+									{% if slide.show_link_button %}
+										<a class="cta-button gold" href="{{ slide.button_link}}">{{ slide.button_text}}</a>
+									{% endif %}
+								</div>
+							</div>
+							<video class="lazyload" loop poster="">
+							  <source src="{{ slide.video_file }}" type="video/mp4">
+							</video>
+							<img class="mobile" src="{{ slide.mobile_image }}"/>
 						</div>
-					</div>
-					<video class="lazyload" loop poster="">
-					  <source src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Homepage _ 09_12_17/02-apparel.mp4" type="video/mp4">
-					</video>
-					<img class="mobile" src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Homepage _ 09_12_17/m-02-apparel.jpg"/>
+					{% endfor %}
 				</div>
-				<div class="slide video">
-					<div class="slide-cover mobile-only">
-						<div class="slide-info">
-							<H2>OBJECTS OF DESIRE</h2>
-							<H3>HOME DECOR</h3>
-							<a class="cta-button gold" href="https://www.urbanzen.com/collections/home/furniture">Discover</a>
-						</div>
-					</div>
-					<video class="lazyload" loop poster="">
-					  <source src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Homepage _ 09_12_17/03-artisans.mp4" type="video/mp4">
-					</video>
-					<img class="mobile" src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Homepage _ 09_12_17/m-03-furniture.jpg"/>
-				</div>
-				<div class="slide video">
-					<div class="slide-cover mobile-only">
-						<div class="slide-info">
-							<h2>ARTISAN CRAFTSMANSHIP</h2>
-							<H3>DESIGNED &amp; MADE WITH INTENTION</h3>
-							<a class="cta-button gold" href="https://www.urbanzen.com/collections/home/decorative-accents">Discover</a>
-						</div>
-					</div>
-					<video class="lazyload" loop poster="">
-					  <source src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Homepage _ 09_12_17/04-furniture.mp4" type="video/mp4">
-					</video>
-					<img class="mobile" src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Homepage _ 09_12_17/m-04-artisans.gif"/>
-				</div>	
-				<div class="slide video">
-					<div class="slide-cover mobile-only">
-						<div class="slide-info">
-							<H2>About Us</h2>
-							<H3>RAISING AWARENESS &amp; INSPIRING CHANGE</h3>
-							<a class="cta-button gold" href="https://www.urbanzen.com/pages/our-story">Discover</a>
-						</div>
-					</div>
-					<video class="lazyload" loop poster="">
-					  <source src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Homepage _ 09_12_17/05-donna.mp4" type="video/mp4">
-					</video>
-					<img class="mobile" src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Homepage _ 09_12_17/m-05-UZ-Center.jpg"/>
-				</div>
-			</div>
+			{% endif %}
+			
 		</section>
 	</div>
 {% endblock %}{# end content #}

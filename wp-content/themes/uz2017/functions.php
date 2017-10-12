@@ -119,78 +119,42 @@ add_action( 'init', 'register_menus' );
 
 // Create Post Types
 
-function create_projects() {
-  $labels = array(
-    'name'               => __( 'Projects'),
-    'singular_name'      => __( 'Project'),
-    'menu_name'          => __( 'Projects'),
-    'name_admin_bar'     => __( 'Projects'),
-    'add_new'            => __( 'Add New'),
-    'add_new_item'       => __( 'Add New Project'),
-    'new_item'           => __( 'New Project'),
-    'edit_item'          => __( 'Edit Project'),
-    'view_item'          => __( 'View Project'),
-    'all_items'          => __( 'All Projects'),
-    'search_items'       => __( 'Search Projects'),
-    'parent_item_colon'  => __( 'Parent Project:'),
-    'not_found'          => __( 'No Projects found.'),
-    'not_found_in_trash' => __( 'No Projects found in Trash.')
-  );
+// function create_projects() {
+//   $labels = array(
+//     'name'               => __( 'Projects'),
+//     'singular_name'      => __( 'Project'),
+//     'menu_name'          => __( 'Projects'),
+//     'name_admin_bar'     => __( 'Projects'),
+//     'add_new'            => __( 'Add New'),
+//     'add_new_item'       => __( 'Add New Project'),
+//     'new_item'           => __( 'New Project'),
+//     'edit_item'          => __( 'Edit Project'),
+//     'view_item'          => __( 'View Project'),
+//     'all_items'          => __( 'All Projects'),
+//     'search_items'       => __( 'Search Projects'),
+//     'parent_item_colon'  => __( 'Parent Project:'),
+//     'not_found'          => __( 'No Projects found.'),
+//     'not_found_in_trash' => __( 'No Projects found in Trash.')
+//   );
 
-  $args = array(
-    'labels'             => $labels,
-    'public'             => true,
-    'publicly_queryable' => true,
-    'show_ui'            => true,
-    'query_var'          => true,
-    'menu_icon'          => 'dashicons-format-gallery',
-    'menu_position'      => 2,
-    'rewrite'            => array( 'slug' => 'projects'),
-    'capability_type'    => 'post',
-    'has_archive'        => true,
-    'hierarchical'       => true,
-    'taxonomies'  => array( 'category' ),
-    'supports'           => array('title','thumbnail', 'editor')
-  );
-  register_post_type( 'projects', $args );
-}
-add_action( 'init', 'create_projects' );
-
-function create_clients() {
-  $labels = array(
-    'name'               => __( 'Clients'),
-    'singular_name'      => __( 'Client'),
-    'menu_name'          => __( 'Clients'),
-    'name_admin_bar'     => __( 'Clients'),
-    'add_new'            => __( 'Add New'),
-    'add_new_item'       => __( 'Add New Client'),
-    'new_item'           => __( 'New Client'),
-    'edit_item'          => __( 'Edit Client'),
-    'view_item'          => __( 'View Client'),
-    'all_items'          => __( 'All Clients'),
-    'search_items'       => __( 'Search Clients'),
-    'parent_item_colon'  => __( 'Parent Client:'),
-    'not_found'          => __( 'No Clients found.'),
-    'not_found_in_trash' => __( 'No Clients found in Trash.')
-  );
-
-  $args = array(
-    'labels'             => $labels,
-    'public'             => true,
-    'publicly_queryable' => true,
-    'show_ui'            => true,
-    'query_var'          => true,
-    'menu_icon'          => 'dashicons-unlock',
-    'menu_position'      => 4,
-    'rewrite'            => array( 'slug' => 'clients'),
-    'capability_type'    => 'post',
-    'has_archive'        => true,
-    'hierarchical'       => true,
-    'supports'           => array('title','thumbnail', 'editor')
-  );
-  register_post_type( 'clients', $args );
-}
-add_action( 'init', 'create_clients' );
+//   $args = array(
+//     'labels'             => $labels,
+//     'public'             => true,
+//     'publicly_queryable' => true,
+//     'show_ui'            => true,
+//     'query_var'          => true,
+//     'menu_icon'          => 'dashicons-format-gallery',
+//     'menu_position'      => 2,
+//     'rewrite'            => array( 'slug' => 'projects'),
+//     'capability_type'    => 'post',
+//     'has_archive'        => true,
+//     'hierarchical'       => true,
+//     'taxonomies'  => array( 'category' ),
+//     'supports'           => array('title','thumbnail', 'editor')
+//   );
+//   register_post_type( 'projects', $args );
+// }
+// add_action( 'init', 'create_projects' );
 
 //Remove needless Wordpress stuff
 function remove_admin_bar_links() 
@@ -229,12 +193,6 @@ function change_menus()
   // remove_menu_page( 'tools.php' );                  //Tools
   // remove_menu_page( 'options-general.php' );     //Settings
 
-  add_menu_page( 'Home', 'Home', 'edit_pages', 'post.php?post=14&action=edit', '', 'dashicons-admin-home', 1);
-
-add_menu_page( 'About', 'About', 'edit_pages', 'post.php?post=6&action=edit', '', 'dashicons-id', 3);
-add_menu_page( 'Contact', 'Contact', 'edit_pages', 'post.php?post=12&action=edit', '', 'dashicons-email-alt', 5);
-add_menu_page( 'Press', 'Press', 'edit_pages', 'post.php?post=8&action=edit', '', 'dashicons-welcome-widgets-menus', 6);
-  
   add_menu_page( 'Site Menus', 'Site Menus', 'edit_pages', 'nav-menus.php', '', 'dashicons-list-view', 25 );
 }
 add_filter( 'intermediate_image_sizes', '__return_empty_array', 999 );

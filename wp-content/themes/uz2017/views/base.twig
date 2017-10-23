@@ -3,12 +3,12 @@
   {% include 'partials/head.twig' %}
   <body class="{{ body_class }}">
     <div class="animsition">
-      {# {% include 'partials/header.twig'%}
-      {% include 'partials/menu.twig' %} #}
+      {# {% include 'partials/header.twig'%} #}
+      {% include 'partials/menu.twig' %}
       
-      <div id="page">
+      <div id="page" class="{{ page_class }}">
         {% block page %}
-          <div id="content">
+          <div id="content" >
             {% block content %}
               
             {% endblock %}{# end content #}

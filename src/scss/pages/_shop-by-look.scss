@@ -32,14 +32,14 @@
 			{
 				margin-bottom: 0;
 				// width: calc(25% - 11.25px);
-				flex-basis: 24.5%;
+				flex-basis: 24.625%;
 			}
 			&.two_up{
 				@include respond-min(640)
 				{
 					margin-bottom: 0;
 					// width: calc(50% - 7.5px);
-					flex-basis: 49.5%;
+					flex-basis: 49.75%;
 				}
 			}
 			&.hide-mobile{
@@ -172,6 +172,8 @@
 		    line-height: 1em;
 		    letter-spacing: 0;
 		    text-transform: none;
+		    text-decoration: none;
+    		color: black;
 		    @include respond-max($tablet-portrait)
 				{	
 				font-size: .8em;

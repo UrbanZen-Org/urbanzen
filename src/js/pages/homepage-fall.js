@@ -62,23 +62,20 @@ var homepage = {
             var video = $(slick.$slides[0]).find('video')[0];
             $(slick.$slides[0]).addClass('loaded');
             video.play();
-
           }
       });
       $('.full-slideshow .slides').slick(options);
-
       $('.full-slideshow .slides').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         var slideClasses = slick.$slides[nextSlide].className;
-        
-          if(slideClasses.indexOf('video') !== -1){
-            var video = $(slick.$slides[nextSlide]).find('video')[0];
-            if ( video.readyState === 4 ) {
-              $(slick.$slides[nextSlide]).addClass('loaded');
-                video.play();
-            }
+
+        if(slideClasses.indexOf('video') !== -1){
+          var video = $(slick.$slides[nextSlide]).find('video')[0];
+          if ( video.readyState === 4 ) {
+            $(slick.$slides[nextSlide]).addClass('loaded');
+            video.play();
           }
-        
-        });
+        }
+      });
 
       $('.full-slideshow .slides').on('afterChange', function(event, slick, currentSlide, nextSlide){
         var lastSlide = (currentSlide != 0 ) ? parseInt(currentSlide-1) : parseInt(slick.$slides.length - 1);

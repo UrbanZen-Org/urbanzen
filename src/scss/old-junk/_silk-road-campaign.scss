@@ -1,0 +1,71 @@
+.page-silk-road-campaign {
+ .cell-video-container .text{z-index:9999;color:#f5f1e1;font-size:4rem;display:none;}
+	.half{padding:0;@media (max-width: 1023px){padding-left:0;padding-right: 0;}}
+	.half {
+    width: 50%;
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+	}
+	#fullpage{overflow: hidden;}
+	.cell-video-container,[class*='super'] .cell-video-container{margin-bottom:20px; height:100vh;padding:0;width:100%;@media (max-width: 1023px){padding:0;height:100%;}}
+	.full-width{
+		padding-bottom:20px;
+		position:relative;
+		&:after{
+			content: "";
+		  display: table;
+		  clear: both;
+		}
+	}
+	.full-width .half:first-child{padding-right:10px;@media (max-width: 1023px){padding-right:0;padding-bottom:20px;}}
+	.full-width .half:last-child{padding-left:10px;@media (max-width: 1023px){padding-left:0;}}
+	.full-width .half:last-child{padding-left:10px;@media (max-width: 1023px){padding-left:0;}}
+	.full-width.stacked{margin-right:-20px;margin-left:-20px;@media (max-width: 1023px){margin:0;}}
+	.full-width .half.stacked{ padding-left: 10px;padding-right: 15px;@media (max-width: 1023px){padding:0;}}
+	.full-width .half .padding-bottom{padding-bottom:20px;}
+	.center{text-align:center;}
+	.credits{text-align:center;padding-right:  15px;@media (max-width: 1023px){text-align:center;padding:0;margin-bottom: 10px;}}
+	.first{
+	  background-image: url('https://s3.amazonaws.com/site-global/Silk+Road/Campaign/campaign_02c.jpg');
+	  @media (max-width: 1023px){
+	    background-image: url('https://s3.amazonaws.com/site-global/Silk+Road/Campaign/m_campaign_02.jpg');
+	  }
+	}
+	.slides{
+		padding: 0 20px;
+		.item{
+			box-sizing: border-box;
+			padding: 5px;
+		}
+	}
+	.bg-full {
+    height: 100vh;
+    background-size: cover;
+    margin-bottom: 20px;
+    position: relative;
+    .text.right {
+	    left: 75%;
+	    padding-left: 2%;
+		}
+		.centeredBox, .text {
+	    width: 100%;
+	    position: absolute;
+	    top: 50%;
+	    text-align: center;
+	    left: 50%;
+	    display: block;
+	    -webkit-transform: translate3d(-50%, -50%, 0) translateZ(0px) scale(1, 1);
+	    transform: translate3d(-50%, -50%, 0) translateZ(0px) scale(1, 1);
+	    -webkit-backface-visibility: hidden;
+	    -moz-backface-visibility: hidden;
+	    -ms-backface-visibility: hidden;
+	    backface-visibility: hidden;
+	    -webkit-font-smoothing: antialiased;
+	    box-sizing: border-box;
+	    max-width: 650px;
+	    z-index: 9;
+		}
+	}
+}
+

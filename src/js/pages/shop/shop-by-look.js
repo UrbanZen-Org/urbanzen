@@ -1,10 +1,9 @@
-import { GraphQLClient } from 'graphql-request'
-import { request } from 'graphql-request'
-
 'use strict';
 
 var $ = require('jquery');
 var imagesLoaded = require('imagesloaded');
+var GraphQLClient = require('graphql-request').GraphQLClient;
+require('graphql-request').request;
 
 var shopbylook = {
   init: function(){
@@ -18,6 +17,7 @@ var shopbylook = {
 	      look.addClass('loaded');
 	    });
     });
+    console.log('hi');
     $('body').append('<div class="quick-overlay" data-quick-overlay=""></div>');
 		var rows = 	`[{
 		"looks": [{
@@ -762,13 +762,13 @@ var shopbylook = {
 	  	$('.look .look-product-links a, [data-product-link]').click(function(e){
 	  		e.preventDefault();
 	  		var product_data = $(this).data();
-				if ($('.drawer-brand').attr('href').indexOf('foundation') !== -1){
-					var client_url = 'urban-zen-foundation.myshopify.com';
-					var access_token = 'f987f1824dd7e73305a2243a31c0d4be';
-				}else{
+				// if ($('.drawer-brand').attr('href').indexOf('foundation') !== -1){
+				// 	var client_url = 'urban-zen-foundation.myshopify.com';
+				// 	var access_token = 'f987f1824dd7e73305a2243a31c0d4be';
+				// }else{
 					var client_url = 'urbanzen.com';
 					var access_token = 'd1c52518cdfc4bd586603aa9303a8eee';
-				}
+				// }
 				var client = new GraphQLClient('https://'+ client_url+'/api/graphql', {
 				  headers: {
 				    'X-Shopify-Storefront-Access-Token': access_token
@@ -998,6 +998,4 @@ var shopbylook = {
     
   }
 };
-// module.exports = shopbylook;
-export default shopbylook;
-		
+module.exports = shopbylook;

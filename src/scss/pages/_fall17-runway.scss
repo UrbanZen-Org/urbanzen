@@ -91,11 +91,15 @@
 		.half{
 			@include respond-min($tablet-portrait)
 			{
-				width: calc(50% - 20px);
+				width: calc(50% - 10px);
 			}
+			position: relative;
+    	box-sizing: border-box;
 		}
 		.quarter{
 			width: calc(50% - 10px);
+			position: relative;
+    	box-sizing: border-box;
 			@include respond-min($tablet-portrait)
 			{
 				width: calc(25% - 20px);
@@ -107,9 +111,12 @@
 .img-wrap{
 		background: #000;
 		img{
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
+			@include respond-min($tablet-portrait)
+			{
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
 		}
 		&.square{
 			height: 0;

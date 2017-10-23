@@ -1,0 +1,36 @@
+h1, h1 span {
+  font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  line-height: 1em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+h2, h2 span {
+  font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif;
+  font-size: 27px;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+}
+p, label, span {
+  font-family: 'HelveticaNeueLTStd-Roman','Helvetica Neue Roman', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: .08333em;
+}
+h3, *.h3 {
+  font-size: 1.5625rem;
+  font-weight: 700;
+  line-height: 1.333em;
+  letter-spacing: 0.05em;
+  text-transform: none;
+}
+h5 {
+    font-family: 'HelveticaNeueLTStd-Bd', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1em;
+    letter-spacing: 0.05em;
+    text-transform: none;
+}
+.light, a.light {
+    color: #f5f1e1 !important;
+}

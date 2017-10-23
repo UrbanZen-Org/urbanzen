@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-orient-campaign black-bg' %}\
+
+{% block content %}
+	<div class="orient-express-fall-17">
+		<section class="full-slideshow">
+			<div class="slides">
+				<div class="slide">
+					<div class="slide-cover">
+						<div class="slide-info fade-in-out">
+							<h2>{{ post.title }}</h2>
+						</div>
+					</div>
+					<img src="{{ post.main_image }}">
+					<img class="mobile" src="{{ post.mobile_main_image }}">
+				</div>	
+			</div>
+			<div class="down-arrow" data-target=".campaign-images"></div>
+		</section>
+
+		{% set images = post.images %}
+		{% if images %}
+			<section class="campaign-images">
+				{% for image in images %}
+						<div class="campaign-image" style="background-image: url({{ image.image }})">
+							<img src="{{ image.mobile_image }}">
+						</div>
+				{% endfor %}
+			</section>
+		{% endif %}
+
+		<section class="behind-the-scenes">
+			<h2>{{ post.behind_the_scenes_title }}</h2>
+			<p>{{ post.behind_the_scenes_credits }}</p>
+
+			{% set bts_images = post.behind_the_scenes_images %}
+			{% if bts_images %}
+				<div class="carousel">
+					{% for image in bts_images %}
+						<div class="carousel-image">
+							<img src="{{ image.image }}">
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</section>
+
+		<section class="explore-the-collection">
+			<h2>{{ post.explore_the_collection_title }}</h2>
+			<a href="{{ post.button_link }}" class="cta-button" title="{{ post.button_text }}">{{ post.button_text }}</a>
+		</section>
+	</div>
+{% endblock %}{# end content #}

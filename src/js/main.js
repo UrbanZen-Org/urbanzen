@@ -43,6 +43,7 @@ window.uz.modules.push(require('./pages/shop/shop-by-look'));
 window.uz.modules.push(require('./pages/our-story'));
 window.uz.modules.push(require('./pages/fall17-runway'));
 window.uz.modules.push(require('./pages/video-styles'));
+window.uz.modules.push(require('./pages/silk-road-campaign'));
 
 window.uz.init(window.uz);
 document.addEventListener('DOMContentLoaded', window.uz.ready.bind(window.uz));

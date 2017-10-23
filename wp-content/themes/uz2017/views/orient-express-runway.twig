@@ -1,0 +1,107 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-orient-runway black-bg' %}
+
+{% block content %}
+<div class="fall17-event">
+	<div class="cover-area">
+		<iframe class="hpvideo hide-mobile" src="https://player.vimeo.com/video/{{ post.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<div class="mobile-video hide-desktop">
+			<div class="video-item" data-video-id="{{ post.vimeo_id }}">
+				<img class="lazyload" data-src="{{ post.video_mobile_image }}">
+				<div class="play-icon">
+					<i class="material-icons">play_arrow</i>
+				</div>
+			</div>
+			<div class="video-overlay">
+				<i class="close material-icons">close</i>
+				<div class="video-holder">
+					<div class="video-responsive">
+						<div id="video"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<h1>{{ post.top_title }}</h1>
+		<div class="down-arrow" data-target="#unveil"></div>
+	</div>
+	<div class="unveiling" id="unveil"></div>
+	
+	<div class="unveil-heading">
+		<h2>{{ post.unveiling_title }}</h2>		
+		<p>{{ post.unveiling_text }}</p>
+	</div>
+
+	<div class="signature-looks">
+		<div class="signature-looks-slideshow">
+			<div class="signature-look-slides">
+				{% for look in post.signature_looks %}
+					<div class="img-wrap">
+						<img class="lazyload" data-src="{{ look.image }}">
+						<div class="look-title">{{ look.title }}</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	{% set unveiling_images = post.unveiling_images %}
+	
+	{% if unveiling_images %}
+		<div class="unveil-images">
+			{% for row in unveiling_images %}
+				<div class="flex-row">
+					{% for image in row.images %}
+						<div class="{{ image.layout }}">
+							<div class="img-wrap">
+								<img class="hide-mobile lazyload" data-src="{{ image.image }}">
+								<img class="hide-desktop lazyload" data-src="{{ image.mobile_image }}">
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+	
+	{% set lifestyle_images = post.lifestyle_images %}
+	
+	{% if lifestyle_images %}
+		<div class="lifestyle">
+			<h2>{{ post.lifestyle_title }}</h2>
+			<div class="lifestyle-images">
+				{% for row in lifestyle_images %}
+					<div class="flex-row">
+						{% for image in row.images %}
+							<div class="{{ image.layout }}">
+								<div class="img-wrap">
+									<img class="hide-mobile lazyload" data-src="{{ image.image }}">
+									<img class="hide-desktop lazyload" data-src="{{ image.mobile_image }}">
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% endif %}
+
+	{% set behind_the_scenes_images = post.behind_the_scenes_images %}
+	
+	{% if behind_the_scenes_images %}
+		<div class="behind-the-scenes">
+			<h2>{{ post.behind_the_scenes_title }}</h2>
+			<div class="behind-the-scenes-slideshow">
+				<div class="behind-the-scenes-slides">
+					{% for image in behind_the_scenes_images %}
+						<img class="lazyload" data-src="{{ image.url }}">
+					{% endfor %}
+				</div>
+			</div>
+			<h2>{{ post.button_callout_title }}</h2>
+			<a class="purchase cta-button light" href="{{ post.button_link }}">{{post.button_text }}</a>
+		</div>
+	{% endif %}
+
+</div>
+{% endblock %}{# end content #}

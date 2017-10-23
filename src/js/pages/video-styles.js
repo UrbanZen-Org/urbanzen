@@ -2,6 +2,7 @@
 
 var $ = require('jquery');
 var VimeoPlayer = require('@vimeo/player');
+var slick = require('slick-carousel');
 
 var video_styles = {
   init: function(){
@@ -70,6 +71,7 @@ var video_styles = {
 					arrows: true,
 					vertical: true,
 					infinite: true,
+          rows:0,
 					prevArrow: '<div class="slick-arrow arrow-up"></div>',
 	      	nextArrow: '<div class="slick-arrow arrow-down"></div>',
 				});			

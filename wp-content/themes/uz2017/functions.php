@@ -24,7 +24,7 @@ class StudioLab extends TimberSite
 
   function add_to_context($context)
   {
-    $context['header_menu'] = new TimberMenu('header-menu');
+    $context['main_menu'] = new TimberMenu('main-menu');
     $context['footer_menu'] = new TimberMenu('footer-menu');
 
     $context['site'] = $this;
@@ -98,6 +98,32 @@ class StudioLab extends TimberSite
 
     $twig->addExtension(new Twig_Extension_Debug());
 
+    function markup_item($item) 
+    {
+
+      // print_r($item);
+      $markup = '<li class="'. implode(" ", $item->classes ) . '">
+        <a href="'. $item->link . '" class="transition-link" title="'. $item->title .'">'. $item->title .'
+        </a>';
+        if ($item->children){
+          if (strpos($item->class, 'current-menu-parent') !== false) {
+            
+            $class = 'open';
+          }
+          $markup .= '<ul class="' . $class. '">';
+          foreach ($item->children as $i => $item){
+            $markup .= markup_item($item);
+          }
+          $markup .= '</ul>';
+        }
+      $markup .= '</li>';
+      return $markup;
+    };
+    $markup_menu_item = new Twig_SimpleFunction('markup_menu_item', function($item){
+     return markup_item($item);
+    });
+    $twig->addFunction($markup_menu_item);
+    
     return $twig;
     
   }
@@ -110,7 +136,7 @@ function register_menus()
 {
   register_nav_menus(
     array(
-      'header-menu' => __( 'Header Menu' ),
+      'main-menu' => __( 'Main Menu' ),
       'footer-menu' => __('Footer Menu')
     )
   );

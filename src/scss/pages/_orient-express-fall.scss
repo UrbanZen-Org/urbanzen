@@ -14,7 +14,6 @@
 		{
 			height: calc(100vh - 50px);
 		}
-		
 		background: black;
 		.slides .slide:first-child{
 			.slide-cover .slide-info{
@@ -162,6 +161,20 @@
 					padding-right: 20px;
 				}
 			}
+		}
+	}
+	.explore-the-collection{
+		text-align: center;
+		color: #f5f1e1;
+		padding: 50px 20px;
+		h2{
+			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	    font-size: 30px;
+	    line-height: 1em;
+	    letter-spacing: 0;
+	    text-transform: uppercase;
+	    letter-spacing: .02em;
+	    margin: 50px auto;
 		}
 	}
 }

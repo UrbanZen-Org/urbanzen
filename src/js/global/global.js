@@ -14,6 +14,7 @@ var global = {
     this.downArrow();
     this.lazyload();
     this.newsletterPopup.init();
+    this.menu();
   },
   
   resize:function(){
@@ -21,6 +22,19 @@ var global = {
   },  
   scroll: function(){
     
+  },
+  menu:  function(){
+    var nav_link = $('nav.main-menu li a');
+    
+
+    nav_link.click(function(e){
+      if ($(this).parent().find('ul').length){
+        e.preventDefault();
+        $(this).parent().find('ul').toggleClass('open');
+        $(this).parent().toggleClass('current-menu-parent');
+        console.log($(this).parent().find('ul'));
+      }
+    });
   },
   downArrow: function(){
     if ($('.down-arrow').length){

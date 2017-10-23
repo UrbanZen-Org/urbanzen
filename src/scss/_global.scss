@@ -7,6 +7,18 @@ main{
 	position: relative;
   z-index: 1;
 }
+#content{
+	margin-bottom: 60px;
+}
+#page{
+	margin-left: 200px;
+	&.full-width-page{
+		margin-left: 0;
+	}
+}
+.black-bg{
+	background: black;
+}
 .hide-mobile{
 	@include respond-max($tablet-portrait)
 	{
@@ -381,3 +393,15 @@ main{
 		}
 	}
 @import 'partials/newsletter-popup.scss';
+
+.hpvideo{
+  box-sizing: border-box;
+  height: 56.25vw;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  width: 177.77777778vh;
+}

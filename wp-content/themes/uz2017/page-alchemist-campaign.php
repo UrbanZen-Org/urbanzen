@@ -1,8 +1,8 @@
 <?php
 /*
-	Template Name: Silk Road Campaign
+	Template Name: Alchemist Campaign
 */
-	$templates = 'silk-road-campaign.twig';
+	$templates = 'alchemist-campaign.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	

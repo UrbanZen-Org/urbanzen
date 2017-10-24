@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Silk Road Campaign
+	Template Name: Evolution Collection
 */
 	$templates = 'silk-road-campaign.twig';
 	$context = Timber::get_context();

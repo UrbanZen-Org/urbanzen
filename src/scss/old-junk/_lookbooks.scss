@@ -1,0 +1,53 @@
+/* Custom Lookbook Page Styles
+==================================================*/
+
+[class^='page-lookbook-']  .image-row ,
+[class*='page-lookbook-']  .image-row,.Furniture .image-row {
+ display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding-bottom:0;
+  @media all and (max-width: 1023px) {
+    display:block;padding-bottom:0;
+  }
+}
+[class*='page-lookbook-'] .flexwrap, [class*='page-lookbook-']
+.hide-mobile{
+  height: 100%;
+}
+
+[class^='page-lookbook-']  .inline.thumbnail img,
+[class*='page-lookbook-']  .inline.thumbnail img,.Furniture .inline.thumbnail img{box-sizing:border-box;}
+[class^='page-lookbook-']  .columns,
+[class*='page-lookbook-']  .columns, .Furniture .columns{overflow:hidden;position:relative;-webkit-flex: 0 0 auto;flex: 0 0 auto;display:inline-block;padding:0;margin:0;box-sizing:border-box;padding: 10px;}
+[class^='page-lookbook-']  .four.columns,
+[class*='page-lookbook-']  .four.columns, .Furniture .four.columns{width:25%;margin:0;@media all and (max-width: 1023px) {width:50% !important;margin:0;float:left;}}
+[class^='page-lookbook-']  .four.columns img,
+[class*='page-lookbook-']  .four.columns img,.Furniture .four.columns img{@media all and (max-width: 1023px) {padding:0;}         object-fit: cover;
+          height: 100%;
+          width: 100%;}
+[class^='page-lookbook-']  .eight.columns,
+[class*='page-lookbook-']  .eight.columns, .Furniture .eight.columns{width:50%;@media all and (max-width: 1023px) {width:100% !important;margin:0;}}
+[class^='page-lookbook-']  .eight.columns img,
+[class*='page-lookbook-']  .eight.columns img,.Furniture .eight.columns img{@media all and (max-width: 1023px) {padding:0;}}
+[class^='page-lookbook-']  .align_left,
+[class*='page-lookbook-']  .align_left,.Furniture .align_left{padding:0;box-sizing:border-box;}
+[class^='page-lookbook-']  .sixteen.columns,
+[class*='page-lookbook-']  .sixteen.columns,.Furniture .sixteen.columns{padding:20px 20px 10px 20px;box-sizing:border-box;@media all and (max-width: 1023px) {padding:0 20px;}}
+[class^='page-lookbook-'] .four.columns.mobile-single,
+[class*='page-lookbook-'] .four.columns.mobile-single,.Furniture .four.columns.mobile-single{@media all and (max-width: 1023px) {width:100% !important;}}
+
+.summer-looks{
+  background:#000;height:100%;min-height: 300px;
+  @media (max-width: 1024px) {
+      min-height: 269px;
+
+  }
+
+}

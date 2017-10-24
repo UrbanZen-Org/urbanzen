@@ -2,6 +2,7 @@ body{
 	&.lock-scroll{
 		overflow: hidden;
 	}
+	background: #f7f6f2;
 }
 main{
 	position: relative;
@@ -359,49 +360,4 @@ main{
 			}
 		}
 	}
-	.cta-button{
-    	font-family: 'HelveticaNeueLTStd-Md','Helvetica Neue Medium', Helvetica, Arial, sans-serif;
-      padding: 8px 20px;
-      font-size: 12px;
-      vertical-align: top;
-      letter-spacing: 1px;
-      color: #f6f3ef;
-      border: 1px solid #f6f3ef;
-      display: inline-block;
-      background-color: transparent;
-      text-transform: lowercase;
-      cursor: pointer;
-      border-radius: 0;
-      -webkit-border-radius:0;
-      -moz-border-radius:0;
-	    -webkit-transition: background-color 500ms ease;
-	    -moz-transition: background-color 500ms ease;
-	    -o-transition: background-color 500ms ease;
-	    -ms-transition: background-color 500ms ease;
-	    transition: background-color 500ms ease;
-	    -webkit-appearance: none;
-	    text-decoration: none;
-	    margin-top: 15px;
-		&.gold{
-			border-color: $gold;
-			color: white;
-			@include transition((background .3s ease-in-out, border-color .3s ease-in-out));
-			&:hover,&:active{
-				color: white;
-				background-color: $gold;
-			}
-		}
-	}
 @import 'partials/newsletter-popup.scss';
-
-.hpvideo{
-  box-sizing: border-box;
-  height: 56.25vw;
-  left: 50%;
-  min-height: 100%;
-  min-width: 100%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  width: 177.77777778vh;
-}

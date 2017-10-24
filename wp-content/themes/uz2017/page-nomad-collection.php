@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Harmony Collection
+	Template Name: Nomad Collection
 */
 	$templates = 'silk-road-campaign.twig';
 	$context = Timber::get_context();

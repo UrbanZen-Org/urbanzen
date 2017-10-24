@@ -48,24 +48,7 @@
 	    left: 75%;
 	    padding-left: 2%;
 		}
-		.centeredBox, .text {
-	    width: 100%;
-	    position: absolute;
-	    top: 50%;
-	    text-align: center;
-	    left: 50%;
-	    display: block;
-	    -webkit-transform: translate3d(-50%, -50%, 0) translateZ(0px) scale(1, 1);
-	    transform: translate3d(-50%, -50%, 0) translateZ(0px) scale(1, 1);
-	    -webkit-backface-visibility: hidden;
-	    -moz-backface-visibility: hidden;
-	    -ms-backface-visibility: hidden;
-	    backface-visibility: hidden;
-	    -webkit-font-smoothing: antialiased;
-	    box-sizing: border-box;
-	    max-width: 650px;
-	    z-index: 9;
-		}
+		
 	}
 }
 

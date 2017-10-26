@@ -2,7 +2,7 @@
 /*
 	Template Name: Evolution Collection
 */
-	$templates = 'silk-road-campaign.twig';
+	$templates = 'evolution-collection.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	

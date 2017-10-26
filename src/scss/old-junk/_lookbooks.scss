@@ -21,7 +21,9 @@
 .hide-mobile{
   height: 100%;
 }
-
+.negative-margins{
+  padding: 0 10px;
+}
 [class^='page-lookbook-']  .inline.thumbnail img,
 [class*='page-lookbook-']  .inline.thumbnail img,.Furniture .inline.thumbnail img{box-sizing:border-box;}
 [class^='page-lookbook-']  .columns,

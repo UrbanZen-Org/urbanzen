@@ -2,7 +2,7 @@
 /*
 	Template Name: Harmony Collection
 */
-	$templates = 'silk-road-campaign.twig';
+	$templates = 'harmony-collection.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	

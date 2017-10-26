@@ -29,7 +29,7 @@ main{
 .hide-desktop{
 	@include respond-min($tablet-portrait)
 	{
-		display: none;
+		display: none!important;
 	}	
 }
 .title-overlay{

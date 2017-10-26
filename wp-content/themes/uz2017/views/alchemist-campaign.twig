@@ -1,0 +1,108 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-alchemist-campaign page-campaign  black-bg' %}
+
+{% block content %}
+<div class="alchemist campaign">
+<div id="">
+
+	<div class="cover-area">
+		<iframe class="hpvideo hide-mobile" src="https://player.vimeo.com/video/179917227?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<div class="mobile-video hide-desktop">
+			<div class="video-item" data-video-id="179917227">
+				<img class="lazyload" data-src="https://s3.us-east-2.amazonaws.com/fall-2017/Past+Collection+and+Campaign/The+Alchemist/header_image_m.jpg">
+				<div class="play-icon">
+					<i class="material-icons">play_arrow</i>
+				</div>
+			</div>
+			<div class="video-overlay">
+				<i class="close material-icons">close</i>
+				<div class="video-holder">
+					<div class="video-responsive">
+						<div id="video"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<h1 class="light">THE ALCHEMIST CAMPAIGN</h1>
+		<p class="light">A modern urban wardrobe inspired by ancient artisan life, created to travel the many worlds you live in</p>
+		<div class="down-arrow" data-target="#images">EXPLORE</div>
+	</div>
+
+	<div class="full-width first bg-full hide-mobile" id="images"style="background-image: url({{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/Campaign_D_01a.jpg' }});">
+		<a name="jump-to"> </a>
+	</div>
+	<div class="full-width">
+		<div class="half left">
+			<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/Campaign_D_02a.jpg' }}" alt="Urban Zen Alchemist Collection" />
+		</div>
+		<div class="half left">
+			<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/Campaign_D_03a.jpg' }}" alt="Urban Zen Alchemist Collection" />
+		</div>
+	</div>
+	<div class="full-width">
+		<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/Campaign_D_04a.jpg' }}" alt="Urban Zen Alchemist Collection" />
+	</div>	
+	<div class="full-width">
+		<div class="half left">
+			<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/Campaign_D_05a.jpg' }}" alt="Urban Zen Alchemist Collection" />
+		</div>
+		<div class="half left">
+			<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/Campaign_D_06a.jpg' }}" alt="Urban Zen Alchemist Collection" />
+		</div>
+	</div>
+	<div class="full-width">
+		<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/Campaign_D_07a.jpg' }}" alt="Urban Zen Alchemist Collection" />
+	</div>		
+</div>	
+<div class="article">
+	<p class="credits right light">Photographer: Hans Neumann  |  Model: Tiana Tolstoi  |  Set Designer: Hans Maharawal</p>
+	<br/>
+	<br/>
+	<br/>
+	<h1 class="light center">BEHIND THE SCENES</h1><br/>
+	<div class="alchemistSlider relative_slider black-nav">
+		<ul class="slides">
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_01.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_02.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_03.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_04.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_05.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_06.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_07.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_08.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_09.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_10.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_11.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_12.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+			<li class="item">
+				<img src="{{ 'https://s3.amazonaws.com/site-global/Shopify+Assets/FW16_BTS_13.jpg' }}" alt="Urban Zen Alchemist Collection" />
+			</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}{# end content #}

@@ -2,7 +2,7 @@
 /*
 	Template Name: Nomad Collection
 */
-	$templates = 'silk-road-campaign.twig';
+	$templates = 'nomad-collection.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	

@@ -1,8 +1,8 @@
 <?php
 /*
-	Template Name: My Journey Collection
+	Template Name: About Us
 */
-	$templates = 'my-journey-collection.twig';
+	$templates = 'about-us.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	

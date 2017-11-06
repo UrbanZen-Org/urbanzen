@@ -15,6 +15,7 @@ var global = {
     this.lazyload();
     this.newsletterPopup.init();
     this.menu();
+    this.accordian();
   },
   
   resize:function(){
@@ -22,6 +23,25 @@ var global = {
   },  
   scroll: function(){
     
+  },
+  accordian : function(){
+    console.log('hi');
+    if ($('.block-accordian').length) {
+      
+      $('.accordian-title').click(function(e) {
+          var accordianParent = $(this).parent();
+          var accordianText = accordianParent.find('.accordian-text');
+          
+          if(accordianParent.hasClass('open')) {
+            accordianParent.removeClass('open');
+            accordianText.slideUp(300).removeClass('open');
+          }else{
+            accordianParent.addClass('open');
+            accordianText.slideDown(300);
+          }
+          e.preventDefault();
+      });
+    }
   },
   menu:  function(){
 
@@ -63,7 +83,7 @@ var global = {
     init: function(){
       if($('.newsletter_popup').length){
         if (!Cookies.get('newsletter')){
-          Cookies.set('newsletter', 1, { expires: 1 });
+          Cookies.set('newsletter', 7, { expires: 7 });
           this.open();
         }        
         this.actions();

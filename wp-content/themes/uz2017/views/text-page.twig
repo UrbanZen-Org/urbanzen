@@ -3,21 +3,26 @@
 
 {% block content %}
 	<div class="text-page">
-		{% for block in post.blocks %}
-			{% if block.acf_fc_layout == 'text' %}
-				<div class="block-text">
-					{{ block.text }}
-				</div>
-			{% elseif block.acf_fc_layout == 'heading' %}
-				<div class="block-heading">
-					<h2>{{ block.text }}</h2>
-				</div>
-			{% elseif block.acf_fc_layout == 'accordian' %}
-				<div class="block-accordian">
-					<div class="accordian-title">{{ block.title }}</div>
-					<div class="accordian-text">{{ block.text }}</div>
-				</div>
-			{% endif %}
-		{% endfor %}
+		<div class="image-header" style="background-image:url({{ post.thumbnail.src }});">
+			<h1 style="color:{{ post.title_color }}">{{ post.title }}</h1>
+		</div>
+		<div class="text-blocks">
+			{% for block in post.blocks %}
+				{% if block.acf_fc_layout == 'text' %}
+					<div class="block-text">
+						{{ block.text }}
+					</div>
+				{% elseif block.acf_fc_layout == 'heading' %}
+					<div class="block-heading">
+						<h2>{{ block.text }}</h2>
+					</div>
+				{% elseif block.acf_fc_layout == 'accordian' %}
+					<div class="block-accordian">
+						<div class="accordian-title">{{ block.title }}<div class="material-icons accordian-arrow"></div></div>
+						<div class="accordian-text">{{ block.text }}</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
 	</div>
 {% endblock %}{# end content #}

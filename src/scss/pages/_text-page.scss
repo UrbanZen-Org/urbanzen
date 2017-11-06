@@ -1,0 +1,58 @@
+.page-text{
+	.image-header{
+		@include respond-min($tablet-portrait) {
+			height: 275px;
+		}
+		height: 150px;
+		background-size: cover;
+		text-align: center;
+		color: black;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		h1{
+
+		}
+	}
+	h2{
+		margin-top: 40px;
+		margin-bottom: 30px;
+	}
+	h3{
+		margin: 20px 0;
+	}
+	.text-blocks{
+		max-width: 600px;
+		margin: 0 auto;
+		.block-accordian{
+			width: 100%;
+			overflow: hidden;
+			border-bottom: 1px solid black;
+			margin-bottom: 15px;
+			.accordian-title{
+				padding-bottom: 15px;
+				position: relative;
+				cursor: pointer;
+				.accordian-arrow{
+					position: absolute;
+					right: 0;
+					font-size: 22px;
+					&:after{
+						content: 'keyboard_arrow_down';
+					}
+				}
+			}
+			.accordian-text{
+				display: none;
+				padding-bottom: 15px;
+			}
+			&.open{
+				.accordian-arrow{
+					&:after{
+						content: 'keyboard_arrow_up';
+					}
+				}
+			}
+		}
+	}
+}

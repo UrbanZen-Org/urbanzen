@@ -1,0 +1,16 @@
+.page-size-guide{
+	.container{
+		max-width: 1000px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.size-chart{
+		margin-top: 40px;
+		table{
+			width: 100%;
+			tr:nth-child(odd) {
+	    	background: #c8c8c8;
+			}
+		}
+	}
+}

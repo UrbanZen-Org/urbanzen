@@ -1,0 +1,47 @@
+footer{
+	@include respond-min($tablet-portrait)
+	{
+		margin-left: 200px;
+		height: 85px;
+	}
+	position: relative;
+	padding: 30px 20px;
+	background: black;
+	.footer-menu{
+		text-align: right;
+		li{
+			display: inline-block;
+			a{
+				color: white;
+				font-size: 13px;
+				letter-spacing: .1em;
+				padding: 0 20px;
+				&:last-child{
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	.newsletter-callout{
+		cursor: pointer;
+		text-align: right;
+		@include respond-min($tablet-landscape)
+		{
+			position: absolute;
+			left: 20px;
+			top: 30px;
+		}
+		color: white;
+		font-size: 13px;
+		letter-spacing: .1em;
+		span{
+			line-height: 19px;
+			margin-right: 5px;
+		}
+	}
+}
+.footer-push{
+	@include respond-min($tablet-portrait) {
+		height: 85px;
+	}	
+}

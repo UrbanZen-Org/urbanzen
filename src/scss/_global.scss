@@ -1,8 +1,12 @@
+html,.animsition{
+	height: 100%;
+}
 body{
 	&.lock-scroll{
 		overflow: hidden;
 	}
 	background: #f7f6f2;
+	min-height: 100%;
 }
 main{
 	position: relative;
@@ -12,7 +16,11 @@ main{
 	margin-bottom: 60px;
 }
 #page{
-	margin-left: 200px;
+	@include respond-min($tablet-portrait) {
+		margin-left: 200px;
+		min-height: 100%;
+  	margin-bottom: -85px;
+	}
 	&.full-width-page{
 		margin-left: 0;
 	}

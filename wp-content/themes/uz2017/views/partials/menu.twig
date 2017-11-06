@@ -1,9 +1,20 @@
-
-<nav class="main-menu{{ " " ~ menu_class }}">
-	<a href="/" class="menu-logo">{% include 'partials/uz-logo.svg' %}</a>
-	<ul>
+<nav class="top-menu{{ " " ~ menu_class }}">
+	<div class="nav-bar">
+		<div class="menu-link">
+			<div class="menu-icon">
+				<div class="center"></div>
+			</div>
+		</div>
+		<a href="/" class="menu-logo">{% include 'partials/uz-logo.svg' %}</a>
+	</div>
+	<ul class="main-menu">
 		{% for item in main_menu.items %}
 			{{ markup_menu_item(item) }}
 		{% endfor %}
 	</ul>
+	<div class="social">
+		{% for social in options.social_media %}
+			<a href="{{ social.link }}" class="icon-{{ social.platform }}"></a>
+		{% endfor %}
+	</div>
 </nav>

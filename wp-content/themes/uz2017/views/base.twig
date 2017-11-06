@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   {% include 'partials/head.twig' %}
-  <body class="{{ body_class }}">
-    <div class="animsition">
+  <body class="{{ body_class }} animsition">
       {# {% include 'partials/header.twig'%} #}
       {% include 'partials/menu.twig' %}
       
@@ -14,12 +13,13 @@
             {% endblock %}{# end content #}
           </div>
         {% endblock %}{# end page #}
+        <div class="footer-push"></div>
       </div><!-- #page -->
 
       {% if footer != 'false' %}
         {% include 'partials/footer.twig' %}
       {% endif %}
-    </div>
+    {% include 'partials/newsletter.twig' %}
     {% include 'partials/foot.twig' %}
   </body>
 </html>

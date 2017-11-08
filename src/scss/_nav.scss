@@ -1,14 +1,14 @@
-nav.top-menu{
+nav.top-menu{		
 	width: 100%;
-	@include respond-min($tablet-portrait) {
-		width: 200px;
-		position: fixed;
-		left: 0;
-		top: 0;
-		bottom: 0;
-	}
 	background: black;
 	z-index: 99;
+	position: fixed;
+	top: 0;
+	@include respond-min($tablet-portrait) {
+		width: 200px;
+		left: 0;
+		bottom: 0;
+	}
 	&.transparent-bg{
 		background: transparent;
 	}
@@ -83,7 +83,6 @@ nav.top-menu{
 	.social{
 		position: absolute;
 		bottom: 30px;
-		padding-left: 30px;
 		a{
 			color: white;
 			padding: 8px;

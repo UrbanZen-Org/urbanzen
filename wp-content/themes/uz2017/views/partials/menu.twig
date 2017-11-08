@@ -11,10 +11,10 @@
 		{% for item in main_menu.items %}
 			{{ markup_menu_item(item) }}
 		{% endfor %}
-	</ul>
-	<div class="social">
+		<div class="social">
 		{% for social in options.social_media %}
 			<a href="{{ social.link }}" class="icon-{{ social.platform }}"></a>
 		{% endfor %}
 	</div>
+	</ul>
 </nav>

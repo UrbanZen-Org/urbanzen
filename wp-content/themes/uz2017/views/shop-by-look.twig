@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-shop-by-look' %}
+
+{% block content %}
+<div class="shop-by-look">
+	<h1>Orient Express Resort Collection</h1>
+	<p>click caption to shop</p>
+	<div class="shop-by-looks" data-shop-by-looks="">
+			<div class="look-row sample-row">
+			</div>
+			<div class="look sample-look loaded">
+				<img src="">
+				<div class="look-product-links" data-product-links=""></div>
+			</div>
+		<div class="quick-shop sample-quick-shop">
+			<div class="close" data-close=""><i class="material-icons">close</i></div>
+			<img class="product-image" data-quick-image="" src="">
+			<div class="quick-details">
+				<h2 data-quick-title=""><a href=""></a></h2>
+				<span data-quick-price="" class="quick-price"></span>
+				<div class="quick-colors" data-colors>
+					<div class="color-label">Color: <span data-color-label></span></div>
+				</div>	
+				<form>
+				<span class="quick-variant-label">Size</span>
+					<div class="product-variants" data-product-variants="">
+					</div>
+					<button type="submit" value="Add to cart">Add to Bag</button>
+				</form>
+			</div>
+		</div>
+
+		{% for row in post.rows %}
+			<div class="look-row">
+				{% for look in row.looks %}
+					<div class="look {{ look.layout }}">
+						<img class="mobile-image" src="{{ look.mobile_image }}"/>
+						<img src="{{ look.image }}">
+						{% if look.products %}
+							<div class="look-product-links" data-product-links="">
+								{% for product in look.products %}
+									<a data-handle="{{ product.handle }}" data-color="{{ product.color }}" data-size="{{ product.size }}">{{ product.title }}</a>
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}{# end content #}

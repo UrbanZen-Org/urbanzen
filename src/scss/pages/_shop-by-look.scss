@@ -41,6 +41,15 @@
 					// width: calc(50% - 7.5px);
 					flex-basis: 49.75%;
 				}
+				img{
+					@include respond-max(640)
+					{
+						display: none;
+						&.mobile-image{
+							display: block;
+						}
+					}
+				}
 			}
 			&.hide-mobile{
 				@include respond-max(640)
@@ -63,14 +72,6 @@
 						display: none;
 						opacity: 0;
 				}
-				@include respond-max(640)
-				{
-					display: none;
-					&.mobile-image{
-						display: block;
-					}
-				}
-
 			}
 			.look-product-links{
 				opacity: 0;

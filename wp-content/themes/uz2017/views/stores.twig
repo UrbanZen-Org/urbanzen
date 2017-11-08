@@ -2,5 +2,47 @@
 {% set body_class = 'page-stores' %}
 
 {% block content %}
+	<section class="stores-slideshow">
+		<div class="slides">
+			{% for slide in post.images %}
+				<div class="slide">
+					<div class="slide-caption">{{ slide.title }}</div>
+					<img src="{{ slide.url }}">
+				</div>	
+			{% endfor %}
+		</div>
+	</section>
 
+	{% if post.stores %}
+		<div class="stores-list">
+			{% for store in post.stores %}
+				<div class="store-item">
+					<div class="accordian-section">
+						<div class="accordian-title"><h2>{{ store.title }}</h2><div class="material-icons accordian-arrow"></div></div>
+						<div class="accordian-content">
+						<div class="store-info">{{ store.info }}</div>
+						<div class="store-hours">{{ function('wpautop', store.hours) }}</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+	<div class="retail-partners">
+		<div class="accordian-section">
+			<div class="accordian-title"><h2>Retail Partners</h2><div class="material-icons accordian-arrow"></div></div>
+			<div class="accordian-content">
+				{% for region in post.regions %}
+					<div class="accordian-section">
+						<div class="accordian-title">{{ region.title }}<div class="material-icons accordian-arrow"></div></div>
+						<div class="accordian-content">
+							{% for store in region.stores %}
+								<div class="store">{{ store.info }}</div>
+							{% endfor %}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 {% endblock %}{# end content #}

@@ -17,9 +17,9 @@
 						<h2>{{ block.text }}</h2>
 					</div>
 				{% elseif block.acf_fc_layout == 'accordian' %}
-					<div class="block-accordian">
+					<div class="accordian-section">
 						<div class="accordian-title">{{ block.title }}<div class="material-icons accordian-arrow"></div></div>
-						<div class="accordian-text">{{ block.text }}</div>
+						<div class="accordian-content">{{ block.text }}</div>
 					</div>
 				{% endif %}
 			{% endfor %}

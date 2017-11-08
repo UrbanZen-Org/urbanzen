@@ -762,13 +762,13 @@ var shopbylook = {
 	  	$('.look .look-product-links a, [data-product-link]').click(function(e){
 	  		e.preventDefault();
 	  		var product_data = $(this).data();
-				// if ($('.drawer-brand').attr('href').indexOf('foundation') !== -1){
-				// 	var client_url = 'urban-zen-foundation.myshopify.com';
-				// 	var access_token = 'f987f1824dd7e73305a2243a31c0d4be';
-				// }else{
+				if (window.location.href.indexOf('dev') !== -1){
+					var client_url = 'urban-zen-foundation.myshopify.com';
+					var access_token = 'f987f1824dd7e73305a2243a31c0d4be';
+				 }else{
 					var client_url = 'urbanzen.com';
 					var access_token = 'd1c52518cdfc4bd586603aa9303a8eee';
-				// }
+				 }
 				var client = new GraphQLClient('https://'+ client_url+'/api/graphql', {
 				  headers: {
 				    'X-Shopify-Storefront-Access-Token': access_token
@@ -840,7 +840,9 @@ var shopbylook = {
   		var new_quick_shop = $($('.sample-quick-shop')[0]).clone().removeClass('sample-quick-shop');
   		this.module = new_quick_shop;
     
-    	this.module.find('[data-quick-image]').attr('src', product.variantBySelectedOptions.image.src);
+    	if (product.variantBySelectedOptions.image != null){
+    		this.module.find('[data-quick-image]').attr('src', product.variantBySelectedOptions.image.src);
+    	}
     	this.module.find('[data-quick-title] a').text(product.title);
     	this.module.find('[data-quick-title] a').attr("href","/products/"+ product.handle);
 
@@ -914,16 +916,17 @@ var shopbylook = {
   		});
   		$('.quick-shop form').submit(function(e){
   			e.preventDefault();
-  			var cart_request = $.ajax({
-  				type: 'post',
-  				url: '/cart/add.js',
-  				data : $(this).serialize(),
-  				success: function(response){
-  					self.close();
-  					console.log('hey');
-  				}
-  			});
-  			
+  			// var cart_request = $.ajax({
+  			// 	type: 'post',
+  			// 	url: 'https://urban-zen-foundation.myshopify.com/cart/add.js',
+  			// 	data : $(this).serialize(),
+  			// 	success: function(response){
+  			// 		self.close();
+  			// 		console.log('hey');
+  			// 	}
+
+  			var id = $(this).find('input[name=id]:checked').val();
+  			window.location = "http://urban-zen-foundation.myshopify.com/cart/" + id + ":1";
   		});
 
   	},
@@ -932,7 +935,9 @@ var shopbylook = {
   		var variant_data = variant.data('variant');
   		this.module.find('[data-quick-price]').text('$' + data.price);
   		this.swapColor(this.module.find('[data-colors] img[data-color="'+ data.color +'"]'));
-  		this.module.find('.product-image').attr('src', variant_data.image.src);
+  		if(variant_data.image){
+  			this.module.find('.product-image').attr('src', variant_data.image.src);
+  		}
   		variant.find('input')[0].checked = true;
 
   	},
@@ -947,7 +952,9 @@ var shopbylook = {
 					$(this).addClass('hidden');
 				}
 			})
-			this.module.find('.product-image').attr('src', variant_data.image.src);
+			if(variant_data.image){
+				this.module.find('.product-image').attr('src', variant_data.image.src);
+			}
   		this.module.find('[data-variant][data-color="'+ data.color + '"]').removeClass('hidden');  		
   		this.module.find('[data-color-label]').text(data.label);
   		color.addClass('selected').siblings().removeClass('selected');

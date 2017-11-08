@@ -26,15 +26,16 @@ var global = {
   },
   accordian : function(){
     console.log('hi');
-    if ($('.block-accordian').length) {
+    if ($('.accordian-section').length) {
       
       $('.accordian-title').click(function(e) {
           var accordianParent = $(this).parent();
-          var accordianText = accordianParent.find('.accordian-text');
+          var accordianText = accordianParent.find('.accordian-content').first();
           
           if(accordianParent.hasClass('open')) {
             accordianParent.removeClass('open');
-            accordianText.slideUp(300).removeClass('open');
+            accordianParent.find('.accordian-content').slideUp(300);
+            accordianParent.find('.accordian-section').removeClass('open')
           }else{
             accordianParent.addClass('open');
             accordianText.slideDown(300);

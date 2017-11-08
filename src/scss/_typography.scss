@@ -7,9 +7,12 @@ h1, h1 span {
 }
 h2, h2 span {
   font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif;
-  font-size: 27px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: .025em;
+  @include respond-min($tablet-portrait) {    
+    font-size: 27px;
+  }
 }
 h4{
   font-size: 20px;

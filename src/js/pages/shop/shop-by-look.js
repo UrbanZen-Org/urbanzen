@@ -779,6 +779,7 @@ var shopbylook = {
 	  		{
 				  shop {
 				    productByHandle(handle: "`+ product_data.handle+`") {
+				    	id
 				      title
 				      handle
 				      options {
@@ -845,7 +846,9 @@ var shopbylook = {
     	}
     	this.module.find('[data-quick-title] a').text(product.title);
     	this.module.find('[data-quick-title] a').attr("href","/products/"+ product.handle);
-
+    	var product_id = atob(product.id).replace('gid://shopify/Product/','');
+    	this.module.find('[data-product-id]').val(product_id);
+			
 			var filtered_options = product.options.filter(function(v){
     		return v.name == 'Color';
 	  	});
@@ -925,10 +928,13 @@ var shopbylook = {
   			// 		console.log('hey');
   			// 	}
 
-  			var id = $(this).find('input[name=id]:checked').val();
-  			window.location = "http://urban-zen-foundation.myshopify.com/cart/" + id + ":1";
+  			// var id = $(this).find('input[name=id]:checked').val();
+  			// window.location = "http://urban-zen-foundation.myshopify.com/cart/" + id + ":1";
+  			var variantId = $(this).find('input[name=id]:checked').val();
+  			var productId = $(this).find('input[name=productId]').val();
+  			
+  			window.cart.addToCart(productId, variantId);
   		});
-
   	},
   	swapVariant : function(variant){
   		var data = variant.data();

@@ -5,6 +5,9 @@ body{
 	&.lock-scroll{
 		overflow: hidden;
 	}
+	&.cart-open{
+		overflow: hidden;
+	}
 	background: #f7f6f2;
 	min-height: 100%;
 }

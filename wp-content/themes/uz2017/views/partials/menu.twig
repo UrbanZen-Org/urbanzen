@@ -6,6 +6,27 @@
 			</div>
 		</div>
 		<a href="/" class="menu-logo">{% include 'partials/uz-logo.svg' %}</a>
+		<div class="tagline">A philosophy of living by Donna Karan</div>
+		<div class="cart-search">
+			<form class="search" action="https://www.urbanzen.com/search">
+				<input type="text" name="q">
+				<button type="submit"><div class="material-icons">search</div></button>			
+			</form>
+			<div class="cart-info">
+				<div class="cart-icon"></div>
+				<div class="cart-num">(<span class="cart-count">0</span>)</div>
+			</div>
+		</div>
+	</div>
+	<div class="cart">
+		<div class="cart-sidebar">
+			<div class="material-icons close">close</div>
+			<h2>MY BAG</h2>
+			<div class="no-items">Your Bag is empty</div>
+			<ul class="cart-items">
+				
+			</ul>		
+		</div>
 	</div>
 	<ul class="main-menu">
 		{% for item in main_menu.items %}
@@ -18,3 +39,21 @@
 	</div>
 	</ul>
 </nav>
+
+</div>
+
+<script id="CartItemTemplate" type="text/x-jsrender">
+	<div class="cart-item" data-line-item-id="<%:variantID%>">
+		<div class="cart-item-image"><img src="<%:image%>" alt="<%:title%>"></div>
+		<div class="cart-item-details">
+			<div class="cart-item-title"><%:title%></div>
+			<div class="cart-item-size"><%:variantTitle%></div>
+			<div class="cart-item-price"><%:price%></div>
+			<div class="cart-item-qty">
+				<label class="qty-label" for ="itemQty">Qty</label>
+				<input type="text" name="qty" value="<%:qty%>" id="itemQty">
+			</div>
+			<div class="cart-item-remove material-icons">close</div>
+		</div>
+	</div>
+</script>

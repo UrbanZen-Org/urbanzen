@@ -144,7 +144,6 @@
 		.slides{
 			@include respond-max($tablet-portrait)
 			{
-				padding-top: 50px;
 			}
 			.slide:first-child{
 				.slide-cover .slide-info{

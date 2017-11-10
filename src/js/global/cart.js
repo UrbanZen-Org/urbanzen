@@ -1,92 +1,117 @@
 'use strict';
 
 var $ = require('jquery');
+var ShopifyBuy = require('shopify-buy');
+var jsrender = require('jsrender');
 
-var cart = {
+window.cart = {
   init: function(){
   },
 
   ready: function(){
-   this.observe();
+    window.shopClient = ShopifyBuy.buildClient({
+      accessToken: 'f987f1824dd7e73305a2243a31c0d4be',
+      domain: 'urban-zen-foundation.myshopify.com',
+      appId: '63414003'
+    });
+    this.actions();
+    this.updateQty();
+    this.renderCartItems();
   },
-  
+  actions: function(){
+    var self = this;
+    $('.cart-info').click(function(){
+      self.open();
+    });
+
+    $('.cart .close').click(function(){
+      self.close();
+    });
+  },
+  addToCart: function(productId, variantId){
+    var self = this;
+    window.shopClient.fetchProduct(productId)
+    .then(function (product) {
+      var variant;
+      $.each(product.variants,function(i,v){
+        if (v.id == variantId){
+          return variant = v;
+        }
+      });
+      window.shopClient.fetchRecentCart().then(function (cart) {
+        cart.createLineItemsFromVariants({variant: variant, quantity: 1}).then(function (cart) {
+          console.log(cart);
+          var cartItem = cart.lineItems.filter(function (item) {
+            return (item.variant_id === variant.id);
+          })[0];
+          var $cartItem = self.renderCartItem(cartItem);
+          setTimeout(function () {
+            self.open();
+          }, 0);
+          self.updateQty();
+        });
+        });
+      });
+  },
+  open: function(){
+    $('body').addClass('cart-open');
+  },
+  close: function(){    
+    $('body').removeClass('cart-open');
+  },
   resize:function(){
-    
+
   },  
   scroll: function(){
     
   },
-  observe : function() {
-    const origOpen = XMLHttpRequest.prototype.open;
-    XMLHttpRequest.prototype.open = function() {
-      this.addEventListener('load', function(response) {
-        //console.log(response);
-        if (this.readyState !== 4) {
-          return false;
-        }
-        if (this.status === 200) {
-          if (
-            (
-              (this._url && this._url.indexOf("cart/add.js") !== -1) ||
-              (this._url && this._url.indexOf("cart/update.js") !== -1) ||
-              (this._url && this._url.indexOf("cart/clear.js") !== -1) ||
-              (this._url && this._url.indexOf("cart.js") !== -1) ||
-              (this._url && this._url.indexOf("cart/change.js") !== -1)
-            ) && (
-              this._method !== "GET"
-            )
-          ) {
-            var $cart_count = $('[data-cart-count]');
-            var curr_cart_count = parseInt($cart_count.text().replace(/["'()]/g,""));
-            $cart_count.text('('+ (curr_cart_count + 1) +')');
-            //$('body').addClass('drawer-right-open');
-            if($('[data-quick-overlay].open').length){
-              var filtered_modules = uz.modules.filter(function(v){
-                return (v.quickShop);
-              });
-              var shop_module = filtered_modules[0];
-              
-              // var product_image = $('.quick-shop [data-quick-image]').src;
-              // var product_link = $('.quick-shop [data-quick-title] a').attr('href');
-              // var variant_id = $('.quick-shop data-variant-input:checked').val();
-              // var $variant = $('.quick-shop data-variant-input:checked').parent();
-              // var title = $('.quick-shop [data-quick-title] a').text();
-              // var color = $variant.data('color');
-              // var size = $('.quick-shop [data-variant-label][for="variant_'+ variant_id +'"]').text();
-              // var price = $variant.data('price');
+  renderCartItem: function(lineItem){
+    jsrender.views.settings.delimiters("<%", "%>");
+    var template = jsrender.templates("#CartItemTemplate");
+    function formatAsMoney(amount, currency, thousandSeparator, decimalSeparator, localeDecimalSeparator) {
+      currency = currency || '$';
+      thousandSeparator = thousandSeparator || ',';
+      decimalSeparator = decimalSeparator || '.';
+      localeDecimalSeparator = localeDecimalSeparator || '.';
+      var regex = new RegExp('(\\d)(?=(\\d{3})+\\.)', 'g');
 
-              // var markup = 
-              // `<li class="cart_item">
-              //   <div class="cart_image">
-              //     <a href="`+ product_link+`">
-              //       <img src="`+ product_image+`" alt="Cross Over Neck Blouse - Ivory Silkcharmeuse / S">
-              //     </a>
-              //   </div>
-              //   <div class="cart-meta">
-              //     <a href="`+ product_link +`">
-              //       <div class="item_title">`+ title +`</div>
-              //       <div class="item_title">`+ color+` / `+ size +`</div>
-              //       <strong class="price">$`+ price +`</strong>
-              //     </a>
-              //     <p class="mm-counter">
-              //       <input type="number" min="0" class="quantity" name="updates[]" id="updates_36775306177" value="1">
-              //       <span class="remove">remove</span>
-              //     </p>
-              //   </div>
-              // </li>`;
-              //$('#cart ul').append(markup);
-              shop_module.quickShop.close();
-              window.location = '';
-            }
-          }
-        }
+      return currency + parseFloat(amount, 10).toFixed(2)
+        .replace(localeDecimalSeparator, decimalSeparator)
+        .replace(regex, '$1' + thousandSeparator)
+        .toString();
+    }
 
-      });
-      origOpen.apply(this, arguments);
-    };
+    var cartItem = {};
+    cartItem.variantID = lineItem.variant_id;
+    cartItem.image = lineItem.image.src;
+    cartItem.title = lineItem.title;
+    cartItem.variantTitle = lineItem.variant_title;
+    cartItem.price = formatAsMoney(lineItem.line_price);
+    cartItem.qty = lineItem.quantity;
+
+    var cartItemMarkup = template.render(cartItem);
+    $('.cart-items').append(cartItemMarkup);
+  },
+  renderCartItems: function(){
+    var self = this;
+    window.shopClient.fetchRecentCart().then(function (cart) {
+      if (cart.lineItems){
+        $.each(cart.lineItems, function(i,item){
+          self.renderCartItem(item);
+        });
+        $('.cart').removeClass('empty');
+      }else{
+        $('.cart').addClass('empty');
+      }
+    });
+  },
+  updateQty: function(){
+    window.shopClient.fetchRecentCart().then(function (cart) {
+      $('.cart-count').text(cart.lineItemCount);
+    });
   }
 };
 
-module.exports = cart;
+module.exports = window.cart;
 
 

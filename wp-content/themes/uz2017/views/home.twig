@@ -1,8 +1,8 @@
 {% extends "base.twig" %}
-{% set body_class = 'page-home' %}
+{% set body_class = 'page-home black-bg' %}
 {% set menu_class = 'transparent-bg' %}
 {% set page_class = 'full-width-page' %}
-{% set hide_footer = true %}
+{% set hide_footer = false %}
 	
 {% block content %}
 	<div class="homepage-fall">
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			
-			{% set slides = get_field('slides') %}
+			{% set slides = post.slides %}
 			
 			{% if slides %}
 				<div class="slides">

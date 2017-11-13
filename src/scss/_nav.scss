@@ -16,7 +16,6 @@ nav.top-menu{
 		margin: 0 auto;
 		display: block;
 		text-align: center;
-		display: inline-block;
 		width: 173px;
 		svg{
 			*{
@@ -109,7 +108,8 @@ nav.top-menu{
 			@include respond-max($tablet-portrait) {
 				height: 20px;
 			}
-			display: inline-block;
+			display: block;
+			text-align: center;
 			width: auto;
 			@include respond-max($tablet-portrait) {
 				position: relative;
@@ -117,7 +117,7 @@ nav.top-menu{
 			}
 			svg{
 				height: 100%;
-
+				margin: 0 auto;
 			}
 		}
 		.tagline{			

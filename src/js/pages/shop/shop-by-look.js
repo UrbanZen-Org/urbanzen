@@ -933,7 +933,7 @@ var shopbylook = {
   			var variantId = $(this).find('input[name=id]:checked').val();
   			var productId = $(this).find('input[name=productId]').val();
   			
-  			window.cart.addToCart(productId, variantId);
+  			//window.cart.addToCart(productId, variantId);
   			self.close();
   		});
   	},

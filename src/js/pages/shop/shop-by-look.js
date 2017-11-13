@@ -762,7 +762,7 @@ var shopbylook = {
 	  	$('.look .look-product-links a, [data-product-link]').click(function(e){
 	  		e.preventDefault();
 	  		var product_data = $(this).data();
-				if (window.location.href.indexOf('dev') !== -1){
+				if (window.location.href.indexOf('dev') !== -1 || window.location.href.indexOf('stage') !== -1){
 					var client_url = 'urban-zen-foundation.myshopify.com';
 					var access_token = 'f987f1824dd7e73305a2243a31c0d4be';
 				 }else{
@@ -934,6 +934,7 @@ var shopbylook = {
   			var productId = $(this).find('input[name=productId]').val();
   			
   			window.cart.addToCart(productId, variantId);
+  			self.close();
   		});
   	},
   	swapVariant : function(variant){

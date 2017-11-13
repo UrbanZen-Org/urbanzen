@@ -15,6 +15,9 @@ main{
 	position: relative;
   z-index: 1;
 }
+.container{
+	padding: 0 20px;
+}
 #content{
 	margin-bottom: 60px;
 	@include respond-max($tablet-portrait) {
@@ -90,7 +93,7 @@ main{
 	    cursor: pointer;
 	  }
 		&.arrow-left,&.arrow-right{
-			z-index: 999;
+			z-index: 8;
 		}
 		&.arrow-left{
 			left: 20px;

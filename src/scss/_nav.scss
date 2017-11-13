@@ -216,10 +216,10 @@ nav.top-menu{
 	}
 }
 .menu-open{
-	.top-menu{
+	nav.top-menu{
 		.main-menu{
 			@include respond-max($tablet-portrait) {
-				transform: translate3d(0%, 0, 0)!important;		
+				transform: translate3d(0%, 0, 0);		
 			}
 		}
 	}
@@ -290,6 +290,12 @@ nav.top-menu{
 			top: -2px;
 			display: inline-block;
 		}
+		.cart-close{
+			display: none;
+			font-size: 22px;
+			position: relative;
+			top: -3px;
+		}
 	}
 }
 .cart{
@@ -309,22 +315,53 @@ nav.top-menu{
 	@include respond-max($tablet-portrait) {
 		top: 50px;
 	}
+	.no-items{
+		opacity: 0;
+		visibility: hidden;
+		height: 0;
+		@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));
+	}
+	.checkout-button{
+		@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));		
+		opacity: 1;
+		visibility: visible;
+		@include respond-min($tablet-portrait) {
+			position: fixed;
+			bottom: 0;
+		}
+		
+		background: $ivory;
+		text-transform: uppercase;
+		color: black;
+		text-align: center;
+		width: 100%;
+		display: block;
+		line-height: 40px;
+	}
 	&.empty{
 		.no-items{
 			opacity: 1;
 			visibility: visible;
+			height: auto;
+		}
+		.cart-total{
+			opacity: 0;
+			visibility: hidden;
+		}
+		.checkout-button{
+			opacity: 0;
+			visibility: hidden;
 		}
 	}
-	.no-items{
-		opacity: 0;
-		visibility: hidden;
-		@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));
-	}
 	.cart-sidebar{
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
+		height: 100%;
+		overflow: scroll;
+		@include respond-min($tablet-portrait) {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
 		transform: translate3d(100%, 0, 0);
 		@include transition((transform .3s ease-in-out));
 		background: black;
@@ -339,32 +376,70 @@ nav.top-menu{
 			top: 20px;
 			right: 20px;
 			cursor: pointer;
+			font-size: 22px;
 
 		}
 	}
 	.cart-items{
-		padding: 20px;
+		padding: 0 20px 20px;
 		.cart-item{
 			position: relative;
 			padding: 20px 0;
 			border-bottom: 1px solid white;
 			text-align: left;
+			@include transition((border-color .3s ease-in-out));
+			&:last-child{
+				padding: 20px 0 0;
+				border-bottom: none;
+			}
+			&.removing{
+				.cart-item-content{
+					@include transform(translate(-110%,0));
+					opacity: 0;
+				}
+				border-color: transparent;
+			}
+			.cart-item-content{
+				opacity: 1;
+				@include transform(translate(0,0));
+				@include transition((transform .3s ease-in-out, opacity .3s ease-in-out));
+			}
 			.cart-item-image{
+				width: 30%;
 				max-width: 100px;
 				display: inline-block;
 				vertical-align: top;
 			}
 			.cart-item-details{
+				width: 67%;
 				display: inline-block;
 				vertical-align: top;
 				padding-left: 20px;
 				.cart-item-title{
-
+					font-size: 15px;
+					padding-bottom: 6px;
 				}
-				.cart-item-size{
-
+				.cart-item-size,.cart-item-color{
+					label{
+						display: inline-block;
+						min-width: 50px;
+						
+					}
+					font-size: 13px;
+					line-height: 13px;
+				}
+				.cart-item-price{
+					font-size: 15px;
+					position: absolute;
+					bottom: 0px;
+					right: 0;
 				}
 				.cart-item-qty{
+					position: absolute;
+					bottom: 0px;
+					left: 30%;
+					padding-left: 20px;
+
 					input{
 						border: none;
 						border-bottom: 1px solid white;
@@ -377,16 +452,40 @@ nav.top-menu{
 				}
 				.cart-item-remove{
 					position: absolute;
-					top: 0;
+					top: 20px;
 					right: 0;
 					cursor: pointer;
 				}
 			}	
 		}
 	}
+	.cart-total{
+		width: 100%;
+		padding: 20px;
+		text-align: left;
+		font-size: 16px;
+		@include respond-min($tablet-portrait) {
+			position: fixed;
+			bottom: 40px;
+		}
+		@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));
+		span{
+			float: right;
+			font-size: 16px;
+		}
+	}
 }
 .cart-open{
 	.top-menu{
+			@include respond-max($tablet-portrait) {
+				.cart-icon, .cart-num,.cart .close{
+					display: none;
+				}
+				.cart-close{
+					display: block;
+				}
+			
+			}
 		.cart{
 			opacity: 1;
 			visibility: visible;
@@ -395,4 +494,19 @@ nav.top-menu{
 			}
 		}
 	}	
+}
+.black-bg{
+	.cart-search{	
+		.search{
+			input{
+				border-color: white;
+			}
+			button{
+				color: white;
+			}
+		}
+		.cart-info{
+			color: white;
+		}
+	}
 }

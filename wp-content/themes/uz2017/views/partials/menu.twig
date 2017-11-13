@@ -15,6 +15,7 @@
 			<div class="cart-info">
 				<div class="cart-icon"></div>
 				<div class="cart-num">(<span class="cart-count">0</span>)</div>
+				<div class="material-icons cart-close">close</div>
 			</div>
 		</div>
 	</div>
@@ -25,7 +26,12 @@
 			<div class="no-items">Your Bag is empty</div>
 			<ul class="cart-items">
 				
-			</ul>		
+			</ul>
+			<div class="cart-total">
+				Subtotal
+				<span class="cart-subtotal"></span>
+			</div>
+			<a class="checkout-button">checkout</a>	
 		</div>
 	</div>
 	<ul class="main-menu">
@@ -43,17 +49,21 @@
 </div>
 
 <script id="CartItemTemplate" type="text/x-jsrender">
-	<div class="cart-item" data-line-item-id="<%:variantID%>">
-		<div class="cart-item-image"><img src="<%:image%>" alt="<%:title%>"></div>
-		<div class="cart-item-details">
-			<div class="cart-item-title"><%:title%></div>
-			<div class="cart-item-size"><%:variantTitle%></div>
-			<div class="cart-item-price"><%:price%></div>
-			<div class="cart-item-qty">
-				<label class="qty-label" for ="itemQty">Qty</label>
-				<input type="text" name="qty" value="<%:qty%>" id="itemQty">
+	<div class="cart-item" data-line-item-id="<%:lineItemId%>">
+		<div class="cart-item-content">
+			<div class="cart-item-image"><img src="<%:image%>" alt="<%:title%>"></div>
+			<div class="cart-item-details">
+				<div class="cart-item-title"><%:title%></div>
+				<div class="cart-item-color"><label>Color</label><%:color%></div>
+				<div class="cart-item-size"><label>Size</label><%:size%></div>
+				
+				<div class="cart-item-qty">
+					<label class="qty-label" for ="itemQty">Qty</label>
+					<input type="text" name="qty" value="<%:qty%>" id="itemQty">					
+				</div>
+				<div class="cart-item-price"><%:price%></div>
+				<div class="cart-item-remove material-icons" data-line-item-id="<%:lineItemId%>">close</div>
 			</div>
-			<div class="cart-item-remove material-icons">close</div>
 		</div>
 	</div>
 </script>

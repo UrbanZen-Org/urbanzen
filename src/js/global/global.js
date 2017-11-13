@@ -59,6 +59,7 @@ var global = {
     $('.menu-link').click(function(e){
       $('body').toggleClass('lock-scroll');
       $('body').toggleClass('menu-open');
+      $('body').removeClass('cart-open');
     });
   },
 

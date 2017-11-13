@@ -16,7 +16,8 @@ var express = {
 			  slidesToScroll: 1,
 			  prevArrow: '<div class="slick-arrow arrow-left"></div>',
 	      nextArrow: '<div class="slick-arrow arrow-right"></div>',
-        focusOnSelect: false    
+        focusOnSelect: false,
+        accessibility: false   
 			});
       $('.stores-list .store-item .accordian-section').on('click',function(e){
         console.log($(this));

@@ -54,6 +54,7 @@ window.cart = {
           }, 0);
           self.updateQty();
           self.updateTotal();
+          $('.cart .checkout-button').attr('href', cart.checkoutUrl);
         });
         });
       });

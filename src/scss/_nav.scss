@@ -108,7 +108,7 @@ nav.top-menu{
 			@include respond-max($tablet-portrait) {
 				height: 20px;
 			}
-			display: block;
+			display: inline-block;
 			text-align: center;
 			width: auto;
 			@include respond-max($tablet-portrait) {

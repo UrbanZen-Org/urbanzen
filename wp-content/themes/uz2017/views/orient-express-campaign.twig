@@ -18,13 +18,22 @@
 			<div class="down-arrow" data-target=".campaign-images"></div>
 		</section>
 
-		{% set images = post.images %}
-		{% if images %}
-			<section class="campaign-images">
-				{% for image in images %}
-						<div class="campaign-image" style="background-image: url({{ image.image }})">
-							<img src="{{ image.mobile_image }}">
-						</div>
+		{% set slides = post.slides %}
+		{% if slides %}
+			<section class="campaign-slides">
+				{% for slide in slides %}						
+						{% if slide.video %}
+							<div class="campaign-slide">
+								<video class="lazyload" autoplay loop poster="">
+								  <source src="{{ slide.video_file }}" type="video/mp4">
+								</video>							
+								<img src="{{ slide.mobile_image }}">
+							</div>
+						{% else %}
+							<div class="campaign-slide" style="background-image: url({{ slide.image }})">
+								<img src="{{ slide.mobile_image }}">
+							</div>
+						{% endif %}
 				{% endfor %}
 			</section>
 		{% endif %}

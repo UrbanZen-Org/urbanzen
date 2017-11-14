@@ -12,17 +12,6 @@ nav.top-menu{
 	&.transparent-bg{
 		background: transparent;
 	}
-	.menu-logo{
-		margin: 0 auto;
-		display: block;
-		text-align: center;
-		width: 173px;
-		svg{
-			*{
-				fill: white;
-			}
-		}
-	}
 	.main-menu ul, .main-menu{
 		&.main-menu{
 			@include respond-max($tablet-portrait) {
@@ -105,20 +94,26 @@ nav.top-menu{
 		}
 		.menu-logo{
 			height: 28px;
+			display: block;
 			@include respond-max($tablet-portrait) {
 				height: 20px;
-			}
-			display: inline-block;
-			text-align: center;
-			width: auto;
-			@include respond-max($tablet-portrait) {
 				position: relative;
 				top: -3px;
 			}
-			svg{
-				height: 100%;
+			a{
 				margin: 0 auto;
-			}
+				display: inline-block;
+				text-align: center;
+				width: auto;
+				height: 100%;
+				svg{
+					height: 100%;
+					fill: white;
+					*{
+						fill: white;
+					}		
+				}
+			}			
 		}
 		.tagline{			
 			display: none;
@@ -142,6 +137,7 @@ nav.top-menu{
 	position: absolute;
 	left: 0;
 	top: 0;
+	z-index: 8;
 	@include respond-min($tablet-portrait) {
 		display: none;
 	}

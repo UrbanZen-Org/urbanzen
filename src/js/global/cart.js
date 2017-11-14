@@ -127,7 +127,7 @@ window.cart = {
     var self = this;
     window.shopClient.fetchRecentCart().then(function (cart) {
         cart.removeLineItem(lineItemId).then(cart => {
-        $('.cart-item[data-line-item-id="'+lineItemId+'"]').addClass('removing').slideUp(400);          
+        $('.cart-item[data-line-item-id="'+lineItemId+'"]').addClass('removing').slideUp(400).remove();          
         setTimeout(function(){
           self.updateQty();
           self.updateTotal();  

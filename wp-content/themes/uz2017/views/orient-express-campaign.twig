@@ -22,18 +22,19 @@
 		{% if slides %}
 			<section class="campaign-slides">
 				{% for slide in slides %}						
+					<div class="campaign-slide">
 						{% if slide.video %}
-							<div class="campaign-slide">
-								<video class="lazyload" autoplay loop poster="">
+							
+								<video class="lazyload hide-mobile" autoplay loop poster="">
 								  <source src="{{ slide.video_file }}" type="video/mp4">
 								</video>							
-								<img src="{{ slide.mobile_image }}">
-							</div>
+								<img class="hide-desktop"src="{{ slide.mobile_image }}">
+							
 						{% else %}
-							<div class="campaign-slide" style="background-image: url({{ slide.image }})">
-								<img src="{{ slide.mobile_image }}">
-							</div>
+							<img class="hide-mobile" src="{{ slide.image }}">
+							<img class="hide-desktop" src="{{ slide.mobile_image }}">							
 						{% endif %}
+					</div>
 				{% endfor %}
 			</section>
 		{% endif %}

@@ -40,16 +40,19 @@
 		}
 	}
 	.campaign-slide{
-		height: 100vh;
+		@include respond-min(1000)
+		{
+			max-height: 100vh;
+			min-height: 511px;
+		}
 		background-size: cover;
 		background-position: center center;
-		img{
-			display: none;
-		}
-		video{
+		overflow: hidden;
+		video, img{
 			object-fit:cover;
 			height: 100%;
 			width: 100%;
+			@include transform(scale(1.03));
 		}
 		@include respond-max($tablet-portrait)
 		{
@@ -57,9 +60,6 @@
 			height: auto; 
 			video{
 				display: none;
-			}
-			img{
-				display: block;
 			}
 		}
 	}

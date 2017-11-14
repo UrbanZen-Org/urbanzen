@@ -8,6 +8,25 @@
 	.footer-push{
 		height: 0;
 	}
+	@include respond-min($tablet-portrait) {
+		nav{
+			.nav-bar{
+				width: 300px;
+				.menu-logo a {
+					height: 37px;
+					svg{
+						height: 37px;
+						display: block;
+					}
+				}
+				.tagline{
+					padding-top: 10px;
+					display: block;
+					letter-spacing: .08em;
+				}
+			}
+		}
+	}
 }
 .index{
 	header{

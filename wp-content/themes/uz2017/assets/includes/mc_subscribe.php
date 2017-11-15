@@ -1,8 +1,8 @@
 <?php
 error_reporting(0);
-$api_key = getenv('MC_API_KEY');
+$api_key = '8f145ec349879f2f11b3768076c7edf1-us2';
 $dc = substr($api_key, strpos($api_key, "-") + 1);
-$list_id = getenv('MC_LIST_ID');
+$list_id = '1e92fa25d8';
 $email = $_REQUEST['email'];
 $params = json_encode(array("email_address" => $email, "status" => "subscribed"));
 $ch = curl_init();

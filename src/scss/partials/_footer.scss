@@ -7,15 +7,31 @@ footer{
 	position: relative;
 	padding: 30px 20px;
 	background: black;
+	@include respond-max($tablet-portrait)
+	{
+		border-top: 1px solid white;
+	}
 	.footer-menu{
 		text-align: right;
+		@include respond-max($tablet-portrait)
+		{
+			text-align: center;
+		}
 		li{
 			display: inline-block;
+			line-height: 30px;
+			@include respond-max($tablet-portrait)
+			{
+				display: block;
+				width: 100%;
+			}
 			a{
-				color: white;
+				font-family: 'HelveticaNeueLTStd-Lt', 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
+				color: #f5f1e1;
 				font-size: 13px;
 				letter-spacing: .1em;
 				padding: 0 20px;
+
 				&:last-child{
 					padding-right: 0;
 				}
@@ -24,14 +40,17 @@ footer{
 	}
 	.newsletter-callout{
 		cursor: pointer;
-		text-align: right;
+		text-align: center;
+		line-height: 30px;
 		@include respond-min($tablet-landscape)
 		{
+			text-align: right;
 			position: absolute;
 			left: 20px;
 			top: 30px;
 		}
-		color: white;
+		font-family: 'HelveticaNeueLTStd-Lt', 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
+		color: #f5f1e1;
 		font-size: 13px;
 		letter-spacing: .1em;
 		span{

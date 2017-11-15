@@ -43,6 +43,40 @@
 			z-index: 2;
 		}
 	}
+    .newsletter-signup{
+        input[type=text]{
+            border: none;
+            border-bottom: 1px solid white;
+            width: 75%;
+            background: transparent;
+            line-height: 32px;
+            color: white;
+            height: 32px;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 14px;
+
+            @include respond-max($tablet-portrait)
+            {
+                text-align: center;
+                width: 100%;
+            }
+            margin-bottom: 10px;
+        }
+        button{
+            margin-top: 0;
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 4%;
+            outline: none;
+            @include respond-max($tablet-portrait)
+            {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
 
 }
 // OLD CRAP
@@ -80,12 +114,6 @@
 .newsletter_popup .sign_up:hover {
     background: #000;
     color: #f5f1e1;
-}
-.newsletter_popup button.cta-button {
-    width: 25% !important;
-    @media all and (max-width: 1023px) {
-        width: 100% !important;
-    }
 }
 .popup-text {
     position: absolute;

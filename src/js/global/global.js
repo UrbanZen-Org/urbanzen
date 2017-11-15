@@ -16,6 +16,7 @@ var global = {
     this.newsletterPopup.init();
     this.menu();
     this.accordian();
+    this.mailchimpSignup.init();
   },
   
   resize:function(){
@@ -51,7 +52,13 @@ var global = {
     nav_link.click(function(e){
       if ($(this).parent().find('ul').length){
         e.preventDefault();
-        $(this).parent().find('ul').toggleClass('open');
+        var parent_ul = $(this).parent().find('ul');
+        if (parent_ul.hasClass('open')){
+          $(this).parent().find('ul').removeClass('open').slideUp(300);
+        }else{
+          $(this).parent().find('ul').addClass('open').slideDown(300);
+        }
+        
         $(this).parent().toggleClass('current-menu-parent');
         console.log($(this).parent().find('ul'));
       }
@@ -111,7 +118,49 @@ var global = {
       $('.newsletter_popup').removeClass('open');
       $('body').removeClass('lock-scroll');
     }
-  }
+  },
+  
+   mailchimpSignup :{
+    init : function() {
+      var self = this;
+      $('.newsletter-signup').submit(function(e){
+        self.subscribe(e, self);
+      });
+    },
+    form : $('.newsletter-signup'),
+
+    subscribe : function(e, self){
+      e.preventDefault();
+      var form = self.form,
+          td = $('.newsletter-signup').attr('data-td'),
+          link = td + '/assets/includes/mc_subscribe.php',
+          request = $.ajax({
+                      url: link,
+                      type: 'POST',
+                      data : $('.newsletter-signup').serialize()
+                    });
+      request.done(self.handleResponse);
+    },
+
+    handleResponse : function(response){
+      function outputMessage(msg){
+        $('.newsletter-signup').find('input[type=text]').val('');
+        $('.newsletter-signup').find('input[type=text]').blur();
+        $('.newsletter-signup').find('input[type=text]').attr('placeholder',msg);
+      };
+      var form = this.form;
+      var resp = JSON.parse(response);          
+      if (resp.title == 'Member Exists') {
+        outputMessage('Already suscribed');        
+      } else if (resp.title == 'Invalid Resource' || resp.title == 'Internal Server Error') {
+        outputMessage('Invalid Email');
+      } else if (resp.status == 'subscribed') {
+        outputMessage('Thanks');
+      }else{
+        outputMessage('Invalid Response');
+      }
+    }
+  }, // End mailchimpSignup
 };
 
 module.exports = global;

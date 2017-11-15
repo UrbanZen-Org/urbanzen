@@ -13,8 +13,10 @@ nav.top-menu{
 		background: transparent;
 	}
 	.main-menu ul, .main-menu{
-		&.main-menu{
+		&.main-menu{			
+			width: 100%;
 			@include respond-max($tablet-portrait) {
+				width: 80%;
 				transform: translate3d(-100%, 0, 0);
 				@include transition((transform .3s ease-in-out));
 				position: fixed;
@@ -29,11 +31,27 @@ nav.top-menu{
 		li{
 			list-style: none;
 			line-height: 26px;
+			position: relative;
+			@include respond-max($tablet-portrait) {
+				line-height: 34px;
+
+			}
 			&.current-menu-item > a,&.current-menu-parent >  a{
 				font-family: 'HelveticaNeueLTStd-Bd', 'Helvetica Neue Bold', Helvetica, Arial, sans-serif;
 				color: #f5f1e1!important;
 			}
+			&.menu-item-has-children{
+				&:after{
+						color: #f5f1e1;
+						font-family: "icons" !important;
+						content: "\65";
+						position: absolute;
+						right: 0;
+					}
+				}
 			a{
+				width: 100%;
+				display: block;
 				font-family: 'HelveticaNeueLTStd-Lt', 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
 				color: #f5f1e1;
 				font-size: 13px;
@@ -48,11 +66,9 @@ nav.top-menu{
 	}
 
 	ul li ul{
-		max-height: 0;
 		overflow: hidden;
-		@include transition((max-height .6s ease-in-out));
 		&.open{
-			max-height: 500px;
+			
 		}
 		li {
 			&.current-menu-item a{
@@ -70,7 +86,11 @@ nav.top-menu{
 	}
 	.social{
 		position: absolute;
-		bottom: 30px;
+		padding-bottom: 30px;
+		padding-top: 10px;
+		bottom: 0;
+		background: black;
+		z-index: 9;
 		a{
 			color: white;
 			padding: 8px;

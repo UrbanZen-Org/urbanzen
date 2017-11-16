@@ -257,8 +257,10 @@ nav.top-menu{
 		display: block;
 		color: white;
 		input{
+			-webkit-appearance: none;
+			border-radius: 0;
 			border-bottom-color: white;
-			width: calc(100% - 24px);
+			width: calc(100% - 26px);
 			color: white;
 			font-size: 14px;
 		}

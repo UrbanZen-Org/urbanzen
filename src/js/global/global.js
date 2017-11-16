@@ -54,13 +54,24 @@ var global = {
         e.preventDefault();
         var parent_ul = $(this).parent().find('ul');
         if (parent_ul.hasClass('open')){
+          if(!$(this).parent().hasClass('menu-item-has-children')){
+            $('.main-menu ul').removeClass('open');  
+          }
           $(this).parent().find('ul').removeClass('open').slideUp(300);
         }else{
-          $(this).parent().find('ul').addClass('open').slideDown(300);
+          if(!parent_ul.parent().hasClass('menu-item-has-children')){
+            console.log($(this).parent());
+            
+            $('.main-menu ul').removeClass('open');
+          }
+          parent_ul.first().addClass('open').slideDown(300);
+          $('.main-menu').animate({
+            scrollTop: $(this).parent().find('ul').offset().top - 80
+          }, 400);
         }
         
         $(this).parent().toggleClass('current-menu-parent');
-        console.log($(this).parent().find('ul'));
+        
       }
     });
     $('.menu-link').click(function(e){

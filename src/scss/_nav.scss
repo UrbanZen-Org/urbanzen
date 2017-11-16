@@ -13,7 +13,8 @@ nav.top-menu{
 		background: transparent;
 	}
 	.main-menu ul, .main-menu{
-		&.main-menu{			
+		&.main-menu{
+			overflow: scroll;
 			width: 100%;
 			@include respond-max($tablet-portrait) {
 				width: 80%;
@@ -41,12 +42,15 @@ nav.top-menu{
 				color: #f5f1e1!important;
 			}
 			&.menu-item-has-children{
-				&:after{
-						color: #f5f1e1;
-						font-family: "icons" !important;
-						content: "\65";
-						position: absolute;
-						right: 0;
+				@include respond-max($tablet-portrait) {
+						&:after{
+							color: #f5f1e1;
+							font-family: "icons" !important;
+							content: "\65";
+							position: absolute;
+							right: 0;
+							top: 0;
+						}
 					}
 				}
 			a{
@@ -67,8 +71,10 @@ nav.top-menu{
 
 	ul li ul{
 		overflow: hidden;
+		max-height: 0;
+		@include transition((max-height .3s ease-in-out));
 		&.open{
-			
+			max-height: 1000px;
 		}
 		li {
 			&.current-menu-item a{
@@ -85,6 +91,7 @@ nav.top-menu{
 		}
 	}
 	.social{
+		display: none;
 		position: absolute;
 		padding-bottom: 30px;
 		padding-top: 10px;

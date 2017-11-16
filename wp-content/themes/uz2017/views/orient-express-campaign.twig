@@ -15,9 +15,11 @@
 					<img class="mobile" src="{{ post.mobile_main_image }}">
 				</div>	
 			</div>
-			<div class="down-arrow" data-target=".campaign-images"></div>
+			<div class="down-arrow" data-target=".campaign-slides"></div>
 		</section>
-
+		<div class="mobile-title hide-desktop">
+			<h1>{{ post.title }}</h1>
+		</div>
 		{% set slides = post.slides %}
 		{% if slides %}
 			<section class="campaign-slides">

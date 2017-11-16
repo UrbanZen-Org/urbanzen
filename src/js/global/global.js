@@ -52,21 +52,20 @@ var global = {
       var link = $(this);
       if ($(this).parent().find('ul').length){
         e.preventDefault();
+
         var parent_ul = $(this).parent().find('ul');
+
         if (parent_ul.hasClass('open')){
-          if(!$(this).parent().hasClass('menu-item-has-children')){
-            $('.main-menu ul').removeClass('open');  
-          }
-          $(this).parent().find('ul').removeClass('open').slideUp(300);
+          parent_ul.removeClass('open').slideUp(300);
+          parent_ul.find('ul').removeClass('open');
+          $(this).parent().find('ul li').removeClass('current-menu-parent');
         }else{
-          if(!parent_ul.parent().hasClass('menu-item-has-children')){            
-            $('.main-menu ul').removeClass('open');
-          }
           parent_ul.first().addClass('open').slideDown(300);
+          parent_ul.parent().siblings().find('ul').removeClass('open').slideDown(300);
+          parent_ul.parent().siblings().removeClass('current-menu-parent');
           $('.main-menu').animate({
             scrollTop: link.parent().position().top - 80
           }, 400);
-          console.log($(this).offset().top);
         }
         $(this).parent().toggleClass('current-menu-parent');
         

@@ -6,15 +6,28 @@
 	}
 	.content-rows{
 		padding: 0 20px;
-		.img-wrap{
-			background: transparent;
-		}
-		.quarter{
-
+			@include respond-max(1400) {
+				.half{
+					width: 100%;
+					&:first-child{
+						margin-bottom: 20px;
+					}
+				}
+				.quarter{
+					width: calc(50% - 10px);
+					margin-bottom: 20px;
+					.img-wrap{
+						
+					}
+				}
+			}
 			@include respond-max($tablet-portrait) {
+			.img-wrap,.half,.quarter,img{
 				width: 100%;
+				background: transparent;
 			}
 		}
+		
 		.text-block{
 			
 			color: white;
@@ -23,9 +36,7 @@
 			align-items: center;
 			justify-content: center;
 			background: black;
-			@include respond-max($tablet-portrait) {
-				margin-bottom: 20px;
-			}
+
 			.text-content{
 				padding: 40px;
 				

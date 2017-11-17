@@ -16,10 +16,14 @@
 				.quarter{
 					width: calc(50% - 10px);
 					margin-bottom: 20px;
-					.img-wrap{
-						
-					}
+					
 				}
+				.img-wrap{
+					margin-bottom: 0;	
+					}
+					.flex-row{
+						margin-bottom: 20px;
+					}
 			}
 			@include respond-max($tablet-portrait) {
 			.img-wrap,.half,.quarter,img{

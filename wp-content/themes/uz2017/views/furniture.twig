@@ -13,8 +13,8 @@
 						{% if block.acf_fc_layout == 'image' %}						
 							<div class="{{ block.layout }}">
 								<div class="img-wrap">
-									<img class="hide-mobile lazyload" data-src="{{ block.image }}">
-									<img class="hide-desktop lazyload" data-src="{{ block.mobile_image }}">
+									<img class="lazyload" data-src="{{ block.image }}">
+									{# <img class="hide-desktop lazyload" data-src="{{ block.mobile_image }}"> #}
 								</div>
 							</div>
 						{% else %}

@@ -21,7 +21,9 @@
 							<div class="{{ block.layout}} text-block">
 								<div class="text-content">
 									<p>{{ block.text }}</p>
+									{% if block.author %}
 									<div class="text-author">{{ block.author }}</div>
+									{% endif %}
 								</div>
 							</div>
 						{% endif %}

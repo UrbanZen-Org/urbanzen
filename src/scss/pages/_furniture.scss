@@ -6,14 +6,29 @@
 	}
 	.content-rows{
 		padding: 0 20px;
+		.img-wrap{
+			background: transparent;
+		}
+		.quarter{
+
+			@include respond-max($tablet-portrait) {
+				width: 100%;
+			}
+		}
 		.text-block{
-			background: black;
+			
 			color: white;
-			padding: 40px;
+			
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			background: black;
+			@include respond-max($tablet-portrait) {
+				margin-bottom: 20px;
+			}
 			.text-content{
+				padding: 40px;
+				
 				p{
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					font-size: 16px;

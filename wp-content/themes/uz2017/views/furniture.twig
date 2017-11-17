@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-furniture' %}
+{% set content_rows = post.content_rows %}
+
+{% block content %}
+	<h1>{{ post.post_title }}</h1>
+
+	{% if content_rows %}
+		<div class="content-rows">
+			{% for row in content_rows %}
+				<div class="flex-row">
+					{% for block in row.content_blocks %}
+						{% if block.acf_fc_layout == 'image' %}						
+							<div class="{{ block.layout }}">
+								<div class="img-wrap">
+									<img class="hide-mobile lazyload" data-src="{{ block.image }}">
+									<img class="hide-desktop lazyload" data-src="{{ block.mobile_image }}">
+								</div>
+							</div>
+						{% else %}
+							<div class="{{ block.layout}} text-block">
+								<div class="text-content">
+									<p>{{ block.text }}</p>
+									<div class="text-author">{{ block.author }}</div>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+				{% endfor %}
+		</div>
+	{% endif %}
+	
+	<div class="inquiry-text">
+		{{ post.inquiry_text }}
+		<a class="cta-button dark" href="mailto:{{ inquiry_email }}">Inquire</a>
+	</div>
+
+{% endblock %}{# end content #}

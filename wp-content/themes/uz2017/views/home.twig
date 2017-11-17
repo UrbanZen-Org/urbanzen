@@ -29,7 +29,7 @@
 			{% if slides %}
 				<div class="slides">
 					{% for slide in slides %}
-						<div class="slide video">
+						<div class="slide {% if slide.video %}video{% endif %}">
 							<div class="slide-cover mobile-only">						
 								<div class="slide-info">
 									<h2>{{ slide.title }}</h2> 
@@ -39,9 +39,13 @@
 									{% endif %}
 								</div>
 							</div>
-							<video class="lazyload" loop poster="">
-							  <source src="{{ slide.video_file }}" type="video/mp4">
-							</video>
+							{% if slide.video %}
+								<video class="lazyload" loop poster="">
+							  	<source src="{{ slide.video_file }}" type="video/mp4">
+								</video>
+							{% else %}
+								<img src="{{ slide.image }}">
+							{% endif %}
 							<img class="mobile" src="{{ slide.mobile_image }}"/>
 						</div>
 					{% endfor %}

@@ -71,42 +71,43 @@
 	.behind-the-scenes-slideshow{
 		margin-bottom: 30px;
 	}
-	.flex-row{
-			display: flex;
-			justify-content: space-between;
-			flex-direction: row;
-			flex-wrap: wrap;
-			//margin-bottom: 20px;
-			@include respond-min($tablet-portrait)
-			{
+	
+	
+}
+.flex-row{
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+		//margin-bottom: 20px;
+		@include respond-min($tablet-portrait)
+		{
+			margin-bottom: 20px;
+		}
+		.img-wrap{
+			height: 100%;
+			@include respond-max($tablet-portrait)
+			{		
 				margin-bottom: 20px;
 			}
-			.img-wrap{
-				height: 100%;
-				@include respond-max($tablet-portrait)
-				{		
-					margin-bottom: 20px;
-				}
-			}
-		.half{
-			@include respond-min($tablet-portrait)
-			{
-				width: calc(50% - 10px);
-			}
-			position: relative;
-    	box-sizing: border-box;
 		}
-		.quarter{
+	.half{
+		@include respond-min($tablet-portrait)
+		{
 			width: calc(50% - 10px);
-			position: relative;
-    	box-sizing: border-box;
-			@include respond-min($tablet-portrait)
-			{
-				width: calc(25% - 20px);
-			}
+		}
+		position: relative;
+  	box-sizing: border-box;
+	}
+	.quarter{
+		width: calc(50% - 10px);
+		position: relative;
+  	box-sizing: border-box;
+		@include respond-min($tablet-portrait)
+		{
+			width: calc(25% - 20px);
 		}
 	}
-	
 }
 .img-wrap{
 		background: #000;

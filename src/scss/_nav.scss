@@ -367,7 +367,7 @@ nav.top-menu{
 		width: 50%;
 	}
 	@include respond-min($tablet-landscape) {
-		width: 400px;
+	width: 100%;	
 	}
 	@include respond-max($tablet-landscape) {
 		top: 50px;

@@ -1,4 +1,6 @@
 AddType video/mp4 mp4
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods: "GET"
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>

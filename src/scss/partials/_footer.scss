@@ -1,5 +1,5 @@
 footer{
-	@include respond-min($tablet-portrait)
+	@include respond-min($tablet-landscape)
 	{
 		margin-left: 200px;
 		height: 85px;
@@ -7,20 +7,20 @@ footer{
 	position: relative;
 	padding: 30px 20px;
 	background: black;
-	@include respond-max($tablet-portrait)
+	@include respond-max($tablet-landscape)
 	{
 		border-top: 1px solid white;
 	}
 	.footer-menu{
 		text-align: right;
-		@include respond-max($tablet-portrait)
+		@include respond-max($tablet-landscape)
 		{
 			text-align: center;
 		}
 		li{
 			display: inline-block;
 			line-height: 30px;
-			@include respond-max($tablet-portrait)
+			@include respond-max($tablet-landscape)
 			{
 				display: block;
 				width: 100%;
@@ -58,9 +58,20 @@ footer{
 			margin-right: 5px;
 		}
 	}
+	.social{
+		@include respond-min($tablet-landscape) {
+			display: none;
+		}
+		text-align: center;
+		margin-bottom: 20px;
+		a{
+			color: white;
+			padding: 10px;
+		}
+	}
 }
 .footer-push{
-	@include respond-min($tablet-portrait) {
+	@include respond-min($tablet-landscape) {
 		height: 85px;
 	}	
 }

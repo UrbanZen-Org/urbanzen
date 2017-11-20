@@ -20,12 +20,12 @@ main{
 }
 #content{
 	margin-bottom: 60px;
-	@include respond-max($tablet-portrait) {
+	@include respond-max($tablet-landscape) {
 		margin-top: 50px;
 	}
 }
 #page{
-	@include respond-min($tablet-portrait) {
+	@include respond-min($tablet-landscape) {
 		margin-left: 200px;
 		min-height: 100%;
   	margin-bottom: -85px;
@@ -164,7 +164,7 @@ main{
 					height: calc(100vh - 50px);
 				}
 				.mobile-only{
-					@include respond-min($tablet-portrait)
+					@include respond-min($tablet-landscape)
 					{
 						display: none!important;
 					}
@@ -189,6 +189,18 @@ main{
 						}
 					}
 
+				}
+				img{
+					&.mobile{
+							display: none;
+					}
+					@include respond-max($tablet-portrait)
+					{	
+						display: none;
+						&.mobile{
+							display: block;
+						}
+					}
 				}
 				&.loaded,&.slick-cloned{
 					video{
@@ -241,7 +253,7 @@ main{
 					    display: block;
 					    color: $ivory;
 					    letter-spacing: .05em;
-					    @include respond-min(1024)
+					    @include respond-min($tablet-landscape)
 					    {    	
 					    	font-size: 35px;
 					    }

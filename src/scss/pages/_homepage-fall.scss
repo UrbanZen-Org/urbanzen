@@ -3,15 +3,35 @@
 		margin-bottom: 0;
 	}
 	#content{
-		margin-bottom: 0;
+		margin-bottom: 0;		
+		@include respond-max($tablet-landscape) {
+			margin-top: 0;
+		}
+		@include respond-max($tablet-portrait) {			
+			margin-top: 50px;
+		}
 	}
+	footer{
+			border-top-color: transparent;
+		}
 	.footer-push{
 		height: 0;
 	}
-	@include respond-min($tablet-portrait) {
+	nav.top-menu{
+		@include respond-min($tablet-portrait) {
+			.nav-bar{
+				background: transparent;
+			}
+			.main-menu{
+				background: transparent;
+			}
+		}
+	}
+	@include respond-min($tablet-landscape) {
 		nav{
 			.nav-bar{
 				width: 300px;
+
 				.menu-logo a {
 					height: 37px;
 					svg{

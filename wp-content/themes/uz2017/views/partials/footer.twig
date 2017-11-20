@@ -1,8 +1,14 @@
 <footer>
+	<div class="social">
+		{% for social in options.social_media %}
+			<a href="{{ social.link }}" class="icomoon-{{ social.platform }}"></a>
+		{% endfor %}
+	</div>
 	<div class="newsletter-callout"><span class="material-icons">mail_outline</span>Join Our Newsletter</div>
 	<ul class="footer-menu">
 		{% for item in footer_menu.items %}
 				<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link}}" title="{{ item.title }}">{{ item.title }}</a></li>
 		{% endfor %}
 	</ul>
+	
 </footer>

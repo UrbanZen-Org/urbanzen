@@ -10,7 +10,7 @@ var homepage = {
 
   ready: function(){
     var self = this;
-    if ($(window).width() > 768){
+    if ($(window).width() > 1023){
       setTimeout(function(){
         self.slideshow();
       },1000);

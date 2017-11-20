@@ -42,7 +42,7 @@ window.cart = {
           return variant = v;
         }
       });
-      window.shopClient.fetchCart('shopify-buy.1459804699118.2').then(function (cart) {
+      window.shopClient.fetchCart('cartdata').then(function (cart) {
         cart.createLineItemsFromVariants({variant: variant, quantity: 1}).then(function (cart) {
           console.log(cart);
           var cartItem = cart.lineItems.filter(function (item) {
@@ -125,7 +125,7 @@ window.cart = {
   },
   removeFromCart: function(lineItemId){
     var self = this;
-    window.shopClient.fetchCart('shopify-buy.1459804699118.2').then(function (cart) {
+    window.shopClient.fetchCart('cartdata').then(function (cart) {
         cart.removeLineItem(lineItemId).then(cart => {
         $('.cart-item[data-line-item-id="'+lineItemId+'"]').addClass('removing').slideUp(400).remove();          
         setTimeout(function(){
@@ -138,7 +138,7 @@ window.cart = {
     });
   },
   updateQty: function(){
-    window.shopClient.fetchCart('shopify-buy.1459804699118.2').then(function (cart) {
+    window.shopClient.fetchCart('cartdata').then(function (cart) {
       $('.cart-count').text(cart.lineItemCount);
       if(!cart.lineItemCount){
         $('.cart').addClass('empty');
@@ -149,7 +149,7 @@ window.cart = {
   },
   updateTotal: function(){
     var self = this;
-    window.shopClient.fetchCart('shopify-buy.1459804699118.2').then(function (cart) {
+    window.shopClient.fetchCart('cartdata').then(function (cart) {
       $('.cart-subtotal').text(self.formatAsMoney(cart.subtotal));
     });
   }

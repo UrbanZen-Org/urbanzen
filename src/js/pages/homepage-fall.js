@@ -82,10 +82,8 @@ var homepage = {
 
         if(slideClasses.indexOf('video') !== -1){
           var video = $(slick.$slides[nextSlide]).find('video')[0];
-          if ( video.readyState === 4 ) {
             $(slick.$slides[nextSlide]).addClass('loaded');
             video.play();
-          }
         }
       });
 

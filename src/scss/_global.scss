@@ -160,6 +160,7 @@ main{
 				position: relative;
 				height: 100vh;
 				background-position:top;
+				background-repeat: no-repeat;
 				img{
 					display: none!important;
 				}
@@ -171,7 +172,8 @@ main{
 				
 				@include respond-min($tablet-landscape)
 				{
-					background-image: none!important;		
+					background-image: none!important;
+					background-size: cover;		
 				}
 				.mobile-only{
 					@include respond-min($tablet-landscape)

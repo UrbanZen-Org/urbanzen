@@ -173,6 +173,7 @@ main{
 				@include respond-min($tablet-landscape)
 				{
 					background-image: none!important;
+					background: black;
 					background-size: cover;		
 					background-position: center;
 				}

@@ -29,7 +29,7 @@
 			{% if slides %}
 				<div class="slides">
 					{% for slide in slides %}
-						<div class="slide {% if slide.video %}video{% endif %}">
+						<div class="slide {% if slide.video %}video{% endif %}" style="background-image: url({{ slide.mobile_image }});">
 							<div class="slide-cover mobile-only">						
 								<div class="slide-info">
 									<h2>{{ slide.title }}</h2> 

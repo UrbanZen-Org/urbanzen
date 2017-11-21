@@ -40,7 +40,7 @@
 								</div>
 							</div>
 							{% if slide.video %}
-								<video class="lazyload" poster="">
+								<video class="lazyload" muted preload="metadata" playsinline poster="">
 							  	<source src="{{ slide.video_file }}" type="video/mp4">
 								</video>
 							{% else %}

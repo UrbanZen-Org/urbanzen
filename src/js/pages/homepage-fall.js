@@ -27,7 +27,19 @@ var homepage = {
   },
   
   resize:function(){
-    
+  if ($('.page-home').length){
+      // reslick only if it's not slick()
+    if ($(window).width() < 768) {
+      if ($('.page-home .full-slideshow .slides').hasClass('slick-initialized')) {
+        $('.page-home .full-slideshow .slides').slick('unslick');
+      }
+      return
+    }
+
+    if (!$('.page-home .full-slideshow .slides').hasClass('slick-initialized')) {
+      this.slideshow();
+    }
+  }
   },  
   scroll: function(){
     

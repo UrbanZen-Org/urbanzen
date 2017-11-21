@@ -172,8 +172,8 @@ main{
 				
 				@include respond-min($tablet-landscape)
 				{
-					background-image: none!important;
 					background-size: cover;		
+					background-position: center;
 				}
 				.mobile-only{
 					@include respond-min($tablet-landscape)

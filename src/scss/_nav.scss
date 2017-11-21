@@ -364,7 +364,6 @@ nav.top-menu{
 	text-align: center;
 	@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));
 	@include respond-min($tablet-portrait) {
-		width: 50%;
 	}
 	@include respond-min($tablet-landscape) {
 	width: 100%;	

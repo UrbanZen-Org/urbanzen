@@ -6,7 +6,6 @@ var jsrender = require('jsrender');
 
 window.cart = {
   init: function(){
-    
   },
 
   ready: function(){
@@ -43,7 +42,7 @@ window.cart = {
           return variant = v;
         }
       });
-      window.shopClient.fetchCart('cartdata').then(function (cart) {
+      window.shopClient.fetchRecentCart().then(function (cart) {
         cart.createLineItemsFromVariants({variant: variant, quantity: 1}).then(function (cart) {
           console.log(cart);
           var cartItem = cart.lineItems.filter(function (item) {
@@ -114,7 +113,7 @@ window.cart = {
   },
   renderCartItems: function(){
     var self = this;
-    window.shopClient.fetchCart('cartdata').then(function (cart) {
+    window.shopClient.fetchRecentCart().then(function (cart) {
       if (cart.lineItems){
         $.each(cart.lineItems, function(i,item){
           self.renderCartItem(item);
@@ -126,7 +125,7 @@ window.cart = {
   },
   removeFromCart: function(lineItemId){
     var self = this;
-    window.shopClient.fetchCart('cartdata').then(function (cart) {
+    window.shopClient.fetchRecentCart().then(function (cart) {
         cart.removeLineItem(lineItemId).then(cart => {
         $('.cart-item[data-line-item-id="'+lineItemId+'"]').addClass('removing').slideUp(400).remove();          
         setTimeout(function(){
@@ -139,7 +138,7 @@ window.cart = {
     });
   },
   updateQty: function(){
-    window.shopClient.fetchCart('cartdata').then(function (cart) {
+    window.shopClient.fetchRecentCart().then(function (cart) {
       $('.cart-count').text(cart.lineItemCount);
       if(!cart.lineItemCount){
         $('.cart').addClass('empty');
@@ -150,7 +149,7 @@ window.cart = {
   },
   updateTotal: function(){
     var self = this;
-    window.shopClient.fetchCart('cartdata').then(function (cart) {
+    window.shopClient.fetchRecentCart().then(function (cart) {
       $('.cart-subtotal').text(self.formatAsMoney(cart.subtotal));
     });
   }

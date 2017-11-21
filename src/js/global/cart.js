@@ -6,6 +6,7 @@ var jsrender = require('jsrender');
 
 window.cart = {
   init: function(){
+    
   },
 
   ready: function(){

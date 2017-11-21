@@ -34,7 +34,7 @@
 		{% for row in post.rows %}
 			<div class="look-row">
 				{% for look in row.looks %}
-					<div class="look {{ look.layout }}">
+					<div class="look {{ look.layout }} {% if look.hide_mobile %}hide mobile{% endif %}">
 						<img class="mobile-image" src="{{ look.mobile_image }}"/>
 						<img src="{{ look.image }}">
 						{% if look.products %}

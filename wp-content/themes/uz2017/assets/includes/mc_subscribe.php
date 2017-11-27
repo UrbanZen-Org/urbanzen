@@ -1,8 +1,6 @@
 <?php
 require('/srv/uzstage/mc-creds.php');
-echo MC_API_KEY;
 error_reporting(0);
-
 $api_key = MC_API_KEY;
 $dc = substr($api_key, strpos($api_key, "-") + 1);
 $list_id = MC_LIST_ID;

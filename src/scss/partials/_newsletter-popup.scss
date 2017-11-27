@@ -55,6 +55,7 @@
             display: inline-block;
             vertical-align: top;
             font-size: 14px;
+            border-radius: 0;
             -webkit-appearance: none;
             @include respond-max($tablet-portrait)
             {

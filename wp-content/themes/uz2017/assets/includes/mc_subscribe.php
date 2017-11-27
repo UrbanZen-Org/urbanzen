@@ -1,8 +1,11 @@
 <?php
+require('/srv/uzstage/mc-creds.php');
+echo MC_API_KEY;
 error_reporting(0);
-$api_key = '8f145ec349879f2f11b3768076c7edf1-us2';
+
+$api_key = MC_API_KEY;
 $dc = substr($api_key, strpos($api_key, "-") + 1);
-$list_id = '1e92fa25d8';
+$list_id = MC_LIST_ID;
 $email = $_REQUEST['email'];
 $params = json_encode(array("email_address" => $email, "status" => "subscribed"));
 $ch = curl_init();

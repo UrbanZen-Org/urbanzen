@@ -51,11 +51,12 @@
 	    margin-top: 15px;
 		&.gold{
 			border-color: $gold;
+      background: $gold;
 			color: white;
 			@include transition((background .3s ease-in-out, border-color .3s ease-in-out));
 			&:hover,&:active{
-				color: white;
-				background-color: $gold;
+				color: $gold;
+				background-color: white;
 			}
 		}
 		&.dark{

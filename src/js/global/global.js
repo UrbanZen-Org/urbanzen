@@ -164,11 +164,11 @@ var global = {
       var form = this.form;
       var resp = JSON.parse(response);          
       if (resp.title == 'Member Exists') {
-        outputMessage('Already suscribed');        
+        outputMessage('Already suscribed, thanks!');        
       } else if (resp.title == 'Invalid Resource' || resp.title == 'Internal Server Error') {
         outputMessage('Invalid Email');
       } else if (resp.status == 'subscribed') {
-        outputMessage('Thanks');
+        outputMessage('Thanks!');
       }else{
         outputMessage('Invalid Response');
       }

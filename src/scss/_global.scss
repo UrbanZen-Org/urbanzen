@@ -162,7 +162,7 @@ main{
 				background-position:top;
 				background-repeat: no-repeat;
 				img{
-					display: none!important;
+					display: none;
 				}
 				@include respond-max($tablet-portrait)
 				{
@@ -206,12 +206,9 @@ main{
 				}
 				img{
 					&.mobile{
-							display: none;
-					}
-					@include respond-max($tablet-portrait)
-					{	
 						display: none;
-						&.mobile{
+						@include respond-max($tablet-portrait - 1)
+						{	
 							display: block;
 						}
 					}

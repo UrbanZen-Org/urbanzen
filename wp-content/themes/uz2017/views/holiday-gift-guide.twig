@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-holiday-gift-guide' %}
+{% set gift_sections = post.gift_sections %}
+
+{% block content %}
+<div class="header-area" style="background:url({{ post.thumbnail.src }});">
+	<div class="header-titles">
+		<div class="header-subtitle">{{ post.post_title }}</div>
+		<div class="header-title"><h1>{{ post.header_callout }}</h1></div>
+	</div>
+</div>
+<div class="gift-sections">
+	{% for section in gift_sections %}
+		<div class="gift-section">
+			<div class="gift-section-header">
+				<div class="gift-section-header-text">
+					<h2>{{ section.title }}</h2>
+					<p>{{ section.description }}</p>
+				</div>
+				<div class="gift-section-header-image"><img class="lazyload" data-src
+					="{{ section.featured_image }}"></div>
+			</div>
+			<div class="gift-section-products">
+				{% for gift in section.products %}
+					<div class="gift look-product-links" data-handle="{{ gift.handle }}" data-color="{{ gift.color }}" data-size="{{ gift.size }}">
+						<img src="{{ gift.image }}">
+						<div class="gift-overlay">
+							<div class="overlay-content">
+								<div class="gift-title">{{ gift.title }}</div>
+								<div class="gift-price">{{ gift.price }}</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}{# end content #}

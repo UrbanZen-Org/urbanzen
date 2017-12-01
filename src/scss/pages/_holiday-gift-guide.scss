@@ -1,0 +1,71 @@
+.page-holiday-gift-guide{
+	.header-area{
+		max-height: 400px;
+		background-position: center;
+		background-size: cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		height: 20vh;
+		text-align: center;
+	}
+	.gift-section-header{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 60px 20px 0;
+		.gift-section-header-image,.gift-section-header-text{
+			@include respond($tablet-portrait)
+			{
+				width: calc(50% - 10px);
+				text-align: center;
+			}
+		}
+		.gift-section-header-image{
+			img{
+				object-fit:cover;
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+	}
+	.gift-section-products{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px 20px;
+		.gift{
+			width: calc(25% - 15px);
+			position: relative;
+			img{
+				object-fit:cover;
+				height: 100%;
+				width: 100%;
+			}
+			.gift-overlay{
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				text-align: center;
+				left: 0;
+				right:0;
+				top:0;
+				bottom:0;
+				background: rgba(0,0,0,.8);
+				color: white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				@include transition((opacity .5s ease-in-out, visibility .5s ease-in-out));
+			}
+			&:hover{
+				.gift-overlay{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}

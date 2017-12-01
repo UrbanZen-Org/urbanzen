@@ -27,6 +27,7 @@
     "js-cookie": "^2.1.4",
     "jsrender": "^0.9.89",
     "lazysizes": "^4.0.0-rc3",
+    "masonry-layout": "4.2.0",
     "node-sass": "^4.5.2",
     "postcss-cssnext": "^2.11.0",
     "postcss-import": "^9.1.0",

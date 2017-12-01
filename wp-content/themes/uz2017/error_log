@@ -1,0 +1,8 @@
+[23-Nov-2017 12:35:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Timber' not found in /home/urbanzen/public_html/wp-content/themes/uz2017/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/urbanzen/public_html/wp-content/themes/uz2017/index.php on line 3
+[01-Dec-2017 02:47:54 UTC] PHP Fatal error:  Uncaught Error: Class 'Timber' not found in /home/urbanzen/public_html/wp-content/themes/uz2017/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/urbanzen/public_html/wp-content/themes/uz2017/index.php on line 3

@@ -766,7 +766,7 @@ var shopbylook = {
 					var client_url = 'urban-zen-foundation.myshopify.com';
 					var access_token = 'f987f1824dd7e73305a2243a31c0d4be';
 				 }else{
-					var client_url = 'urbanzen.com';
+					var client_url = 'shop.urbanzen.com';
 					var access_token = 'd1c52518cdfc4bd586603aa9303a8eee';
 				 }
 				var client = new GraphQLClient('https://'+ client_url+'/api/graphql', {

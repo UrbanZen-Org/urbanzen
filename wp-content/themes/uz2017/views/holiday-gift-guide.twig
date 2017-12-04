@@ -42,15 +42,16 @@
 				{% for row in section.product_rows %}
 					<div class="gift-section-row">
 						{% for gift in row.products %}
-							<div class="gift {{ gift.layout }}" data-product-link data-handle="{{ gift.handle }}" data-color="{{ gift.color }}" data-size="{{ gift.size }}">
+							<a class="gift {{ gift.layout }}" {% if gift.handle %} data-product-link data-handle="{{ gift.handle }}" data-color="{{ gift.color }}" data-size="{{ gift.size }}"{% endif %} {% if gift.link %}href="{{ gift.link }}" {% endif %}  >
 								<img src="{{ gift.image }}">
+								<img class="mobile-image" src="{{ gift.image }}">
 								<div class="gift-overlay">
 									<div class="overlay-content">
 										<div class="gift-title">{{ gift.title }}</div>
 										<div class="gift-price">{{ gift.price }}</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						{% endfor %}
 					</div>
 				{% endfor %}

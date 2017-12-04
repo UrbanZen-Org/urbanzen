@@ -278,6 +278,7 @@
     		border: 1px solid black;
     		cursor: pointer;
     		outline: none;
+    		border-radius: 0;
     		@include transition((color .3s ease-in-out, background .3s ease-in-out));
     		&:hover, &:active{
     			background: black;

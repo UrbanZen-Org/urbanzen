@@ -757,9 +757,9 @@ var shopbylook = {
 	  //   	$('.shop-by-looks').append(new_row);
    //  	});
 
-		  // console.log(all_data);
-
-	  	$('.look .look-product-links a, [data-product-link]').click(function(e){
+		  // console.log(all_data);   
+ 		}
+ 		$('.look .look-product-links a, [data-product-link]').click(function(e){
 	  		e.preventDefault();
 	  		var product_data = $(this).data();
 				if (window.location.href.indexOf('dev') !== -1 || window.location.href.indexOf('stage') !== -1){
@@ -827,9 +827,6 @@ var shopbylook = {
      //    	shopbylook.quickShop.build(response.product, product_data);
 		   //  });
 			});
-
-   
- 		}
   },
   quickShop : {
   	module : '',

@@ -35,38 +35,68 @@
 
 	}
 	.gift-section-products{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		padding: 20px 20px;
-		.gift{
-			width: calc(25% - 15px);
-			position: relative;
-			img{
-				object-fit:cover;
-				height: 100%;
-				width: 100%;
-			}
-			.gift-overlay{
-				opacity: 0;
-				visibility: hidden;
-				position: absolute;
-				text-align: center;
-				left: 0;
-				right:0;
-				top:0;
-				bottom:0;
-				background: rgba(0,0,0,.8);
-				color: white;
+		.gift-section-row{
+			@include respond-min(640)
+			{
 				display: flex;
-				align-items: center;
-				justify-content: center;
-				@include transition((opacity .5s ease-in-out, visibility .5s ease-in-out));
+				justify-content: space-between;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				margin-bottom: 1%;
 			}
-			&:hover{
+			.gift{
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+				vertical-align: bottom;
+				@include respond-min(640)
+				{
+					margin-bottom: 0;
+					// width: calc(25% - 11.25px);
+					flex-basis: 24.25%;
+				}
+				&.two_up{
+					@include respond-min(640)
+					{
+						margin-bottom: 0;
+						// width: calc(50% - 7.5px);
+						flex-basis: 49.5%;
+					}
+				}	
+				img{
+					object-fit:cover;
+					height: 100%;
+					width: 100%;
+					@include respond-max(640)
+					{
+						display: none;
+						&.mobile-image{
+							display: block;
+						}
+					}
+				}
 				.gift-overlay{
-					opacity: 1;
-					visibility: visible;
+					opacity: 0;
+					visibility: hidden;
+					position: absolute;
+					text-align: center;
+					left: 0;
+					right:0;
+					top:0;
+					bottom:0;
+					background: rgba(0,0,0,.8);
+					color: white;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					@include transition((opacity .5s ease-in-out, visibility .5s ease-in-out));
+				}
+				&:hover{
+					.gift-overlay{
+						opacity: 1;
+						visibility: visible;
+					}
 				}
 			}
 		}

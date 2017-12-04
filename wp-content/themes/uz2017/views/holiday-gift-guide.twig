@@ -3,6 +3,24 @@
 {% set gift_sections = post.gift_sections %}
 
 {% block content %}
+			<div class="quick-shop sample-quick-shop">
+			<div class="close" data-close=""><i class="material-icons">close</i></div>
+			<img class="product-image" data-quick-image="" src="">
+			<div class="quick-details">
+				<h2 data-quick-title=""><a href=""></a></h2>
+				<span data-quick-price="" class="quick-price"></span>
+				<div class="quick-colors" data-colors>
+					<div class="color-label">Color: <span data-color-label></span></div>
+				</div>	
+				<form>
+					<input name="productId" type="hidden" value="" data-product-id="">	
+					<span class="quick-variant-label">Size</span>
+					<div class="product-variants" data-product-variants="">
+					</div>
+					<button type="submit" value="Add to cart">Add to Bag</button>
+				</form>
+			</div>
+		</div>
 <div class="header-area" style="background:url({{ post.thumbnail.src }});">
 	<div class="header-titles">
 		<div class="header-subtitle">{{ post.post_title }}</div>
@@ -21,15 +39,19 @@
 					="{{ section.featured_image }}"></div>
 			</div>
 			<div class="gift-section-products">
-				{% for gift in section.products %}
-					<div class="gift look-product-links" data-handle="{{ gift.handle }}" data-color="{{ gift.color }}" data-size="{{ gift.size }}">
-						<img src="{{ gift.image }}">
-						<div class="gift-overlay">
-							<div class="overlay-content">
-								<div class="gift-title">{{ gift.title }}</div>
-								<div class="gift-price">{{ gift.price }}</div>
+				{% for row in section.product_rows %}
+					<div class="gift-section-row">
+						{% for gift in row.products %}
+							<div class="gift {{ gift.layout }}" data-product-link data-handle="{{ gift.handle }}" data-color="{{ gift.color }}" data-size="{{ gift.size }}">
+								<img src="{{ gift.image }}">
+								<div class="gift-overlay">
+									<div class="overlay-content">
+										<div class="gift-title">{{ gift.title }}</div>
+										<div class="gift-price">{{ gift.price }}</div>
+									</div>
+								</div>
 							</div>
-						</div>
+						{% endfor %}
 					</div>
 				{% endfor %}
 			</div>

@@ -10,7 +10,7 @@ var gift = {
 
   },
   ready: function(){
-  	
+  	this.giftsFadeIn();
   },
   scroll: function(){
 

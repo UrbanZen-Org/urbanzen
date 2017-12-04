@@ -59,24 +59,51 @@
 				margin-bottom: 1%;
 			}
 			.gift{
-				display: inline-block;
-				width: 100%;
+				display: block;
+
 				position: relative;
 				overflow: hidden;
 				vertical-align: bottom;
-				width: 100%;
+
 				margin-bottom: 15px;
-				
+				background: $gold;
+				-webkit-perspective: 1300px;
+				perspective: 1300px;
+				@include respond-max(640)
+				{
+					width: 100%;
+				}
 				@include respond-min(640)
 				{
-					display: block;
 					margin-bottom: 0;
 					// width: calc(25% - 11.25px);
 					flex-basis: 24.25%;
 				}
+				/* Effect 7: helix (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
+				&.visible {
+					-webkit-transform-style: preserve-3d;
+					transform-style: preserve-3d;
+					-webkit-transform: rotateY(-180deg);
+					transform: rotateY(-180deg);
+					-webkit-animation: helix .8s ease-in-out forwards;
+					animation: helix .8s ease-in-out forwards;
+				}
+
+				@-webkit-keyframes helix {
+					0% { }
+					100% { -webkit-transform: rotateY(0deg); opacity: 1; }
+				}
+
+				@keyframes helix {
+					0% { }
+					100% { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); opacity: 1; }
+				}
 
 				&.two_up{
-					width: 100%;
+					@include respond-max(640)
+					{
+						width: 100%;
+					}
 					@include respond-min(640)
 					{
 						margin-bottom: 0;
@@ -94,6 +121,10 @@
 						&.mobile-image{
 							display: block;
 						}
+					}
+					&.mobile-image{
+						display: none;
+						opacity: 0;
 					}
 				}
 				.gift-overlay{

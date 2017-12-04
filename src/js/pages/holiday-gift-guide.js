@@ -24,7 +24,7 @@ var gift = {
       
       var gift = $(this);
       //console.log(gift);
-      gift.addClass('visible');
+
       var waypoint = new Waypoint.Inview({
         element: gift[0],
       entered: function(direction) {

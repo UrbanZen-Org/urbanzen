@@ -43,14 +43,17 @@
 					<div class="gift-section-row">
 						{% for gift in row.products %}
 							<a class="gift {{ gift.layout }}" {% if gift.handle %} data-product-link data-handle="{{ gift.handle }}" data-color="{{ gift.color }}" data-size="{{ gift.size }}"{% endif %} {% if gift.link %}href="{{ gift.link }}" {% endif %}  >
-								<img src="{{ gift.image }}">
-								<img class="mobile-image" src="{{ gift.image }}">
-								<div class="gift-overlay">
-									<div class="overlay-content">
-										<div class="gift-title">{{ gift.title }}</div>
-										<div class="gift-price">{{ gift.price }}</div>
+								<div class="front">
+									<img src="{{ gift.image }}">
+									<img class="mobile-image" src="{{ gift.image }}">
+									<div class="gift-overlay">
+										<div class="overlay-content">
+											<div class="gift-title">{{ gift.title }}</div>
+											<div class="gift-price">{{ gift.price }}</div>
+										</div>
 									</div>
 								</div>
+								<div class="back"></div>
 							</a>
 						{% endfor %}
 					</div>

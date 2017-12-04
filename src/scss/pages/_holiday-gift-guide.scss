@@ -65,9 +65,12 @@
 				vertical-align: bottom;
 
 				margin-bottom: 15px;
-				background: $gold;
 				-webkit-perspective: 1300px;
 				perspective: 1300px;
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+				-webkit-transform: rotateY(-180deg);
+				transform: rotateY(-180deg);
 				@include respond-max(640)
 				{
 					width: 100%;
@@ -79,13 +82,24 @@
 					flex-basis: 24.25%;
 				}
 				/* Effect 7: helix (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
-				&.visible {
-					-webkit-transform-style: preserve-3d;
-					transform-style: preserve-3d;
-					-webkit-transform: rotateY(-180deg);
-					transform: rotateY(-180deg);
+				&.visible {		
+				&:nth-child(1){
 					-webkit-animation: helix .8s ease-in-out forwards;
 					animation: helix .8s ease-in-out forwards;
+				}			
+				&:nth-child(2){
+					-webkit-animation: helix .8s ease-in-out .2s forwards;
+					animation: helix .8s ease-in-out .2s forwards;
+				}			
+				&:nth-child(3){
+					-webkit-animation: helix .8s ease-in-out .4s forwards;
+					animation: helix .8s ease-in-out .4s forwards;
+				}			
+				&:nth-child(4){
+					-webkit-animation: helix .8s ease-in-out .6s forwards;
+					animation: helix .8s ease-in-out .6sforwards;
+				}			
+					
 				}
 
 				@-webkit-keyframes helix {
@@ -111,19 +125,21 @@
 					}
 				}	
 				img{
+					background: $gold;
 					object-fit:cover;
 					height: 100%;
 					width: 100%;
 					@include respond-max(640)
 					{
 						display: none;
-						&.mobile-image{
-							display: block;
-						}
 					}
 					&.mobile-image{
-						display: none;
-						opacity: 0;
+						display: block;
+						@include respond-min(640)
+						{
+							display: none;
+							opacity: 0;
+						}
 					}
 				}
 				.gift-overlay{

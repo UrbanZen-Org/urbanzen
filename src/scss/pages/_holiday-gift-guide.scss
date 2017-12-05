@@ -8,6 +8,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		@include respond-max($tablet-portrait)
+		{
+			height: 50vh;
+		}
 	}
 	.header-subtitle{
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;

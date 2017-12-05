@@ -21,7 +21,6 @@
 	h2{
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		font-size: 20px;
-		
 		letter-spacing: .15em;
 		@include respond($tablet-portrait)
 		{
@@ -30,12 +29,12 @@
 	}
 	.gift-section-header-text p{
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		font-size: 18px;
+		font-size: 14px;
 		padding-top: 1em;
 		letter-spacing: .15em;
 		@include respond($tablet-portrait)
 		{
-			font-size: 18px;
+			font-size: 14px;
 		}
 	}
 	.header-area{
@@ -203,6 +202,10 @@
 					align-items: center;
 					justify-content: center;
 					@include transition((opacity .5s ease-in-out, visibility .5s ease-in-out));
+					.gift-title{
+						font-size: 18px;
+						letter-spacing: .2em;
+					}
 				}
 				&:hover{
 					.gift-overlay{

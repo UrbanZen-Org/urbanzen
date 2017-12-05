@@ -2,6 +2,13 @@
 	.header-area{
 		padding: 0 20px; 
 	}
+	.cover-area{
+		color: $ivory;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 	.header-subtitle{
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		font-size: 15px;
@@ -16,6 +23,7 @@
 		font-size: 20px;
 		letter-spacing: .20em;
 		text-transform: uppercase;
+		margin-top: 0;
 		@include respond($tablet-portrait)
 		{
 			font-size: 45px;

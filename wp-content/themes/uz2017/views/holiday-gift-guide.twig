@@ -21,13 +21,14 @@
 				</form>
 			</div>
 		</div>
-<div class="header-area" style="background:url({{ post.thumbnail.src }});">
-	<div class="header-titles">		
-		<div class="header-subtitle">{{ post.post_title }}</div>
-		<div class="header-title"><h1>{{ post.header_callout }}</h1></div>
+<div class="cover-area" style="background:url({{ post.thumbnail.src }});">
+	<div class="header-titles">
+		<div class="header-title"><h1>{{ post.post_title }}</h1></div>
+		<div class="header-subtitle">{{ post.header_callout }}</div>
 	</div>
+	<div class="down-arrow" data-target="#gifts"></div>
 </div>
-<div class="gift-sections">
+<div class="gift-sections" id="gifts">
 	{% for section in gift_sections %}
 		<div class="gift-section">
 			<div class="gift-section-header">

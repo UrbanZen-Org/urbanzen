@@ -62,7 +62,7 @@
 			width: 100%;
 			@include respond($tablet-portrait)
 			{
-				width: calc(50% - 10px);
+				flex-basis: 49.5%;
 				text-align: center;
 			}
 		}

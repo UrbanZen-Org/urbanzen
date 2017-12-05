@@ -1,4 +1,43 @@
 .page-holiday-gift-guide{
+	.header-subtitle{
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 15px;
+		letter-spacing: .15em;
+		@include respond($tablet-portrait)
+		{
+			font-size: 28px;
+		}
+	}
+	h1{
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 20px;
+		letter-spacing: .20em;
+		text-transform: uppercase;
+		@include respond($tablet-portrait)
+		{
+			font-size: 45px;
+		}
+	}	
+	h2{
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 20px;
+		
+		letter-spacing: .15em;
+		@include respond($tablet-portrait)
+		{
+			font-size: 25px;
+		}
+	}
+	.gift-section-header-text p{
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 18px;
+		padding-top: 1em;
+		letter-spacing: .15em;
+		@include respond($tablet-portrait)
+		{
+			font-size: 18px;
+		}
+	}
 	.header-area{
 		max-height: 400px;
 		background-position: center;
@@ -87,23 +126,26 @@
 					flex-basis: 24.25%;
 				}
 				/* Effect 7: helix (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
-				&.visible {		
-				&:nth-child(1){
-					-webkit-animation: helix .8s ease-in-out forwards;
-					animation: helix .8s ease-in-out forwards;
-				}			
-				&:nth-child(2){
-					-webkit-animation: helix .8s ease-in-out .2s forwards;
-					animation: helix .8s ease-in-out .2s forwards;
-				}			
-				&:nth-child(3){
-					-webkit-animation: helix .8s ease-in-out .4s forwards;
-					animation: helix .8s ease-in-out .4s forwards;
-				}			
-				&:nth-child(4){
-					-webkit-animation: helix .8s ease-in-out .6s forwards;
-					animation: helix .8s ease-in-out .6sforwards;
-				}			
+				&.visible {
+					@include respond-min(640)
+					{
+						&:nth-child(1){
+							-webkit-animation: helix .8s ease-in-out forwards;
+							animation: helix .8s ease-in-out forwards;
+						}			
+						&:nth-child(2){
+							-webkit-animation: helix .8s ease-in-out .2s forwards;
+							animation: helix .8s ease-in-out .2s forwards;
+						}			
+						&:nth-child(3){
+							-webkit-animation: helix .8s ease-in-out .4s forwards;
+							animation: helix .8s ease-in-out .4s forwards;
+						}			
+						&:nth-child(4){
+							-webkit-animation: helix .8s ease-in-out .6s forwards;
+							animation: helix .8s ease-in-out .6sforwards;
+						}			
+					}
 					
 				}
 
@@ -130,7 +172,6 @@
 					}
 				}	
 				img{
-					background: $gold;
 					object-fit:cover;
 					height: 100%;
 					width: 100%;

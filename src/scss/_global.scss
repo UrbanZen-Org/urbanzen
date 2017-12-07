@@ -142,6 +142,12 @@ main{
 	    border-top: 0px;
 	    transform: rotate(45deg) translate(-50%, -50%);
 	  }
+	  &.gold{
+	  	color:$gold;
+	  	&:after{
+	  		border-color: $gold;
+	  	}
+	  }
 	}
 	.slick-slide{
 		outline: none;
@@ -341,6 +347,12 @@ main{
 			background-size: cover;
 			background-position: center center;
 			overflow: hidden;
+		}
+		.cover-image{
+			object-fit:cover;
+			height: 100%;
+			width: 100%;
+			max-width: none;
 		}
 	}
 

@@ -4,8 +4,11 @@
 {% set experience_images = post.experience_images %}
 
 {% block content %}
-	<div class="cover-area">
-		<iframe class="hpvideo hide-mobile" src="https://player.vimeo.com/video/{{ post.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="cover-area" style="background-image: url({{ post.thumbnail.src }});">
+		{% if post.vimeo_id %}
+			<iframe class="hpvideo hide-mobile" src="https://player.vimeo.com/video/{{ post.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		{% endif %}
+		{% if post.vimeo_id %}
 		<div class="mobile-video hide-desktop">
 			<div class="video-item" data-video-id="{{ post.vimeo_id }}">
 				<img class="lazyload" data-src="{{ post.video_placeholder }}">
@@ -22,10 +25,17 @@
 				</div>
 			</div>
 		</div>
+		{% else %}
+			<div class="hide-desktop">
+				<img class="lazyload" data-src="{{ post.video_placeholder }}">
+			</div>
+		{% endif %}
+
+		<div class="cover-text">
+			<h1>{{ post.post_title }}</h1>
+		</div>
 		
-		<h1 class="light">{{ post.pot_title }}</h1>
-		
-		<div class="down-arrow" data-target="#callout"></div>
+		<div class="down-arrow gold" data-target="#callout"></div>
 	</div>
 
 	<div class="full-callout" id="callout">

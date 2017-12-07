@@ -1,4 +1,30 @@
 .page-holiday-experience{
+	.cover-area{
+		.cover-text{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			text-align: center;
+		}
+			background-size: cover;
+		background-position: center center;
+		@include respond-max($tablet-portrait) {
+			display: block;
+			background:transparent;
+			background-position: -9999 -9999;
+		}
+		h1{
+			color: $gold;
+			font-size: 35px;
+			line-height: 40px;
+			text-transform: uppercase;
+		}
+	}
 	.full-callout{
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		color: $gold;

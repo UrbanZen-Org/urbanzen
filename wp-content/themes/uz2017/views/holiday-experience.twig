@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-holiday-experience black-bg' %}
+{% set callout_blocks = post.callout_blocks %}
+{% set experience_images = post.experience_images %}
+
+{% block content %}
+	<div class="cover-area">
+		<iframe class="hpvideo hide-mobile" src="https://player.vimeo.com/video/{{ post.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<div class="mobile-video hide-desktop">
+			<div class="video-item" data-video-id="{{ post.vimeo_id }}">
+				<img class="lazyload" data-src="{{ post.video_placeholder }}">
+				<div class="play-icon">
+					<i class="material-icons">play_arrow</i>
+				</div>
+			</div>
+			<div class="video-overlay">
+				<i class="close material-icons">close</i>
+				<div class="video-holder">
+					<div class="video-responsive">
+						<div id="video"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<h1 class="light">{{ post.pot_title }}</h1>
+		
+		<div class="down-arrow" data-target="#callout"></div>
+	</div>
+
+	<div class="full-callout" id="callout">
+		<div class="container">{{ function('nl2br', post.callout) }}</div>
+	</div>
+	{% if callout_blocks %}
+		<div class="callout-blocks">
+			{% for block in callout_blocks %}
+				<div class="callout-block">
+					<div class="callout-image">
+
+						<img class="lazyload" data-src="{{ block.image }}">
+					</div>
+					<div class="callout-text">
+						<h2>{{ block.title }}</h2>
+						<div class="text-content">{{ block.text }}</div>
+					</div>
+				</div>				
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	{% if experience_images %}
+		<div class="experience-uz">
+			<h2>{{ post.experience_title }}</h2>
+			<p>{{ post.experience_text }}</p>
+			<div class="experience-images">
+				{% for image in experience_images %}
+					<figure>
+					  <img class="lazyload" data-src="{{ image.src }}">
+					  <figcaption></figcaption>
+					</figure>
+				{% endfor %}
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}{# end content #}

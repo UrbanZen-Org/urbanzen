@@ -1,0 +1,15 @@
+<!-- Instagram -->
+<div class="instagram-block">
+	<div class="container">
+		<h2>{{ options.instagram_title }}</h2>
+		<div class="instagram-images row no-break">
+			{% set instagrams = get_instagrams() %}
+			{% for gram in instagrams %}
+		    <div class="col-3">
+					<a href="{{ gram.link }}" target="_blank"><img src="{{ gram.images.standard_resolution.url }}" /></a>
+				</div>
+			{% endfor %}
+		</div>	
+		<a href="https://www.instagram.com/urbanzen/" class="btn transparent">{{ options.instagram_link_text }}</a>
+	</div>
+</div>

@@ -79,8 +79,8 @@
 				.text-content p{
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					font-size: 16px;
-					line-height: 22px;
-					letter-spacing: .02em;
+					line-height: 23px;
+					letter-spacing: .03em;
 					margin-bottom: 1em;
 					&:last-child{
 						margin-bottom: 0;
@@ -110,16 +110,47 @@
 		p{
 			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			font-size: 16px;
-			line-height: 22px;
-			letter-spacing: .02em;
+			line-height: 23px;
+			letter-spacing: .03em;
 			margin-bottom: 1em;
 			&:last-child{
 				margin-bottom: 0;
 			}
 		}
 		.experience-images{
+			padding-top: 2em;
+			@include respond($tablet-portrait) {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+			}
 			figure{
-
+				padding-bottom: 20px;
+				@include respond($tablet-portrait) {
+					flex-basis: 24%;
+					padding-bottom: 1%;
+				}
+				figcaption{
+					position: absolute;
+					left: 0;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					background: rgba(0,0,0,.7);
+					opacity: 0;
+					@include transition((opacity .5s ease-in-out, visibility .5s ease-in-out));
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: white;
+					cursor: pointer;
+				}
+				&:hover{
+					figcaption{
+						opacity: 1;
+					}
+				}
 			}
 
 		}

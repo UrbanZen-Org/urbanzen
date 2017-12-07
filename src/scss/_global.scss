@@ -175,14 +175,20 @@ main{
 					background-image: none;
 					height: calc(100vh - 50px);
 				}
-				
-				@include respond-min($tablet-landscape)
-				{
-					background-image: none!important;
-					background: black;
-					background-size: cover;		
-					background-position: center;
+				&.video{
+					@include respond-min($tablet-landscape)
+					{
+						background-image: none!important;
+						background: black;
+						background-size: cover;		
+						background-position: center center;
+					}
 				}
+				&.image{
+						background-size: cover;		
+						background-position: center center;
+				}
+				
 				.mobile-only{
 					@include respond-min($tablet-landscape)
 					{

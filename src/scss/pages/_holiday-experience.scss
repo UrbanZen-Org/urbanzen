@@ -22,17 +22,22 @@
 			color: $gold;
 			font-size: 35px;
 			line-height: 40px;
+			letter-spacing: 0.07em;
 			text-transform: uppercase;
 		}
 	}
 	.full-callout{
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		color: $gold;
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 18px;
+		line-height: 22px;
 		padding: 4.5em 0;
 		text-align: center;
 		letter-spacing: .02em;
+		@include respond($tablet-portrait) {
+			font-size: 20px;
+			line-height: 26px;
+		}
 	}
 	.callout-blocks{
 		@include respond($tablet-portrait) {
@@ -52,6 +57,7 @@
 				flex-direction: row;
 			}
 			h2{
+				font-size: 20px;
 				margin-bottom: 1em;
 			}
 			.callout-image{
@@ -72,8 +78,8 @@
 				}	
 				.text-content p{
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-					font-size: 20px;
-					line-height: 24px;
+					font-size: 16px;
+					line-height: 22px;
 					letter-spacing: .02em;
 					margin-bottom: 1em;
 					&:last-child{
@@ -90,9 +96,32 @@
 					}
 				a{
 					color: $gold;
-					text-decoration: underline;
 				}
 			}
+		}
+	}
+	.experience-uz{
+		color: $gold;
+		text-align: center;
+		h2{
+			font-size: 20px;
+			margin-bottom: 1em;
+		}
+		p{
+			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			line-height: 22px;
+			letter-spacing: .02em;
+			margin-bottom: 1em;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.experience-images{
+			figure{
+
+			}
+
 		}
 	}
 }

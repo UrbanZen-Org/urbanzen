@@ -58,24 +58,22 @@
 		</div>
 	{% endif %}
 
-	{% if experience_images %}
-		<div class="experience-uz">
-			<div class="container">
-				<h2>{{ post.experience_title }}</h2>
-				<p>{{ post.experience_text }}</p>
-				<div class="experience-images">
-					{% for image in experience_images %}
-						<figure>
-							<div class="img-wrap square">
-						  	<img class="lazyload" data-src="{{ image.url }}">
-						  	{% if TimberPost(image.id).post_excerpt %}
-						  		<figcaption>{{ TimberPost(image.id).post_excerpt }}</figcaption>
-						  	{% endif %}
-							</div>
-						</figure>
-					{% endfor %}
-				</div>
+	<div class="experience-uz">
+		<div class="container">
+			<h2>{{ post.experience_title }}</h2>
+			<p>{{ post.experience_text }}</p>
+			<div class="experience-images">
+				{% for image in experience_images %}
+					<figure>
+						<div class="img-wrap square">
+					  	<img class="lazyload" data-src="{{ image.url }}">
+					  	{% if TimberPost(image.id).post_excerpt %}
+					  		<figcaption>{{ TimberPost(image.id).post_excerpt }}</figcaption>
+					  	{% endif %}
+						</div>
+					</figure>
+				{% endfor %}
 			</div>
 		</div>
-	{% endif %}
+	</div>
 {% endblock %}{# end content #}

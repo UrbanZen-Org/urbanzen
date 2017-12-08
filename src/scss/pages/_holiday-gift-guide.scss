@@ -5,13 +5,22 @@
 	.cover-area{
 		color: $ivory;
 		text-align: center;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		.header-titles{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 0 20px;
+		}
 		background-position: center center;
 		@include respond-max($tablet-portrait)
 		{
-			height: 50vh;
+			background-position: -9999px -9999px;
+			background: transparent;
 		}
 	}
 	.header-subtitle{

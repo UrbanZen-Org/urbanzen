@@ -1,0 +1,91 @@
+.page-objects-of-desire{
+	h2,h3{
+		text-align: center;
+		text-transform: uppercase;
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		letter-spacing: .1em;
+		margin-bottom: .5em;
+	}
+	p{
+		font-size: 16px;
+		line-height: 22px;
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
+	h3{
+		font-size: 18px;
+	}
+	.cover-area{
+		min-height: 35vh;
+	}
+	.callout{
+		margin-top: 40px;
+		color: $gold;
+		text-align: center;
+		p{
+			max-width: 800px;
+			margin: 0 auto 2em;
+			font-size: 16px;
+			line-height: 22px;
+			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+	}
+	.image-blocks{
+		padding: 20px;
+		@include respond($tablet-portrait) {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.large-square{
+			flex-basis: 49%;
+
+			margin-bottom: 2%;
+		}
+		.four-up{
+			flex-basis: 49%;	
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-bottom: 2%;
+			
+			figure{
+				flex-basis: 48%;
+				margin-bottom: 20px;
+				@include respond($tablet-portrait) {
+					margin-bottom: 0;
+					&:nth-child(1), &:nth-child(2){
+						margin-bottom: 4%;
+					}
+				}
+			}
+		}
+		.full-width{
+			img{
+				max-width: none;
+				position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+			}
+			margin-left: -20px;
+			margin-right: -20px;
+			width: calc(100% + 40px);
+		}		
+	}
+	.inquire{
+		text-align: center;
+		color: $gold;
+		margin-top: 40px;
+		h2{
+			margin-bottom: .5em;
+		}
+		a{
+			color: $gold;
+		}
+		.cta-button{
+			border-color: $gold;
+		}
+	}
+}

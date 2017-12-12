@@ -4,6 +4,7 @@ var $ = require('jquery');
 var lazysizes = require('lazysizes');
 var unveilhooks = require('unveilhooks');
 var Cookies = require('js-cookie');
+var Parallax = require('scroll-parallax');
 
 
 var global = {
@@ -17,8 +18,11 @@ var global = {
     this.menu();
     this.accordian();
     this.mailchimpSignup.init();
+    this.parallax();
   },
-  
+  parallax: function(){
+    var p = new Parallax('.parallax').init();
+  },
   resize:function(){
     
   },  

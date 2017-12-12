@@ -1,0 +1,50 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-objects-of-desire black-bg' %}
+
+{% block content %}
+	<div class="cover-area" style="background-image: url({{ post.thumbnail.src }});">
+		<div class="hide-desktop">
+			<img class="lazyload" data-src="{{ post.header_image_mobile }}">
+		</div>
+
+		<div class="down-arrow gold" data-target="#callout"></div>
+	</div>
+	<div class="callout" id="callout">
+		<div class="container">
+			{{ post.callout }}
+		</div>
+	</div>
+	<div class="image-blocks">
+		{% for block in post.blocks %}
+		 {% if block.acf_fc_layout == 'single_image' %}
+		 	{% if block.full_width %}
+		 		<figure class="full-width" style="position: relative; height: 300px; overflow: hidden;">
+  				<img class="parallax" src="{{ block.image }}" />
+				</figure>
+			{% else %}
+				<figure class="large-square">
+					<div class="img-wrap square">
+						<img class="lazyload" data-src="{{ block.image }}">
+					</div>
+				</figure>
+		 	{% endif %}
+		 {% elseif block.acf_fc_layout == 'four_images' %}
+				<div class="four-up">
+					{% for image in block.images %}
+						<figure class="square">
+							<div class="img-wrap square">
+								<img class="lazyload" data-src="{{ image.url }}">
+							</div>
+						</figure>
+					{% endfor %}
+				</div>
+		 {% endif %}
+		{% endfor %}
+	</div>
+	<div class="photo-gallery"></div>
+	<div class="inquire">
+		<h2>Inquire</h2>
+		{{ post.inquire_text }}
+		<a class="cta-button transparent" href="{{ post.inquire_button_link }}">learn more</a>
+	</div>
+{% endblock %}{# end content #}

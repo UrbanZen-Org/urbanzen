@@ -18,7 +18,7 @@
 		{% for block in post.blocks %}
 		 {% if block.acf_fc_layout == 'single_image' %}
 		 	{% if block.full_width %}
-		 		<figure class="full-width" style="position: relative; height: 300px; overflow: hidden;">
+		 		<figure class="full-width" style="position: relative; height: 400px; overflow: hidden;">
   				<img class="parallax" src="{{ block.image }}" />
 				</figure>
 			{% else %}

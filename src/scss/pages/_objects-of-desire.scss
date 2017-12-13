@@ -63,6 +63,12 @@
 		}
 		.full-width{
 			margin-bottom: 20px;
+			position: relative; 
+			height: 450px; 
+			overflow: hidden;
+			@include respond($tablet-portrait) {
+				height: 300px;
+			}
 			img{
 				max-width: none;
 				position: absolute;

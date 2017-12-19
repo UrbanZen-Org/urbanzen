@@ -11,12 +11,21 @@
 			bottom: 0;
 			text-align: center;
 		}
-			background-size: cover;
+		background-size: cover;
 		background-position: center center;
 		@include respond-max($tablet-portrait) {
 			display: block;
-			background:transparent;
-			background-position: -9999 -9999;
+			background:black;
+			background-image: none!important;
+			background-position: -9999px -9999px;
+		}
+		h3{
+			font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif; 
+			font-size: 15px; 
+			text-transform: uppercase; 
+			letter-spacing: .05em; 
+			margin-bottom: 6px;
+			color: $gold;
 		}
 		h1{
 			color: $gold;
@@ -78,8 +87,8 @@
 				}	
 				.text-content p{
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-					font-size: 16px;
-					line-height: 23px;
+					font-size: 15px;
+					line-height: 22px;
 					letter-spacing: .03em;
 					margin-bottom: 1em;
 					&:last-child{
@@ -109,8 +118,8 @@
 		}
 		p{
 			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-			font-size: 16px;
-			line-height: 23px;
+			font-size: 15px;
+			line-height: 22px;
 			letter-spacing: .03em;
 			margin-bottom: 1em;
 			&:last-child{

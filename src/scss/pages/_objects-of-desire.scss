@@ -1,3 +1,4 @@
+
 .page-objects-of-desire{
 	h2,h3{
 		text-align: center;
@@ -16,6 +17,14 @@
 	}
 	.cover-area{
 		min-height: 35vh;
+		background-size: cover;
+		background-position: center center;
+		@include respond-max($tablet-portrait) {
+			display: block;
+			background:black;
+			background-image: none!important;
+			background-position: -9999px -9999px;
+		}
 	}
 	.callout{
 		margin-top: 40px;
@@ -39,8 +48,10 @@
 		}
 		.large-square{
 			flex-basis: 49%;
-
-			margin-bottom: 2%;
+			margin-bottom: 20px;
+			@include respond($tablet-portrait) {
+				margin-bottom: 2%;
+			}
 		}
 		.four-up{
 			flex-basis: 49%;	
@@ -48,7 +59,10 @@
 			align-items: center;
 			flex-wrap: wrap;
 			justify-content: space-between;
-			margin-bottom: 2%;
+			margin-bottom: 0px;
+			@include respond($tablet-portrait) {
+				margin-bottom: 2%;
+			}
 			
 			figure{
 				flex-basis: 48%;

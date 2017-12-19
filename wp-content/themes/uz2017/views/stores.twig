@@ -16,7 +16,7 @@
 	{% if post.stores %}
 		<div class="stores-list">
 			{% for store in post.stores %}
-				<div class="store-item">
+				<div class="store-item" id="{{ store.title | replace(' ', '-') | lower }}">
 					<div class="accordian-section">
 						<div class="accordian-title"><h2>{{ store.title }}</h2><div class="material-icons accordian-arrow"></div></div>
 						<div class="accordian-content">

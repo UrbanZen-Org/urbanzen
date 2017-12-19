@@ -19,16 +19,23 @@ var express = {
         focusOnSelect: false,
         accessibility: false   
 			});
+      $('.stores-list .store-item').on('click',function(e){
+
+      });
       $('.stores-list .store-item .accordian-section').on('click',function(e){
-        console.log($(this));
         if ($(this).hasClass('open')){
           $('.stores-slideshow .slides').slick('slickGoTo', $(this).parent().index());
+          history.pushState(null, null, '#'+$(this).parent().attr('id'));
         }
       });
       $('.retail-partners').on('click',function(e){
         $('.stores-slideshow .slides').slick('slickGoTo', 3);
       });
-  	}	
+  	}
+    if(window.location.hash) {
+      $('.store-item' + window.location.hash + ' .accordian-title').trigger('click');
+      
+    }
   },
   
   resize:function(){

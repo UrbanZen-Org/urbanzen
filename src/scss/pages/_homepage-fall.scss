@@ -51,7 +51,7 @@
 .index{
 	header{
 		opacity: 0;
-		@include animation('fadeInMenu .5s linear 4s forwards');
+		@include animation('fadeInMenu .5s linear 3s forwards');
 		@include keyframes (fadeInMenu) {
 	    0% {opacity: 0;}
 	    100% {opacity: 1;}
@@ -79,7 +79,7 @@
 		visibility: hidden;
 		@include respond-min($tablet-portrait)
 		{
-			@include animation('fadeIn .5s linear 4s forwards');
+			@include animation('fadeIn .5s linear 3s forwards');
 		}
 		.material-icons{
 			cursor: pointer;

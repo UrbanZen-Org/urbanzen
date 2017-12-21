@@ -98,6 +98,11 @@
 			}
 		}
 	}
+	.full-slideshow[data-arrows=true]{
+		.opening-logos{
+			display: none;
+		}
+	}
 	.opening-logos{
 		position: absolute;
 		left: 0;

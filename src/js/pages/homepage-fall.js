@@ -61,7 +61,7 @@ var homepage = {
       var options = {
         fade: true,
         appendDots: '.full-slideshow-nav',
-        arrows : arrows,
+        dots : arrows,
         autoplay: 1,
         autoplaySpeed: 4000,
         speed: 0,

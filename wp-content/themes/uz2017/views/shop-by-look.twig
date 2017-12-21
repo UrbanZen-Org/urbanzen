@@ -35,8 +35,12 @@
 			<div class="look-row">
 				{% for look in row.looks %}
 					<div class="look {{ look.layout }} {% if look.hide_mobile %}hide mobile{% endif %}">
-						<img class="mobile-image" src="{{ look.mobile_image }}"/>
-						<img src="{{ look.image }}">
+						{% if look.layout == 'callout' %}
+							<p>{{ look.callout_message }}</p>
+						{% else %}
+							<img class="mobile-image" src="{{ look.mobile_image }}"/>
+							<img src="{{ look.image }}">
+						{% endif %}
 						{% if look.products %}
 							<div class="look-product-links" data-product-links="">
 								{% for product in look.products %}

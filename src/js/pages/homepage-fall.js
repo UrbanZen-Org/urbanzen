@@ -53,20 +53,23 @@ var homepage = {
         });
       });
 
-     
+      var arrows = $('.page-home .full-slideshow').attr('data-arrows');
+      console.log(arrows);
       // imagesLoaded($('.full-slideshow')[0], function(){
       //   $('.full-slideshow').addClass('visible');
       // });
       var options = {
         fade: true,
         appendDots: '.full-slideshow-nav',
-        arrows : false,
+        arrows : arrows,
         autoplay: 1,
         autoplaySpeed: 4000,
         speed: 0,
         pauseOnHover: false,
         pauseOnFocus: false,
-        rows:0
+        rows:0,
+        prevArrow: '<div class="slick-arrow arrow-left"></div>',
+        nextArrow: '<div class="slick-arrow arrow-right"></div>'
       };
       $('.full-slideshow .slides').on('init', function(event,slick){
         var slideClasses = slick.$slides[0].className;

@@ -34,6 +34,19 @@
 				// width: calc(25% - 11.25px);
 				flex-basis: 24.625%;
 			}
+			&.callout{
+				background: black;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				p{
+					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					font-size: 30px;
+					color: white;
+					line-height: 1em;
+					letter-spacing: 0;
+				}
+			}
 			&.two_up{
 				@include respond-min(640)
 				{

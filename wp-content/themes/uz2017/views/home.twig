@@ -6,7 +6,7 @@
 	
 {% block content %}
 	<div class="homepage-fall">
-		<section class="full-slideshow">
+		<section class="full-slideshow" data-arrows="{{ post.arrows ? 'true' : 'false' }}">
 			<div class="sound-controls"><i class="material-icons"></i>
 				<audio>
 			  	<source src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Fall+17+Teaser+Audio.mp3" type="audio/mpeg">

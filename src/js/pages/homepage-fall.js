@@ -65,7 +65,7 @@ var homepage = {
         arrows : false,
         autoplay: 1,
         autoplaySpeed: 4000,
-        speed: 0,
+        speed: dots == "true" ? 1000 : 0,
         pauseOnHover: false,
         pauseOnFocus: false,
         rows:0,

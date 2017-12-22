@@ -98,9 +98,12 @@
 			}
 		}
 	}
-	.full-slideshow[data-arrows=true]{
+	.full-slideshow[data-dots="true"]{
 		.opening-logos{
 			display: none;
+		}
+		.sound-controls{
+			display: none;	
 		}
 	}
 	.opening-logos{
@@ -179,6 +182,16 @@
 
 		}
 	}
+	.full-slideshow[data-dots="true"]{
+			.slides{
+				.slide.loaded:first-child{
+					.slide-cover .slide-info{
+					@include animation('fadeInSlide .5s linear forwards');
+					}
+				}
+
+			}
+		}
 	.full-slideshow{
 		@include respond-min($tablet-portrait)
 		{
@@ -186,11 +199,8 @@
 		}
 		.slick-arrow{
 			display: none!important;
-		}
+		}		
 		.slides{
-			@include respond-max($tablet-portrait)
-			{
-			}
 			.slide:first-child{
 				.slide-cover .slide-info{
 					@include animation('fadeInSlide .3s linear 4.5s forwards');

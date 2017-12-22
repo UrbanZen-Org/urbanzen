@@ -53,15 +53,16 @@ var homepage = {
         });
       });
 
-      var arrows = $('.page-home .full-slideshow').attr('data-arrows');
-      console.log(arrows);
+      var dots = $('.page-home .full-slideshow').attr('data-dots');
+      console.log(dots);
       // imagesLoaded($('.full-slideshow')[0], function(){
       //   $('.full-slideshow').addClass('visible');
       // });
       var options = {
         fade: true,
         appendDots: '.full-slideshow-nav',
-        dots : arrows,
+        dots : dots == "true" ? true : false,
+        arrows : false,
         autoplay: 1,
         autoplaySpeed: 4000,
         speed: 0,
@@ -71,6 +72,11 @@ var homepage = {
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>'
       };
+      if (dots){
+        options.customPaging = function(slider, i) {        
+          return '<a class="dot"></a>';
+        }
+      }
       $('.full-slideshow .slides').on('init', function(event,slick){
         var slideClasses = slick.$slides[0].className;
           if(slideClasses.indexOf('video') !== -1){

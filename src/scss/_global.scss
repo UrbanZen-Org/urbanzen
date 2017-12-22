@@ -160,6 +160,39 @@ main{
 		{
 			height: auto;
 		}
+		.full-slideshow-nav{
+			position: absolute;
+			bottom: 5%;
+			width: 100%;
+			text-align: center;
+			ul{
+				display: inline-block;
+				li{
+					display: inline-block;
+					padding: 5px;
+					font-size: 0;
+					&.slick-active{
+						.dot{
+							background: white;
+						}
+					}
+					.dot{
+						text-indent: -9999px;
+    				overflow:hidden;
+						display: block;
+						border: none;
+						border-radius: 50%;
+						width: 8px;
+						height: 8px;
+						background: #aaa;
+						font-size: 0;
+						line-height: 0;
+						text-indent: -1000em;
+						outline: none;
+					}
+				}
+			}
+		}
 		.slides{
 			.slide{
 				outline: none;

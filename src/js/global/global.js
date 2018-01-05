@@ -50,31 +50,31 @@ var global = {
   },
   menu:  function(){
 
-    var nav_link = $('nav.top-menu li a');
+    // var nav_link = $('nav.top-menu li a');
     
-    nav_link.click(function(e){
-      var link = $(this);
-      if ($(this).parent().find('ul').length){
-        e.preventDefault();
+    // nav_link.click(function(e){
+    //   var link = $(this);
+    //   if ($(this).parent().find('ul').length){
+    //     e.preventDefault();
 
-        var parent_ul = $(this).parent().find('ul');
+    //     var parent_ul = $(this).parent().find('ul');
 
-        if (parent_ul.hasClass('open')){
-          parent_ul.removeClass('open').slideUp(300);
-          parent_ul.find('ul').removeClass('open');
-          $(this).parent().find('ul li').removeClass('current-menu-parent');
-        }else{
-          parent_ul.first().addClass('open').slideDown(300);
-          parent_ul.parent().siblings().find('ul').removeClass('open').slideDown(300);
-          parent_ul.parent().siblings().removeClass('current-menu-parent');
-          $('.main-menu').animate({
-            scrollTop: link.parent().position().top - 80
-          }, 400);
-        }
-        $(this).parent().toggleClass('current-menu-parent');
+    //     if (parent_ul.hasClass('open')){
+    //       parent_ul.removeClass('open').slideUp(300);
+    //       parent_ul.find('ul').removeClass('open');
+    //       $(this).parent().find('ul li').removeClass('current-menu-parent');
+    //     }else{
+    //       parent_ul.first().addClass('open').slideDown(300);
+    //       parent_ul.parent().siblings().find('ul').removeClass('open').slideDown(300);
+    //       parent_ul.parent().siblings().removeClass('current-menu-parent');
+    //       $('.main-menu').animate({
+    //         scrollTop: link.parent().position().top - 80
+    //       }, 400);
+    //     }
+    //     $(this).parent().toggleClass('current-menu-parent');
         
-      }
-    });
+    //   }
+    // });
     $('.menu-link').click(function(e){
       $('body').toggleClass('lock-scroll');
       $('body').toggleClass('menu-open');

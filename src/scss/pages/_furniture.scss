@@ -11,7 +11,7 @@
 	}
 	.content-rows{
 		padding: 0 20px;
-			@include respond-max(1400) {
+			@include respond-max($tablet-portrait) {
 				.half{
 					width: 100%;
 					&:first-child{
@@ -19,7 +19,7 @@
 					}
 				}
 				.quarter{
-					width: calc(50% - 10px);
+					width: calc(50% - 5px);
 					margin-bottom: 20px;
 					
 				}

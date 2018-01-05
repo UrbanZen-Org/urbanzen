@@ -135,9 +135,13 @@
 				font-weight: bold;
 				margin: 0 auto 10px;
 			}
+			label{
+				text-align: left;
+			}
 			input, textarea{
 				width: 100%;
-				border: 1px solid #ccc;				
+				border: 1px solid #ccc;
+				text-indent: 10px;		
 			}
 			input{
 				line-height: 30px;

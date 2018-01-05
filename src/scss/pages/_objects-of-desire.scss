@@ -16,9 +16,10 @@
 		font-size: 18px;
 	}
 	.cover-area{
-		min-height: 35vh;
+		min-height: 45vh;
 		background-size: cover;
 		background-position: center center;
+		background-attachment: fixed;
 		@include respond-max($tablet-portrait) {
 			display: block;
 			background:black;

@@ -47,6 +47,7 @@ window.uz.modules.push(require('./pages/silk-road-campaign'));
 window.uz.modules.push(require('./pages/alchemist-campaign'));
 window.uz.modules.push(require('./pages/stores'));
 window.uz.modules.push(require('./pages/holiday-gift-guide'));
+window.uz.modules.push(require('./pages/collection'));
 
 window.uz.init(window.uz);
 document.addEventListener('DOMContentLoaded', window.uz.ready.bind(window.uz));

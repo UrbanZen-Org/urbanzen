@@ -190,10 +190,10 @@ echo '<div class="current-collection-products" id="collection-products">';
 
 	      foreach($products as $index=>$product) { ?>
 
-	        <div class="product" data-id="<?php echo $product['id']; ?>">
-	          <a target="_blank" href="http://urbanzen.myshopify.com/products/<?php echo $product['handle']; ?>">
-	            <img src="<?php echo $product['images'][0]['src']; ?>" alt="" />
-	            <h4><?php echo $product['title']; ?></h4>
+	        <div class="product" style="width:100%;" data-id="<?php echo $product['id']; ?>">
+	          <a target="_blank" href="http://urbanzen.myshopify.com/products/<?php echo $product['handle']; ?>" style="padding:5px 5px 0;text-decoration: none;">
+	            <img src="<?php echo $product['images'][0]['src']; ?>" alt="" style="display:inline-block;width:15%;"/>
+	            <h4 style="width:74%;display:inline-block;vertical-align: bottom;padding:0;margin: 0;"><?php echo $product['title']; ?></h4>
 	          </a>
 	        </div>
 

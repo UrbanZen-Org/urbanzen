@@ -1,7 +1,7 @@
 nav.top-menu{		
 	width: 100%;
 	background: black;
-	z-index: 99;
+	z-index: 999;
 	position: fixed;
 	top: 0;
 	@include respond-min($tablet-landscape) {

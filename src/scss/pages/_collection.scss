@@ -1,0 +1,35 @@
+.collection{
+	.collection-slideshow{
+		.collection-slide{
+			position: relative;
+			.slide-overlay{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				color: white;
+				z-index: 99;
+				display: flex;
+	    	align-items: center;
+	    	justify-content: center;
+	    	padding: 20px;
+	    	&.left{
+	    		justify-content:flex-start;
+	    	}
+	    	&.right{
+	    		justify-content:flex-end;
+	    	}
+				.slide-text{
+
+					h4{
+						
+					}
+					p{
+
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+{% set body_class = 'collection' %}
+
+{% block content %}
+<section class="collection-slideshow hide-mobile">
+	<div class="collection-slides">
+		{% for slide in post.desktop_slides %}		
+			<div class="collection-slide">
+				<div class="slide-overlay left">
+					{# <div class="slide-text">
+						<h4>{{ slide.title }}</h4>
+						<p>{{ TimberPost(slide.id).post_excerpt }}</p>
+					</div> #}
+				</div>
+				<img src="{{ slide.url }}">
+			</div>			
+		{% endfor %}
+	</div>
+</section>
+<section class="collection-grid">
+		{% for item in products %}
+			{{ function('print_r', item)}}
+			{{ item['title'] }}
+			{{ item.handle }}
+			<img src="{{ item.images.0.src }}" alt="{{ item.title }}">
+		{% endfor %}
+</section>
+{% endblock %}{# end content #}

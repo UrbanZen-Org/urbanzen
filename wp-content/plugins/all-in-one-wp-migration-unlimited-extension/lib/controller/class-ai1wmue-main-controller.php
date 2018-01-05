@@ -111,7 +111,8 @@ class Ai1wmue_Main_Controller {
 			<p>
 				<?php
 				_e(
-					'All in One WP Migration is not activated. Please activate the plugin in order to use Unlimited extension.',
+					'Unlimited extension requires <a href="https://wordpress.org/plugins/all-in-one-wp-migration/" target="_blank">All-in-One WP Migration plugin</a> to be activated. ' .
+					'<a href="https://help.servmask.com/knowledgebase/install-instructions-for-unlimited-extension/" target="_blank">Unlimited extension install instructions</a>',
 					AI1WMUE_PLUGIN_NAME
 				);
 				?>

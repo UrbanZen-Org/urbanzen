@@ -145,42 +145,41 @@ add_action( 'init', 'register_menus' );
 
 // Create Post Types
 
-// function create_projects() {
-//   $labels = array(
-//     'name'               => __( 'Projects'),
-//     'singular_name'      => __( 'Project'),
-//     'menu_name'          => __( 'Projects'),
-//     'name_admin_bar'     => __( 'Projects'),
-//     'add_new'            => __( 'Add New'),
-//     'add_new_item'       => __( 'Add New Project'),
-//     'new_item'           => __( 'New Project'),
-//     'edit_item'          => __( 'Edit Project'),
-//     'view_item'          => __( 'View Project'),
-//     'all_items'          => __( 'All Projects'),
-//     'search_items'       => __( 'Search Projects'),
-//     'parent_item_colon'  => __( 'Parent Project:'),
-//     'not_found'          => __( 'No Projects found.'),
-//     'not_found_in_trash' => __( 'No Projects found in Trash.')
-//   );
+function create_collections() {
+  $labels = array(
+    'name'               => __( 'Collections'),
+    'singular_name'      => __( 'Collection'),
+    'menu_name'          => __( 'Collections'),
+    'name_admin_bar'     => __( 'Collections'),
+    'add_new'            => __( 'Add New'),
+    'add_new_item'       => __( 'Add New Collection'),
+    'new_item'           => __( 'New Collection'),
+    'edit_item'          => __( 'Edit Collection'),
+    'view_item'          => __( 'View Collection'),
+    'all_items'          => __( 'All Collections'),
+    'search_items'       => __( 'Search Collections'),
+    'parent_item_colon'  => __( 'Parent Collection:'),
+    'not_found'          => __( 'No Collections found.'),
+    'not_found_in_trash' => __( 'No Collections found in Trash.')
+  );
 
-//   $args = array(
-//     'labels'             => $labels,
-//     'public'             => true,
-//     'publicly_queryable' => true,
-//     'show_ui'            => true,
-//     'query_var'          => true,
-//     'menu_icon'          => 'dashicons-format-gallery',
-//     'menu_position'      => 2,
-//     'rewrite'            => array( 'slug' => 'projects'),
-//     'capability_type'    => 'post',
-//     'has_archive'        => true,
-//     'hierarchical'       => true,
-//     'taxonomies'  => array( 'category' ),
-//     'supports'           => array('title','thumbnail', 'editor')
-//   );
-//   register_post_type( 'projects', $args );
-// }
-// add_action( 'init', 'create_projects' );
+  $args = array(
+    'labels'             => $labels,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'query_var'          => true,
+    'menu_icon'          => 'dashicons-format-gallery',
+    'menu_position'      => 24,
+    'rewrite'            => array( 'slug' => 'collections'),
+    'capability_type'    => 'post',
+    'has_archive'        => false,
+    'hierarchical'       => true,
+    'supports'           => array('title','thumbnail', 'editor')
+  );
+  register_post_type( 'collections', $args );
+}
+add_action( 'init', 'create_collections' );
 
 //Remove needless Wordpress stuff
 function remove_admin_bar_links() 

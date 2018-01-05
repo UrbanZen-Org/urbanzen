@@ -36,7 +36,34 @@
 				background: transparent;
 			}
 		}
-		
+		.img-wrap{
+			position: relative;
+			overflow: hidden;
+			&:hover{
+				.caption{
+					@include transform(translateY(0));
+				}		
+			}
+			.caption{
+				background: black;
+				width: 100%;
+				display: block;
+				@include transition((transform .3s ease-in-out, -webkit-transform .3s ease-in-out));
+				padding: 20px;
+				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 16px;
+				color: white;
+				line-height: 30px;
+				@include respond($tablet-portrait) {
+					background: rgba(0,0,0,.7);
+					@include transform(translateY(100%));
+					position: absolute;
+					bottom: 0;
+					padding: 40px 20px;
+				}
+
+			}
+		}
 		.text-block{
 			
 			color: white;

@@ -48,6 +48,7 @@ window.uz.modules.push(require('./pages/alchemist-campaign'));
 window.uz.modules.push(require('./pages/stores'));
 window.uz.modules.push(require('./pages/holiday-gift-guide'));
 window.uz.modules.push(require('./pages/collection'));
+window.uz.modules.push(require('./pages/furniture'));
 
 window.uz.init(window.uz);
 document.addEventListener('DOMContentLoaded', window.uz.ready.bind(window.uz));

@@ -94,4 +94,63 @@
 		padding: 0 20px;
 		text-align: center;
 	}
+	.email-overlay{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0,0,0,.7);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		visibility: hidden;
+		@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));
+		&.open{
+			opacity: 1;
+			visibility: visible;
+		}
+		.email-popup{
+			max-width: 400px;
+			position: relative;
+			background: white;
+			padding: 20px;
+			padding-top: 30px;
+			.close{
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 10px;
+				cursor: pointer;
+			}
+			
+			h4{
+				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				margin-bottom: 10px;
+				font-size: 16px;
+			}
+			p{
+				max-width: 300px;
+				font-weight: bold;
+				margin: 0 auto 10px;
+			}
+			input, textarea{
+				width: 100%;
+				border: 1px solid #ccc;				
+			}
+			input{
+				line-height: 30px;
+				background: white;
+			}
+
+			textarea{
+
+			}
+			.wpcf7-validation-errors{
+				margin: 0;
+				max-width: 300px;
+			}
+		}
+	}
 }

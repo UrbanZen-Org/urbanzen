@@ -38,7 +38,15 @@
 	
 	<div class="inquiry-text">
 		{{ post.inquiry_text }}
-		<a class="cta-button dark" href="mailto:{{ inquiry_email }}">Inquire</a>
+		<a class="cta-button dark email-popup-trigger">Inquire</a>
+		<div class="email-overlay">
+			<div class="email-popup">
+				<div class="close"><i class="material-icons">close</i></div>
+				<h4>{{ post.inquiry_form_title }}</h4>
+				<p>{{ post.inquiry_form_text }}</p>
+				{{ function('do_shortcode', post.inquiry_form_shortcode) }}
+			</div>
+		</div>
 	</div>
 
 {% endblock %}{# end content #}

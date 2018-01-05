@@ -51,7 +51,7 @@
 				@include transition((transform .3s ease-in-out, -webkit-transform .3s ease-in-out));
 				padding: 20px;
 				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-				font-size: 16px;
+				font-size: 14px;
 				color: white;
 				line-height: 30px;
 				@include respond($tablet-portrait) {
@@ -77,9 +77,8 @@
 				
 				p{
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-					font-size: 16px;
+					font-size: 20px;
 					color: white;
-					font-size: 24px;
 					line-height: 30px;
 				}
 			}

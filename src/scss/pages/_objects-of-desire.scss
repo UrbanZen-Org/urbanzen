@@ -82,7 +82,7 @@
 			height: 35vh; 
 			overflow: hidden;
 			@include respond($tablet-portrait) {
-				height: 300px;
+				height: 400px;
 			}
 			img{
 				max-width: none;

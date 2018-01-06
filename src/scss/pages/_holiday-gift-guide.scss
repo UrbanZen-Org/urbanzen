@@ -16,7 +16,10 @@
 			bottom: 0;
 			padding: 0 20px;
 		}
+		min-height: 65vh;
+		background-size: cover;
 		background-position: center center;
+		background-attachment: fixed;
 		@include respond-max($tablet-portrait)
 		{
 			background-position: -9999px -9999px;

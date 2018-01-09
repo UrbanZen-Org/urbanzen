@@ -95,6 +95,20 @@ class StudioLab extends TimberSite
     );
     $twig->addFunction($format_price);
     
+    $check_inventory = new Twig_SimpleFunction('check_inventory', 
+      function ($product) 
+      {
+        $out_of_stock = false;
+        foreach ($product['variants'] as $variant) {
+          $qty += $variant['inventory_quantity'];
+        }
+          if ($qty < 1){
+            $out_of_stock = true;
+          }
+        return $out_of_stock;
+      }
+    );
+    $twig->addFunction($check_inventory);
 
     $twig->addExtension(new Twig_Extension_Debug());
 

@@ -16,6 +16,15 @@ var tabletop = {
 			  slidesToScroll: 1
   		});
   	}
+    if ($('.collection-mobile-slideshow').length){
+      $('.collection-mobile-slideshow .collection-mobile-slides').slick({
+        prevArrow: '<div class="slick-arrow arrow-left"></div>',
+        nextArrow: '<div class="slick-arrow arrow-right"></div>',
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+    }
   },
   resize:function(){
     

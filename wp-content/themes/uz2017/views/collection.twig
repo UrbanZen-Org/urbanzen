@@ -6,23 +6,43 @@
 	<div class="collection-slides">
 		{% for slide in post.desktop_slides %}		
 			<div class="collection-slide">
-				<div class="slide-overlay left">
-					{# <div class="slide-text">
+{# 				<div class="slide-overlay left">
+					<div class="slide-text">
 						<h4>{{ slide.title }}</h4>
 						<p>{{ TimberPost(slide.id).post_excerpt }}</p>
-					</div> #}
-				</div>
+					</div>
+				</div> #}
 				<img src="{{ slide.url }}">
 			</div>			
 		{% endfor %}
 	</div>
 </section>
-<section class="collection-grid">
-		{% for item in products %}
-			{{ function('print_r', item)}}
-			{{ item['title'] }}
-			{{ item.handle }}
-			<img src="{{ item.images.0.src }}" alt="{{ item.title }}">
+<section class="collection-mobile-slideshow hide-desktop">
+	<div class="collection-mobile-slides">
+		{% for mobile_slide in post.mobile_slides %}		
+			<div class="collection-mobile-slide">
+{# 				<div class="slide-overlay left">
+					<div class="slide-text">
+						<h4>{{ slide.title }}</h4>
+						<p>{{ TimberPost(slide.id).post_excerpt }}</p>
+					</div>
+				</div> #}
+				<img src="{{ mobile_slide.url }}">
+			</div>			
 		{% endfor %}
+	</div>
+</section>
+<section class="collection-grid">
+	{% for product in products %}
+		<div class="grid-product" data-handle="{{ product.handle }}" >
+			<a href="http://shop.urbanzen.com/products/{{ product.handle }}">
+				<img src="{{ product.images.0.src }}" alt="{{ product.title }}">
+				<h3>{{ product.title }}</h3>		
+				 {# {{ function('print_r', product ) }} #}
+				<div class="grid-product-price">{% if check_inventory(product) %}
+					${{ product.variants.0.price }}{% else %}<span class="sold-out">Sold Out</span>{% endif %}</div>
+			</a>
+		</div>
+	{% endfor %}
 </section>
 {% endblock %}{# end content #}

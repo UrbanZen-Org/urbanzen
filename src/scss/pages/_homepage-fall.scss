@@ -186,7 +186,7 @@
 			.slides{
 				.slide.loaded:first-child{
 					.slide-cover .slide-info{
-					@include animation('fadeInSlide .1s linear forwards');
+					@include animation('fadeInSlide .05s linear forwards');
 					}
 				}
 

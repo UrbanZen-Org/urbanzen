@@ -27,7 +27,7 @@
 			{% set slides = post.slides %}
 			
 			{% if slides %}
-				<div class="slides">
+				<div class="slides hide-mobile">
 					{% for slide in slides %}
 						<div class="slide {% if slide.video %}video{% else %}image{% endif %}" style="background-image: url({{ slide.image }});">
 							<div class="slide-cover {% if not slide.show_mobile_titles %}mobile-only{% endif %}">						
@@ -47,6 +47,26 @@
 								<img src="{{ slide.image }}">
 							{% endif %}
 							<img class="mobile" src="{{ slide.mobile_image }}"/>
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+			{% set slides_mobile = post.slides_mobile %}
+
+			{% if slides_mobile %}
+			<div class="slides hide-desktop">
+					{% for slide in slides_mobile %}
+						<div class="slide image" >
+							<div class="slide-cover {% if not slide.show_mobile_titles %}mobile-only{% endif %}">						
+								<div class="slide-info">
+									<h2>{{ slide.title }}</h2> 
+									<h3>{{ slide.subtext }}</h3>
+									{% if slide.show_link_button %}
+										<a class="cta-button gold" href="{{ slide.button_link}}">{{ slide.button_text}}</a>
+									{% endif %}
+								</div>
+							</div>
+							<img class="mobile" src="{{ slide.image }}"/>
 						</div>
 					{% endfor %}
 				</div>

@@ -363,7 +363,7 @@ main{
 				}
 				&.slick-current, &.visible{
 					.slide-info{
-						@include animation('fadeInSlide .3s linear 1s forwards');
+						@include animation('fadeInSlide .3s linear 0s forwards');
 					}
 				}
 			}

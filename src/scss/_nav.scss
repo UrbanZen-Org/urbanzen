@@ -13,8 +13,8 @@ nav.top-menu{
 		background: transparent;
 	}
 	.main-menu{
-			overflow: scroll;
-			-ms-overflow-style: none;
+			overflow-y: auto;
+			-ms-overflow-style: auto;
 			@include respond-max($tablet-landscape) {
 				width: 50%;
 				transform: translate3d(-100%, 0, 0);

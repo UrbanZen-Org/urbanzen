@@ -3,9 +3,6 @@
 
 {% block content %}
 <section class="collection-slideshow hide-mobile">
-	<div class="collection-title">
-		<h1>{{ post.title }}</h1>
-	</div>
 	<div class="collection-slides">
 		{% for slide in post.desktop_slides %}		
 			<div class="collection-slide">
@@ -15,6 +12,11 @@
 						<p>{{ TimberPost(slide.id).post_excerpt }}</p>
 					</div>
 				</div> #}
+				{% if loop.index == 1 %}
+					<div class="collection-title">
+						<h1>{{ post.title }}</h1>
+					</div>
+				{% endif %}
 				<img src="{{ slide.url }}">
 			</div>			
 		{% endfor %}

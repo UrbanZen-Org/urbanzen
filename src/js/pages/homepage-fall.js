@@ -30,13 +30,13 @@ var homepage = {
   if ($('.page-home').length){
       // reslick only if it's not slick()
     if ($(window).width() < 769) {
-      if ($('.page-home .full-slideshow .slides').hasClass('slick-initialized')) {
-        $('.page-home .full-slideshow .slides').slick('unslick');
+      if ($('.page-home .slides.desktop-slideshow').hasClass('slick-initialized')) {
+        $('.page-home .slides.desktop-slideshow').slick('unslick');
       }
       return
     }
 
-    if (!$('.page-home .full-slideshow .slides').hasClass('slick-initialized')) {
+    if (!$('.page-home .slides.desktop-slideshow').hasClass('slick-initialized')) {
       this.slideshow();
     }
   }
@@ -77,7 +77,7 @@ var homepage = {
           return '<a class="dot"></a>';
         }
       }
-      $('.full-slideshow .slides').on('init', function(event,slick){
+      $('.full-slideshow .slides.desktop-slideshow').on('init', function(event,slick){
         var slideClasses = slick.$slides[0].className;
           if(slideClasses.indexOf('video') !== -1){
             var video = $(slick.$slides[0]).find('video')[0];
@@ -85,8 +85,8 @@ var homepage = {
             video.play();
           }
       });
-      $('.full-slideshow .slides').slick(options);
-      $('.full-slideshow .slides').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $('.full-slideshow .slides.desktop-slideshow').slick(options);
+      $('.full-slideshow .slides.desktop-slideshow').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         var slideClasses = slick.$slides[nextSlide].className;
 
         if(slideClasses.indexOf('video') !== -1){
@@ -96,7 +96,7 @@ var homepage = {
         }
       });
 
-      $('.full-slideshow .slides').on('afterChange', function(event, slick, currentSlide, nextSlide){
+      $('.full-slideshow .slides.desktop-slideshow').on('afterChange', function(event, slick, currentSlide, nextSlide){
         var lastSlide = (currentSlide != 0 ) ? parseInt(currentSlide-1) : parseInt(slick.$slides.length - 1);
         //console.log(lastSlide);
         var currentSlideClasses = slick.$slides[lastSlide].className;

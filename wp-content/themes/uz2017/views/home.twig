@@ -27,7 +27,7 @@
 			{% set slides = post.slides %}
 			
 			{% if slides %}
-				<div class="slides hide-mobile">
+				<div class="slides desktop-slideshow hide-mobile">
 					{% for slide in slides %}
 						<div class="slide {% if slide.video %}video{% else %}image{% endif %}" style="background-image: url({{ slide.image }});">
 							<div class="slide-cover {% if not slide.show_mobile_titles %}mobile-only{% endif %}">						

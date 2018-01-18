@@ -120,7 +120,7 @@ class StudioLab extends TimberSite
         <a href="'. $item->link . '" class="transition-link" title="'. $item->title .'">'. $item->title .'
         </a>';
         if ($item->children){
-          if (strpos($item->class, 'current-menu-parent') !== false) {
+          if (strpos($item->class, 'current-menu-parent') !== false || strpos($item->class, 'current-menu-item') !== false) {
             
             $class = 'open';
           }

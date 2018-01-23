@@ -51,9 +51,9 @@
 				@include transition((transform .3s ease-in-out, -webkit-transform .3s ease-in-out));
 				padding: 20px;
 				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-				font-size: 14px;
+				font-size: 12px;
 				color: white;
-				line-height: 30px;
+				line-height: 20px;
 				@include respond($tablet-portrait) {
 					background: rgba(0,0,0,.7);
 					@include transform(translateY(100%));

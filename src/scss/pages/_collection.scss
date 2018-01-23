@@ -18,7 +18,7 @@
 			color: white;
 			font-size: 26px;
 			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-			letter-spacing: 1;
+			letter-spacing: .04em;
 			@include respond($tablet-portrait) {
 				font-size: 30px;
 			}

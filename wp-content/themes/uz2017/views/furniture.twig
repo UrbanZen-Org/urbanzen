@@ -14,12 +14,13 @@
 							<div class="{{ block.layout }}">
 								<div class="img-wrap">
 									<img class="lazyload {% if block.mobile_image %}hide-mobile{% endif %}" data-src="{{ TimberImage(block.image).src }}">
+									{% if block.mobile_image %}
+										<img class="hide-desktop lazyload" data-src="{{ TimberImage(block.mobile_image) }}">
+									{% endif %}
 									{% if TimberImage(block.image).caption %}
 										<span class="caption">{{ TimberImage(block.image).caption }}</span>
 									{% endif %}
-									{% if block.mobile_image %}
-										<img class="hide-desktop lazyload" data-src="{{ block.mobile_image }}">
-									{% endif %}
+									
 								</div>
 							</div>
 						{% else %}

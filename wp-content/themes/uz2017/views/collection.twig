@@ -32,6 +32,11 @@
 						<p>{{ TimberPost(slide.id).post_excerpt }}</p>
 					</div>
 				</div> #}
+				{% if loop.index == 1 %}
+					<div class="collection-title">
+						<h1>{{ post.title }}</h1>
+					</div>
+				{% endif %}
 				<img src="{{ mobile_slide.url }}">
 			</div>			
 		{% endfor %}

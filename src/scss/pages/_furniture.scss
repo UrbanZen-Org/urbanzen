@@ -39,6 +39,7 @@
 		.img-wrap{
 			position: relative;
 			overflow: hidden;
+			background: transparent;
 			&:hover{
 				.caption{
 					@include transform(translateY(0));

@@ -98,14 +98,15 @@ class StudioLab extends TimberSite
     $check_inventory = new Twig_SimpleFunction('check_inventory', 
       function ($product) 
       {
-        $out_of_stock = false;
+        $qty = 0;
+        $in_stock = false;
         foreach ($product['variants'] as $variant) {
-          $qty += $variant['inventory_quantity'];
+          $qty += (int)$variant['inventory_quantity'];
         }
-          if ($qty < 1){
-            $out_of_stock = true;
+          if ($qty >= 1){
+            $in_stock = true;
           }
-        return $out_of_stock;
+        return $in_stock;
       }
     );
     $twig->addFunction($check_inventory);

@@ -1,0 +1,90 @@
+{% extends "base.twig" %}
+{% set body_class = 'about black-bg' %}
+
+{% block content %}
+	<div class="cover-area short" style="background-image:url({{ post.thumbnail.src }});">
+		<div class="hide-desktop">
+			<img class="lazyload" data-src="{{ TimberImage(post.header_image_mobile).src }}">
+		</div>
+	</div>
+
+	<div class="content-blocks">
+		{% for block in post.content_blocks %}
+			{% if block.acf_fc_layout == 'callout' %}
+				<div class="callout-block">
+					<div class="callout-title">{{ block.title }}</div>
+					<div class="callout-text">
+						{{ block.text }}
+					</div>
+					{% if block.button_link %}
+						<a class="cta-button gold" href="{{ block.button_link }}">{{ block.button_text }}</a>
+					{% endif %}
+				</div>
+			{% elseif block.acf_fc_layout == 'image_grid' %}
+				{% if block.layout == 'large_image_left' %}
+					{% set large_block = block.images_text.0 %}
+					{% set secondary_images = block.images_text | slice(1,3) %}
+				{% else %}
+					{% set large_block = block.images_text.2 %}
+					{% set secondary_images = block.images_text | slice(0,1) %}
+				{% endif %}
+					<div class="image-blocks{% if block.layout == 'large_image_right' %} large-right{%endif %}">
+						<figure class="two-thirds">
+							{% if large_block.image %}
+								<div class="img-wrap">
+									<img class="lazyload" data-src="{{ TimberImage(large_block.image).src }}">
+								</div>
+							{% else %}
+								<div class="img-wrap text-content">
+									<p>{{ large_block.text }}</p>
+								</div>
+							{% endif %}
+						</figure>
+						<div class="two-up">
+							{% for content in secondary_images %}						
+								<figure class="wide">
+										{% if content.image %}
+											<div class="img-wrap wide">
+												<img class="lazyload" data-src="{{ TimberImage(content.image).src }}">
+											</div>
+										{% else %}
+											<div class="img-wrap wide text-content">
+												<p>{{ content.text }}</p>
+											</div>
+										{% endif %}
+								</figure>
+							{% endfor %}
+						</div>
+
+					</div>
+			{% elseif block.acf_fc_layout == 'full_width' %}
+				<div class="full-width-block">
+					{% if block.content_type_video %}
+						<div class="video-responsive">
+						<iframe class="hide-mobile" src="https://player.vimeo.com/video/{{ block.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+						<div class="mobile-video hide-desktop">
+							<div class="video-item" data-video-id="{{ block.vimeo_id }}">
+								<img class="lazyload" data-src="{{ TimberImage(block.mobile_video_placeholder).src }}">
+								<div class="play-icon">
+									<i class="material-icons">play_arrow</i>
+								</div>
+							</div>
+							<div class="video-overlay">
+								<i class="close material-icons">close</i>
+								<div class="video-holder">
+									<div class="video-responsive">
+										<div id="video"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% else %}
+					<img src="{{ TimberImage(block.image).src }}">
+					{% endif %}
+				</div>
+		 	{% endif %}
+		{% endfor %}				
+	</div>
+	<div class="back"></div>
+{% endblock %}{# end content #}

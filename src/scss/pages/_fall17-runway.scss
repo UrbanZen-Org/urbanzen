@@ -111,6 +111,35 @@
 }
 .img-wrap{
 		background: #000;
+		position: relative;
+		&.text-content{
+			background: #1b1b1b;
+			color: white;
+			text-align: center;
+			@include respond-max($tablet-portrait) {
+				padding-bottom: 0!important;
+				height: auto!important;
+			}
+			p{
+				font-family: 'HelveticaNeueLTStd-Lt', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 20px;
+				letter-spacing: .02em;
+				line-height: 40px;
+				
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				padding: 20px;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				@include respond-max($tablet-portrait) {
+					position: static;
+				}
+			}
+		}
 		img{
 			@include respond-min($tablet-portrait)
 			{
@@ -125,12 +154,7 @@
 			padding-bottom: 100%;
 			position: relative;
 			overflow: hidden;
-			img{
-				position: absolute;
-			  top: 50%;
-	  		left: 50%;
-	  		transform: translate(-50%, -50%);
-			}
+
 		}
 		&.two-to-one{
 			height: 0;
@@ -138,5 +162,18 @@
 			padding-bottom: calc(50% - 10px);
 			position: relative;
 			overflow: hidden;
+		}
+		&.wide{
+			height: 0;
+			width: 100%;
+			padding-bottom:73.3%;
+			position: relative;
+			overflow: hidden;
+			img{
+				position: absolute;
+			  top: 50%;
+	  		left: 50%;
+	  		transform: translate(-50%, -50%);
+			}
 		}
 	}

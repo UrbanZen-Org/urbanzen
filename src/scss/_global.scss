@@ -402,8 +402,127 @@ main{
 			width: 100%;
 			max-width: none;
 		}
+		&.short{
+			@include respond-min($tablet-portrait)
+			{
+				min-height: 50vh;
+				max-height: 50vh;
+			}
+		}
 	}
+.image-blocks{
 
+		padding: 20px 20px 0 20px;
+		@include respond($tablet-portrait) {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.large-square{
+			flex-basis: 49%;
+			margin-bottom: 20px;
+			@include respond($tablet-portrait) {
+				margin-bottom: 2%;
+			}
+		}
+		.two-thirds{
+			flex-basis: 66%;
+			margin-bottom: 20px;
+			@include respond($tablet-portrait) {
+				margin-bottom: 2%;
+			}
+		}
+		.four-up{
+			flex-basis: 49%;	
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-bottom: 0px;
+			@include respond($tablet-portrait) {
+				margin-bottom: 2%;
+			}
+			
+			figure{
+				flex-basis: 48%;
+				margin-bottom: 20px;
+				@include respond($tablet-portrait) {
+					margin-bottom: 0;
+					&:nth-child(1), &:nth-child(2){
+						margin-bottom: 4%;
+					}
+				}
+			}
+		}
+		.two-up{
+			flex-basis: 32%;	
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-bottom: 0px;
+			@include respond($tablet-portrait) {
+				margin-bottom: 2%;
+			}
+			figure{
+				flex-basis: 100%;
+				margin-bottom: 20px;
+				@include respond($tablet-portrait) {
+					margin-bottom: 0;
+					&:nth-child(1){
+						margin-bottom: 4%;
+					}
+				}
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+		.full-width{
+			margin-bottom: 20px;
+			position: relative; 
+			height: 35vh; 
+			overflow: hidden;
+			@include respond($tablet-portrait) {
+				height: 400px;
+			}
+			img{
+				max-width: none;
+				position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+			}
+			margin-left: -20px;
+			margin-right: -20px;
+			width: calc(100% + 40px);
+		}		
+}
+.content-blocks{
+	.full-width-block{
+		margin-top: 40px;
+	}
+	.callout-block{
+		color: white;
+		text-align: center;
+		max-width: 1000px;
+		margin: 40px auto;
+		padding: 0 20px;
+		.callout-title{
+			font-family: 'HelveticaNeueLTStd-Md', Helvetica, Arial, sans-serif;
+			font-size: 22px;
+			letter-spacing: .03em;
+			line-height: 42px;
+		}
+		.callout-text{
+			font-family: 'HelveticaNeueLTStd-Lt', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: 20px;
+			letter-spacing: .02em;
+			line-height: 40px;
+		}
+	}
+}
 // ahcks
 .page-apple-awards{
 	p{
@@ -445,7 +564,10 @@ main{
 	    align-items: center;
 	    justify-content: center;
 	    padding: 20px;
-			.video-responsive{
+			
+		}
+	}
+	.video-responsive{
 				width: 100%;
 				position: relative;
 				padding-bottom: 56.25%; /* 16:9 */
@@ -458,6 +580,4 @@ main{
 					height: 100%;
 				}
 			}
-		}
-	}
 @import 'partials/newsletter-popup.scss';

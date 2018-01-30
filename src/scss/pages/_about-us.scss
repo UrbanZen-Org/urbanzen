@@ -1,17 +1,19 @@
 .about{
 	.cover-area{
-		@include respond($tablet-portrait) {
+		@include respond-min($tablet-portrait) {
 			min-height: 60vh;
 			max-height: 60vh;	
 			background-attachment: fixed;
 			background-position: top center;
 			background-repeat: no-repeat;
 		}
-		height: auto;
+		@include respond-max($tablet-portrait) {
+			background-image: none!important;
+					height: auto;
 		min-height: 0;
 		max-height: 0;
 		background: black;
-		background-image: none!important;
+		}
 		
 	}
 }

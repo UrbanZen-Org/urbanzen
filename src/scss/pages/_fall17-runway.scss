@@ -163,10 +163,23 @@
 			position: relative;
 			overflow: hidden;
 		}
+		&.four-by-three{
+			height: 0;
+			width: 100%;
+			padding-bottom: calc(75%);
+			position: relative;
+			overflow: hidden;
+						img{
+				position: absolute;
+			  top: 50%;
+	  		left: 50%;
+	  		transform: translate(-50%, -50%);
+			}
+		}
 		&.wide{
 			height: 0;
 			width: 100%;
-			padding-bottom:73.3%;
+			padding-bottom:75.4%;
 			position: relative;
 			overflow: hidden;
 			img{

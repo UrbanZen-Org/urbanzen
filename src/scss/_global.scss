@@ -411,7 +411,9 @@ main{
 		}
 	}
 .image-blocks{
-
+	&.large-right{
+		flex-direction: row-reverse;
+	}
 		padding: 20px 20px 0 20px;
 		@include respond($tablet-portrait) {
 			display: flex;

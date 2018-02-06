@@ -70,12 +70,14 @@
 				}
 				.look-product-links{
 					text-align: left;
+					 column-count: 2;
+					 column-gap: 20px;
 					a{
 						display: inline-block;
 						vertical-align: top;
 						@include respond-min(640)
 						{
-							width: 49%;
+							
 						}
 					}
 				}

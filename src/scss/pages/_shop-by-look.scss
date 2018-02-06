@@ -134,8 +134,8 @@
 					font-family: 'HelveticaNeueLTStd-Lt';
 					@include respond-min($tablet-portrait)
 					{
-						
-						font-size: 13px;
+						font-size: 14px;
+						line-height: 16px
 					}
 					&:hover{
 						color: #bababa;

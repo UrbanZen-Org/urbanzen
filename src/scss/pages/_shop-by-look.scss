@@ -127,15 +127,14 @@
 					cursor: pointer;
 					color: white;
 					text-align: left;
-					font-size: 12px;
-					line-height: 15px;
+					font-size: 13px;
+					line-height: 16px;
 					letter-spacing: 0.03em;
 					margin-bottom: 5px;
 					font-family: 'HelveticaNeueLTStd-Lt';
 					@include respond-min($tablet-portrait)
 					{
-						font-size: 14px;
-						line-height: 16px
+						font-size: 13px;
 					}
 					&:hover{
 						color: #bababa;

@@ -115,10 +115,10 @@
 					display: block;
 					cursor: pointer;
 					color: white;
-					text-align: center;
+					text-align: left;
 					font-size: 12px;
 					line-height: 16px;
-					letter-spacing: 0.1em;
+					letter-spacing: 0.03em;
 					margin-bottom: 5px;
 					font-family: 'HelveticaNeueLTStd-Lt';
 					@include respond-min($tablet-portrait)

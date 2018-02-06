@@ -97,9 +97,30 @@
 						<img src="{{ TimberImage(block.image).src }}">
 					{% endif %}
 				</div>
-			{% elseif block.acf_fc_layout == 'image_row_grid' %}
-				<div class="image-rows-block {{ block.row_amount }}">
-					div.
+			{% elseif block.acf_fc_layout == 'image_column_grid' %}
+				<div class="image-columns-block {{ block.column_amount }}">
+					{% for item in block.grid_items %}
+					<figure class="image-block">
+						<img src="{{ TimberImage(item.image).src }}"/>
+						<figcaption>
+							<a {% if item.link %}href="{{ item.link }}"{% endif %}>{{ item.text }}</a>
+						</figcaption>
+					</figure>
+				{% endfor %}				
+			{% elseif block.acf_fc_layout == 'alternating_image_text' %}
+				<div class="image-text-block">
+					<div class="image-text-image">
+							<img class="lazyload" data-src="{{ TimberImage(block.image).src }}">
+						</div>
+						<div class="image-text-text">
+							<h2>{{ block.title }}</h2>
+							<div class="text-content">{{ block.text }}
+								{% if block.button_link %}
+									<a href="{{ block.button_link }}">{{ block.button_text }}</a>
+								{% endif %}
+						</div>
+					</div>				
+				
 				</div>
 		 	{% endif %}
 		{% endfor %}				

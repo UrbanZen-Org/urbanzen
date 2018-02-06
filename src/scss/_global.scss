@@ -522,6 +522,108 @@ main{
 			line-height: 40px;
 		}
 	}
+	.image-columns-block{
+		display: flex;
+		align-items: center;  
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0 20px 30px;
+		&.three-column{
+			.image-block{
+				
+				@include respond($tablet-portrait) {
+					flex-basis: 32.667%;
+					padding: 1% .5% 0;
+				}
+			}
+		}
+		&.four-column{
+			.image-block{
+				
+				@include respond($tablet-portrait) {
+					flex-basis: 24.334%;
+					padding: 1% .5% 0;
+				}
+			}
+		}
+		.image-block {
+			position: relative;
+			padding-top: 20px;
+			@include respond-min($tablet-portrait) {
+				padding-top: 1%;
+			}
+			figcaption{
+				display: block;
+				a{
+					position: absolute;
+					bottom: 10px;
+					color: white;
+					left: 10px;
+					text-transform: uppercase;
+					font-size: 12px;
+					display: inline-block;
+					width: calc(100% - 10px);
+					}
+			}
+		}
+	}
+	.image-text-block{
+		padding-top: 20px;
+			padding-bottom: 3.5em;
+			@include respond($tablet-portrait) {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-direction: row-reverse;
+				padding: 20px 20px 4.5em;
+			}
+			
+			&:nth-child(even){
+				flex-direction: row;
+			}
+			h2{
+				font-size: 20px;
+				margin-bottom: 1em;
+			}
+			.image-text-image{
+				
+				padding-bottom: 3.5em;
+				@include respond($tablet-portrait) {
+					flex-basis: 48%;
+					padding-bottom: 0;
+				}
+			}
+			.image-text-text{
+				padding: 0 20px;
+				text-align: center;
+				color: $gold;
+				@include respond($tablet-portrait) {
+					flex-basis: 48%;
+					padding: 0;
+				}	
+				.text-content p{
+					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					font-size: 15px;
+					line-height: 22px;
+					letter-spacing: .03em;
+					margin-bottom: 1em;
+					&:last-child{
+						margin-bottom: 0;
+					}
+					strong{
+						font-family: 'HelveticaNeueLTStd-Md', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					}
+				}
+				h6{
+						font-size: 15px;
+						text-transform: none;
+						margin-bottom: 1rem;
+					}
+				a{
+					color: $gold;
+				}
+			}
+		}
 }
 // ahcks
 .page-apple-awards{

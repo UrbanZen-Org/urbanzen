@@ -72,6 +72,7 @@
 					text-align: left;
 					a{
 						display: inline-block;
+						vertical-align: top;
 						@include respond-min(640)
 						{
 							width: 49%;

@@ -69,9 +69,13 @@
 					}
 				}
 				.look-product-links{
+					text-align: left;
 					a{
 						display: inline-block;
-						width: 49%;
+						@include respond-min(640)
+						{
+							width: 49%;
+						}
 					}
 				}
 			}

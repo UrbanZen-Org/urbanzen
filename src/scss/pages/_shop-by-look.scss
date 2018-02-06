@@ -71,7 +71,7 @@
 				.look-product-links{
 					a{
 						display: inline-block;
-						min-width: 49%;
+						width: 49%;
 					}
 				}
 			}
@@ -117,14 +117,14 @@
 					color: white;
 					text-align: left;
 					font-size: 12px;
-					line-height: 16px;
+					line-height: 15px;
 					letter-spacing: 0.03em;
 					margin-bottom: 5px;
 					font-family: 'HelveticaNeueLTStd-Lt';
 					@include respond-min($tablet-portrait)
 					{
 						
-						font-size: 14px;
+						font-size: 13px;
 					}
 					&:hover{
 						color: #bababa;

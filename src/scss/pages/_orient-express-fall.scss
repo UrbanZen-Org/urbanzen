@@ -15,6 +15,12 @@
 			height: calc(100vh - 150px);
 		}
 		background: black;
+		img{
+			@include respond-min($tablet-portrait)
+			{
+				display: block;
+			}
+		}
 		.slides .slide:first-child{
 			.slide-cover .slide-info{
 				h2{

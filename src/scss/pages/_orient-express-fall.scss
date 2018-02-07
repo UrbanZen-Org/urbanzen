@@ -22,6 +22,12 @@
 			}
 		}
 		.slides .slide:first-child{
+					img{
+						@include respond-min($tablet-portrait)
+						{
+							display: block;
+						}
+					}
 			.slide-cover .slide-info{
 				h2{
 					padding-top: 50%;

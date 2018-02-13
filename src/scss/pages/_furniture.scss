@@ -51,11 +51,14 @@
 				display: block;
 				@include transition((transform .3s ease-in-out, -webkit-transform .3s ease-in-out));
 				padding: 20px;
-				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-				font-size: 12px;
+				font-family: 'HelveticaNeueLTStd-Lt';
+				font-size: 14px;
+				line-height: 18px;
+				letter-spacing: 0.04em;
 				color: white;
 				line-height: 20px;
 				@include respond($tablet-portrait) {
+					font-size: 13px;
 					background: rgba(0,0,0,.7);
 					@include transform(translateY(100%));
 					position: absolute;

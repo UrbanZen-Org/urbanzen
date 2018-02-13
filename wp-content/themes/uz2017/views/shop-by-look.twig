@@ -34,7 +34,7 @@
 		{% for row in post.rows %}
 			<div class="look-row">
 				{% for look in row.looks %}
-					<div class="look {{ look.layout }} {% if look.hide_mobile %}hide-mobile{% endif %}">
+					<div class="look {{ look.layout }} {% if look.hide_mobile %}hide-mobile-look{% endif %}">
 						{% if look.layout == 'callout' %}
 							<p>{{ look.callout_message }}</p>
 						{% else %}

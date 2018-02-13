@@ -85,7 +85,7 @@
 					}
 				}
 			}
-			&.hide-mobile{
+			&.hide-mobile-look{
 				@include respond-max(640)
 				{
 					display: none;

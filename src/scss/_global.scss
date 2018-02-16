@@ -206,7 +206,15 @@ main{
 				@include respond-max($tablet-portrait)
 				{
 					background-image: none;
-					height: calc(100vh - 50px);
+				}
+				height: calc(100vh - 50px);
+				@include respond-min($tablet-portrait)
+				{
+					height: auto;
+				}
+				@include respond-min($tablet-landscape)
+				{
+					height: calc(100vh);
 				}
 				&.video{
 					@include respond-min($tablet-landscape)

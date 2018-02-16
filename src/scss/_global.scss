@@ -223,7 +223,7 @@ main{
 				}
 				
 				.mobile-only{
-					@include respond-min($tablet-landscape)
+					@include respond-min($tablet-portrait)
 					{
 						display: none!important;
 					}
@@ -252,7 +252,7 @@ main{
 				img{
 					&.mobile{
 						display: none;
-						@include respond-max($tablet-portrait - 1)
+						@include respond-max($tablet-portrait)
 						{	
 							display: block;
 						}

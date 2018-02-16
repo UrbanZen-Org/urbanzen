@@ -304,7 +304,11 @@ main{
 						visibility: hidden;
 						text-align: center;
 						padding-bottom: 80px;
-						@include respond-min($tablet-landscape)
+						@include respond-min($mobile)
+						{    	
+							padding-bottom: 300px;
+						}
+						@include respond-min($tablet-portrait)
 						{    	
 							padding-bottom: 0;
 						}

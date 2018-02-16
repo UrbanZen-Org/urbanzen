@@ -197,7 +197,6 @@ main{
 			.slide{
 				outline: none;
 				position: relative;
-				height: 100vh;
 				background-position:top;
 				background-repeat: no-repeat;
 				img{
@@ -208,7 +207,7 @@ main{
 					background-image: none;
 				}
 				height: calc(100vh - 50px);
-				@include respond-min($tablet-portrait)
+				@include respond-min($mobile)
 				{
 					height: auto;
 				}

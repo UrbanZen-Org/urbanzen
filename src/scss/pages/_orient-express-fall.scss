@@ -7,7 +7,7 @@
 // .page-orient-express-fall17 .drawer-contents{
 // 	margin-left: 0!important;
 // }
-.orient-express-fall-17{
+.orient-express-fall-17, .campaign{
 	.full-slideshow{
 		overflow: hidden;
 		@include respond-max($tablet-portrait)
@@ -22,12 +22,12 @@
 			}
 		}
 		.slides .slide:first-child{
-					img{
-						@include respond-min($tablet-portrait)
-						{
-							display: block;
-						}
+				img{
+					@include respond-min($tablet-portrait)
+					{
+						display: block;
 					}
+				}
 			.slide-cover .slide-info{
 				h2{
 					padding-top: 50%;

@@ -1,0 +1,95 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-campaign black-bg' %}
+
+{% block content %}
+	<div class="campaign">
+
+	{% if not post.video_banner %}	
+		<section class="full-slideshow">
+			<div class="slides">
+				<div class="slide">
+					<div class="slide-cover">
+						<div class="slide-info fade-in-out">
+							<h2>{{ post.title }}</h2>
+						</div>
+					</div>
+					<img src="{{ post.main_image }}">
+					<img class="mobile" src="{{ post.mobile_main_image }}">
+				</div>	
+			</div>
+			<p class="campaign-text">{{ post.campaign_text }}</p>
+			<div class="down-arrow" data-target=".campaign-slides">{{ post.down_arrow_prompt_text }}</div>
+		</section>
+	{% else %}
+		<div class="cover-area">
+			<iframe class="hpvideo hide-mobile" src="https://player.vimeo.com/video/{{ post.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<div class="mobile-video hide-desktop">
+				<div class="video-item" data-video-id="{{ post.vimeo_id }}">
+					<img class="lazyload" data-src="{{ post.mobile_main_image }}">
+					<div class="play-icon">
+						<i class="material-icons">play_arrow</i>
+					</div>
+				</div>
+				<div class="video-overlay">
+					<i class="close material-icons">close</i>
+					<div class="video-holder">
+						<div class="video-responsive">
+							<div id="video"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p class="campaign-text">{{ post.campaign_text }}</p>
+			<div class="down-arrow" data-target=".campaign-slides">{{ post.down_arrow_prompt_text }}</div>
+		</div>
+	{% endif %}
+
+		<div class="mobile-title hide-desktop">
+			<h1>{{ post.title }}</h1>
+		</div>
+		{% set slides = post.slides %}
+		{% if slides %}
+			<section class="campaign-slides">
+				{% for slide in slides %}						
+					<div class="campaign-slide {{ slide.half_width ? 'half-width' }}">
+						{% if slide.video %}
+								<video class="lazyload hide-mobile" autoplay loop poster="">
+								  <source src="{{ slide.video_file }}" type="video/mp4">
+								</video>							
+								<img class="hide-desktop"src="{{ slide.mobile_image }}"> 
+						{% else %}
+							<img class="hide-mobile" src="{{ slide.image }}">
+							<img class="hide-desktop" src="{{ slide.mobile_image }}">
+						{% endif %}
+						{% if slide.caption %}
+							<div class="campaign-slide-caption">{{ slide.caption }}</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</section>
+		{% endif %}
+		
+		<section class="behind-the-scenes">
+			{% if post.behind_the_scenes_title %}
+				<h2>{{ post.behind_the_scenes_title }}</h2>
+			{% endif %}
+			<p>{{ post.behind_the_scenes_credits }}</p>
+
+			{% set bts_images = post.behind_the_scenes_images %}
+			{% if bts_images %}
+				<div class="carousel">
+					{% for image in bts_images %}
+						<div class="carousel-image">
+							<img src="{{ image.image }}">
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</section>
+
+		<section class="explore-the-collection">
+			<h2>{{ post.explore_the_collection_title }}</h2>
+			<a href="{{ post.button_link }}" class="cta-button" title="{{ post.button_text }}">{{ post.button_text }}</a>
+		</section>
+	</div>
+{% endblock %}{# end content #}

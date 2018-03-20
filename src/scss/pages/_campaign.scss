@@ -19,10 +19,11 @@
 			text-transform: uppercase;
 			margin: 20px 20px 0;
 			opacity: 0;
-			font-size: 35px;
+			color: white;
 			@include animation('fadeIn 3s linear 1s forwards');
 			@include respond-min($tablet-portrait)
 			{
+				font-size: 35px;
 				margin-top: 0;
 				@include animation('fadeInOut 3s linear 1s forwards');
 			}

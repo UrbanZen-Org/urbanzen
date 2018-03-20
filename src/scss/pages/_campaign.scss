@@ -20,7 +20,7 @@
 			margin: 20px 20px 0;
 			opacity: 0;
 			color: white;
-			@include animation('fadeIn 0s linear 0s forwards');
+			@include animation('fadeIn 0.1s linear 0.1s forwards');
 			@include respond-min($tablet-portrait)
 			{
 				font-size: 35px;
@@ -33,7 +33,7 @@
 			max-width: 400px;
 			padding: 20px;
 			opacity: 0;
-			@include animation('fadeIn 0s linear 0s forwards');
+			@include animation('fadeIn 0.1s linear 0.1s forwards');
 			@include respond-min($tablet-portrait)
 			{
 				@include animation('fadeIn 3s linear 1s forwards');
@@ -60,11 +60,6 @@
 			margin: 0 auto;
 			text-align: center;
 			line-height: 22px;
-		}
-	}
-	.explore-the-collection{
-		h2{
-			margin-top: 0;
 		}
 	}
 }

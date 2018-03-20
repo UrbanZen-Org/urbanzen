@@ -20,7 +20,7 @@
 			margin: 20px 20px 0;
 			opacity: 0;
 			color: white;
-			@include animation('fadeIn 0s linear');
+			@include animation('fadeIn 0s linear 0s forwards');
 			@include respond-min($tablet-portrait)
 			{
 				font-size: 35px;

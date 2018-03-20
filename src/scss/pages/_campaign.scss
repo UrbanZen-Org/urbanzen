@@ -33,9 +33,10 @@
 			max-width: 400px;
 			padding: 20px;
 			opacity: 0;
-			@include animation('fadeIn 3s linear 1s forwards');
+			@include animation('fadeIn 0s linear 0s forwards');
 			@include respond-min($tablet-portrait)
 			{
+				@include animation('fadeIn 3s linear 1s forwards');
 				position: absolute;
 				bottom: 10%;
 			}

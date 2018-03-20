@@ -16,8 +16,10 @@
 			z-index: 2;	
 		}
 		h1{
+			text-transform: uppercase;
 			margin: 20px 20px 0;
 			opacity: 0;
+			font-size: 35px;
 			@include animation('fadeIn 3s linear 1s forwards');
 			@include respond-min($tablet-portrait)
 			{

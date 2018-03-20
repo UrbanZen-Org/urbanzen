@@ -41,30 +41,30 @@
 					</div>
 				</div>
 			</div>
+			<h1 class="light">{{ post.title }}</h1>			
 			<p class="campaign-text {{ post.campaign_text_white ? 'color-white' }}">{{ post.campaign_text }}</p>
 			<div class="down-arrow {{ post.campaign_text_white ? 'color-white' }}" data-target=".campaign-slides">{{ post.down_arrow_prompt_text }}</div>
 		</div>
 	{% endif %}
 
-		<div class="mobile-title hide-desktop">
-			<h1>{{ post.title }}</h1>
-		</div>
 		{% set slides = post.slides %}
 		{% if slides %}
 			<section class="campaign-slides">
 				{% for slide in slides %}						
-					<div class="campaign-slide {{ slide.half_width ? 'half-width' }}">
+					<div class="campaign-slide {{ slide.half_width ? 'half-width' }} {{ slide.mobile_image ? '' : 'hide-mobile' }}">
 						{% if slide.video %}
 								<video class="lazyload hide-mobile" autoplay loop poster="">
 								  <source src="{{ slide.video_file }}" type="video/mp4">
 								</video>							
-								<img class="hide-desktop"src="{{ slide.mobile_image }}"> 
+								
+									<img class="hide-desktop"src="{{ slide.mobile_image }}"> 
+								
 						{% else %}
 							<img class="hide-mobile" src="{{ slide.image }}">
-							<img class="hide-desktop" src="{{ slide.mobile_image }}">
+								<img class="hide-desktop" src="{{ slide.mobile_image }}">
 						{% endif %}
 						{% if slide.caption %}
-							<div class="campaign-slide-caption"><p {{ slide.caption_text_white ? 'class="color-white"' }}>{{ slide.caption }}</p></div>
+							<div class="campaign-slide-caption "><p {{ slide.caption_text_white ? 'class="color-white"' }}>{{ slide.caption }}</p></div>
 						{% endif %}
 					</div>
 				{% endfor %}

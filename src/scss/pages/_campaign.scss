@@ -46,9 +46,16 @@
 	}
 	.campaign-text{
 		font-size: 16px;
+		line-height: 22px;
 	}
 
 	.behind-the-scenes{
 		background: none;
+		p{
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			line-height: 22px;
+		}
 	}
 }

@@ -1,4 +1,10 @@
-.campaign{
+.page-campaign{
+	.drawer-nav{
+		background: transparent;
+	}
+	.drawer-contents{
+		margin-left: 0!important;
+	}
 	.cover-area{
 		display: flex;
 		align-items: center;
@@ -37,5 +43,12 @@
 				display: none;
 			}
 		}
+	}
+	.campaign-text{
+		font-size: 16px;
+	}
+
+	.behind-the-scenes{
+		background: none;
 	}
 }

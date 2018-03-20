@@ -1,6 +1,8 @@
 {% extends "base.twig" %}
 {% set body_class = 'page-campaign black-bg' %}
-
+{% set menu_class = 'transparent-bg' %}
+{% set page_class = 'full-width-page' %}
+	
 {% block content %}
 	<div class="campaign">
 
@@ -17,8 +19,8 @@
 					<img class="mobile" src="{{ post.mobile_main_image }}">
 				</div>	
 			</div>
-			<p class="campaign-text">{{ post.campaign_text }}</p>
-			<div class="down-arrow" data-target=".campaign-slides">{{ post.down_arrow_prompt_text }}</div>
+			<p class="campaign-text {{ post.campaign_text_white ? 'color-white' }}">{{ post.campaign_text }}</p>
+			<div class="down-arrow {{ post.campaign_text_white ? 'color-white' }}" data-target=".campaign-slides">{{ post.down_arrow_prompt_text }}</div>
 		</section>
 	{% else %}
 		<div class="cover-area">
@@ -39,8 +41,8 @@
 					</div>
 				</div>
 			</div>
-			<p class="campaign-text">{{ post.campaign_text }}</p>
-			<div class="down-arrow" data-target=".campaign-slides">{{ post.down_arrow_prompt_text }}</div>
+			<p class="campaign-text {{ post.campaign_text_white ? 'color-white' }}">{{ post.campaign_text }}</p>
+			<div class="down-arrow {{ post.campaign_text_white ? 'color-white' }}"" data-target=".campaign-slides">{{ post.down_arrow_prompt_text }}</div>
 		</div>
 	{% endif %}
 
@@ -62,7 +64,7 @@
 							<img class="hide-desktop" src="{{ slide.mobile_image }}">
 						{% endif %}
 						{% if slide.caption %}
-							<div class="campaign-slide-caption">{{ slide.caption }}</div>
+							<div class="campaign-slide-caption"><p {{ post.campaign_text_white ? 'class="color-white"' }}>{{ slide.caption }}</p></div>
 						{% endif %}
 					</div>
 				{% endfor %}

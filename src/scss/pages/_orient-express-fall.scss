@@ -59,15 +59,27 @@
 			padding: 20px 0;
 		}
 	}
+	.campaign-slides{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
 	.campaign-slide{
 		@include respond-min(1000)
 		{
 			max-height: 100vh;
 			min-height: 511px;
 		}
+		width: 100%;
 		background-size: cover;
 		background-position: center center;
 		overflow: hidden;
+		position: relative;
+		margin-bottom: 1.5%;
+		&.half-width{
+			width: 49.25%;
+		}
 		video, img{
 			object-fit:cover;
 			height: 100%;
@@ -80,6 +92,20 @@
 			height: auto; 
 			video{
 				display: none;
+			}
+		}
+		.campaign-slide-caption{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;			
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			p{
+				font-size: 16px;
+				text-align: center;	
 			}
 		}
 	}

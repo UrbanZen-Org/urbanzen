@@ -126,7 +126,7 @@ main{
 	  cursor: pointer;
 	  color: #f5f1e1;
 	  left: 50%;
-    margin-left: -10px;
+    @include transform(translateX(-50%));
 	  @include animation('fadeIn .3s linear 1s forwards');
 		&:after{
 	    content: "";

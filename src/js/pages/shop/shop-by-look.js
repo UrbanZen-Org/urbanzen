@@ -761,6 +761,7 @@ var shopbylook = {
  		}
  		$('[data-product-link]').click(function(e){
 	  		e.preventDefault();
+	  		
 	  		var product_data = $(this).data();
 				if (window.location.href.indexOf('dev') !== -1 || window.location.href.indexOf('stage') !== -1){
 					var client_url = 'urban-zen-foundation.myshopify.com';

@@ -87,14 +87,16 @@ var global = {
   downArrow: function(){
     if ($('.down-arrow').length){
       $('.down-arrow').click(function() {
-        var target = $(this).data('target');
-        if ($(window).width > 1023 ){
-          var nextSection = $(target).offset().top;  
-        }else{
-          var nextSection = $(target).offset().top - 50;  
+        if ($(this).data('target')){
+          var target = $(this).data('target');
+          if ($(window).width > 1023 ){
+            var nextSection = $(target).offset().top;  
+          }else{
+            var nextSection = $(target).offset().top - 50;  
+          }
+          
+          $("html, body").animate({ scrollTop: nextSection });
         }
-        
-        $("html, body").animate({ scrollTop: nextSection });
       });
     }
   },

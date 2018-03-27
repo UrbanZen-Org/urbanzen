@@ -59,7 +59,7 @@
 				background-color: white;
 			}
 		}
-		&.dark{
+		&.dark, &.black{
 			border-color: black;
 			color: black;
 			@include transition((background .3s ease-in-out, border-color .3s ease-in-out));

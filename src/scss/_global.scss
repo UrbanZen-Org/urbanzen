@@ -65,7 +65,7 @@ main{
 		}
 	}
 }
-	.slick-arrow{
+	.slick-arrow,.fp-controlArrow{
 		cursor: pointer;
 		position: absolute;
 		top: 50%;
@@ -92,10 +92,10 @@ main{
 	    border-top: 0px;
 	    cursor: pointer;
 	  }
-		&.arrow-left,&.arrow-right{
+		&.arrow-left,&.arrow-right,&.fp-prev,&.fp-next{
 			z-index: 8;
 		}
-		&.arrow-left{
+		&.arrow-left, &.fp-prev{
 			left: 20px;
 			&:after{
 				@include transform(rotate(135deg));
@@ -105,7 +105,7 @@ main{
 				padding-left: 20px;
 			}
 		}
-		&.arrow-right{
+		&.arrow-right,&.fp-next{
 			right: 20px;
 			&:after{
 				@include transform(rotate(-45deg));

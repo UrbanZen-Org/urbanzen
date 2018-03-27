@@ -1,0 +1,77 @@
+
+{% set body_class = 'page-home-spring-2018 black-bg' %}
+{% set menu_class = 'transparent-bg' %}
+{% set page_class = 'full-width-page' %}
+{% set hide_footer = false %}
+<!DOCTYPE html>
+<html>
+  {% include 'partials/head.twig' %}
+  <body class="{{ body_class }} animsition">
+      {# {% include 'partials/header.twig'%} #}
+      {% include 'partials/menu.twig' %}
+      
+      <div id="page" class="{{ page_class }}">
+        {% block page %}
+          <div id="content" >
+            {% block content %}
+	<div id="fullpage">
+		{% for slide_area in post.slide_areas %}
+			<div class="section">
+				{% for slide in slide_area.slides %}
+					<div class="slide">				
+						<img class="hide-desktop lazyload" data-src="{{ slide.mobile_image }}"/>
+						{% if not slide.video %}
+							<img class="hide-mobile lazyload" data-src="{{ slide.image }}">
+						{% else %}
+							<div class="hpvideo hide-mobile">
+								<iframe class="hide-mobile" src="https://player.vimeo.com/video/{{ slide.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							</div>
+						{% endif %}
+						{% if slide.title and slide.text %}
+							<div class="caption-overlay {{ slide.text_position }}">
+								<div class="slide-caption text-{{slide.text_color }}">
+									<h3>{{ slide.title }}</h2>
+									<p>{{ slide.text }}</p>
+									{% if slide.button_text %}
+										<a class="cta-button {{slide.text_color }}" href="{{ slide.button_link}}">{{ slide.button_text}}</a>
+									{% endif %}
+								</div>
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+				<div class="down-arrow"></div>
+			</div>
+		{% endfor %}
+		<div class="section fp-auto-height insta-slide">
+			<div class="insta-block">
+				<h2>{{ post.instagram_title }}</h2>
+				<p>{{ post.instagram_text }}</p>
+				<div class="insta-links">
+					{% for link in post.social_links %}
+						<a href="{{ link.url }}">{{ link.title }}</a>
+					{% endfor %}
+				</div>
+				<div class="insta-images">
+					{% for image in post.instagram_images %}
+						<img src="{{ image.url }}">
+					{% endfor %}
+				</div>
+			</div>
+			{% if hide_footer != true %}
+			  {% include 'partials/footer.twig' %}
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock %}{# end content #}
+          </div>
+        {% endblock %}{# end page #}
+        <div class="footer-push"></div>
+      </div><!-- #page -->
+
+      
+    {% include 'partials/newsletter.twig' %}
+    {% include 'partials/foot.twig' %}
+  </body>
+</html>

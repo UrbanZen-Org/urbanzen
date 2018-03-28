@@ -19,15 +19,15 @@
 			@include respond($tablet-portrait) {
 				&.center{
 					justify-content: center;
-					text-align: center;
+					
 				}
 				&.left{
 					justify-content: flex-start;	
-					text-align: right;
+					
 				}
 				&.right{
 					justify-content: flex-end;
-					text-align: left;
+					
 				}
 			}
 		}

@@ -1,0 +1,64 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-spring-campaign' %}
+	{% set content_rows = post.content_rows %}
+
+{% block content %}
+	{% if content_rows %}
+		<div class="content-rows">
+			{% for row in content_rows %}
+				<div class="flex-row">
+					{% for block in row.content_blocks %}
+						{% if block.acf_fc_layout == 'image_slider' %}
+							{% if block.images %}
+								<div class="image-slider">
+									{% for image in block.images %}
+										<img src="{{ image.url }}"/>
+									{% endfor %}
+								</div>
+							{% endif %}
+						{% elseif block.acf_fc_layout == 'text' %}
+							<div class="campaign-text">
+								{% if block.title %}
+									<h2>{{ block.title }}</h2>
+								{% endif %}
+
+								{% if block.subtitle %}
+									<h3>{{ block.subtitle }}</h3>
+								{% endif %}
+							</div>
+						{% elseif block.acf_fc_layout == 'video' %}
+							<div class="campaign-video">
+								<iframe class="hide-mobile" src="https://player.vimeo.com/video/{{ block.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+								<div class="mobile-video hide-desktop">
+									<div class="video-item" data-video-id="{{ block.vimeo_id }}">
+										<img class="lazyload" data-src="{{ block.mobile_image }}">
+										<div class="play-icon">
+											<i class="material-icons">play_arrow</i>
+										</div>
+									</div>
+									<div class="video-overlay">
+										<i class="close material-icons">close</i>
+										<div class="video-holder">
+											<div class="video-responsive">
+												<div id="video"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						{% elseif block.acf_fc_layout == 'single_image' %}
+							<div class="single-image {{ block.parallax ? 'full-width' }}">
+								<img class="parallax" src="{{ block.image }}"/>
+							</div>
+						{% elseif block.acf_fc_layout == 'two_images' %}										
+							{% for image in block.images %}
+								<img class="lazyload hide-mobile" src="{{ block.image }}">
+								<img class="lazyload hide-desktop" src="{{ block.mobile_image }}">
+							{% endfor %}
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endblock %}{# end content #}

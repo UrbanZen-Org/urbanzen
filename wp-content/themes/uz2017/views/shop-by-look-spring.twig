@@ -5,6 +5,7 @@
 <div class="shop-by-look">
 	<h1>{{ post.post_title }}</h1>
 	<p>{{ post.post_content }}</p>
+	<a class="cta-button"></a>
 	<div class="shop-by-looks" data-shop-by-looks="">
 		<div class="look-row sample-row">
 		</div>
@@ -44,7 +45,7 @@
 						{% if look.products %}
 							<div class="look-product-links" data-product-links="">
 								{% for product in look.products %}
-									<a href="http://urban-zen-foundation.myshopify.com/products/{{ product.handle }}">{{ product.title }}</a>
+									<a id="{{ product.handle }}" href="http://urban-zen-foundation.myshopify.com/products/{{ product.handle }}">{{ product.title }}</a>
 								{% endfor %}
 							</div>
 						{% endif %}

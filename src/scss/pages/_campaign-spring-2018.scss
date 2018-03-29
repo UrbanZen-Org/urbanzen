@@ -46,10 +46,18 @@
 					}
 						text-align: right;
 					h2{
-						font-size: 22px;
+						font-size: 16px;
+						@include respond-min($tablet-portrait)
+						{
+							font-size: 22px;
+						}
 					}
 					h4{
-						font-size: 12px;
+						font-size: 10px;
+						@include respond-min($tablet-portrait)
+						{
+							font-size: 12px;
+						}
 						text-transform: none;
 						font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif;
 						margin-bottom: 2em;

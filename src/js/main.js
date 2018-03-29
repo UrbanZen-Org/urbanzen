@@ -34,6 +34,7 @@ window.uz.modules.push(require('./global/global'));
 window.uz.modules.push(require('./global/cart'));
 window.uz.modules.push(require('./pages/home'));
 window.uz.modules.push(require('./pages/spring-home'));
+window.uz.modules.push(require('./pages/spring-campaign'));
 window.uz.modules.push(require('./pages/homepage-fall'));
 window.uz.modules.push(require('./pages/super-saturday'));
 window.uz.modules.push(require('./pages/orient-express'));

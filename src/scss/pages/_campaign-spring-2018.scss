@@ -1,0 +1,80 @@
+.page-spring-campaign{
+	.content-rows{
+		.content-row{
+			padding-bottom: 20px;
+			.inner-container{
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+			.campaign-video{
+				padding-bottom: 2em;				
+			}
+			.campaign-text{
+				text-align: center;
+				padding: 2em 0;
+				h2{
+					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    			font-size: 26px;
+    			letter-spacing: .02em;
+				}
+				p{
+					font-size: 12px;
+					font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif;
+				}
+			}
+
+			.single-image{
+				overflow: hidden;
+			}
+
+			.two-images{
+				@include respond-min($tablet-portrait)
+				{
+					display: flex;
+					justify-content: space-between;
+					flex-direction: row;
+					flex-wrap: no-wrap;
+				}
+				.half-image{
+					@include respond-min($tablet-portrait)
+					{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-basis: 49%;
+					}
+						text-align: right;
+					h2{
+						font-size: 22px;
+					}
+					h4{
+						font-size: 12px;
+						text-transform: none;
+						font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif;
+						margin-bottom: 2em;
+					}
+					h2,h4{
+						text-align: center;
+					}
+					.caption{
+						
+					}
+				}
+			}
+		}
+	}
+}
+.image-slider{
+	height: 60vh;
+	max-height: 900px;
+	max-width: 100%;
+	.slick-list,.slick-track{
+		height: 100%;
+	}
+	.slick-track{
+		img{
+			padding: 0 10px 0 0;
+		}
+	}
+}

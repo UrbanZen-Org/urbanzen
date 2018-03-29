@@ -26,6 +26,10 @@
 
 			.single-image{
 				overflow: hidden;
+				@include respond-max($tablet-portrait)
+				{
+					height: 400px;
+				}
 			}
 
 			.two-images{

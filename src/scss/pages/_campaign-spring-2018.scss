@@ -67,6 +67,10 @@
 }
 .image-slider{
 	height: 60vh;
+	@include respond-min($tablet-portrait)
+	{
+		height: 75vh;
+	}
 	max-height: 900px;
 	max-width: 100%;
 	.slick-list,.slick-track{

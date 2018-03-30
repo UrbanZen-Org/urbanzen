@@ -46,7 +46,9 @@
 		<div class="section fp-auto-height insta-slide">
 			<div class="insta-block">
 				<h2>{{ post.instagram_title }}</h2>
-				<p>{{ post.instagram_text }}</p>
+				{% if post.instagram_text %}
+					<p>{{ post.instagram_text }}</p>
+				{% endif %}
 				<div class="insta-links">
 					{% for link in post.social_links %}
 						<a href="{{ link.url }}">{{ link.title }}</a>

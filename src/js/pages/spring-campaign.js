@@ -35,7 +35,7 @@ var spring_campaign = {
             infinite: true,
             variableWidth: false
           }
-        }
+        }]
       };
       
       $('.image-slider').slick(options);

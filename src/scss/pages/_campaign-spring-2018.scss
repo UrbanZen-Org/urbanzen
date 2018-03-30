@@ -100,7 +100,6 @@
 			display: none!important;
 		}
 	}
-	height: 60vh;
 	@include respond-min($tablet-portrait)
 	{
 		height: 75vh;

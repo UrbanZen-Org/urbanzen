@@ -1,8 +1,8 @@
 <?php
 /*
-	Template Name: Home
+	Template Name: Home Spring 2018
 */
-	$templates = 'home.twig';
+	$templates = 'home-spring-2018.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 

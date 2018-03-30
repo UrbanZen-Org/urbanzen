@@ -26,9 +26,11 @@
 
 			.single-image{
 				overflow: hidden;
-				@include respond-max($tablet-portrait)
-				{
-					height: 400px;
+				&.parallax{
+					@include respond-max($tablet-portrait)
+					{
+						height: 400px;
+					}
 				}
 			}
 
@@ -57,11 +59,7 @@
 						}
 					}
 					h4{
-						font-size: 10px;
-						@include respond-min($tablet-portrait)
-						{
-							font-size: 12px;
-						}
+						font-size: 12px;
 						text-transform: none;
 						font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif;
 						margin-bottom: 2em;

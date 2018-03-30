@@ -64,13 +64,16 @@
 		}
 	}
 	.insta-slide{
-		background: white;
+		color: $ivory;
 		text-align: center;
 		.insta-block{
 			padding: 2em 0;	
 		}
 		.insta-links{
 			padding: 1em 0;
+			a{
+				color: $ivory;
+			}
 
 		}
 		.insta-images{

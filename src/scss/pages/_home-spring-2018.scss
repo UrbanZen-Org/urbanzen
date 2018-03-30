@@ -94,8 +94,10 @@
 					width: 33.3%;
 					padding: .5%;
 				}
-				&:nth-child(5),&:nth-child(6){
-					display: none;
+				@include respond-max($tablet-portrait) {
+					&:nth-child(5),&:nth-child(6){
+						display: none;
+					}
 				}
 			}
 		}

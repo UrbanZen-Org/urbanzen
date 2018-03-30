@@ -25,7 +25,17 @@ var spring_campaign = {
         speed: 300,
         variableWidth: true,
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
-        nextArrow: '<div class="slick-arrow arrow-right"></div>'
+        nextArrow: '<div class="slick-arrow arrow-right"></div>',
+        responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            variableWidth: false
+          }
+        }
       };
       
       $('.image-slider').slick(options);

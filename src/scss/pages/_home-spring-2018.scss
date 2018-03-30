@@ -1,16 +1,5 @@
 .page-home-spring-2018{
-	.image-slider.hide-mobile{
-		display: none!important;
-		@include respond($tablet-portrait) {
-			display: block;
-		}
-	}
-	.image-slider.hide-desktop{
-		
-		@include respond($tablet-portrait) {
-			display: none!important;
-		}
-	}
+
 	.slide{
 		position: relative;
 		img{

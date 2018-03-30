@@ -88,6 +88,18 @@
 	}
 }
 .image-slider{
+		&.hide-mobile{
+		display: none!important;
+		@include respond($tablet-portrait) {
+			display: block;
+		}
+	}
+	&.hide-desktop{
+		
+		@include respond($tablet-portrait) {
+			display: none!important;
+		}
+	}
 	height: 60vh;
 	@include respond-min($tablet-portrait)
 	{

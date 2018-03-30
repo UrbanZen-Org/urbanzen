@@ -9,8 +9,15 @@
 				<div class="content-row">
 						{% if block.acf_fc_layout == 'image_slider' %}
 							{% if block.images %}
-								<div class="image-slider">
+								<div class="image-slider hide-mobile">
 									{% for image in block.images %}
+										<img class="lazyload" src="{{ image.url }}"/>
+									{% endfor %}
+								</div>
+							{% endif %}
+							{% if block.mobile_images %}
+								<div class="image-slider hide-desktop">
+									{% for image in block.mobile_images %}
 										<img class="lazyload" src="{{ image.url }}"/>
 									{% endfor %}
 								</div>

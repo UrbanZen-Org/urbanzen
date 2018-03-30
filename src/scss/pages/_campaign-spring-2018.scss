@@ -1,7 +1,6 @@
 .page-spring-campaign{
 	.content-rows{
 		.content-row{
-			padding-bottom: 20px;
 			.inner-container{
 				max-width: 1200px;
 				margin: 0 auto;
@@ -13,20 +12,28 @@
 			.campaign-text{
 				text-align: center;
 				padding: 2em 1em;
+				&.black-background{
+					background: black;
+					color: $ivory;
+				}
 				h2{
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     			font-size: 26px;
     			letter-spacing: .02em;
 				}
 				p{
-					font-size: 12px;
-					font-family: 'HelveticaNeueLTStd-BdEx', 'Helvetica Neue Bold Extended', Helvetica, Arial, sans-serif;
+					font-size: 13px;
+					text-transform: none;
+					font-family: 'HelveticaNeueLTStd-Bd', 'Helvetica Neue Bold', Helvetica, Arial, sans-serif;
+					letter-spacing: .03em;
 				}
 			}
 
 			.single-image{
 				overflow: hidden;
+				padding-top: 20px;
 				&.parallax{
+					padding-top: 0;
 					@include respond-max($tablet-portrait)
 					{
 						height: 400px;
@@ -35,16 +42,20 @@
 			}
 
 			.two-images{
+				
 				@include respond-min($tablet-portrait)
 				{
+					padding-top: 20px;
 					display: flex;
 					justify-content: space-between;
 					flex-direction: row;
 					flex-wrap: no-wrap;
 				}
 				.half-image{
+					padding-top: 20px;
 					@include respond-min($tablet-portrait)
 					{
+						padding-top: 0;
 						display: flex;
 						justify-content: center;
 						align-items: center;
@@ -59,7 +70,7 @@
 						}
 					}
 					h4{
-						font-size: 14px;
+						font-size: 13px;
 						text-transform: none;
 						font-family: 'HelveticaNeueLTStd-Bd', 'Helvetica Neue Bold', Helvetica, Arial, sans-serif;
 						margin-bottom: 2em;

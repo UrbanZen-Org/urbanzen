@@ -91,7 +91,7 @@
 		&.hide-mobile{
 		display: none!important;
 		@include respond($tablet-portrait) {
-			display: block;
+			display: block!important;
 		}
 	}
 	&.hide-desktop{

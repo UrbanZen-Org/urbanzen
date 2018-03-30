@@ -111,7 +111,10 @@
 	}
 	.slick-track{
 		img{
-			padding: 0 10px 0 0;
+			@include respond-min($tablet-portrait)
+			{
+				padding: 0 10px 0 0;
+			}
 		}
 	}
 }

@@ -45,7 +45,7 @@
 						{% if look.products %}
 							<div class="look-product-links" data-product-links="">
 								{% for product in look.products %}
-									<a id="{{ product.handle }}" href="http://urban-zen-foundation.myshopify.com/products/{{ product.handle }}">{{ product.title }}</a>
+									<a id="{{ product.handle }}" {% if product.handle %} href="http://urban-zen-foundation.myshopify.com/products/{{ product.handle }}"{% endif %}>{{ product.title }}</a>
 								{% endfor %}
 							</div>
 						{% endif %}

@@ -9,7 +9,8 @@ var spring_home = {
 
   ready: function(){
     $('#fullpage').fullpage({
-      scrollBar: true
+      scrollBar: true,
+      scrollOverflow:true
     });
     $('.section .down-arrow').click(function(){
 			$.fn.fullpage.moveSectionDown();

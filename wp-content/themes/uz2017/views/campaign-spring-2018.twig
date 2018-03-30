@@ -16,13 +16,16 @@
 								</div>
 							{% endif %}
 						{% elseif block.acf_fc_layout == 'text' %}
-							<div class="campaign-text">
+							<div class="campaign-text {{ block.black_background ? 'black-background' }}">
 								{% if block.title %}
 									<h2>{{ block.title }}</h2>
 								{% endif %}
 
 								{% if block.subtitle %}
-									<p>{{ block.subtitle }}</p>
+									<h4>{{ block.subtitle }}</h4>
+								{% endif %}
+								{% if block.button_text %}
+									<a href="{{ block.button_link }}" class="cta-button {{ block.black_background ? 'light' : 'dark' }}">{{ block.button_text}}</a>		
 								{% endif %}
 							</div>
 						{% elseif block.acf_fc_layout == 'video' %}

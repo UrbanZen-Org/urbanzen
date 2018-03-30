@@ -85,18 +85,16 @@ var global = {
 
 
   downArrow: function(){
-    if ($('.down-arrow').length){
-      $('.down-arrow').click(function() {
-        if ($(this).data('target')){
-          var target = $(this).data('target');
-          if ($(window).width > 1023 ){
-            var nextSection = $(target).offset().top;  
-          }else{
-            var nextSection = $(target).offset().top - 50;  
-          }
-          
-          $("html, body").animate({ scrollTop: nextSection });
+    if ($('a[data-target]').length){
+      $('a[data-target]').click(function() {
+        var target = $(this).data('target');
+        if ($(window).width > 1023 ){
+          var nextSection = $(target).offset().top;  
+        }else{
+          var nextSection = $(target).offset().top - 50;  
         }
+        
+        $("html, body").animate({ scrollTop: nextSection });
       });
     }
   },

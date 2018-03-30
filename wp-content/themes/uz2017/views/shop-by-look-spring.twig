@@ -45,7 +45,7 @@
 						{% if look.products %}
 							<div class="look-product-links" data-product-links="">
 								{% for product in look.products %}
-									<a id="look-{{ loop.index }}-{{ product.handle }}" {% if product.handle %} href="http://urban-zen-foundation.myshopify.com/products/{{ product.handle }}"{% endif %}>{{ product.title }}</a>
+									<a id="look-{{ loop.index }}-{{ product.handle }}" {% if product.handle %} href="http://shop.urbanzen.com/products/{{ product.handle }}"{% endif %}>{{ product.title }}</a>
 								{% endfor %}
 							</div>
 						{% endif %}
@@ -54,5 +54,8 @@
 			</div>
 		{% endfor %}
 	</div>
+	<p>
+		Please call store to pre-order our Spring, Part II collection.</br>Sunglasses, headbands and leather hat are stylist’s own wardrobe.
+	</p>
 </div>
 {% endblock %}{# end content #}

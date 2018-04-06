@@ -109,10 +109,10 @@ var global = {
   newsletterPopup: {
     init: function(){
       if($('.newsletter_popup').length){
-        // if (!Cookies.get('newsletter')){
-        //   Cookies.set('newsletter', 7, { expires: 7 });
-        //   this.open();
-        // }        
+        if (!Cookies.get('newsletter')){
+          Cookies.set('newsletter', 7, { expires: 7 });
+          this.open();
+        }        
         this.actions();
       }    
     },

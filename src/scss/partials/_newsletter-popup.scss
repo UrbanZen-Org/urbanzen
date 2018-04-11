@@ -21,13 +21,13 @@
 		background: black;
 		padding: 20px;
 		.popup-text{
-			padding: 20px 20px 20px 85px;
+			padding: 20px 20px 20px 20px;
 			@include respond-min($tablet-portrait)
 			{
 				padding: 20px;
 			}
 			p{
-				padding-left: 113px;
+				padding-left: 0px;
 				@include respond-min($tablet-portrait)
 				{	
 					padding-left: 0;
@@ -123,7 +123,7 @@
     max-width: 55%;
     text-align: left;
     @media all and (max-width: 1023px) {
-        max-width: 80% !important;
+        max-width: 53% !important;
         left: 10px;
         top: 10px;
     }

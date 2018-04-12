@@ -89,13 +89,14 @@ var global = {
 
 
   downArrow: function(){
-    if ($('a[data-target]').length){
-      $('a[data-target]').click(function() {
+    if ($('[data-target]').length){
+      $('[data-target]').click(function() {
         var target = $(this).data('target');
+        console.log(target);
         if ($(window).width > 1023 ){
-          var nextSection = $(target).offset().top;  
-        }else{
           var nextSection = $(target).offset().top - 50;  
+        }else{
+          var nextSection = $(target).offset().top;  
         }
         
         $("html, body").animate({ scrollTop: nextSection });

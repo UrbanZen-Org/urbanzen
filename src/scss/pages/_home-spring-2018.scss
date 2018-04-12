@@ -1,7 +1,16 @@
 .page-home-spring-2018{
+.page-slides{
 
+}
+.section{
+	position: relative;
+}
 	.slide{
+		height: calc(100vh - 50px);
 		position: relative;
+		@include respond($tablet-portrait) {
+			height: 100vh;
+		}
 		img{
 			object-fit:cover;
 			height: 100%;

@@ -14,11 +14,11 @@
         {% block page %}
           <div id="content" >
             {% block content %}
-	<div id="fullpage">
+	<div class="page-slides" >
 		{% for slide_area in post.slide_areas %}
-			<div class="section">
+			<div class="section" id="section_{{ loop.index }}">
 				{% for slide in slide_area.slides %}
-					<div class="slide">				
+					<div class="slide" >				
 						<img class="hide-desktop lazyload" data-src="{{ slide.mobile_image }}"/>
 						{% if not slide.video %}
 							<img class="hide-mobile lazyload" data-src="{{ slide.image }}">
@@ -40,10 +40,10 @@
 						{% endif %}
 					</div>
 				{% endfor %}
-				<div class="down-arrow"></div>
+				<div class="down-arrow" data-target="#section_{{ loop.index + 1}}"></div>
 			</div>
 		{% endfor %}
-		<div class="section fp-auto-height insta-slide">
+		<div class="section fp-auto-height insta-slide" id="section_{{ post.slide_areas|length + 1 }}">
 			<div class="insta-block">
 				<h2>{{ post.instagram_title }}</h2>
 				{% if post.instagram_text %}

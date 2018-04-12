@@ -12,9 +12,6 @@ var spring_home = {
       scrollBar: true,
       scrollOverflow:true
     });
-    $('.section .down-arrow').click(function(){
-			$.fn.fullpage.moveSectionDown();
-    });    
   },
   
   resize:function(){

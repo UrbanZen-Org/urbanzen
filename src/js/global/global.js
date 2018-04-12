@@ -5,7 +5,11 @@ var lazysizes = require('lazysizes');
 var unveilhooks = require('unveilhooks');
 var Cookies = require('js-cookie');
 var Parallax = require('scroll-parallax');
-
+var openOnScroll = function(){
+  if ($(window).scrollTop() > 100){
+    global.newsletterPopup.open();
+  }
+};
 
 var global = {
   init: function(){
@@ -108,9 +112,10 @@ var global = {
   },
   newsletterPopup: {
     init: function(){
-      if($('.newsletter_popup').length & $('.shop-by-look').length){
+      if($('.newsletter_popup').length && $('.shop-by-look').length){
         if (!Cookies.get('newsletter')){
-          Cookies.set('newsletter', 7, { expires: 7 });
+          Cookies.set('newsletter', 1, { expires: 1 });
+          console.log('newsed');
           this.scroll();
         }        
         this.actions();
@@ -119,15 +124,7 @@ var global = {
     },
     scroll: function(){
       var self = this;
-      document.addEventListener('scroll', 
-        function(){
-          if ($(window).scrollTop() > 50){
-            self.open();  
-          }
-
-        });
-      
-      
+      document.addEventListener('scroll', openOnScroll);
     },
     actions: function(){
       var self = this;
@@ -142,8 +139,10 @@ var global = {
       });
     },
     open: function(){
+      var self = this;
       $('.newsletter_popup').addClass('open');
       $('body').addClass('lock-scroll');
+      document.removeEventListener('scroll', openOnScroll);
     },
     close: function(){
       $('.newsletter_popup').removeClass('open');

@@ -108,13 +108,26 @@ var global = {
   },
   newsletterPopup: {
     init: function(){
-      if($('.newsletter_popup').length){
+      if($('.newsletter_popup').length & $('.shop-by-look').length){
         if (!Cookies.get('newsletter')){
           Cookies.set('newsletter', 7, { expires: 7 });
-          this.open();
+          this.scroll();
         }        
         this.actions();
-      }    
+      }   
+ 
+    },
+    scroll: function(){
+      var self = this;
+      document.addEventListener('scroll', 
+        function(){
+          if ($(window).scrollTop() > 50){
+            self.open();  
+          }
+
+        });
+      
+      
     },
     actions: function(){
       var self = this;

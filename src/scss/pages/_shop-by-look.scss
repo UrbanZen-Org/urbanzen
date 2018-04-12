@@ -113,11 +113,10 @@
 				}
 			}
 			.look-product-links{
-				
 				opacity: 0;
-				padding: 20px 10px 10px;
+				padding: 10px 10px 10px;
 				width: 100%;
-				background: rgba(27,27,27,1);
+				background:transparent;
 				@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out, transform .3s ease-in-out));
 				@include respond-min(640)
 				{
@@ -129,10 +128,10 @@
 				a{
 					display: block;
 					cursor: pointer;
-					color: white;
+					color: black;
 					text-align: left;
 					font-size: 14px;
-					line-height: 18px;
+					line-height: 20px;
 					letter-spacing: 0.04em;
 					margin-bottom: 5px;
 					font-family: 'HelveticaNeueLTStd-Lt';

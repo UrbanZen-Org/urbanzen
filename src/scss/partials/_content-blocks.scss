@@ -1,0 +1,55 @@
+.content-rows{
+
+// Isotope Images
+.iso-images{
+	.iso-image{
+		max-width: 33%;
+		padding: 5px;
+	}
+}
+
+// Centered Slideshow
+.centered-slideshow{
+	position: relative;
+	.slideshow-title{
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		text-align: center;
+		z-index: 96;
+		color: white;
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	  line-height: 1em;
+	  letter-spacing: 0.04em;
+	  text-transform: uppercase;
+	   font-size: 20px;
+	  @include respond($tablet-portrait)
+	  {
+ 			font-size: 26px;
+	  }
+	 
+	}
+	.slides{
+		.slide{
+			height: 80vh;
+			background-position: center;
+			background-size: cover;
+			@include respond-max($tablet-portrait)
+			{
+				height: auto;
+				background-image: none;
+			}
+			img{
+			
+				&.hide-mobile{
+					@include respond-max($tablet-portrait)
+					{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+}

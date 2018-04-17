@@ -93,7 +93,7 @@ main{
 	    cursor: pointer;
 	  }
 		&.arrow-left,&.arrow-right,&.fp-prev,&.fp-next{
-			z-index: 8;
+			z-index: 99;
 		}
 		&.arrow-left, &.fp-prev{
 			left: 20px;

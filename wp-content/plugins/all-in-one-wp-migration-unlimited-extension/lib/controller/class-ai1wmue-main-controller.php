@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2017 ServMask Inc.
+ * Copyright (C) 2014-2018 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,8 +35,8 @@ class Ai1wmue_Main_Controller {
 
 		// Activate hooks
 		$this->activate_actions()
-			 ->activate_filters()
-			 ->activate_textdomain();
+			->activate_filters()
+			->activate_textdomain();
 	}
 
 	/**
@@ -82,6 +82,9 @@ class Ai1wmue_Main_Controller {
 	private function activate_filters() {
 		add_filter( 'ai1wm_max_file_size', array( $this, 'max_file_size' ) );
 
+		// Add links to plugin list page
+		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 5, 2 );
+
 		return $this;
 	}
 
@@ -119,6 +122,19 @@ class Ai1wmue_Main_Controller {
 			</p>
 		</div>
 		<?php
+	}
+
+	/**
+	 * Add links to plugin list page
+	 *
+	 * @return array
+	 */
+	public function plugin_row_meta( $links, $file ) {
+		if ( $file == AI1WMUE_PLUGIN_BASENAME ) {
+			$links[] = __( '<a href="https://help.servmask.com/knowledgebase/unlimited-extension-user-guide/" target="_blank">User Guide</a>', AI1WMUE_PLUGIN_NAME );
+		}
+
+		return $links;
 	}
 
 	/**

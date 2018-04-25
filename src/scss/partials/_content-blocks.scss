@@ -1,5 +1,8 @@
 .content-rows{
 	.caption{
+		a{
+			color: black;
+		}
 		strong{
 			font-family: 'HelveticaNeueLTStd-Bd', Helvetica, Arial, sans-serif;
 		}
@@ -191,4 +194,7 @@
 	}
 }
 
+}
+.page-event{
+	background: white;
 }

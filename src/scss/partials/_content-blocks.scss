@@ -41,7 +41,7 @@
 			padding-top: 0;
 		}
 		.inner-container{
-			max-width: 1200px;
+			max-width: 1000px;
 			margin: 0 auto;
 			padding: 0 20px;
 		}
@@ -68,7 +68,7 @@
 			}
 			.cta-button{
 				margin-top: 30px;
-				
+
 			}
 		}
 
@@ -79,6 +79,12 @@
 				@include respond-max($tablet-portrait)
 				{
 					height: 400px;
+				}
+			}
+			&.full-width{
+				img{
+					width: 100%;
+					max-width: none;
 				}
 			}
 

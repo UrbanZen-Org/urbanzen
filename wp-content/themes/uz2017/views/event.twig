@@ -82,7 +82,7 @@
 								</div>
 							</div>
 						{% elseif block.acf_fc_layout == 'single_image' %}
-							<div class="single-image {{ block.parallax ? 'full-width' }}">
+							<div class="single-image {{ block.full_width ? 'full-width' }}">
 								{{ block.full_width ? '' : '<div class="inner-container">' }}
 								<img class="{{ block.parallax ? 'parallax' }} hide-mobile" src="{{ block.image }}"/>
 								<img class="hide-desktop {{ block.parallax ? 'parallax' }}" src="{{ block.mobile_image }}"/>

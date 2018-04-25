@@ -83,11 +83,11 @@
 							</div>
 						{% elseif block.acf_fc_layout == 'single_image' %}
 							<div class="single-image {{ block.parallax ? 'full-width' }}">
-								{{ block.parallax ? '' : '<div class="inner-container">' }}
+								{{ block.full_width ? '' : '<div class="inner-container">' }}
 								<img class="{{ block.parallax ? 'parallax' }} hide-mobile" src="{{ block.image }}"/>
 								<img class="hide-desktop {{ block.parallax ? 'parallax' }}" src="{{ block.mobile_image }}"/>
-								{{ block.parallax ? '' : '</div>' }}
-								
+								<span class="caption">{{ block.caption }}</span>
+								{{ block.full_width ? '' : '</div>' }}
 							</div>
 						{% elseif block.acf_fc_layout == 'two_images' %}			
 							<div class="inner-container">							

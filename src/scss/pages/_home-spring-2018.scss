@@ -5,6 +5,11 @@
 .section{
 	position: relative;
 }
+.section-slides{
+	.arrow-left{
+		margin-left: 200px;
+	}
+}
 	.slide{
 		height: calc(100vh - 50px);
 		position: relative;

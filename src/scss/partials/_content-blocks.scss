@@ -1,4 +1,17 @@
 .content-rows{
+	.shortcode{
+		span.mb-siwc-tag{
+			line-height: 28px;
+		}
+		div.mb-siwc-popup div.mb-siwc-popup-inner h2{
+			font-size: 16px;
+		}
+		.mabel-siwc-img-wrapper{
+			&:before{
+				display: none;
+			}
+		}
+	}
 	.caption{
 		a{
 			color: black;

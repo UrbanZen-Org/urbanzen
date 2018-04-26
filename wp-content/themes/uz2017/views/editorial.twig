@@ -89,7 +89,7 @@
 								<span class="caption">{{ block.caption }}</span>
 								{{ block.full_width ? '' : '</div>' }}
 							</div>
-						{% elseif block.acf_fc_layout == 'two_images' %}			
+						{% elseif block.acf_fc_layout == 'two_images' %}
 							<div class="inner-container">							
 								<div class="two-images">
 									{% for image in block.images %}
@@ -109,8 +109,12 @@
 									{% endfor %}
 								</div>
 							</div>
+						{% elseif block.acf_fc_layout == 'shortcode' %}
+							<div class="shortcode">
+								{{ function('do_shortcode', block.shortcode_text) }}
+							</div>
 						{% endif %}
-				</div>
+					</div>
 			{% endfor %}
 		</div>
 	{% endif %}

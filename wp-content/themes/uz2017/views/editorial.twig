@@ -22,7 +22,8 @@
 								{% endif %}
 							</div>
 						{% elseif block.acf_fc_layout == 'isotope_images' %}
-							<div class="iso-images">
+							<div class="iso-images hidden">
+								<div class="iso-image-sizer"></div>
 								{% for slide in block.images %}
 									<div class="iso-image">
 										<img class="lazyload" src="{{ slide.url }}"/>

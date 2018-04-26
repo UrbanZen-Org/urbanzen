@@ -109,17 +109,19 @@ var global = {
   },
   isoImages: function(){
     if ($('.iso-images').length){
-      
+      $('.iso-images').addClass('hidden');
       $('.iso-images').each(function(){
         var self = this;
         imagesLoaded($(self), function(){
           var grid = $(self)[0];
           var iso = new Isotope( grid, {
             itemSelector: '.iso-image',
+            percentPosition: true,
             masonry: {
-              columnWidth: '.iso-image'
+              columnWidth: '.iso-image-sizer'
             }
           });
+          $('.iso-images').toggleClass('hidden');
         });
       });
       

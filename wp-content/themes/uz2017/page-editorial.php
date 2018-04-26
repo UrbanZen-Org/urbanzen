@@ -1,8 +1,8 @@
 <?php
 /*
-	Template Name: Event
+	Template Name: Editorial
 */
-	$templates = 'event.twig';
+	$templates = 'editorial.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	

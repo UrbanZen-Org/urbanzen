@@ -1,10 +1,15 @@
 .content-rows{
 	.shortcode{
 		span.mb-siwc-tag{
-			line-height: 28px;
+			text-align: center;
+			line-height: 27px;
 			color: white;
-			background: black;
+			background: rgba(0,0,0,.7);
 			border: 1px solid white;
+		}
+		.siwc-icon-plus_thin:before{
+			position: relative;
+			left: 1px;
 		}
 		div.mb-siwc-popup div.mb-siwc-popup-inner h2{
 			font-size: 16px;

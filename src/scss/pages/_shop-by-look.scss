@@ -2,6 +2,21 @@
 	padding-top: 2em;
 	text-align: center;
 	position: relative;
+	.shortcode{
+		margin-top: 40px!important;
+		span.mb-siwc-tag{
+			line-height: 28px;
+		}
+		div.mb-siwc-popup div.mb-siwc-popup-inner h2{
+			font-size: 16px;
+		}
+		.mabel-siwc-img-wrapper{
+
+			&:before{
+				display: none;
+			}
+		}
+	}
 	.sample-look,.sample-row{
 		display: none;
 	}

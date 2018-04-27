@@ -77,14 +77,13 @@ main{
 	  opacity: 0;
 	  @include transition((opacity .3s ease-in-out));
 	  @include animation('fadeIn .3s linear 1s forwards');
-
 		&:after{
 	    content: "";
 	    display: block;
 	    width: 20px;
 	    height: 20px;
 	    position: absolute;
-	    transform: rotate(45deg);
+	    
 	    border-width: 0px 2px 2px 0px;
 	    border-style: solid solid;
 	    border-color: #f5f1e1 #f5f1e1;
@@ -97,23 +96,21 @@ main{
 		}
 		&.arrow-left, &.fp-prev{
 			left: 20px;
+			@include transform(rotate(135deg));
 			&:after{
-				@include transform(rotate(135deg));
+				
 			}
 			@include transition((padding .3s ease-in-out));
-			&:hover{
-				padding-left: 20px;
-			}
+			
 		}
 		&.arrow-right,&.fp-next{
 			right: 20px;
+			@include transform(rotate(-45deg));
 			&:after{
-				@include transform(rotate(-45deg));
+				
 			}
 			@include transition((padding .3s ease-in-out));
-			&:hover{
-				padding-right: 20px;
-			}
+			
 		}
 	}
 

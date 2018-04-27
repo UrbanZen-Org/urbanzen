@@ -65,7 +65,8 @@ var spring_home = {
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>',
         fade: false,
-        arrows : true,
+        arrows : false,
+        dots: true,
         infinite: true,
         slide: '.slide',
         speed: 1000

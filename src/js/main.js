@@ -50,6 +50,7 @@ window.uz.modules.push(require('./pages/alchemist-campaign'));
 window.uz.modules.push(require('./pages/stores'));
 window.uz.modules.push(require('./pages/holiday-gift-guide'));
 window.uz.modules.push(require('./pages/collection'));
+window.uz.modules.push(require('./global/popup-gallery'));
 window.uz.modules.push(require('./pages/furniture'));
 
 window.uz.init(window.uz);

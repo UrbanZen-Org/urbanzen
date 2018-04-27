@@ -6,8 +6,43 @@
 	position: relative;
 }
 .section-slides{
+	position: relative;
 	.arrow-left{
 		margin-left: 200px;
+	}
+	.slick-dots{
+		position: absolute;
+		bottom: 0;
+		text-align: center;
+		width: 100%;
+		margin-bottom: 20px;
+		li {
+			display: inline-block;
+			outline: none;
+			&.slick-active{
+				button:before{
+					background: white;
+				}
+			}
+			button{
+				font-size: 0;
+				background: transparent;
+				border: none;
+				outline: none;
+				&:before{
+					cursor: pointer;
+					outline: none;
+					content: '';
+					display: block;
+					background: #ccc;
+					border-radius: 50%;
+					width: 10px;
+					height: 10px;
+					font-size: 0;
+					text-indent: -999px;
+				}
+			}
+		}
 	}
 }
 	.slide{

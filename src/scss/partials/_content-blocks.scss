@@ -182,14 +182,7 @@
 			width: 25%;
 		}
 		&.two-up{
-			@include respond($tablet-portrait)
-			{
-				width: 100%;	
-			}
-			@include respond($tablet-landscape)
-			{
-				width: 100%;	
-			}
+			width: 100%;
 			@include respond(1200)
 			{
 				width: 50%;

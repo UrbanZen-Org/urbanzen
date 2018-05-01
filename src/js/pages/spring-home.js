@@ -64,10 +64,11 @@ var spring_home = {
       var options = {
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>',
-        fade: false,
+        fade: true,
         arrows : false,
         dots: true,
         infinite: true,
+        autoplay: 4000,
         slide: '.slide',
         speed: 1000
       };

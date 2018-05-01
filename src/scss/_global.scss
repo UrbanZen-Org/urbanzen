@@ -15,6 +15,9 @@ main{
 	position: relative;
   z-index: 1;
 }
+img:not([src]){ 
+    visibility: hidden;
+}
 .container{
 	padding: 0 20px;
 }

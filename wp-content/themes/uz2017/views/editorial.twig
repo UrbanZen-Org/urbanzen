@@ -25,7 +25,7 @@
 							<div class="iso-images hidden" data-popup-gallery="true" data-gallery-id="gallery-{{loop.index }}">
 								<div class="iso-image-sizer"></div>
 								{% for slide in block.images %}
-									<div class="iso-image">
+									<div class="iso-image {{ slide.alt }}">
 										<img class="lazyload" src="{{ slide.url }}" title="{{ slide.caption }}"/>
 									</div>
 								{% endfor %}

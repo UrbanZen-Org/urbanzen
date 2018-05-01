@@ -171,19 +171,29 @@
 		opacity: 0;
 	}
 	.iso-image,.iso-image-sizer{
-		width: 100%;
+		width: 50%;
 		padding: 5px;
 		@include respond($tablet-portrait)
 		{
 			width: 50%;	
 		}
-		@include respond($tablet-landscape)
-		{
-			width: 33%;	
-		}
 		@include respond(1200)
 		{
 			width: 25%;
+		}
+		&.two-up{
+			@include respond($tablet-portrait)
+			{
+				width: 100%;	
+			}
+			@include respond($tablet-landscape)
+			{
+				width: 100%;	
+			}
+			@include respond(1200)
+			{
+				width: 50%;
+			}
 		}
 		img{
 			max-width: none;

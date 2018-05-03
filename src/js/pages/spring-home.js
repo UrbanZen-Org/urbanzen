@@ -69,7 +69,7 @@ var spring_home = {
         dots: true,
         infinite: true,
         autoplay: 1,
-        autoplaySpeed: 3500,
+        autoplaySpeed: 3000,
         slide: '.slide',
         speed: 1000
       };

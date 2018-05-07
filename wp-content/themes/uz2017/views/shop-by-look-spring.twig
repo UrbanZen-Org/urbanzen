@@ -38,7 +38,7 @@
 		</div>
 
 		{% for row in post.rows %}
-			<div class="look-row">
+			<div class="look-row" id="row-{{ loop.index }}">
 				{% for look in row.looks %}
 					<div class="look {{ look.layout }} {% if look.hide_mobile %}hide-mobile-look{% endif %}">
 						{% if look.layout == 'callout' %}

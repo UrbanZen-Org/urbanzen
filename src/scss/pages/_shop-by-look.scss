@@ -122,8 +122,10 @@
 						vertical-align: top;
 						outline: none;
 						width: 100%;
+						
 						@include respond-min(640)
 						{
+							color: $ivory;
 							display: inline-block;
 							width: 49%;
 							margin-right: -.25em;

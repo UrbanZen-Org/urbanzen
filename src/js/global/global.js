@@ -152,7 +152,7 @@ var global = {
   },
   newsletterPopup: {
     init: function(){
-      if($('.newsletter_popup').length && $('.shop-by-look').length){
+      if($('.newsletter_popup').length){
         if (!Cookies.get('newsletter')){
           Cookies.set('newsletter', 1, { expires: 1 });
           console.log('newsed');

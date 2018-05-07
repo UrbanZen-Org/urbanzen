@@ -78,7 +78,14 @@
             }
         }
     }
-
+    .cta-button{
+        margin: 0 auto;
+        display: block;
+        max-width: 200px;
+        width: 100%;
+        color: white;
+        text-align:center;
+    }
 }
 // OLD CRAP
 .newsletter_popup img {

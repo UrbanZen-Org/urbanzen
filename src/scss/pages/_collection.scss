@@ -1,6 +1,11 @@
 .collection{
 	.collection-slideshow, .collection-mobile-slideshow{
 		position: relative;
+		opacity: 0;
+		@include transition((opacity .4s ease-in-out));
+		&.visible{
+			opacity: 1;
+		}
 		.collection-title{
 				position: absolute;
 				top: 0;

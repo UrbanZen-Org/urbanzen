@@ -6,6 +6,9 @@
 			.collection-slide img{
 				opacity: 1;
 			}
+			h1{
+				opacity: 1;
+			}
 		}
 		.collection-title{
 				position: absolute;
@@ -21,6 +24,8 @@
 	    	z-index: 99;
 		}
 		h1{
+			opacity: 0;
+			@include transition((opacity .4s ease-in-out));
 			color: white;
 			font-size: 26px;
 			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;

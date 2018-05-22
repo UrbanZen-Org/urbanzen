@@ -385,7 +385,7 @@ img:not([src]){
 	}
 	.lazyloaded{
 		opacity: 0;
-		@include animation('fadeIn .3s linear forwards');
+		@include animation('fadeIn .1s linear forwards');
 	}
 // Description Hack
 .fall-product{

@@ -16,6 +16,7 @@ class StudioLab extends TimberSite
   function __construct()
   {
     add_theme_support('post-thumbnails');
+    add_theme_support('eventbrite');
     add_theme_support('thumbnail');
     add_filter('timber_context', array($this, 'add_to_context'));
     add_filter('get_twig', array($this, 'add_to_twig'));

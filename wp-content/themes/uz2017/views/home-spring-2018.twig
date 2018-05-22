@@ -58,7 +58,14 @@
 				</div>
 				<div class="insta-images">
 					{% for image in post.instagram_images %}
-						<img src="{{ image.url }}">
+						<div class="insta-image">
+							{% if image.caption %}
+								<div class="insta-caption">
+									<p>{{ image.caption }}</p>
+								</div>
+							{% endif %}
+							<img src="{{ image.url }}">
+						</div>
 					{% endfor %}
 				</div>
 			</div>

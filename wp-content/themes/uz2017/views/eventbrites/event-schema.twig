@@ -1,0 +1,41 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Event",
+  "name": "{{ event.post_title }}",
+  "url": "{{ event.url }}",
+  "startDate": "{{ event.start.local }}",
+  "location": {
+    "@type": "Place",
+    "name": "{{ event.venue.address.localized_area_display }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ event.venue.address.address_1 }}",
+      "addressLocality": "{{ event.venue.address.city }}",
+      "postalCode": "{{ event.venue.address.postal_code }}",
+      "addressRegion": "{{ event.venue.address.region }}",
+      "addressCountry": "{{ event.venue.address.country }}"
+    }
+  },
+  "image": [
+    "{{ event.logo_url }}"
+   ],
+  "description": "{{ function('strip_tags', event.post_content) }}",
+  "endDate": "{{ event.end.local }}",
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ event.tickets.0.resource_uri }}",
+    "price": "{{ event.tickets.0.cost.major_value }}",
+    "priceCurrency": "{{ event.tickets.0.cost.currency }}",
+    "availability": "http://schema.org/InStock",
+    "validFrom": "{{ event.start.local }}",
+    "availabilityStarts": "{{ event.tickets.0.sales_start }}",
+    "availabilityEnds": "{{ event.tickets.0.sales_end }}"
+  },
+  "performer": {
+    "@type": "Organization",
+    "name": "{{ event.organizer.name }}",
+    "description": "{{ event.organizer.description.text }}"
+  }
+}
+</script>

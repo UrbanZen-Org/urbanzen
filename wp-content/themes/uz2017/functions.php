@@ -238,3 +238,10 @@ function change_menus()
 }
 add_filter( 'intermediate_image_sizes', '__return_empty_array', 999 );
 add_action( 'admin_menu', 'change_menus' );
+
+function _remove_script_version( $src ){ 
+$parts = explode( '?', $src );  
+return $parts[0]; 
+} 
+add_filter( 'script_loader_src', '_remove_script_version', 15, 1 ); 
+add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );

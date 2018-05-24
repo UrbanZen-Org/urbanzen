@@ -1,0 +1,64 @@
+.page-eventbrite-listing{
+	
+	h1{
+		padding-top: 2em;
+		text-align: center;	
+	}
+	.eventbrite-events{
+		padding-top: 2em;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap:wrap;
+		.eventbrite-event-listing{
+			width: 49%;
+			padding-bottom: 20px;
+			.event-image{
+				
+				img{
+					width: 100%;
+				}
+			}
+			.event-info{
+				padding-top: 20px;
+				text-align: left;
+				padding-left: 25px;
+				
+				h2{
+
+				}
+				.event-date{
+					display: inline-block;
+					text-align: center;
+					width: 12%;
+					vertical-align: top;
+					padding-right: 20px;
+					.event-month{
+						font-size: 14px;
+						text-transform: uppercase;
+						display: block;
+						padding-bottom: 5px;
+					}
+					.event-day{
+						font-size: 20px;
+						display: block;
+						padding-bottom: 10px;
+					}
+				}
+				.event-details{
+					vertical-align: top;
+					width: 84%;
+					display: inline-block;
+					font-size: 12px;
+					line-height: 16px;
+					h2{
+						font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					  font-size: 14px;
+					  letter-spacing: .02em;
+					  padding-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}

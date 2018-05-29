@@ -87,6 +87,11 @@ class StudioLab extends TimberSite
       }
     );
     $twig->addFilter($format_date);
+    $event_ticket_widget = new Twig_SimpleFunction('eventbrite_ticket_form_widget', function($id){
+      echo $id;
+        echo eventbrite_ticket_form_widget($id);
+      });
+    $twig->addFunction($event_ticket_widget);
 
     $format_price = new Twig_SimpleFunction('format_price', 
       function ($price) 

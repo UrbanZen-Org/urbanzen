@@ -1,0 +1,44 @@
+.page-eventbrite.single{
+	h1{
+		text-align: left;
+		padding-top: 20px;
+		margin-bottom: 30px;
+	}
+	.eventbrite-events{
+		padding-top: 0;	
+		.eventbrite-event{
+			width: 100%;
+			.event-info{
+				padding:20px;
+				.event-details{
+					width: 100%;
+					font-size: 14px;
+					line-height: 18px;
+					@include respond-min($tablet-portrait)
+					{
+						display: flex;
+						align-items: flex-start;
+						justify-content: center;
+					
+						.event-title-desc{
+							width: 70%;
+						}
+						.event-time-loc{
+							font-size: 14px;
+							line-height: 18px;
+							width: 30%;
+							padding-left: 35px;
+						}
+					}
+				}
+				iframe{
+					@include respond($tablet-portrait)
+					{		
+						width: 70%;
+					}
+					min-height: 400px;
+				}
+			}
+		}
+	}
+}

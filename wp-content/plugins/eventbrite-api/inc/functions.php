@@ -400,10 +400,10 @@ if ( ! function_exists( 'eventbrite_ticket_form_widget' ) ) :
 /**
  * Insert the Eventbrite ticket form widget.
  */
-function eventbrite_ticket_form_widget() {
+function eventbrite_ticket_form_widget($id) {
 	// Build the src attribute URL.
 	$src = add_query_arg( array(
-			'eid' => get_the_ID(),
+			'eid' => ($id) ? $id : get_the_ID(),
 			'ref' => 'etckt',
 	), '//eventbrite.com/tickets-external' );
 

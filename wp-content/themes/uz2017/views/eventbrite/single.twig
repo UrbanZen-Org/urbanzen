@@ -1,6 +1,39 @@
 {% extends "base.twig" %}
-{% set body_class = 'page-eventbrite-single' %}
+{% set body_class = 'page-eventbrite single' %}
 
 {% block content %}
-single
+<div class="eventbrite-events">
+	<div class="eventbrite-event">
+		<div class="event-image">
+			<img src="{{ event.logo_url }}" alt="{{ event.post_title }}"/>
+		</div>
+		{# {{ function('print_r',event)}} #}
+
+		<div class="event-info">
+			<div class="event-details">
+				<div class="event-title-desc">		
+					<h2>{{ event.post_title }}</h2>
+					<div class="event-content">{{ event.post_content}}</div>
+				</div>
+				<div class="event-time-loc">
+					<h2>TIME</h2>
+					<div class="event-time">{{ event.start.local | format_date('l, F d, g:ia') }} - {{ event.end.local | format_date('l, F d, g:ia') }}</div>
+					<br>
+					<h2>LOCATION</h2>
+					<div class="event-place">
+					{{ event.venue.name}}<br>
+					{{ event.venue.address.address_1 }}<br/>
+					{{ event.venue.address.city }}, {{ event.venue.address.region }} {{ event.venue.address.postal_code }}
+					<br>
+					<a target="_blank" href="https://maps.google.com/?q={{ event.venue.name}} {{ event.venue.address.address_1 }} {{ event.venue.address.city }}, {{ event.venue.address.region }} {{ event.venue.address.postal_code }}">View Map</a>
+				</div>
+				</div>
+				
+			</div>
+			{{ function('eventbrite_ticket_form_widget', event.ID) }}
+			
+		</div>
+		{% include 'eventbrite/event-schema.twig' %}
+	</div>
+</div>
 {% endblock %}{# end content #}

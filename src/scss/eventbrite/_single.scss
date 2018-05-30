@@ -14,6 +14,10 @@
 					width: 100%;
 					font-size: 14px;
 					line-height: 18px;
+					.event-content p{
+						font-size: 14px;
+						line-height: 18px;
+					}
 					@include respond-min($tablet-portrait)
 					{
 						display: flex;
@@ -24,7 +28,7 @@
 							width: 70%;
 						}
 						.event-time-loc{
-							font-size: 14px;
+							font-size: 12px;
 							line-height: 18px;
 							width: 30%;
 							padding-left: 35px;

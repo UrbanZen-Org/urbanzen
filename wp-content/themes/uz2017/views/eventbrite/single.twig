@@ -17,15 +17,21 @@
 				</div>
 				<div class="event-time-loc">
 					<h2>TIME</h2>
-					<div class="event-time">{{ event.start.local | format_date('l, F d, g:ia') }} - {{ event.end.local | format_date('l, F d, g:ia') }}</div>
+					<div class="event-time">
+						<p>
+							{{ event.start.local | format_date('l, F d, g:ia') }} - {{ event.end.local | format_date('l, F d, g:ia') }}
+						</p>
+					</div>
 					<br>
 					<h2>LOCATION</h2>
 					<div class="event-place">
-					{{ event.venue.name}}<br>
-					{{ event.venue.address.address_1 }}<br/>
-					{{ event.venue.address.city }}, {{ event.venue.address.region }} {{ event.venue.address.postal_code }}
-					<br>
-					<a target="_blank" href="https://maps.google.com/?q={{ event.venue.name}} {{ event.venue.address.address_1 }} {{ event.venue.address.city }}, {{ event.venue.address.region }} {{ event.venue.address.postal_code }}">View Map</a>
+						<p>
+						{{ event.venue.name}}<br>
+						{{ event.venue.address.address_1 }}<br/>
+						{{ event.venue.address.city }}, {{ event.venue.address.region }} {{ event.venue.address.postal_code }}
+						<br>
+						<a target="_blank" href="https://maps.google.com/?q={{ event.venue.name}} {{ event.venue.address.address_1 }} {{ event.venue.address.city }}, {{ event.venue.address.region }} {{ event.venue.address.postal_code }}">View Map</a>
+					</p>
 				</div>
 				</div>
 				

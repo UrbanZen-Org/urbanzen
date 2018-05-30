@@ -20,6 +20,5 @@
 					// 'format_id' => null,        // integer
 				) ) );
 	$context['events'] = $ev_query->get_posts();
-	print_r($context['events']);
 	
 	Timber::render($templates, $context);

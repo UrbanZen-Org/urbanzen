@@ -15,6 +15,7 @@
 		}
 		.eventbrite-event{
 			display: block;
+			color: black;
 			@include respond-min($tablet-portrait)
 			{		
 				width: 49%;

@@ -153,10 +153,10 @@ var global = {
   newsletterPopup: {
     init: function(){
       if($('.newsletter_popup').length){
-        if ($('.page-home-spring-2018').length){
+        if (!$('.page-home-spring-2018').length){
           if (!Cookies.get('newsletter')){
             Cookies.set('newsletter', 1, { expires: 1 });
-            console.log('newsed');
+            
             this.scroll();
           }          
         }   

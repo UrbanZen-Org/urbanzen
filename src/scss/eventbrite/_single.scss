@@ -4,19 +4,25 @@
 		padding-top: 20px;
 		margin-bottom: 30px;
 	}
+	.eventbrite-events .eventbrite-event .event-info .event-details h2{
+		font-size: 16px;
+	}
 	.eventbrite-events{
 		padding-top: 0;	
 		.eventbrite-event{
 			width: 100%;
 			.event-info{
+				margin: 0 auto;
+				max-width: 800px;
 				padding:20px;
 				.event-details{
 					width: 100%;
 					font-size: 14px;
 					line-height: 18px;
 					.event-content p{
-						font-size: 14px;
-						line-height: 18px;
+						font-size: 15px;
+						line-height: 20px;
+						letter-spacing: .033em;
 					}
 					@include respond-min($tablet-portrait)
 					{

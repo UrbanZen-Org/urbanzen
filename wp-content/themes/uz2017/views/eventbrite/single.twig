@@ -16,10 +16,12 @@
 					<div class="event-content">{{ event.post_content}}</div>
 				</div>
 				<div class="event-time-loc">
-					<h2>TIME</h2>
+					<h2>DATE</h2>
 					<div class="event-time">
 						<p>
-							{{ event.start.local | format_date('l, F d, g:ia') }} - {{ event.end.local | format_date('l, F d, g:ia') }}
+							{{ event.start.local | format_date('l, F d') }} 
+							<br>
+							{{ event.start.local | format_date('g:ia') }}- {{ event.end.local | format_date('g:ia') }}
 						</p>
 					</div>
 					<br>

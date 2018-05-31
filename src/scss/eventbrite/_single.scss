@@ -13,13 +13,16 @@
 			width: 100%;
 			.event-info{
 				margin: 0 auto;
-				max-width: 800px;
+				max-width: 960px;
 				padding:20px;
 				.event-details{
 					width: 100%;
 					font-size: 14px;
 					line-height: 18px;
-					.event-content p{
+					i{
+						margin: 10px 0;
+					}
+					.event-content p,.event-content span {
 						font-size: 15px;
 						line-height: 20px;
 						letter-spacing: .033em;
@@ -51,4 +54,7 @@
 			}
 		}
 	}
+}
+.ticket-widget .promo-access-code-submit.btn{
+	background-color: $gold;
 }

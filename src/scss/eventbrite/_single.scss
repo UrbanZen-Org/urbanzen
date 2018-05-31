@@ -21,10 +21,15 @@
 					line-height: 18px;
 					i{
 						margin: 10px 0;
+						&.loc{
+							position: relative;
+							left: -4px;
+							font-size: 20px;
+						}
 					}
 					.event-content p,.event-content span {
-						font-size: 15px;
-						line-height: 20px;
+						font-size: 14px;
+						line-height: 22px;
 						letter-spacing: .033em;
 					}
 					@include respond-min($tablet-portrait)
@@ -35,6 +40,7 @@
 					
 						.event-title-desc{
 							width: 70%;
+							margin-top: 10px;
 						}
 						.event-time-loc{
 							font-size: 12px;

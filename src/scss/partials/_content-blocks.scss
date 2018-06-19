@@ -173,6 +173,7 @@
 	.iso-image,.iso-image-sizer{
 		width: 50%;
 		padding: 5px;
+		position: relative;
 		@include respond($tablet-portrait)
 		{
 			width: 50%;	
@@ -180,6 +181,27 @@
 		@include respond(1200)
 		{
 			width: 25%;
+		}
+		.iso-caption{
+			right: 5px;
+			bottom: 5px;
+			top: 5px;
+			left: 5px;
+			position: absolute;
+			background: rgba(0, 0, 0, 0.6);
+			color: white;
+			opacity: 0;
+			@include transition((opacity .3s ease-in-out));
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 2;
+			padding: 10px;
+			}
+		&:hover{
+			.iso-caption{
+				opacity: 1;
+			}
 		}
 		&.two-up{
 			width: 100%;

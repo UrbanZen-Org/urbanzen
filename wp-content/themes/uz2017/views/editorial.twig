@@ -26,7 +26,11 @@
 								<div class="iso-image-sizer"></div>
 								{% for slide in block.images %}
 									<div class="iso-image {{ slide.alt }}">
-										<img class="lazyload" src="{{ slide.url }}" title="{{ slide.caption }}"/>
+										{% if slide.caption %}
+											<div class="iso-caption">{{ slide.caption }}</div>
+										{% endif %}
+											<img class="lazyload" src="{{ slide.url }}" title="{{ slide.caption }}"/>
+										
 									</div>
 								{% endfor %}
 							</div>

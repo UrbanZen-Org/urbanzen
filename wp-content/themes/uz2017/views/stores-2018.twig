@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-stores-2018' %}
+
+{% block content %}
+	{# <section class="stores-slideshow">
+		<div class="slides">
+			{% for slide in post.images %}
+				<div class="slide">
+					<div class="slide-caption">{{ slide.title }}</div>
+					<img src="{{ slide.url }}">
+				</div>	
+			{% endfor %}
+		</div>
+	</section> #}
+	<div class="title-heading">
+		<h1>Stores</h1>
+	</div>
+	{% if post.stores %}
+		<div class="stores-list">
+			{% for store in post.stores %}
+				<div class="store-item" id="{{ store.title | replace(' ', '-') | lower }}">					
+					<div class="store-slideshow">
+						<div class="store-images">							
+							{% for image in store.images %}
+								<div class="store-image">
+									<img src="{{ image.url}}" alt="{{ image.alt }}">
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="store-details">
+						<h2>{{ store.title }}</h2>
+						<div class="store-info">{{ store.info }}</div>
+						<div class="store-hours">{{ function('wpautop', store.hours) }}</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endblock %}{# end content #}

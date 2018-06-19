@@ -1,0 +1,92 @@
+.page-stores-2018{
+	.title-heading{
+		padding: 2em 0;
+		text-align: center;
+		position: relative;
+	}
+	.store-item{
+		margin-bottom: 20px;
+		@include respond($tablet-portrait)
+		{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		&:nth-child(2){
+			flex-direction: row-reverse;
+		}
+		h2{
+			font-family: 'HelveticaNeueLTStd-BdEx', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	    font-size: 18px;
+	    line-height: 1em;
+	    letter-spacing: 0;
+	    text-transform: uppercase;
+	    letter-spacing: .02em;
+	    padding-bottom: 1em;
+		}
+
+		.store-info{
+			@include respond-max($tablet-portrait)
+			{
+				padding-top: 1em;
+			}
+			p,a{
+				color: black;
+			}
+		}
+		.store-hours{
+			padding-top: 1em;
+			@include respond-max($tablet-portrait)
+			{
+				padding-top: 2em;
+			}
+		}
+		.store-slideshow{
+			@include respond($tablet-portrait)
+			{
+				width: 70%;
+			}
+			&:hover{
+				.slick-arrow{
+					opacity: 1;
+				}
+			}
+			@include respond-min($tablet-portrait)
+			{
+				.slick-arrow{
+					opacity: 0;
+					animation: none!important;
+					-webkit-animation: none!important;
+					@include transition((opacity .2s ease-in-out));
+				}
+			}
+
+			.store-images{
+				height: 400px;
+				.slick-list,.slick-track{
+					height: 100%;
+				}
+				.store-image{
+					height: 100%;
+					img{
+						object-fit:cover;
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+		}
+		.store-details{
+			@include respond($tablet-portrait)
+			{
+				width: 40%;
+			}
+				padding: 1em 30px;
+			@include respond-max($tablet-portrait)
+			{
+				padding: 2em 30px;
+			}
+			
+		}
+	}
+}

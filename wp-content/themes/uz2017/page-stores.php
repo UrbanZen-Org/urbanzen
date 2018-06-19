@@ -2,7 +2,7 @@
 /*
 	Template Name: Stores
 */
-	$templates = 'stores.twig';
+	$templates = 'stores-2018.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	

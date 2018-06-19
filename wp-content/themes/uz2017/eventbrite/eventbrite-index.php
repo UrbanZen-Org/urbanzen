@@ -6,9 +6,9 @@
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	$ev_query = new Eventbrite_Query( apply_filters( 'eventbrite_query_args', array(
-		'sort_by' => 'date'
-					// 'display_private' => false, // boolean
-					// 'status' => 'live',         // string (only available for display_private true)
+		'sort_by' => 'date',
+					'display_private' => true,
+					'status' => 'live'
 					// 'nopaging' => false,        // boolean
 					// 'limit' => null,            // integer
 					// 'organizer_id' => null,     // integer

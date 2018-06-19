@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Stores
+	Template Name: Stores 2018
 */
 	$templates = 'stores-2018.twig';
 	$context = Timber::get_context();

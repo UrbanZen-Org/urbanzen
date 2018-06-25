@@ -95,8 +95,9 @@
 
 			}
 		}
-
+		
 		.single-image{
+			position: relative;
 			overflow: hidden;
 			&.parallax{
 				padding-top: 0;
@@ -119,6 +120,50 @@
 				padding-top: 5px;
 
 			}
+			.text-content{
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				text-align: center;
+			}
+			.supertitle{
+				display: block;
+				font-size: 16px;
+				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				text-transform: uppercase;
+				letter-spacing: .3em;
+				margin-bottom: .5em;
+			}
+			.title{
+				display: inline-block;
+				font-size: 30px;
+				font-family: 'Baskerville';
+				letter-spacing: .1em;
+			}
+			.subtitle{
+				display: inline-block;				
+			}
+			p{
+				&:before{
+					content: '';
+					width: 100px;
+					display: block;
+					margin: 0 auto;
+					border-top: 1px solid white;
+					padding-bottom: 2em;
+				}
+				margin-top: 2em;
+				font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 16px;
+				letter-spacing: .3em;
+			}
+
 		}
 
 		.two-images{
@@ -160,6 +205,82 @@
 				.caption{
 					
 				}
+			}
+		}
+		&.image_text_layout{
+			padding-top: 0;
+			&:nth-child(odd){
+				.image-text{
+					flex-direction: row-reverse;
+				}
+			}
+		}
+		.image-text{
+			
+			@include respond-min($tablet-portrait)
+			{
+				display: flex;
+				justify-content: space-between;
+				flex-direction: row;
+				flex-wrap: no-wrap;
+			}
+			.half-image{
+				@include respond-min($tablet-portrait)
+				{
+					padding-top: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-basis: 50%;
+				}
+					.image-content, img{
+						width: 100%;
+					}
+					text-align: right;
+				h2{
+					font-size: 16px;
+					@include respond-min($tablet-portrait)
+					{
+						font-size: 22px;
+					}
+				}
+				h4{
+					font-size: 13px;
+					text-transform: none;
+					font-family: 'HelveticaNeueLTStd-Bd', 'Helvetica Neue Bold', Helvetica, Arial, sans-serif;
+					margin-bottom: 2em;
+					letter-spacing: .03em;
+				}
+				h2,h4{
+					text-align: center;
+				}
+				.caption{
+					
+				}
+			}
+			.half-text{
+				background: #1e1a17;
+				text-align: center;
+				p{
+					text-align: center;
+					color: $ivory;
+					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					font-size: 14px;
+					line-height: 20px;
+					letter-spacing: .1em;
+				}
+				@include respond-min($tablet-portrait)
+				{
+					padding-top: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-basis: 50%;
+				}
+				.text-content{
+					padding: 2em;
+				}
+
 			}
 		}
 	}

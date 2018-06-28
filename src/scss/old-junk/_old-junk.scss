@@ -49,6 +49,10 @@
 	    -webkit-appearance: none;
 	    text-decoration: none;
 	    margin-top: 15px;
+      &:hover,&:active{
+        color: black;
+        background-color: white;
+      } 
 		&.gold{
 			border-color: $gold;
       background: $gold;

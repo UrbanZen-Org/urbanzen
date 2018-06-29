@@ -53,6 +53,7 @@ window.uz.modules.push(require('./pages/collection'));
 window.uz.modules.push(require('./global/popup-gallery'));
 window.uz.modules.push(require('./pages/furniture'));
 window.uz.modules.push(require('./pages/stores-2018'));
+window.uz.modules.push(require('./pages/santa-fe'));
 
 window.uz.init(window.uz);
 document.addEventListener('DOMContentLoaded', window.uz.ready.bind(window.uz));

@@ -11,20 +11,27 @@
 		</div>
 		
 		<div class="santa-fe-outfits">
-			{% for outfit in post.outfits %}		
-				<div class="outfit">	
-					<img src="{{ outfit.image }}">
+			{% for outfit in post.outfits %}
+				{% if loop.index is odd	%}
+					<div class="flex-row">
+				{% endif %}
+					<div class="outfit">	
+						<img src="{{ outfit.image }}">
 
-					<div class="captions">
-						{% for caption in outfit.captions %}
-							<span class="caption">
-								{{ caption.text }}
-								<div class="caption-popup">{{ caption.popup_text }}</div>
-							</span>{% if not loop.last %}, {% endif %}
-						{% endfor %}
+						<div class="captions">
+							{% for caption in outfit.captions %}
+								<span class="caption">
+									{{ caption.text }}
+									<div class="caption-popup">{{ caption.popup_text }}</div>
+								</span>{% if not loop.last %}, {% endif %}
+							{% endfor %}
+						</div>
+
 					</div>
 
-				</div>
+				{% if loop.index is even	%}
+					</div>
+				{% endif %}
 			{% endfor %}
 		</div>
 		

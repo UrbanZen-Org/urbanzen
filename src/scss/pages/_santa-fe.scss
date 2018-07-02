@@ -20,11 +20,13 @@
 		}
 	}
 	.santa-fe-outfits{
-		@include respond-min($tablet-portrait)
-		{
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+		.flex-row{
+			@include respond-min($tablet-portrait)
+			{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
 		}
 		.outfit{
 			width: 100%;

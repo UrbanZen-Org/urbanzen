@@ -30,7 +30,7 @@
 			width: 100%;
 			@include respond-min($tablet-portrait)
 			{
-				flex-basis: 49%;
+				width: 49%;
 			}
 			padding-bottom: 2%;
 			img{

@@ -1,4 +1,35 @@
 .content-rows{
+	.richtext{
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto;
+		p{
+			margin-bottom: 2em;
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+		
+		a{
+			color: black;
+			display: inline-block;
+			&:after{
+				content: '';
+				display: block;
+				width: 100%;
+				border-bottom: 1px solid black;
+				border-color: transparent;
+				@include transform(translateY(2px));
+				@include transition((transform .3s ease-in-out, -webkit-transform .3s ease-in-out, border-color .3s ease-in-out ));
+
+			}
+			&:hover{
+				&:after{
+					@include transform(translateY(0px));
+					border-color: black;
+				}
+			}
+		}
+	}
 	.shortcode{
 		span.mb-siwc-tag{
 			text-align: center;

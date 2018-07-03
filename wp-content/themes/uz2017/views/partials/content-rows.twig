@@ -53,7 +53,7 @@
 							<h4>{{ block.subtitle }}</h4>
 						{% endif %}
 						{% if block.button_text %}
-							<a href="{{ block.button_link }}" class="cta-button {{ block.black_background ? 'light' : 'dark' }}">{{ block.button_text}}</a>		
+							<a href="{{ block.button_link.url }}" target="{{ block.button_link.target }}" class="cta-button {{ block.black_background ? 'light' : 'dark' }}">{{ block.button_text}}</a>		
 						{% endif %}
 					</div>
 				{% elseif block.acf_fc_layout == 'video' %}
@@ -104,6 +104,10 @@
 				{% elseif block.acf_fc_layout == 'shortcode' %}
 					<div class="shortcode">
 						{{ function('do_shortcode', block.shortcode_text) }}
+					</div>
+				{% elseif block.acf_fc_layout == 'richtext' %}
+					<div class="richtext">
+						{{ block.text }}
 					</div>
 				{% endif %}
 			</div>

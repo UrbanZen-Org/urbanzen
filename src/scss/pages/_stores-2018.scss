@@ -44,7 +44,7 @@
 		.store-slideshow{
 			@include respond($tablet-portrait)
 			{
-				width: 70%;
+				width: 75%;
 			}
 			&:hover{
 				.slick-arrow{

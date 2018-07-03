@@ -4,6 +4,26 @@
 		text-align: center;
 		max-width: 700px;
 		margin: 3em auto;
+		a{
+			color: black;
+			display: inline-block;
+			&:after{
+				content: '';
+				display: block;
+				width: 100%;
+				border-bottom: 1px solid black;
+				border-color: transparent;
+				@include transform(translateY(5px));
+				@include transition((transform .3s ease-in-out, -webkit-transform .3s ease-in-out, border-color .3s ease-in-out ));
+
+			}
+			&:hover{
+				&:after{
+					@include transform(translateY(0px));
+					border-color: black;
+				}
+			}
+		}
 		h4{
 			font-size: 16px;
 			letter-spacing: .15em;

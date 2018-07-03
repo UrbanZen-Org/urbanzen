@@ -12,6 +12,7 @@
 				display: block;
 				width: 100%;
 				border-bottom: 1px solid black;
+				padding-top: 4px;
 				border-color: transparent;
 				@include transform(translateY(5px));
 				@include transition((transform .3s ease-in-out, -webkit-transform .3s ease-in-out, border-color .3s ease-in-out ));

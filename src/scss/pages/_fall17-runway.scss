@@ -1,192 +1,160 @@
-.fall17-event{
-	background: black;
-	color: white;
-	text-align: center;
-	h1{
-		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 30px;
-    line-height: 1em;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    letter-spacing: .02em;
-    position: absolute;
-    bottom: 10%;
-    width: 100%;
-    color: $gold;
-    opacity: 0;
-    animation: fadeInOut 3.0s linear .5s forwards;
-	}
-	h2{
-		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 30px;
-    line-height: 1em;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    letter-spacing: .02em;
-    margin: 50px auto;
-	}
-	.cover-area{
-		position: relative;
-		@include respond-min($tablet-portrait)
-		{
-			min-height: 85vh;
-			background-size: cover;
-			background-position: center center;
-			overflow: hidden;
+.page-orient-runway{
+	.fall17-event{
+		background: black;
+		color: white;
+		text-align: center;
+		h1{
+			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	    font-size: 30px;
+	    line-height: 1em;
+	    letter-spacing: 0;
+	    text-transform: uppercase;
+	    letter-spacing: .02em;
+	    position: absolute;
+	    bottom: 10%;
+	    width: 100%;
+	    color: $gold;
+	    opacity: 0;
+	    animation: fadeInOut 3.0s linear .5s forwards;
 		}
-	}
-	.unveil-heading{
-		margin-bottom: 40px;
-		p{
-			margin: 0 auto;
-			font-size: 16px;
-			line-height: 1.2em;
-			font-family: $helvetica-neue-lt-ex;
-			width: 80%;
+		h2{
+			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	    font-size: 30px;
+	    line-height: 1em;
+	    letter-spacing: 0;
+	    text-transform: uppercase;
+	    letter-spacing: .02em;
+	    margin: 50px auto;
+		}
+		.cover-area{
+			position: relative;
 			@include respond-min($tablet-portrait)
 			{
-				font-size: 26px;
-				width: 50%;
-				max-width: 550px;
+				min-height: 85vh;
+				background-size: cover;
+				background-position: center center;
+				overflow: hidden;
 			}
 		}
-	}
-	.unveil-images{
-		padding: 40px 20px 0;
-	}
-	.signature-look-slides .img-wrap{
-		position: relative;
-		.look-title{
-			position: absolute;
-			bottom: 10px;
-			width: 100%;
-			text-align: center;
-			text-transform: uppercase;
-			letter-spacing: .02em;
-		}
-	}
-	.lifestyle-images{
-		padding: 0 20px;	
-	}
-	.behind-the-scenes-slideshow{
-		margin-bottom: 30px;
-	}
-	
-	
-}
-.flex-row{
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row;
-		flex-wrap: wrap;
-		//margin-bottom: 20px;
-		@include respond-min($tablet-portrait)
-		{
-			margin-bottom: 20px;
-		}
-		.img-wrap{
-			height: 100%;
-			@include respond-max($tablet-portrait)
-			{		
-				margin-bottom: 20px;
-			}
-		}
-	.half{
-		@include respond-min($tablet-portrait)
-		{
-			width: calc(50% - 10px);
-		}
-		position: relative;
-  	box-sizing: border-box;
-	}
-	.quarter{
-		width: calc(50% - 10px);
-		position: relative;
-  	box-sizing: border-box;
-		@include respond-min($tablet-portrait)
-		{
-			width: calc(25% - 20px);
-		}
-	}
-}
-.img-wrap{
-		background: #000;
-		position: relative;
-		&.text-content{
-			background: #1b1b1b;
-			color: white;
-			text-align: center;
-			@include respond-max($tablet-portrait) {
-				padding-bottom: 0!important;
-				height: auto!important;
-			}
+		.unveil-heading{
+			margin-bottom: 40px;
 			p{
-				font-family: 'HelveticaNeueLTStd-Lt', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-				font-size: 20px;
-				letter-spacing: .02em;
-				line-height: 40px;
-				
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				display: flex;
-				padding: 20px;
-				align-items: center;
-				justify-content: center;
-				position: absolute;
-				@include respond-max($tablet-portrait) {
-					position: static;
+				margin: 0 auto;
+				font-size: 16px;
+				line-height: 1.2em;
+				font-family: $helvetica-neue-lt-ex;
+				width: 80%;
+				@include respond-min($tablet-portrait)
+				{
+					font-size: 26px;
+					width: 50%;
+					max-width: 550px;
 				}
 			}
 		}
-		img{
-			@include respond-min($tablet-portrait)
-			{
-				object-fit: cover;
+		.unveil-images{
+			padding: 40px 20px 0;
+		}
+		.signature-look-slides .img-wrap{
+			position: relative;
+			.look-title{
+				position: absolute;
+				bottom: 10px;
 				width: 100%;
-				height: 100%;
+				text-align: center;
+				text-transform: uppercase;
+				letter-spacing: .02em;
 			}
 		}
-		&.square{
-			height: 0;
-			width: 100%;
-			padding-bottom: 100%;
-			position: relative;
-			overflow: hidden;
-
+		.lifestyle-images{
+			padding: 0 20px;	
 		}
-		&.two-to-one{
-			height: 0;
-			width: 100%;
-			padding-bottom: calc(50% - 10px);
-			position: relative;
-			overflow: hidden;
+		.behind-the-scenes-slideshow{
+			margin-bottom: 30px;
 		}
-		&.four-by-three{
-			height: 0;
-			width: 100%;
-			padding-bottom: calc(75%);
-			position: relative;
-			overflow: hidden;
-						img{
-				position: absolute;
-			  top: 50%;
-	  		left: 50%;
-	  		transform: translate(-50%, -50%);
-			}
-		}
-		&.wide{
-			height: 0;
-			width: 100%;
-			padding-bottom:75.4%;
-			position: relative;
-			overflow: hidden;
-			img{
-				position: absolute;
-			  top: 50%;
-	  		left: 50%;
-	  		transform: translate(-50%, -50%);
-			}
-		}
+		
+		
 	}
+
+	.img-wrap{
+			background: #000;
+			position: relative;
+			&.text-content{
+				background: #1b1b1b;
+				color: white;
+				text-align: center;
+				@include respond-max($tablet-portrait) {
+					padding-bottom: 0!important;
+					height: auto!important;
+				}
+				p{
+					font-family: 'HelveticaNeueLTStd-Lt', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					font-size: 20px;
+					letter-spacing: .02em;
+					line-height: 40px;
+					
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					display: flex;
+					padding: 20px;
+					align-items: center;
+					justify-content: center;
+					position: absolute;
+					@include respond-max($tablet-portrait) {
+						position: static;
+					}
+				}
+			}
+			img{
+				@include respond-min($tablet-portrait)
+				{
+					object-fit: cover;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&.square{
+				height: 0;
+				width: 100%;
+				padding-bottom: 100%;
+				position: relative;
+				overflow: hidden;
+
+			}
+			&.two-to-one{
+				height: 0;
+				width: 100%;
+				padding-bottom: calc(50% - 10px);
+				position: relative;
+				overflow: hidden;
+			}
+			&.four-by-three{
+				height: 0;
+				width: 100%;
+				padding-bottom: calc(75%);
+				position: relative;
+				overflow: hidden;
+							img{
+					position: absolute;
+				  top: 50%;
+		  		left: 50%;
+		  		transform: translate(-50%, -50%);
+				}
+			}
+			&.wide{
+				height: 0;
+				width: 100%;
+				padding-bottom:75.4%;
+				position: relative;
+				overflow: hidden;
+				img{
+					position: absolute;
+				  top: 50%;
+		  		left: 50%;
+		  		transform: translate(-50%, -50%);
+				}
+			}
+		}
+}

@@ -38,6 +38,9 @@
 		<div class="bottom-text">
 			{{ post.bottom_text }}
 		</div>
+		{% if content_rows %}
+			{% include 'partials/content-rows.twig' %}
+		{% endif %}
 </div>
 	<div class="designer-overlay">
 		<div class="popup-area">

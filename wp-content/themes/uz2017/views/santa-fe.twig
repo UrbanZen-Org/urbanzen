@@ -5,6 +5,7 @@
 {% block content %}
 	<img src="{{ post.thumbnail.src }}" class="hide-mobile">
 	<img src="{{ post.banner_image_mobile }}" class="hide-desktop">
+
 	<div class="container">
 		<div class="text-container">
 			{{ post.richtext }}
@@ -16,7 +17,7 @@
 					<div class="flex-row">
 				{% endif %}
 					<div class="outfit">	
-						<img src="{{ outfit.image }}">
+						<img src="{{ outfit.image }}" >
 
 						<div class="captions">
 							{% for caption in outfit.captions %}

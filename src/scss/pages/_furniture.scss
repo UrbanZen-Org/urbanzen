@@ -30,6 +30,26 @@
 						margin-bottom: 20px;
 					}
 			}
+			.flex-row{
+				display: flex;
+				justify-content: space-between;
+				align-items: stretch;
+				img{
+					width: 100%;
+				}
+				> div{
+					padding-bottom: 20px;
+				}
+			}
+			.half{
+				width: calc(50% - 5px);
+			}
+			.quarter{
+				width: calc(25% - 5px);
+			}
+			.text-block{
+				height: 100%;
+			}
 			@include respond-max($tablet-portrait) {
 			.img-wrap,.half,.quarter,img{
 				width: 100%;

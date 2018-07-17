@@ -6,7 +6,9 @@ var unveilhooks = require('unveilhooks');
 var Cookies = require('js-cookie');
 var Parallax = require('scroll-parallax');
 var Isotope = require('isotope-layout');
+var animsition = require('animsition');
 var imagesLoaded = require('imagesloaded');
+
 
 var openOnScroll = function(){
   if ($(window).scrollTop() > 100){
@@ -17,8 +19,37 @@ var openOnScroll = function(){
 var global = {
   init: function(){
   },
+  pageTransitions: function () {
+    $(".animsition").animsition({
+      inClass: 'fade-in',
+      outClass: 'fade-out',
+      inDuration: 500,
+      outDuration: 500,
+      linkElement: '.transition-link:not([target="_blank"]):not([href^="#"]):not([href^="mailto"]):not(.trigger)',
+      // linkElement: 'a:not([target="_blank"]):not([href^="#"]):not([href^="deadlink"])',
+      // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+      loading: true,
+      loadingParentElement: 'body', //animsition wrapper element
+      loadingClass: 'page-loading',
+      loadingInner: '', // e.g '<img src="loading.svg" />'
+      timeout: true,
+      timeoutCountdown: 50000,
+      onLoadEvent: true,
+      browser: [ 'animation-duration', '-webkit-animation-duration'],
+      // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+      // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+      overlay : false,
+      overlayClass : 'animsition-overlay-slide',
+      overlayParentElement : 'body',
+      transition: function(url){ window.location.href = url; }
+    });
 
+    $('.animsition').on('animsition.inStart', function(){
+      $('.page-loader').addClass('loaded');
+    });
+  },
   ready: function(){
+    this.pageTransitions();
     this.downArrow();
     this.lazyload();
     this.newsletterPopup.init();

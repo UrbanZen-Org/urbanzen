@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   {% include 'partials/head.twig' %}
-  <body class="{{ body_class }} animsition">
+  <body class="{{ body_class }}">
       {# {% include 'partials/header.twig'%} #}
       {% include 'partials/menu.twig' %}
       
       <div id="page" class="{{ page_class }}">
         {% block page %}
-          <div id="content" >
+          <div id="content" class="animsition" >
             {% block content %}
               
             {% endblock %}{# end content #}

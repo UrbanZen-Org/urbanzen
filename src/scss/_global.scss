@@ -1,5 +1,8 @@
 html,.animsition{
-	height: 100%;
+	min-height: 100%;
+}
+.animsition{
+	opacity: 0;
 }
 body{
 	&.lock-scroll{

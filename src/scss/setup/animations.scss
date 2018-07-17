@@ -11,6 +11,12 @@
 		visibility: visible;
 	}
 }
+@keyframes fade-in {
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
 
 $stagger-time : .1s;
 $stagger-delay : .5s;

@@ -49,7 +49,7 @@ var global = {
     });
   },
   ready: function(){
-    this.pageTransitions();
+    // this.pageTransitions();
     this.downArrow();
     this.lazyload();
     this.newsletterPopup.init();

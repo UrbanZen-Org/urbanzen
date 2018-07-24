@@ -10,9 +10,9 @@
 		<div class="collections">
 		
 		{% for collection in post.past_collections %}
-			<div class="collection">
-				<img class="lazyload hide-mobile" data-src="{{ collection.image }}">
-				<img class="lazyload hide-desktop" data-src="{{ collection.mobile_image }}">
+			<div class="collection scroll-watch image-first">
+				<img class="hide-mobile" src="{{ collection.image }}">
+				<img class="hide-desktop" src="{{ collection.mobile_image }}">
 					<div class="collection-info">
 						<h2>{{ collection.title }}</h2>
 						<div class="collection-links">

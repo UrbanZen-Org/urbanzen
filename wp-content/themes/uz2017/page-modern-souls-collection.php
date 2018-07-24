@@ -2,7 +2,7 @@
 /*
 	Template Name: Modern Souls Collection
 */
-	$templates = 'silk-road-campaign.twig';
+	$templates = 'modern-souls.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 	

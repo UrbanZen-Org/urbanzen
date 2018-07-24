@@ -8,6 +8,7 @@ var Parallax = require('scroll-parallax');
 var Isotope = require('isotope-layout');
 var animsition = require('animsition');
 var imagesLoaded = require('imagesloaded');
+var scrollmonitor = require('scrollmonitor');
 
 
 var openOnScroll = function(){
@@ -59,6 +60,7 @@ var global = {
     this.parallax();
     this.isoImages();
     this.centeredSlideshow();
+    this.scrollWatch();
   },
   parallax: function(){
     var p = new Parallax('.parallax').init();
@@ -68,6 +70,20 @@ var global = {
   },  
   scroll: function(){
     
+  },
+  scrollWatch : function(){
+     $('.scroll-watch').each(function(i,v){
+        var elementWatcher = scrollMonitor.create(v);
+        elementWatcher.enterViewport(function() {
+            console.log( 'I have entered the viewport');
+
+            $(v).find('img').addClass('loaded');
+            $(v).find('a,p,h2').addClass('loaded');
+        });
+        elementWatcher.exitViewport(function() {
+            console.log( 'I have left the viewport' );
+        });
+     });
   },
   accordian : function(){
     if ($('.accordian-section').length) {

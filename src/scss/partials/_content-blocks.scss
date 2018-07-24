@@ -60,6 +60,7 @@
 		}
 	}
 	.image-slider{
+		opacity: 0;
 			&.hide-mobile{
 			display: none!important;
 			@include respond($tablet-portrait) {
@@ -87,6 +88,17 @@
 				{
 					padding: 0 10px 0 0;
 				}
+			}
+		}
+		.image-slider-caption{
+			position: relative;
+			opacity: 0;
+			@include transition((opacity .3s ease-in-out));
+			p{			
+				max-width: 50%;
+				margin-top: 10px; 
+				line-height: 1.5em;
+				font-size: 12px;
 			}
 		}
 	}

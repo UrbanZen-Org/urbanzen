@@ -32,10 +32,12 @@
 					{% if block.images %}
 						<div class="image-slider hide-mobile">
 							{% for image in block.images %}
-								<img class="lazyload" src="{{ image.url }}"/>
+								<img class="lazyload" src="{{ image.url }}" data-caption="{{ image.caption }}" />
 							{% endfor %}
+							<div class="image-slider-caption"><p>{{ block.images.0.caption }}</p></div>
 						</div>
-					{% endif %}
+
+					{% endif %}	
 					{% if block.mobile_images %}
 						<div class="image-slider hide-desktop">
 							{% for image in block.mobile_images %}

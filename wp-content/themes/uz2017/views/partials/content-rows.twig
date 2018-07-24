@@ -31,8 +31,8 @@
 				{% elseif block.acf_fc_layout == 'image_slider' %}						
 					{% if block.images %}
 						<div class="image-slider hide-mobile">
-							{% for image in block.images %}
-								<img class="lazyload" src="{{ image.url }}" data-caption="{{ image.caption }}" />
+							{% for image in block.images %}								
+									<img class="lazyload" src="{{ image.url }}" data-caption="{{ image.caption }}" />
 							{% endfor %}
 							<div class="image-slider-caption"><p>{{ block.images.0.caption }}</p></div>
 						</div>
@@ -43,6 +43,7 @@
 							{% for image in block.mobile_images %}
 								<img class="lazyload" src="{{ image.url }}"/>
 							{% endfor %}
+							<div class="image-slider-caption"><p>{{ block.images.0.caption }}</p></div>
 						</div>
 					{% endif %}
 				{% elseif block.acf_fc_layout == 'text' %}

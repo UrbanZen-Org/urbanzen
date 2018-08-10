@@ -63,6 +63,16 @@
 				background-color: white;
 			}
 		}
+    &.ivory{
+      border-color: $ivory;
+      background: $ivory;
+      color: black;
+      @include transition((background .3s ease-in-out, border-color .3s ease-in-out));
+      &:hover,&:active{
+        color: $ivory;
+        background-color: white;
+      }
+    }
 		&.dark, &.black{
 			border-color: black;
 			color: black;

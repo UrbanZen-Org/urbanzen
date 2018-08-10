@@ -54,8 +54,9 @@ $ivory : #e5ceb2;
 				flex-direction: column;
 			
 				span{
+					 font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					color: $ivory;
-					font-size: 25px;
+					font-size: 28px;
 					letter-spacing: .1em;
 					text-transform: uppercase;
 					margin-bottom: 1em;
@@ -106,7 +107,11 @@ $ivory : #e5ceb2;
 
 	.happenings{
 		h2{
+			padding: 0 30px;
 			color: $ivory;
+			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: 28px;
+			letter-spacing: .1em;
 		}
 		text-align: center;
 		margin-top: 40px;
@@ -151,8 +156,9 @@ $ivory : #e5ceb2;
 				text-align: center;
 				padding: 0 40px;
 				span{
+					 font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					color: $ivory;
-					font-size: 25px;
+					font-size: 28px;
 					letter-spacing: .1em;
 					line-height: 1.2em;
 					text-transform: uppercase;
@@ -163,10 +169,16 @@ $ivory : #e5ceb2;
 
 	}
 	.insta-block{
+		h2{
+			color: $ivory;
+			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: 28px;
+		}
 		margin-top: 40px;
 		text-align: center;
 		color: $ivory;
 		p {
+			font-size: 16px;
 			margin-top: 10px;
 			a{
 				display: block;

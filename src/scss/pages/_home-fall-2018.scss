@@ -82,7 +82,9 @@ $ivory : #e5ceb2;
 				left: 0;
 			}
 			&.arrow-right{
-				right: 0;
+				right: 10px;
+				margin-left: 10px;
+				transform: translateX(10px);
 			}
 			&:after{
 				height: 10px;

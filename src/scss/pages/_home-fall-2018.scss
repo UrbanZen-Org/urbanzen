@@ -84,7 +84,7 @@ $ivory : #e5ceb2;
 			&.arrow-right{
 				right: 10px;
 				margin-left: 10px;
-				transform: translateX(10px);
+				transform: translateX(10px) rotate(-45deg);
 			}
 			&:after{
 				height: 10px;

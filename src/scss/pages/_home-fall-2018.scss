@@ -2,6 +2,11 @@ $ivory : #e5ceb2;
 
 
 .page-home-fall-2018{
+	h2{
+		color: $ivory;
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 28px;
+	}
 	.slider-dots{
 		position: absolute;
 		bottom: 0;
@@ -50,11 +55,14 @@ $ivory : #e5ceb2;
 				top: 0;
 				display: flex;
 				align-items: center;
-				justify-content: center;
+				justify-content: flex-end;
 				flex-direction: column;
+				padding-bottom: 30%;
+
 			
 				span{
-					 font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					
+					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					color: $ivory;
 					font-size: 28px;
 					letter-spacing: .1em;
@@ -75,6 +83,7 @@ $ivory : #e5ceb2;
 		}
 	}
 	.category-slider{
+
 		margin: 20px 0px;
 		padding: 0 20px;
 		.slick-arrow{
@@ -126,6 +135,26 @@ $ivory : #e5ceb2;
 			flex-wrap: wrap;
 			figure{
 				width: 50%;
+				position: relative;
+				figcaption{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					opacity: 0;
+					background: rgba(0,0,0,.6);
+					color: white;
+					padding: 10px;
+					&:hover{
+						opacity: 1;
+						@include transition((opacity .3s ease-in-out));
+					}
+				}
 			}
 		}
 		a{
@@ -140,8 +169,20 @@ $ivory : #e5ceb2;
 		}
 	}
 	.page-callouts{
+		text-align: center;
 		margin-top: 40px;
 		position: relative;
+		p {
+			font-size: 14px;
+			line-height: 1.2em;
+			margin: 10px 20px 20px;
+			color: $ivory;
+
+			a{
+				display: block;
+				color: $ivory;
+			}
+		}
 		figure{
 			position: relative;
 			figcaption{
@@ -171,11 +212,7 @@ $ivory : #e5ceb2;
 
 	}
 	.insta-block{
-		h2{
-			color: $ivory;
-			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-			font-size: 28px;
-		}
+
 		margin-top: 40px;
 		text-align: center;
 		color: $ivory;

@@ -38,6 +38,7 @@ $ivory : #e5ceb2;
 	}
 	.top-slider{
 		position: relative;
+		overflow: hidden;
 		figure{
 			position: relative;
 			height: 100vh;
@@ -55,13 +56,11 @@ $ivory : #e5ceb2;
 				top: 0;
 				display: flex;
 				align-items: center;
-				justify-content: center;
+				justify-content: flex-end;
 				flex-direction: column;
-				
-
-			
+				padding-bottom: 20%;
 				span{
-					padding-top: 80%;	
+					
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					color: $ivory;
 					font-size: 28px;

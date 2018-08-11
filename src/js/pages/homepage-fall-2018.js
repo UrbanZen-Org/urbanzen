@@ -11,11 +11,11 @@ var home_2018 = {
 
   ready: function(){
     homepage.find('.top-slider').css({
-      'max-height': $(window).innerHeight
+      'max-height': window.innerHeight
     });
     homepage.find('.top-slider').slick({
         fade: true,
-        appendDots: '.top-slider-nav',
+        appendDots: '.top-slider-nav',  
         dots : true,
         arrows : false,
         autoplay: 1,

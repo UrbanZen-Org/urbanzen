@@ -20,170 +20,71 @@
 </div>
 
 <div class="category-slider">
+	{% for category in post.featured_category %}
 		<figure>
-			
-				<picture>
-				  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/10194349/HP_Categories_Accessories_M_410x510.jpg">				       
-				</picture>
-				<figcaption>
-					<a href="">
-					<span>Accessories</span>
-					</a>
-				</figcaption>			
+			<picture>
+			  <img src="{{ category.image }}">				       
+			</picture>
+			<figcaption>
+				<a href="{{ category.url }}">
+				<span>{{ category.text }}</span>
+				</a>
+			</figcaption>			
 		</figure>
-		<figure>
-			
-				<picture>
-				  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/10194350/HP_Categories_Home_Decor_M_410x510.jpg">				       
-				</picture>
-				<figcaption>
-					<a href="">
-					<span>Home Decor</span>
-					</a>
-				</figcaption>
-			
-		</figure>
-		<figure>
-			
-				<picture>
-				  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/10194351/HP_Category_Candles_M_410x510.jpg">				       
-				</picture>
-				<figcaption>
-					<a href="">
-					<span>Candles</span>
-					</a>
-				</figcaption>
-			
-		</figure>
-		<figure>
-			<a href="">
-				<picture>
-				  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/10194352/HP_Category_Tabletop_M_410x510.jpg">				       
-				</picture>
-				<figcaption>
-					<span>Tabletop</span>
-				</figcaption>
-			</a>
-		</figure>
+	{% endfor %}
 </div>
 <div class="happenings">
-	<h2>September Happenings</h2>
+	<h2>{{ post.events_title }}</h2>
 	<div class="happening-items">
-		<figure>
-			<picture>
-			  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/10194353/HP_Events_Russell_M_410x410.jpg">
-			</picture>
-			<figcaption>
-				<span> Exhibit by Russell James Fashion Week</span>
-			</figcaption>
-		</figure>
-		<figure>
-			<picture>
-			  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/10194353/HP_Events_Meditation_M_410x410.jpg">
-			</picture>
-			<figcaption>
-				<span>Unplug Meditation Fashion Week</span>
-			</figcaption>
-		</figure>
-		<figure>
-			<picture>
-			  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/10194354/HP_Events_Table_M_410x410.jpg">
-			</picture>
-			<figcaption>
-				<span>Sustainable Dinner 9.25.18</span>
-			</figcaption>
-		</figure>
-		<figure>
-			<picture>
-			  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/10194355/HP_Events_Yoga_M_410x410.jpg">
-			</picture>
-			<figcaption>
-				<span>Class by Taryn Toomey 9.22.18</span>
-			</figcaption>
-		</figure>
+		{% for event in post.featured_events %}
+			<figure>
+				{% if event.url %}<a href="{{ event.url }}">{% endif %}
+				<picture>
+				  <img src="{{ event.image }}">
+				</picture>
+				<figcaption>
+					<span>{{ event.text }}</span>
+				</figcaption>
+				{% if event.url %}</a>{% endif %}
+			</figure>
+		{% endfor %}
 	</div>
-	<a href="#" class="cta-button ivory">Join Us</a>
+	{% if post.event_button_text %}
+		<a href="{{ post.event_button_link }}" class="cta-button ivory">{{ post.event_button_text }}</a>
+	{% endif %}
 </div>
 
 <div class="page-callouts">
-	<h2>Urban Zen Foundation</h2>
-	<p> UZF creates, connects, collaborates.<br>
-			Raising awareness and inspiring change, wellbeing and education.
-	</p>
-	<figure>
-		<a href="">
-			<picture>
-			  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/11144400/HP_UZF_Culture_m_828x1000.jpg">
-			</picture>
-			<figcaption>
-				<span>We are philanthropy + commerce</span>
-				<a class="cta-button ivory" href="">Preserving Cultures</a>
-			</figcaption>
-		</a>
-	</figure>
+	<h2>{{ post.foundation_title }}</h2>
+	<p>{{ post.foundation_text }}</p>
+	{% for event in post.foundation_slides %}
 		<figure>
-		<a href="">
-			<picture>
-			  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/11144402/HP_UZF_Healthcare_m_828x1000.jpg">
-			</picture>
-			<figcaption>
-				<span>We are philanthropy + commerce</span>
-				<a class="cta-button ivory" href="">Healthcare</a>
-			</figcaption>
-		</a>
-	</figure>
-		<figure>
-		<a href="">
-			<picture>
-			  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/11144401/HP_UZF_Education_M828x1000.jpg">
-			</picture>
-			<figcaption>
-				<span>We are philanthropy + commerce</span>
-				<a class="cta-button ivory" href="">Education</a>
-			</figcaption>
-		</a>
-	</figure>
-		<figure>
-		<a href="">
-			<picture>
-			  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/11144401/HP_UZF_DK_m_828x1000.jpg">
-			</picture>
-			<figcaption>
-				<span>We are philanthropy + commerce</span>
-				<a class="cta-button ivory" href="">Our Founder</a>
-			</figcaption>
-		</a>
-	</figure>
+			<a href="{{ event.url }}">
+				<picture>
+				  <img src="{{ event.image }}">
+				</picture>
+				<figcaption>
+					<span>{{ event.text }}</span>
+					<a class="cta-button ivory" href="{{ event.button_url }}">{{ event.button_text }}</a>
+				</figcaption>
+			</a>
+		</figure>
+	{% endfor %}
 	<div class="pages-slider-nav slider-dots"></div>
 </div>
 <div class="insta-block">
-	<h2>Follow Us</h2>
-	<p>
-		<a href="">@urbanzen</a>
-		<a href="">@donnakaranthewoman</a>
-	</p>
+	<h2>{{ post.social_title }}</h2>
+	{{ post.social_text }}
 	<div class="insta-images">
+	{% for insta in post.social_images %}
 		<figure>
-			<a href="">
+			<a href="{{ insta.url }}">
 				<picture>
-				  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/11144358/HP_Social_01_Replacement_M_410x410.jpg">
+				  <img src="{{ insta.image }}">
 				</picture>
 			</a>
 		</figure>
-		<figure>
-			<a href="">
-				<picture>
-				  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/11144359/HP_Social_02_Replacement_M_410x410.jpg">
-				</picture>
-			</a>
-		</figure>
-		<figure>
-			<a href="">
-				<picture>
-				  <img src="https://s3.amazonaws.com/urbanzen.com-wp/wp-content/uploads/2018/08/11144359/HP_Social_03_Replacement_M_410x410.jpg">
-				</picture>
-			</a>
-		</figure>
+	{% endfor %}
 	</div>
 </div>
 

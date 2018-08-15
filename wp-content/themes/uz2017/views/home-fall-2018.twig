@@ -11,8 +11,12 @@
 			  <img src="{{ hero.mobile_image }}">
 			</picture>
 			<figcaption>
-				<span>{{ hero.text }}</span>
-				<a class="cta-button ivory" href="{{ hero.button_link }}">{{ hero.button_text }}</a>
+				{% if hero.text %}
+					<span>{{ hero.text }}</span>
+				{% endif %}
+				{% if hero.button_text %}
+					<a class="cta-button ivory" href="{{ hero.button_link }}">{{ hero.button_text }}</a>
+				{% endif %}
 			</figcaption>
 		</figure>
 	{% endfor %}

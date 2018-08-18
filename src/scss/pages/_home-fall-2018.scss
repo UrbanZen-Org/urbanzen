@@ -3,16 +3,26 @@ $ivory : #e5ceb2;
 
 .page-home-fall-2018{
 	nav.top-menu{
+			.menu-icon,.menu-icon:before,.menu-icon .center:before.menu-icon .center{
+				background: $ivory;
+			}
 		.nav-bar{
 			height: 60px;
 			.menu-logo{
 				height: 30px;
+				svg, svg *{
+					fill: $ivory;
+				}
 			}
+
 			.menu-link{
 				padding: 21px;
 			}
 			.cart-search{
 				margin-top: 17px;
+				.cart-info{
+					color: $ivory;
+				}
 			}
 		}
 		&.scrolled{
@@ -25,6 +35,7 @@ $ivory : #e5ceb2;
 		}
 		.menu-logo,.tagline{
 			opacity: 0;
+			color: $ivory;
 			@include transition((opacity .3s ease-in-out));
 		}
 

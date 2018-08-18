@@ -178,7 +178,7 @@ $ivory : #e5ceb2;
 				position: relative;
 				figcaption{					
 					padding: 10px 0;
-					color: white;
+					color: $ivory;
 					text-align: left;
 					&:hover{
 						opacity: 1;
@@ -242,6 +242,7 @@ $ivory : #e5ceb2;
 					text-transform: uppercase;
 					background: black;
 					color: $ivory;
+					border: black;
 				}
 			}
 		}

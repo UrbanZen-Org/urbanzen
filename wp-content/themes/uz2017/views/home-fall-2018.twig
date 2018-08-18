@@ -76,20 +76,22 @@
 	{% endfor %}
 	<div class="pages-slider-nav slider-dots"></div>
 </div>
-<div class="insta-block">
-	<h2>{{ post.social_title }}</h2>
-	{{ post.social_text }}
-	<div class="insta-images">
-	{% for insta in post.social_images %}
-		<figure>
-			<a href="{{ insta.url }}">
-				<picture>
-				  <img src="{{ insta.image }}">
-				</picture>
-			</a>
-		</figure>
-	{% endfor %}
+{% if post.social_images %}
+	<div class="insta-block">
+		<h2>{{ post.social_title }}</h2>
+		{{ post.social_text }}
+		<div class="insta-images">
+		{% for insta in post.social_images %}
+			<figure>
+				<a href="{{ insta.url }}">
+					<picture>
+					  <img src="{{ insta.image }}">
+					</picture>
+				</a>
+			</figure>
+		{% endfor %}
 	</div>
+{% endif %}
 </div>
 
 {% endblock %}

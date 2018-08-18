@@ -60,6 +60,11 @@ var home_2018 = {
   resize:function(){
   },  
   scroll: function(){
+    if($(document).scrollTop() > 300){
+      $('nav').addClass('scrolled');
+    }else{
+      $('nav').removeClass('scrolled');
+    }
     
   }
 };

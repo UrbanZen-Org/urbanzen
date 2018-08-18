@@ -2,6 +2,27 @@ $ivory : #e5ceb2;
 
 
 .page-home-fall-2018{
+	nav.top-menu{
+		.nav-bar{
+			height: 60px;
+			.menu-logo{
+				height: 30px;
+			}
+		}
+		&.scrolled{
+			.nav-bar{
+				background: black;
+			}
+			.menu-logo,.tagline{
+				opacity: 1;
+			}	
+		}
+		.menu-logo,.tagline{
+			opacity: 0;
+			@include transition((opacity .3s ease-in-out));
+		}
+
+	}
 	h2{
 		color: $ivory;
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -35,6 +56,7 @@ $ivory : #e5ceb2;
 	}
 	#content{
 		margin-top: 0;
+		margin-bottom: 0;
 	}
 	.top-slider{
 		position: relative;
@@ -57,7 +79,7 @@ $ivory : #e5ceb2;
 				align-items: center;
 				justify-content: flex-end;
 				flex-direction: column;
-				padding-bottom: 40%;
+				padding-bottom: 20%;
 				span{
 					
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -72,10 +94,11 @@ $ivory : #e5ceb2;
 					line-height: 30px;
 					font-size: 10px;
 					text-transform: uppercase;
-					background: $ivory;
-					color: black;
+					background: black;
+					color: $ivory;
 					letter-spacing: .15em;
 					padding: 0 20px;
+					border: black;
 				}
 			}
 		}
@@ -138,26 +161,19 @@ $ivory : #e5ceb2;
 			padding: 0 25px;
 			margin-top: 20px;
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: space-between;
 			flex-wrap: wrap;
 			figure{
-				width: 50%;
+				&:first-child{
+					width: 100%;
+				}
+				width: 49%;
 				position: relative;
-				figcaption{
-					position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					top: 0;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					opacity: 0;
-					background: rgba(0,0,0,.6);
+				figcaption{					
+					padding: 10px 0;
 					color: white;
-					padding: 10px;
+					text-align: left;
 					&:hover{
 						opacity: 1;
 						@include transition((opacity .3s ease-in-out));
@@ -216,6 +232,7 @@ $ivory : #e5ceb2;
 					margin-bottom: 1em;
 				}
 				a{
+					margin-top: 100px;
 					text-transform: uppercase;
 				}
 			}

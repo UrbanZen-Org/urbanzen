@@ -126,17 +126,17 @@ $ivory : #e5ceb2;
 		padding: 0px;
 
 		.slick-arrow{
-			// &.arrow-left{
-			// 	left: 0;
-			// }
-			// &.arrow-right{
-			// 	right: 10px;
-			// 	margin-left: 10px;
-			// 	transform: translateX(10px) rotate(-45deg);
-			// }
+			&.arrow-left{
+				left: 0;
+			}
+			&.arrow-right{
+				right: 10px;
+				margin-left: 10px;
+				transform: translateX(10px) rotate(-45deg);
+			}
 			&:after{
-				// height: 10px;
-				// width: 10px;
+				height: 10px;
+				width: 10px;
 				color: $ivory;
 				border-color: $ivory;
 			}

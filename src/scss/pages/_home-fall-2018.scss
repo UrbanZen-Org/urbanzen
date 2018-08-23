@@ -27,7 +27,11 @@ $ivory : #e5ceb2;
 		}
 		&.scrolled{
 			.nav-bar{
-				background: black;
+				@include respond-max($tablet-portrait)
+				{
+					background: black;	
+				}
+				
 			}
 			.menu-logo,.tagline{
 				opacity: 1;
@@ -98,7 +102,6 @@ $ivory : #e5ceb2;
 				flex-direction: column;
 				padding-bottom: 20%;
 				span{
-					
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					color: $ivory;
 					font-size: 28px;

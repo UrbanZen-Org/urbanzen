@@ -3,14 +3,23 @@
 
 {% block content %}
 <div class="shop-by-look">
-		{% if post.featured_image %}	
-			<div class="hide-desktop">
-				<img src="{{ post.featured_image_mobile }}">
-			</div>
-			<div class="hide-mobile">
-				<img src="{{ post.thumbnail.src }}">
-			</div>
-		{% endif %}
+	{% if post.thumbnail %}
+		<figure class="sbl-header-section">
+			<picture>
+  			<source media="(max-width: 1024px)"	srcset="{{ post.featured_image_mobile }}">
+  			<img src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.src }}">
+			</picture>
+			<div class="down-arrow" data-target="#shop-by-look"></div>
+			<figcaption>
+				{% if post.header_title %}
+					<span>{{  post.header_title }}</span>
+				{% endif %}
+				{% if post.header_text %}
+					<p>{{ post.header_text }}</a>
+				{% endif %}
+			</figcaption>
+		</figure>
+	{% endif %}
 	<h1>{{ post.post_title }}</h1>
 	<p>{{ post.post_content }}</p>
 	<a class="cta-button dark" data-target="#row-21">part I</a>
@@ -19,7 +28,7 @@
 	<div class="shortcode">
 		{{ function('do_shortcode', post.shoppable_image_shortcode) }}  
 	</div>
-	<div class="shop-by-looks" data-shop-by-looks="">
+	<div class="shop-by-looks" id="shop-by-look" data-shop-by-looks="">
 		<div class="look-row sample-row">
 		</div>
 		<div class="look sample-look loaded">
@@ -67,7 +76,9 @@
 			</div>
 		{% endfor %}
 	</div>
-	<p>Sunglasses, headbands and leather hat are stylist’s own wardrobe.
+	{% if post.bottom_text %}
+		<p>{{ post.bottom_text }}
+	{% endif %}
 	</p>
 </div>
 {% endblock %}{# end content #}

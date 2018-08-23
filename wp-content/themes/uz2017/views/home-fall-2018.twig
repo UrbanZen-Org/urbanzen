@@ -8,7 +8,8 @@
 	{% for hero in post.hero_images %}
 		<figure>
 			<picture>
-			  <img src="{{ hero.mobile_image }}">
+  			<source media="(max-width: 1024px)"	srcset="{{ hero.mobile_image }}">
+  			<img src="{{ hero.image }}" srcset="{{ hero.image }}">
 			</picture>
 			<figcaption>
 				{% if hero.text %}

@@ -3,6 +3,14 @@
 
 {% block content %}
 <div class="shop-by-look">
+		{% if post.featured_image %}	
+			<div class="hide-desktop">
+				<img src="{{ post.featured_image_mobile }}">
+			</div>
+			<div class="hide-mobile">
+				<img src="{{ post.thumbnail.src }}">
+			</div>
+		{% endif %}
 	<h1>{{ post.post_title }}</h1>
 	<p>{{ post.post_content }}</p>
 	<a class="cta-button dark" data-target="#row-21">part I</a>

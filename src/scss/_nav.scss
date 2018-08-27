@@ -1,4 +1,4 @@
-nav.top-menu{		
+nav.top-menu{
 	width: 100%;
 	background: black;
 	z-index: 999;
@@ -20,7 +20,7 @@ nav.top-menu{
 				transform: translate3d(-100%, 0, 0);
 				@include transition((transform .3s ease-in-out));
 				position: fixed;
-				top: 50px;
+				top: 60px;
 				bottom: 0;
 				z-index: 9;
 				background: black;
@@ -117,7 +117,7 @@ nav.top-menu{
 		text-align: center;
 		padding: 30px 0 30px;
 		@include respond-max($tablet-landscape) {
-			height: 50px;
+			height: 60px;
 			width: 100%;
 			background: black;
 			position: fixed;
@@ -129,7 +129,7 @@ nav.top-menu{
 			height: 28px;
 			display: block;
 			@include respond-max($tablet-landscape) {
-				height: 20px;
+				height: 30px;
 				position: relative;
 				top: -3px;
 			}
@@ -167,6 +167,7 @@ nav.top-menu{
 	display: inline-block;
 	vertical-align: top;
 	margin-right: -10px;
+	margin-top: 5px;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -224,7 +225,7 @@ nav.top-menu{
 			display: block;
 			width: 100%;
 			height: 1px;
-			background: white;
+			background: $ivory;
 			position: absolute;
 			transition: transform $md-speed ease-in-out, opacity $md-speed ease-in-out, width $md-speed ease-in-out;
 		}
@@ -304,7 +305,7 @@ nav.top-menu{
 	top: 0;
 	right: 0;
 	margin-right: 10px;
-	margin-top: 12px;
+	margin-top: 19px;
 	@include respond-min($tablet-landscape) {
 		margin-top: 20px;
 		margin-right: 30px;
@@ -370,7 +371,7 @@ nav.top-menu{
 	width: 100%;	
 	}
 	@include respond-max($tablet-landscape) {
-		top: 50px;
+		top: 60px;
 	}
 	.no-items{
 		opacity: 0;
@@ -425,7 +426,7 @@ nav.top-menu{
 		width: 400px;
 		padding-top: 20px;
 		@include respond-max($tablet-landscape) {
-			top: 50px;
+			top: 60px;
 			width: 100%;
 		}
 		.close{
@@ -499,10 +500,10 @@ nav.top-menu{
 
 					input{
 						border: none;
-						border-bottom: 1px solid white;
+						border-bottom: 1px solid $ivory;
 						background: transparent;
 						width: 20px;
-						color: white;
+						color: $ivory;
 						text-align: center;
 						font-size: 16px;
 					}
@@ -556,14 +557,14 @@ nav.top-menu{
 	.cart-search{	
 		.search{
 			input{
-				border-color: white;
+				border-color: $ivory;
 			}
 			button{
-				color: white;
+				color: $ivory;
 			}
 		}
 		.cart-info{
-			color: white;
+			color: $ivory;
 		}
 	}
 }

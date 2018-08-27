@@ -9,7 +9,7 @@
   			<source media="(max-width: 1024px)"	srcset="{{ post.featured_image_mobile }}">
   			<img src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.src }}">
 			</picture>
-			<div class="down-arrow" data-target="#shop-by-look"></div>
+			<div class="down-arrow" data-target="#shop-by-look">Explore</div>
 			<figcaption>
 				{% if post.header_title %}
 					<span>{{  post.header_title }}</span>
@@ -21,9 +21,6 @@
 		</figure> 
 	{% endif %}
 	
-	<div class="shortcode">
-		{{ function('do_shortcode', post.shoppable_image_shortcode) }}  
-	</div>
 	<div class="shop-by-looks" id="shop-by-look" data-shop-by-looks="">
 		<div class="look-row sample-row">
 		</div>

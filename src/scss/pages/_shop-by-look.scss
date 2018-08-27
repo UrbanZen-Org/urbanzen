@@ -1,4 +1,4 @@
-.shop-by-look{	
+.shop-by-look{
 	text-align: center;
 	position: relative;
 	.shortcode{
@@ -56,7 +56,7 @@
 		padding: 0 20px;
 	}
 	.shop-by-looks{
-		padding: 2em 20px 20px;
+		padding: 1em 20px 20px;
 		.look-row{
 			@include respond-min(640)
 			{

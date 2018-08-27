@@ -135,6 +135,7 @@ var global = {
     $('.menu-link').click(function(e){
       $('body').toggleClass('lock-scroll');
       $('body').toggleClass('menu-open');
+      $('.hamburger').toggleClass('is-active');
       $('body').removeClass('cart-open');
     });
   },

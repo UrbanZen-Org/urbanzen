@@ -172,6 +172,7 @@ nav.top-menu{
 	left: 0;
 	top: 0;
 	z-index: 8;
+	color:$ivory;
 	@include respond-min($tablet-landscape) {
 		display: none;
 	}

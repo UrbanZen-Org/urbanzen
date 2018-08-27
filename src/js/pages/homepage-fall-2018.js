@@ -35,8 +35,7 @@ var home_2018 = {
         slide: 'figure',
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode:true,
-        centerPadding: '30px',
+        fade:true,
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>'
       });

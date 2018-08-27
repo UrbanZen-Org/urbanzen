@@ -1,0 +1,80 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-shop-by-look fall-2018' %}
+
+{% block content %}
+<div class="shop-by-look">
+	{% if post.thumbnail %}
+		<figure class="sbl-header-section">
+			<picture>
+  			<source media="(max-width: 1024px)"	srcset="{{ post.featured_image_mobile }}">
+  			<img src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.src }}">
+			</picture>
+			<div class="down-arrow" data-target="#shop-by-look"></div>
+			<figcaption>
+				{% if post.header_title %}
+					<span>{{  post.header_title }}</span>
+				{% endif %}
+				{% if post.header_text %}
+					<p>{{ post.header_text }}</a>
+				{% endif %}
+			</figcaption>
+		</figure> 
+	{% endif %}
+	
+	<div class="shortcode">
+		{{ function('do_shortcode', post.shoppable_image_shortcode) }}  
+	</div>
+	<div class="shop-by-looks" id="shop-by-look" data-shop-by-looks="">
+		<div class="look-row sample-row">
+		</div>
+		<div class="look sample-look loaded">
+			<img src="">
+			<div class="look-product-links" data-product-links=""></div>
+		</div>
+		<div class="quick-shop sample-quick-shop">
+			<div class="close" data-close=""><i class="material-icons">close</i></div>
+			<img class="product-image" data-quick-image="" src="">
+			<div class="quick-details">
+				<h2 data-quick-title=""><a href=""></a></h2>
+				<span data-quick-price="" class="quick-price"></span>
+				<div class="quick-colors" data-colors>
+					<div class="color-label">Color: <span data-color-label></span></div>
+				</div>	
+				<form>
+					<input name="productId" type="hidden" value="" data-product-id="">	
+					<span class="quick-variant-label">Size</span>
+					<div class="product-variants" data-product-variants="">
+					</div>
+					<button type="submit" value="Add to cart">Add to Bag</button>
+				</form>
+			</div>
+		</div>
+
+		{% for row in post.rows %}
+			<div class="look-row" id="row-{{ loop.index }}">
+				{% for look in row.looks %}
+					<div class="look {{ look.layout }} {% if look.hide_mobile %}hide-mobile-look{% endif %}">
+						{% if look.layout == 'callout' %}
+							<p>{{ look.callout_message }}</p>
+						{% else %}
+							<img class="mobile-image" src="{{ look.mobile_image }}"/>
+							<img src="{{ look.image }}">
+						{% endif %}
+						{% if look.products %}
+							<div class="look-product-links" data-product-links="">
+								{% for product in look.products %}
+									<a id="look-{{ loop.index }}-{{ product.handle }}" {% if product.handle %} href="http://shop.urbanzen.com/products/{{ product.handle }}"{% endif %}>{{ product.title }}</a>
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+	{% if post.bottom_text %}
+		<p>{{ post.bottom_text }}
+	{% endif %}
+	</p>
+</div>
+{% endblock %}{# end content #}

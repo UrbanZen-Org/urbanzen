@@ -1,0 +1,37 @@
+.page-urban-zen-foundation{
+	text-align: center;
+	.titles{
+		margin: 3em 0;
+		color: $ivory;
+		p{
+			max-width: 500px;
+			margin: 1em auto;
+		}
+	}
+	.featured-pages{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		margin: 1em 0 0;
+		.featured-page{
+			width: 100%;
+			margin-bottom: 1em;
+			@include respond-min($tablet-portrait)
+			{
+				
+				width: 49.3334%;	
+			}
+			@include respond-min($tablet-landscape)
+			{
+				width: 24.3334%;	
+			}
+			figcaption, figcaption span{
+				font-size: 20px;
+				letter-spacing: .1em;
+				text-align: center;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

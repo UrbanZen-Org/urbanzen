@@ -1,0 +1,48 @@
+{% extends "base.twig" %}
+{% set body_class = 'page-urban-zen-foundation black-bg' %}
+
+{% block content %}
+<div class="cover-area">
+	<iframe class="hpvideo hide-mobile" src="https://player.vimeo.com/video/{{ post.vimeo_id }}?background=1&autoplay=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="mobile-video hide-desktop">
+		<div class="video-item" data-video-id="{{ post.vimeo_id }}">
+			<img class="lazyload" data-src="{{ post.thumbnail.src }}">
+			<div class="play-icon">
+				<i class="material-icons">play_arrow</i>
+			</div>
+		</div>
+		<div class="video-overlay">
+			<i class="close material-icons">close</i>
+			<div class="video-holder">
+				<div class="video-responsive">
+					<div id="video"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="titles">
+		<h2>{{ post.title }}</h2>
+		<p>{{ post.text }}</p>
+	</div>
+
+	<div class="featured-pages">
+		{% for page in post.featured_pages %}
+			<figure class="featured-page">
+				<picture>
+				  <img src="{{ page.image }}">				       
+				</picture>
+				<figcaption class="over-image ivory">
+					<a href="{{ page.link }}">
+					<span>{{ page.text }}</span>
+					</a>
+				</figcaption>			
+			</figure>
+		{% endfor %}
+	</div>
+	{% if post.learn_more_link %}
+		<a href="{{ post.learn_more_link.url }}" target="{{ post.learn_more_link.target }}" class="cta-button yellow" title="{{ post.learn_more_link.title }}">{{ post.learn_more_link.title }}</a>
+	{% endif %}
+</div>
+{% endblock %}

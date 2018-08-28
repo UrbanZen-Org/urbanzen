@@ -1,6 +1,4 @@
-.shop-by-look{
-	text-align: center;
-	position: relative;
+.page-shop-by-look{
 	&.fall-2018{
 		
 		background: #e5ceb2;
@@ -11,6 +9,10 @@
 			}
 		}
 	}
+}
+.shop-by-look{
+	text-align: center;
+	position: relative;
 	.shortcode{
 		margin-top: 40px!important;
 		.mabel-siwc-img-wrapper{

@@ -1,6 +1,16 @@
 .shop-by-look{
 	text-align: center;
 	position: relative;
+	&.fall-2018{
+		body{
+			background: #e5ceb2;
+		}
+		.look-product-links{
+			a{
+				color: #e5ceb2;
+			}
+		}
+	}
 	.shortcode{
 		margin-top: 40px!important;
 		.mabel-siwc-img-wrapper{

@@ -58,9 +58,6 @@
 		{% endfor %}
 		</div>
 	</div>
-	{% if post.event_button_text %}
-		<a href="{{ post.event_button_link }}" class="cta-button ivory">{{ post.event_button_text }}</a>
-	{% endif %}
 	<a class="cta-button inquire-button">Inquire</a>
 </div>
 
@@ -69,11 +66,11 @@
 	{% if post.foundation_text %}<p>{{ post.foundation_text }}</p>{% endif %}
 	<div class="callout-items">
 		{% for page in post.foundation_slides %}
-			<figure>
-				
+			<figure>			
 					<picture>
 						<a href="{{ page.link.url }}">
-					  	<img src="{{ page.image }}">
+					  	<source media="(max-width: 1024px)"	srcset="{{ page.mobile_image }}">
+  						<img src="{{ page.image }}" srcset="{{ page.image }}">
 					  </a>
 					</picture>
 					<figcaption>

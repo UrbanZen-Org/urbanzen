@@ -312,6 +312,7 @@ $ivory : #e5ceb2;
 			position: relative;
 			@include respond-min($tablet-landscape)
 			{
+				opacity: 1!important;
 				width: calc(33.334% - 9px);
 			}
 			figcaption{

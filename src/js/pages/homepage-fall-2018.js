@@ -39,7 +39,7 @@ var home_2018 = {
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>'
       });
-      homepage.find('.page-callouts').slick({
+      homepage.find('.callout-items').slick({
         fade: true,
         appendDots: '.pages-slider-nav',
         dots : true,
@@ -52,7 +52,14 @@ var home_2018 = {
         rows:0,
         slide: 'figure',
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
-        nextArrow: '<div class="slick-arrow arrow-right"></div>'
+        nextArrow: '<div class="slick-arrow arrow-right"></div>',
+        mobileFirst: true,
+         responsive: [
+            {
+                breakpoint: 769,
+                settings: 'unslick'
+            }
+        ]
       });
   },
   

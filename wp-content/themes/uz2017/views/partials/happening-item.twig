@@ -1,0 +1,10 @@
+<figure class="{{ event_class }}">
+	{% if event.url %}<a href="{{ event.url }}">{% endif %}
+	<picture>
+	  <img src="{{ event.image }}">
+	</picture>
+	<figcaption>
+		<span>{{ event.text }}</span>
+	</figcaption>
+	{% if event.url %}</a>{% endif %}
+</figure>

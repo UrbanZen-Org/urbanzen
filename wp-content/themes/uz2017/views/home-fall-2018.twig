@@ -24,15 +24,17 @@
 	<div class="top-slider-nav slider-dots"></div>
 </div>
 
-<div class="category-slider">
+<div class="category-cards">
 	{% for category in post.featured_categories %}
 		<figure>
 			<picture>
 			  <img src="{{ category.image }}">				       
 			</picture>
-			<figcaption>
-				<a href="{{ category.url }}">
-				<span>{{ category.text }}</span>
+			<figcaption class="{{ category.caption_position }}">
+				
+					<p>{{ category.text }}</p>					
+				<a target="{{ category.link.target }}" href="{{ category.link.url }}">
+					{{ category.link.title }}
 				</a>
 			</figcaption>			
 		</figure>
@@ -42,40 +44,42 @@
 <div class="happenings">
 	<h2>{{ post.events_title }}</h2>
 	<div class="happening-items">
-		{% for event in post.featured_events %}
-			<figure>
-				{% if event.url %}<a href="{{ event.url }}">{% endif %}
-				<picture>
-				  <img src="{{ event.image }}">
-				</picture>
-				<figcaption>
-					<span>{{ event.text }}</span>
-				</figcaption>
-				{% if event.url %}</a>{% endif %}
-			</figure>
+		<div class="featured-happening">
+			{% for event in post.featured_events|slice(0,1) %}
+				{% include 'partials/happening-item.twig' with {'event_class': 'featured'} %}
+			{% endfor %}
+		</div>
+		<div class="more-happenings">
+		{% for event in post.featured_events|slice(1,99) %}
+			{% include 'partials/happening-item.twig' %}
 		{% endfor %}
+		</div>
 	</div>
 	{% if post.event_button_text %}
 		<a href="{{ post.event_button_link }}" class="cta-button ivory">{{ post.event_button_text }}</a>
 	{% endif %}
+	<a class="cta-button inquire-button">Inquire</a>
 </div>
 
 <div class="page-callouts">
 	<h2>{{ post.foundation_title }}</h2>
-	<p>{{ post.foundation_text }}</p>
-	{% for event in post.foundation_slides %}
-		<figure>
-			<a href="{{ event.url }}">
-				<picture>
-				  <img src="{{ event.image }}">
-				</picture>
-				<figcaption>
-					<span>{{ event.text }}</span>
-					<a class="cta-button ivory" href="{{ event.button_url }}">{{ event.button_text }}</a>
-				</figcaption>
-			</a>
-		</figure>
-	{% endfor %}
+	{% if post.foundation_text %}<p>{{ post.foundation_text }}</p>{% endif %}
+	<div class="callout-items">
+		{% for page in post.foundation_slides %}
+			<figure>
+				
+					<picture>
+						<a href="{{ page.link.url }}">
+					  	<img src="{{ page.image }}">
+					  </a>
+					</picture>
+					<figcaption>
+						<a class="cta-button ivory" target="{{page.link.target}}" href="{{ page.link.url }}">{{ page.link.title }}</a>
+					</figcaption>
+				
+			</figure>
+		{% endfor %}
+	</div>
 	<div class="pages-slider-nav slider-dots"></div>
 </div>
 {% if post.social_images %}

@@ -15,8 +15,11 @@
 				{% if hero.text %}
 					<span>{{ hero.text }}</span>
 				{% endif %}
-				{% if hero.button_text %}
-					<a class="cta-button ivory" href="{{ hero.button_link }}">{{ hero.button_text }}</a>
+				<div class="uz-logo">
+					{% include 'partials/uz-big-logo.svg' %}
+				</div>
+				{% if hero.link %}
+					<a class="cta-button ivory" target="{{ hero.link.target }}" href="{{ hero.link.url }}">{{ hero.link.title }}</a>
 				{% endif %}
 			</figcaption>
 		</figure>

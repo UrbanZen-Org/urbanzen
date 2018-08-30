@@ -99,7 +99,23 @@ $ivory : #e5ceb2;
 				justify-content: flex-end;
 				flex-direction: column;
 				padding-bottom: 20%;
+				@include respond-min($tablet-landscape)
+				{
+					padding-bottom: 72px;
+				}
 				text-align: center;
+				.uz-logo{
+					width: 75%;
+					max-width: 684px;
+					svg {
+						height: auto;
+						max-width: 100%;
+					*{
+						fill: $ivory;
+						}
+					}
+
+				}
 				span{
 					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					color: $ivory;

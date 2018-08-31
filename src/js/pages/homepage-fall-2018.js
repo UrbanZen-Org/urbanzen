@@ -17,7 +17,7 @@ var home_2018 = {
         fade: true,
         appendDots: '.top-slider-nav',  
         dots : true,
-        arrows : false,
+        arrows : true,
         autoplay: 1,
         autoplaySpeed: 3000,
         speed: 1000,

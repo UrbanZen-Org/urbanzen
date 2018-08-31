@@ -94,9 +94,18 @@ $ivory : #e5ceb2;
 	.top-slider{
 		position: relative;
 		overflow: hidden;
-		
+		@include respond-min($tablet-landscape)
+		{
+			height: 100vh;
+		}
 		.slick-list,.slick-track{
 			height: 100%;
+		}
+		.slick-arrow{
+			&:after{
+				width: 10px;
+				height: 10px;
+			}
 		}
 		figure{
 			position: relative;
@@ -213,12 +222,19 @@ $ivory : #e5ceb2;
 				justify-content: center;
 				flex-direction: column;
 				text-align: center;
-				p{
-					font-size: 20px;
-					letter-spacing: .3em;
-					line-height: 26px;
+				padding: 0 10px;
+				p{					
+					letter-spacing: .3em;					
 					color: $ivory;
 					text-transform: uppercase;
+					font-size: 16px;
+					line-height: 20px;
+					@include respond-min($tablet-portrait)
+					{
+						line-height: 26px;
+						font-size: 20px;	
+					}
+					
 				}
 				a{
 					font-size: 14px;
@@ -277,7 +293,7 @@ $ivory : #e5ceb2;
 					}
 					@include respond-min($tablet-landscape)
 					{
-						figcaption{
+						span{
 							position: absolute;
 							bottom: 0;
 							transform: translateY(100%);
@@ -303,10 +319,11 @@ $ivory : #e5ceb2;
 				{
 					&:nth-child(3),&:last-child{
 
-						figcaption{
+						span{
 							width: 100%;
 							position: absolute;
 							bottom: 0;
+							left:0;
 							transform: translateY(100%);
 						}
 					}
@@ -317,24 +334,46 @@ $ivory : #e5ceb2;
 					height: 100%;
 					display:block;
 				}
-				figcaption{					
-					padding: 24px 0;
-					color: $ivory;
-					span{
-						display: inline-block;
-						font-size: 14px;
-						line-height: 14px;
-						letter-spacing: .21em;
-						text-align: center;
-						@include respond-min($tablet-landscape)
-						{	
-							line-height: 18px;
-						}
-				}
-					text-transform: uppercase;
+				.image-area{
+					overflow: hidden;
+					position: relative;
 					&:hover{
-						opacity: 1;
-						@include transition((opacity .3s ease-in-out));
+						figcaption{					
+							opacity: 1;
+							transform: translateY(0);
+						}
+					}
+				}
+				figcaption{					
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: row;
+					text-align: center;
+					padding: 20px;
+					opacity: 0;
+					background: rgba(0,0,0,.5);
+					color: $ivory;
+					transform: translateY(100%);
+					@include transition((opacity .3s ease-in-out, transform .3s ease-in-out));
+					
+				}
+				span{
+					padding: 24px 0;
+					color: $ivory;					
+					text-transform: uppercase;
+					display: inline-block;
+					font-size: 14px;
+					line-height: 14px;
+					letter-spacing: .21em;
+					text-align: center;
+					@include respond-min($tablet-landscape)
+					{	
+						line-height: 18px;
 					}
 				}
 			}

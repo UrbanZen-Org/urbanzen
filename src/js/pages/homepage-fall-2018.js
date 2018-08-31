@@ -10,6 +10,15 @@ var home_2018 = {
   },
 
   ready: function(){
+    $('.event-mailchimp-form form').submit(function(){
+      $('.event-mailchimp-form').removeClass('open');
+    });
+    $('.event-mailchimp-form form i').click(function(){
+      $('.event-mailchimp-form').removeClass('open');
+    });
+    $('.inquire-button').click(function(){
+      $('.event-mailchimp-form').addClass('open');
+    });
     homepage.find('.top-slider').css({
       'max-height': window.innerHeight
     });

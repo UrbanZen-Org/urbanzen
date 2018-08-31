@@ -10,9 +10,22 @@ $ivory : #e5ceb2;
 		display: flex;
 		align-items: center;
 		justify-content:center;
-		// opacity: 0;
-		// visibility: hidden;
+		opacity: 0;
+		visibility: hidden;
+		background: rgba(0,0,0,.5);
+		@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));
+		&.open{
+			opacity: 1;
+			visibility: visible;
+		}
 		form{
+			i{
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				cursor: pointer;
+			}
+			position: relative;
 			padding: 40px 100px;
 			background: $ivory;
 			width: 100%;

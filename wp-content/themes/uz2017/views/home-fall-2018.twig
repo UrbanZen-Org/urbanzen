@@ -63,12 +63,13 @@
 	<div class="callout-items">
 		{% for page in post.foundation_slides %}
 			<figure>			
-					<picture>
-						<a href="{{ page.link.url }}">
+				<a href="{{ page.link.url }}">
+					<picture>						
 					  	<source media="(max-width: 1024px)"	srcset="{{ page.mobile_image }}">
-  						<img src="{{ page.image }}" srcset="{{ page.image }}">
-					  </a>
-					</picture>
+					  	<source srcset="{{ page.image }}">
+  						<img src="{{ page.image }}" srcset="{{ page.image }}">					  
+						</picture>
+					</a>
 					<figcaption>
 						<a class="cta-button ivory" target="{{page.link.target}}" href="{{ page.link.url }}">{{ page.link.title }}</a>
 					</figcaption>

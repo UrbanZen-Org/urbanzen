@@ -27,7 +27,11 @@ $ivory : #e5ceb2;
 				cursor: pointer;
 			}
 			position: relative;
-			padding: 40px 100px;
+			padding: 40px 20px;
+			@include respond-min($tablet-landscape)
+			{
+				padding: 40px 100px;
+			}
 			background: $ivory;
 			width: 100%;
 			max-width: 685px;

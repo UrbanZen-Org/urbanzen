@@ -52,6 +52,10 @@ var home_2018 = {
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>'
       });
+      this.uzf_slider();
+  },
+  uzf_slider: {
+    init: function(){
       homepage.find('.callout-items').slick({
         fade: true,
         appendDots: '.pages-slider-nav',
@@ -74,9 +78,18 @@ var home_2018 = {
             }
         ]
       });
+    },
+    unslider: function(){
+      homepage.find('.callout-items').slick('unslick');
+    }
   },
-  
   resize:function(){
+    var self = this;
+    if ($(window).width() <= 768 ){
+      self.uzf_slider();
+    }else{
+      self.uzf_slider.unslider();
+    }
   },  
   scroll: function(){
     if($(document).scrollTop() > 300){

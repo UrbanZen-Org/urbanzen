@@ -28,13 +28,14 @@ var home_2018 = {
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>'
       });
-      homepage.find('.category-slider').slick({
-        appendDots: '.top-slider-nav',
-        arrows : true,
+      homepage.find('.accessories-slider').slick({
+        arrows : false,
+        dots: false,
         rows:0,
         slide: 'figure',
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        autoplay: 1,
+        autoplaySpeed: 3000,
+        speed: 1000,
         fade:true,
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>'

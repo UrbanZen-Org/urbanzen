@@ -1,5 +1,19 @@
 $ivory : #e5ceb2;
 .page-home-fall-2018{
+	h2{
+		color: $ivory;
+		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 26px;
+		letter-spacing: .1em;
+		line-height: 28px;
+		padding-bottom: 36px;
+		@include respond-max($tablet-portrait)
+		{
+			font-size: 36px;
+			letter-spacing: .1em;
+			line-height: 36px;
+		}
+	}
 	nav.top-menu{
 		.menu-link .menu-icon:before, .menu-link .menu-icon:after, .menu-link .menu-icon .center, .menu-link .menu-icon .center:before{
 			background: $ivory;
@@ -80,6 +94,10 @@ $ivory : #e5ceb2;
 	.top-slider{
 		position: relative;
 		overflow: hidden;
+		
+		.slick-list,.slick-track{
+			height: 100%;
+		}
 		figure{
 			position: relative;
 				img{
@@ -142,7 +160,7 @@ $ivory : #e5ceb2;
 			}
 		}
 	}
-	.category-cards{
+	.home-categories{
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
@@ -151,12 +169,41 @@ $ivory : #e5ceb2;
 		{
 			flex-wrap: nowrap;
 		}
-		figure{
+		.accessories-slider{
 			width: 100%;
 			@include respond-min($tablet-landscape)
 			{
-				width: 33.334%;	
+				width: 33.334%;
 			}
+			.slick-slider,.slick-list,.slick-track{
+
+			}
+			figure{
+				width: 100%;
+			}
+		}
+		.category-cards{
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			flex-wrap: wrap;
+			@include respond-min($tablet-landscape)
+			{
+				flex-wrap: nowrap;
+			}
+			@include respond-min($tablet-landscape)
+			{
+				width: 66.667%;
+			}
+			figure{	
+				@include respond-min($tablet-landscape)
+				{
+					width: 50%;
+				}
+			}
+		}
+		figure{
+			width: 100%;
 			figcaption{
 				position: absolute;
 				top: 0;
@@ -167,15 +214,18 @@ $ivory : #e5ceb2;
 				flex-direction: column;
 				text-align: center;
 				p{
-					font-size: 18px;
-					letter-spacing: 1.5px;
-					line-height: 36px;
+					font-size: 20px;
+					letter-spacing: .3em;
+					line-height: 26px;
 					color: $ivory;
 					text-transform: uppercase;
 				}
 				a{
+					font-size: 14px;
+					text-transform: uppercase;
+					letter-spacing: .15em;
 					position: absolute;
-					bottom: 0;
+					bottom: 18px;
 					color: $ivory;
 					text-transform: uppercase;
 				}
@@ -197,23 +247,23 @@ $ivory : #e5ceb2;
 	}
 
 	.happenings{
-		h2{
-			color: $ivory;
-			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-			font-size: 36px;
-			letter-spacing: .1em;
-			line-height: 36px;
-			padding-bottom: 36px;
-		}
 		text-align: center;
 		margin-top: 36px;
 		padding: 0 25px;
+
 		.happening-items{
+			padding-bottom: 62px;
 			display: flex;
-			align-items: flex-start;
 			justify-content: space-between;
 			flex-wrap: wrap;
+			align-items: flex-end;
+			flex-direction: row;
+			@include respond-min($tablet-landscape)
+			{
+					flex-wrap: nowrap;
+			}
 			.featured-happening{
+				
 				@include respond-min($tablet-landscape)
 				{
 					width: calc(50% - 9px);
@@ -225,9 +275,18 @@ $ivory : #e5ceb2;
 						width: 100%;
 						height: 100%;
 					}
+					@include respond-min($tablet-landscape)
+					{
+						figcaption{
+							position: absolute;
+							bottom: 0;
+							transform: translateY(100%);
+						}
+					}
 				}
 			}			
 			.more-happenings{
+				
 				@include respond-min($tablet-landscape)
 				{
 					width: calc(50% - 9px);
@@ -240,12 +299,38 @@ $ivory : #e5ceb2;
 			figure{
 				width: calc(50% - 9px);
 				position: relative;
+				@include respond-min($tablet-landscape)
+				{
+					&:nth-child(3),&:last-child{
+
+						figcaption{
+							width: 100%;
+							position: absolute;
+							bottom: 0;
+							transform: translateY(100%);
+						}
+					}
+				}
+				img{
+					object-fit:cover;
+					width: 100%;
+					height: 100%;
+					display:block;
+				}
 				figcaption{					
-					line-height: 62px;
+					padding: 24px 0;
 					color: $ivory;
-					font-size: 14px;
-					letter-spacing: .21em;
-					text-align: center;
+					span{
+						display: inline-block;
+						font-size: 14px;
+						line-height: 14px;
+						letter-spacing: .21em;
+						text-align: center;
+						@include respond-min($tablet-landscape)
+						{	
+							line-height: 18px;
+						}
+				}
 					text-transform: uppercase;
 					&:hover{
 						opacity: 1;
@@ -276,15 +361,7 @@ $ivory : #e5ceb2;
 				padding: 0 24px;
 			}
 
-		h2{
-			padding: 0 30px;
-			color: $ivory;
-			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-			font-size: 36px;
-			letter-spacing: .1em;
-			line-height: 36px;
-			padding-bottom: 36px;
-		}
+
 		text-align: center;
 		
 		position: relative;
@@ -332,7 +409,7 @@ $ivory : #e5ceb2;
 					padding: 0 40px 20%;
 				}
 				span{
-					 font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 					color: $ivory;
 					font-size: 28px;
 					letter-spacing: .1em;

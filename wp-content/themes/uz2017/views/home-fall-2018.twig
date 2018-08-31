@@ -27,21 +27,17 @@
 	<div class="top-slider-nav slider-dots"></div>
 </div>
 
-<div class="category-cards">
-	{% for category in post.featured_categories %}
-		<figure>
-			<picture>
-			  <img src="{{ category.image }}">				       
-			</picture>
-			<figcaption class="{{ category.caption_position }}">
-				
-					<p>{{ category.text }}</p>					
-				<a target="{{ category.link.target }}" href="{{ category.link.url }}">
-					{{ category.link.title }}
-				</a>
-			</figcaption>			
-		</figure>
-	{% endfor %}
+<div class="home-categories">
+	<div class="accessories-slider">
+		{% for category in post.accessories_slides %}
+			{% include 'partials/home-category-item.twig' %}
+		{% endfor %}
+	</div>
+	<div class="category-cards">
+		{% for category in post.featured_categories %}
+			{% include 'partials/home-category-item.twig' %}
+		{% endfor %}
+	</div>
 </div>
 
 <div class="happenings">

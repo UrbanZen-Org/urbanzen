@@ -27,7 +27,7 @@ footer{
 			}
 			a{
 				font-family: 'HelveticaNeueLTStd-Lt', 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
-				color: #f5f1e1;
+				color: $ivory;
 				font-size: 13px;
 				letter-spacing: .1em;
 				padding: 0 20px;
@@ -50,7 +50,7 @@ footer{
 			top: 30px;
 		}
 		font-family: 'HelveticaNeueLTStd-Lt', 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
-		color: #f5f1e1;
+		color: $ivory;
 		font-size: 13px;
 		letter-spacing: .1em;
 		span{
@@ -65,8 +65,11 @@ footer{
 		text-align: center;
 		margin-bottom: 20px;
 		a{
-			color: white;
-			padding: 10px;
+			border: 1px solid $ivory;
+			border-radius: 50%;
+			padding: 8px;
+			color: $ivory;
+			margin: 0 4px;
 		}
 	}
 }

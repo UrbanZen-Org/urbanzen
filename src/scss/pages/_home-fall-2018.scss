@@ -1,7 +1,7 @@
 $ivory : #e5ceb2;
 .page-home-fall-2018{
 	.event-mailchimp-form{
-		z-index: 99;
+		z-index: 9999;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -202,7 +202,7 @@ $ivory : #e5ceb2;
 		.slick-arrow{
 			@include respond-min($tablet-landscape)
 			{
-				display: none;
+				display: none!important;
 			}
 			&:after{
 				width: 10px;

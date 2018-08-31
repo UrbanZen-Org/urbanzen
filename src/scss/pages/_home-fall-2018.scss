@@ -110,7 +110,7 @@ $ivory : #e5ceb2;
 		font-size: 26px;
 		letter-spacing: .1em;
 		line-height: 28px;
-		padding-bottom: 36px;
+		padding-bottom: 15px;
 		@include respond-max($tablet-portrait)
 		{
 			font-size: 36px;
@@ -343,12 +343,12 @@ $ivory : #e5ceb2;
 					@include respond-min($tablet-landscape)
 					{
 						
-						line-height: 26px;
-						font-size: 20px;	
+						line-height: 20px;
+						font-size: 16px;	
 					}
 				}
 				a{
-					font-size: 14px;
+					font-size: 12px;
 					text-transform: uppercase;
 					letter-spacing: .15em;
 					position: absolute;
@@ -507,6 +507,7 @@ $ivory : #e5ceb2;
 			letter-spacing: .15em;
 			padding: 0 20px;
 			border: black;
+			margin-top: 15px;
 			
 		}
 	}

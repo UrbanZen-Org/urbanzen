@@ -1,5 +1,86 @@
 $ivory : #e5ceb2;
 .page-home-fall-2018{
+	.event-mailchimp-form{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content:center;
+		// opacity: 0;
+		// visibility: hidden;
+		form{
+			padding: 40px 100px;
+			background: $ivory;
+			width: 100%;
+			max-width: 685px;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content:space-between;
+			flex-direction: row;
+			flex-wrap: wrap;
+			color: black;
+			h2{
+				color: black;
+				text-align: center;
+				width: 100%;
+				font-size: 18px;
+				margin-bottom: 24px;
+				padding-bottom: 0;
+			}
+			p{
+				margin-bottom: 24px;
+			}
+			fieldset{
+				text-align: left;
+				width: 100%;
+				margin-bottom: 24px;
+				display: inline-block;
+				
+				input{
+					width: 100%;
+					line-height: 36px;
+					text-indent: 10px;
+
+				}
+				&.names{
+					width: calc(50% - 12px);
+					display: inline-block;
+					
+				}	
+			}
+			.radio-inputs{
+				text-align: left;
+				fieldset{
+					width: 48%;
+					display: inline-block;
+					vertical-align: top;
+					margin-bottom: 6px;
+					input{
+						width: auto;
+						display: inline-block;
+						vertical-align: top;
+					}
+					label{
+						display: inline-block;
+						vertical-align: top;
+						max-width: 85%;
+					}
+				}
+			}
+			input[type=radio]{
+				-webkit-appearance:radio;
+				appearance: radio;
+			}
+			button{
+				margin: 0 auto;
+			}
+		}
+	}
 	h2{
 		color: $ivory;
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;

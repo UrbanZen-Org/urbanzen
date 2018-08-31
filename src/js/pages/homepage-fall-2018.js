@@ -10,6 +10,7 @@ var home_2018 = {
   },
 
   ready: function(){
+    var self = this;
     $('.event-mailchimp-form form').submit(function(){
       $('.event-mailchimp-form').removeClass('open');
       $('body').removeClass('lock-scroll');
@@ -52,7 +53,7 @@ var home_2018 = {
         prevArrow: '<div class="slick-arrow arrow-left"></div>',
         nextArrow: '<div class="slick-arrow arrow-right"></div>'
       });
-      this.uzf_slider();
+      self.uzf_slider.init();
   },
   uzf_slider: {
     init: function(){
@@ -86,7 +87,7 @@ var home_2018 = {
   resize:function(){
     var self = this;
     if ($(window).width() <= 768 ){
-      self.uzf_slider();
+      self.uzf_slider.init();
     }else{
       self.uzf_slider.unslider();
     }

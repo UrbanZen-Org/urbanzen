@@ -84,6 +84,15 @@
 			}
 			
 		}
+		.look-number{
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 7px 10px;
+			font-size: 18px;
+			color: $ivory;
+			font-family: 'HelveticaNeueLTStd-LtEx', 'HelveticaNeue', normal;
+		}
 		.look{
 			width: 100%;
 			position: relative;

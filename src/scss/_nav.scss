@@ -43,12 +43,12 @@ nav.top-menu{
 			}
 			&.current-menu-item > a,&.current-menu-parent >  a{
 				font-family: 'HelveticaNeueLTStd-Bd', 'Helvetica Neue Bold', Helvetica, Arial, sans-serif;
-				color: #f5f1e1!important;
+				color: $ivory!important;
 			}
 			&.menu-item-has-children{
 				@include respond-max($tablet-landscape) {
 						&:after{
-							color: #f5f1e1;
+							color: $ivory;
 							font-family: "icons" !important;
 							content: "\65";
 							position: absolute;
@@ -61,12 +61,12 @@ nav.top-menu{
 				width: 100%;
 				display: block;
 				font-family: 'HelveticaNeueLTStd-Lt', 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
-				color: #f5f1e1;
+				color: $ivory;
 				font-size: 13px;
 		    letter-spacing: 0.1em;
 		    text-decoration: none;
 		    &:visited{
-					color: #f5f1e1;
+					color: $ivory;
 					text-decoration: none;
 				}
 			}

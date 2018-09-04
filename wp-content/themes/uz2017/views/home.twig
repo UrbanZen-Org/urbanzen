@@ -1,77 +1,101 @@
 {% extends "base.twig" %}
-{% set body_class = 'page-home black-bg' %}
+{% set body_class = 'page-home-fall-2018 black-bg' %}
 {% set menu_class = 'transparent-bg' %}
 {% set page_class = 'full-width-page' %}
-{% set hide_footer = false %}
-	
+
 {% block content %}
-	<div class="homepage-fall">
-		<section class="full-slideshow" data-dots="{{ post.dots ? 'true' : 'false' }}">
-			{# <div class="sound-controls"><i class="material-icons"></i>
-				<audio>
-			  	<source src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/Fall+17+Teaser+Audio.mp3" type="audio/mpeg">
-				</audio>
-			</div> #}
+<div class="top-slider">
+	{% for hero in post.hero_images %}
+		<figure>
+			<picture>
+  			<source media="(max-width: 768px)"	srcset="{{ hero.mobile_image }}">
+  			<img src="{{ hero.image }}" srcset="{{ hero.image }}">
+			</picture>
+			<figcaption>
+				{% if hero.text %}
+					<span>{{ hero.text }}</span>
+				{% endif %}
+				<div class="uz-logo">
+					{% include 'partials/uz-big-logo.svg' %}
+				</div>
+				{% if hero.link %}
+					<a class="cta-button ivory" target="{{ hero.link.target }}" href="{{ hero.link.url }}">{{ hero.link.title }}</a>
+				{% endif %}
+			</figcaption>
+		</figure>
+	{% endfor %}
+	<div class="top-slider-nav slider-dots"></div>
+</div>
 
-			<div class="opening-logos">
-				<div class="opening-content">
-					<img src="https://s3.us-east-2.amazonaws.com/fall-2017/Homepage/uz-logo.svg">
-					<div class="opening-text">
-						<div class="part-1">
-							<span>A Philosophy of Living<br>by Donna Karan</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			{% set slides = post.slides %}
-			
-			{% if slides %}
-				<div class="slides desktop-slideshow hide-mobile">
-					{% for slide in slides %}
-						<div class="slide {% if slide.video %}video{% else %}image{% endif %}" style="background-image: url({{ slide.image }});">
-							<div class="slide-cover {% if not slide.show_mobile_titles %}mobile-only{% endif %}">						
-								<div class="slide-info">
-									<h2>{{ slide.title }}</h2> 
-									<h3>{{ slide.subtext }}</h3>
-									{% if slide.show_link_button %}
-										<a class="cta-button" href="{{ slide.button_link}}">{{ slide.button_text}}</a>
-									{% endif %}
-								</div>
-							</div>
-							{% if slide.video %}
-								<video class="lazyload" muted preload="metadata" playsinline poster="">
-							  	<source src="{{ slide.video_file }}" type="video/mp4">
-								</video>
-							{% else %}
-								<img class="lazyload" data-src="{{ slide.image }}">
-							{% endif %}
-							<img class="mobile lazyload" data-src="{{ slide.mobile_image }}"/>
-						</div>
-					{% endfor %}
-				</div>
-			{% endif %}
-			{% set slides_mobile = post.slides_mobile %}
-
-			{% if slides_mobile %}
-			<div class="slides hide-desktop">
-					{% for slide in slides_mobile %}
-						<div class="slide image" >
-							<div class="slide-cover {% if not slide.show_mobile_titles %}mobile-only{% endif %}">						
-								<div class="slide-info">
-									<h2>{{ slide.title }}</h2> 
-									<h3>{{ slide.subtext }}</h3>
-									{% if slide.show_link_button %}
-										<a class="cta-button" href="{{ slide.button_link}}">{{ slide.button_text}}</a>
-									{% endif %}
-								</div>
-							</div>
-							<img class="mobile lazyload" data-src="{{ slide.image }}"/>
-						</div>
-					{% endfor %}
-				</div>
-			{% endif %}
-			<div class="full-slideshow-nav"></div>
-		</section>
+<div class="home-categories">
+	<div class="accessories-slider">
+		{% for category in post.accessories_slides %}
+			{% include 'partials/home-category-item.twig' %}
+		{% endfor %}
 	</div>
-{% endblock %}{# end content #}
+	<div class="category-cards">
+		{% for category in post.featured_categories %}
+			{% include 'partials/home-category-item.twig' %}
+		{% endfor %}
+	</div>
+</div>
+
+<div class="happenings">
+	<h2>{{ post.events_title }}</h2>
+	<div class="happening-items">
+		<div class="featured-happening">
+			{% for event in post.featured_events|slice(0,1) %}
+				{% include 'partials/happening-item.twig' with {'event_class': 'featured'} %}
+			{% endfor %}
+		</div>
+		<div class="more-happenings">
+		{% for event in post.featured_events|slice(1,99) %}
+			{% include 'partials/happening-item.twig' %}
+		{% endfor %}
+		</div>
+	</div>
+	<a class="cta-button inquire-button">Inquire</a>
+	{% include 'partials/event-form.twig' %}
+</div>
+
+<div class="page-callouts">
+	<h2>{{ post.foundation_title }}</h2>
+	{% if post.foundation_text %}<p>{{ post.foundation_text }}</p>{% endif %}
+	<div class="callout-items">
+		{% for page in post.foundation_slides %}
+			<figure>			
+				<a href="{{ page.link.url }}">
+					<picture>						
+					  	<source media="(max-width: 768px)"	srcset="{{ page.mobile_image }}">
+					  	<source srcset="{{ page.image }}">
+  						<img src="{{ page.image }}" srcset="{{ page.image }}">					  
+						</picture>
+					</a>
+					<figcaption>
+						<a class="cta-button ivory" target="{{page.link.target}}" href="{{ page.link.url }}">{{ page.link.title }}</a>
+					</figcaption>
+				
+			</figure>
+		{% endfor %}
+	</div>
+	<div class="pages-slider-nav slider-dots"></div>
+</div>
+{% if post.social_images %}
+	<div class="insta-block">
+		<h2>{{ post.social_title }}</h2>
+		{{ post.social_text }}
+		<div class="insta-images">
+		{% for insta in post.social_images %}
+			<figure>
+				<a href="{{ insta.url }}">
+					<picture>
+					  <img src="{{ insta.image }}">
+					</picture>
+				</a>
+			</figure>
+		{% endfor %}
+	</div>
+{% endif %}
+</div>
+
+{% endblock %}

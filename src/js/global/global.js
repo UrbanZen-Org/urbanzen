@@ -53,7 +53,7 @@ var global = {
     // this.pageTransitions();
     this.downArrow();
     this.lazyload();
-    //this.newsletterPopup.init();
+    this.newsletterPopup.init();
     this.menu();
     this.accordian();
     this.mailchimpSignup.init();

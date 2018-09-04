@@ -165,10 +165,6 @@ $ivory : #e5ceb2;
 		font-size: 28px;
 	}
 	.slider-dots{
-		@include respond-min($tablet-portrait)
-		{
-			display: none;
-		}
 		position: absolute;
 		bottom: 0;
 		width: 100%;

@@ -5,7 +5,10 @@
 		
 		.look-product-links{
 			a{
+				@include respond-min($tablet-portrait)
+			{
 				color: $ivory!important;
+			}
 				line-height: 16px!important;
 			}
 		}

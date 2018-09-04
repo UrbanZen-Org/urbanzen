@@ -1,8 +1,5 @@
 .page-shop-by-look{
 	&.fall-2018{
-		
-		background: #e5ceb2;
-		
 		.look-product-links{
 			a{
 				@include respond-min($tablet-portrait)

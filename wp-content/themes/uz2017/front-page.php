@@ -2,7 +2,7 @@
 /*
 	Template Name: Home Spring 2018
 */
-	$templates = 'home-spring-2018.twig';
+	$templates = 'home-fall-2018.twig';
 	$context = Timber::get_context();
 	$context['post'] = new TimberPost();
 

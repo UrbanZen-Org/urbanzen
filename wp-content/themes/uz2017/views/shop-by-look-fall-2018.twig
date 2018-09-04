@@ -51,7 +51,7 @@
 			<div class="look-row" id="row-{{ loop.index }}">
 				{% for look in row.looks %}
 					<div class="look {{ look.layout }} {% if look.hide_mobile %}hide-mobile-look{% endif %}">
-						<div class="look-number">{{ look.number }}</div>
+						<div class="look-number">{{ look.look_number }}</div>
 						{% if look.layout == 'callout' %}
 							<p>{{ look.callout_message }}</p>
 						{% else %}

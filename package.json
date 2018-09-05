@@ -36,7 +36,7 @@
     "postcss-simple-vars": "^3.0.0",
     "sass-loader": "^6.0.3",
     "scroll-parallax": "^2.0.2",
-    "shopify-buy": "^0.7.1",
+    "shopify-buy": "^1.8.0",
     "slick-carousel": "1.7.1",
     "sortablejs": "1.6.1",
     "style-loader": "^0.13.1",

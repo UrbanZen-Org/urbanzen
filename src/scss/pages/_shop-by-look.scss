@@ -419,7 +419,7 @@
 		}
 	}
 }
-$ivory : #e5ceb2;
+
 .sbl-header-section{
 	width: 100%;
 	position: relative;
@@ -448,14 +448,14 @@ $ivory : #e5ceb2;
 			line-height: 1.2em;
 			display: block;
 			font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-			color: $ivory;
+			color: #e5ceb2;
 			text-transform: uppercase;
 			padding-bottom: .7em;
 		}
 		p{
 			font-size: 18px;
 			text-transform: lowercase;
-			color: $ivory;
+			color: #e5ceb2;
 		}
 	}
 }

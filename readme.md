@@ -13,23 +13,23 @@ https://github.com/UrbanZen-Org/urbanzen
 
 ```sh
  git remote add production root@50.28.12.201:/srv/uzstage/remote-repo
- ```
+```
 To push code changes to the site, make your change on the 'master' branch.
 
 ```sh
  git commit -m "My change on the master branch"
- ```
+```
  Then push the change normally to master.
- ```sh
+```sh
  git push
- ```
+```
   Then push master branch to the remote branch you set up earlier.
  ```sh
  git push production master
  ```
  To look deeper into the hook, let's look at the server setup.
  
- ## Server
+## Server
  The site is hosted on Liquid Web.
  The Web Host Manager can be accessed at https://host.urbanzen.com:2087
   The site root is located at ```/home/urbanzen/public_html```
@@ -49,7 +49,7 @@ To push code changes to the site, make your change on the 'master' branch.
 The wordpress core is part of the repository, and must be updated, commited and pushed from the repository.
 The wordpress theme is called 'uz2017' and is built on top of the plugin 'Timber' for twig templating and 'Advanced Custom Fields' for custom data. Images are hosted on Amazon S3 using the plugins 'WP Offload S3 Lite' and 'Amazon Web Services'.
 
- #### Image Hosting
+#### Image Hosting
  As mentioned above, images are hosted on Amazon S3 using the plugins 'WP Offload S3 Lite' and 'Amazon Web Services'.  The bucket they are stored in is called 'urbanzen.com-wp'.  No images are stored on the server, and are instead all served from Amazon.
 
 ## Local Development

@@ -1064,77 +1064,56 @@ The shopify site is stored on git at <a href="https://github.com/UrbanZen-Org/uz
 <h5 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link"></a></h5>
 <p>Deployment to the server is done through git hooks. 
  Setting up the hooks is done as follows.</p>
-<div class="codehilite"><pre> git remote add production root@50.28.12.201:/srv/uzstage/remote-repo
- <span class="sb">```</span>
-To push code changes to the site, make your change on the <span class="s1">&#39;master&#39;</span> branch.
-
-<span class="sb">```</span>sh
- git commit -m <span class="s2">&quot;My change on the master branch&quot;</span>
- <span class="sb">```</span>
+<p><div class="codehilite"><pre> git remote add production root@50.28.12.201:/srv/uzstage/remote-repo
+</pre></div>
+To push code changes to the site, make your change on the &lsquo;master&rsquo; branch.</p>
+<p><div class="codehilite"><pre> git commit -m <span class="s2">&quot;My change on the master branch&quot;</span>
+</pre></div>
  Then push the change normally to master.
- <span class="sb">```</span>sh
- git push
- <span class="sb">```</span>
-  Then push master branch to the remote branch you <span class="nb">set </span>up earlier.
- <span class="sb">```</span>sh
- git push production master
- <span class="sb">```</span>
- To look deeper into the hook, <span class="nb">let</span><span class="s1">&#39;s look at the server setup.</span>
-
-<span class="s1"> ## Server</span>
-<span class="s1"> The site is hosted on Liquid Web.</span>
-<span class="s1"> The Web Host Manager can be accessed at https://host.urbanzen.com:2087</span>
-<span class="s1">  The site root is located at ```/home/urbanzen/public_html```</span>
-<span class="s1">  **Don&#39;</span>t touch the files in the document root!**
-
-  The codebase, as mentioned above, is managed through git.
-
-  Now, I<span class="s1">&#39;ll explain the server setup for reference.</span>
-<span class="s1">  The git repo is in the ``` srv/uzstage/ ``` folder, inside of ``` remote-repo ```.</span>
-<span class="s1">  The ``` mc-creds.php ``` and ```wp-config.php ``` are both used in the wordpress and are symlinked to the root directory, as these files are not inside the git repository.</span>
-
-<span class="s1">  If changes need to be made to the git hook, it is located at ``` srv/uzstage/remote-repo/hooks/post-receive ```</span>
-
-
-
-<span class="s1">## Wordpress</span>
-<span class="s1">The wordpress core is part of the repository, and must be updated, commited and pushed from the repository.</span>
-<span class="s1">The wordpress theme is called &#39;</span>uz2017<span class="s1">&#39; and is built on top of the plugin &#39;</span>Timber<span class="s1">&#39; for twig templating and &#39;</span>Advanced Custom Fields<span class="s1">&#39; for custom data. Images are hosted on Amazon S3 using the plugins &#39;</span>WP Offload S3 Lite<span class="s1">&#39; and &#39;</span>Amazon Web Services<span class="s1">&#39;.</span>
-
-<span class="s1"> #### Image Hosting</span>
-<span class="s1"> As mentioned above, images are hosted on Amazon S3 using the plugins &#39;</span>WP Offload S3 Lite<span class="s1">&#39; and &#39;</span>Amazon Web Services<span class="s1">&#39;.  The bucket they are stored in is called &#39;</span>urbanzen.com-wp<span class="s1">&#39;.  No images are stored on the server, and are instead all served from Amazon.</span>
-
-<span class="s1">## Local Development</span>
-<span class="s1">Local development is done through a local server setup (ie. MAMP) using the git repository as the root of the setup.</span>
-<span class="s1">An example configuration is a MAMP setup with document root set to git folder.</span>
-<span class="s1">Database backups are done through the plugin &#39;</span>All in One Wordpress Migration<span class="s1">&#39;. Please only use this plugin to restore the database to your local setup. Click on advanced options, and check every option *except* &#39;</span>Do not <span class="nb">export </span>database <span class="o">(</span>sql<span class="o">)</span><span class="s1">&#39;  This plugin is also used to move new content to the local setup periodically. For the most part, it should not be used to other way around, so as not to overwrite updates to the live database.</span>
-
-<span class="s1">#### Theme development with Timber / Twig / Advanced Custom Fields</span>
-<span class="s1">Documentation:</span>
-<span class="s1">https://timber.github.io/docs/</span>
-<span class="s1">https://twig.symfony.com/doc/2.x/</span>
-<span class="s1">https://www.advancedcustomfields.com/resources/</span>
-
-<span class="s1">The theme is called &#39;</span>uz-2017<span class="s1">&#39; and is located at ``` wp-content/themes/uz-2017 ```.  The theme is built on twig templates using Timber, documentation for twig/Timber is linked above.</span>
-<span class="s1">Advanced Custom Fields is used to customize Wordpress pages, documentation for ACF is also linked above.</span>
-
-<span class="s1">##### Theme Dependencies</span>
-<span class="s1">Documentation:</span>
-<span class="s1">https://docs.npmjs.com/</span>
-
-<span class="s1">Theme dependencies are managed through npm, look at ``` package.json ``` in the root for more information on the npm setup.</span>
-
-<span class="s1">##### SCSS/JS Development</span>
-<span class="s1">Documentation:</span>
-<span class="s1">https://webpack.js.org/guides/</span>
-<span class="s1">http://sass-lang.com/documentation/file.SASS_REFERENCE.html</span>
-
-<span class="s1">SCSS/JS Development is compiled through &#39;</span>webpack<span class="err">&#39;</span>. The files are located in <span class="sb">```</span> src/scss <span class="sb">```</span> and <span class="sb">```</span> src/js <span class="sb">```</span>, respectively. 
-The main SCSS file is <span class="sb">```</span> src/scss/main.scss <span class="sb">```</span> and it is compiled to <span class="sb">```</span> wp-content/themes/uz-2017/assets/css/main.css <span class="sb">```</span>
-The main JS file is <span class="sb">```</span> src/scss/main.js <span class="sb">```</span> and it is compiled to <span class="sb">```</span> wp-content/themes/uz-2017/assets/js/main.js <span class="sb">```</span>
-
-The files are compiled through webpack with npm.
-This <span class="nb">command </span>will watch the src directory <span class="k">for</span> changes using webpack:
-<span class="sb">```</span> sh
-npm run watch
-</pre></div></article></body></html>
+<div class="codehilite"><pre> git push
+</pre></div>
+  Then push master branch to the remote branch you set up earlier.
+ <div class="codehilite"><pre>git push production master
+</pre></div>
+ To look deeper into the hook, let&rsquo;s look at the server setup.</p>
+<h2 id="server">Server<a class="headerlink" href="#server" title="Permanent link"></a></h2>
+<p>The site is hosted on Liquid Web.
+ The Web Host Manager can be accessed at <a href="https://host.urbanzen.com:2087">https://host.urbanzen.com:2087</a>
+  The site root is located at <code>/home/urbanzen/public_html</code>
+  <strong>Don&rsquo;t touch the files in the document root!</strong></p>
+<p>The codebase, as mentioned above, is managed through git.</p>
+<p>Now, I&rsquo;ll explain the server setup for reference.
+  The git repo is in the <code>srv/uzstage/</code> folder, inside of <code>remote-repo</code>.
+  The <code>mc-creds.php</code> and <code>wp-config.php</code> are both used in the wordpress and are symlinked to the root directory, as these files are not inside the git repository.</p>
+<p>If changes need to be made to the git hook, it is located at <code>srv/uzstage/remote-repo/hooks/post-receive</code></p>
+<h2 id="wordpress">Wordpress<a class="headerlink" href="#wordpress" title="Permanent link"></a></h2>
+<p>The wordpress core is part of the repository, and must be updated, commited and pushed from the repository.
+The wordpress theme is called &lsquo;uz2017&rsquo; and is built on top of the plugin &lsquo;Timber&rsquo; for twig templating and &lsquo;Advanced Custom Fields&rsquo; for custom data. Images are hosted on Amazon S3 using the plugins &lsquo;WP Offload S3 Lite&rsquo; and &lsquo;Amazon Web Services&rsquo;.</p>
+<h4 id="image-hosting">Image Hosting<a class="headerlink" href="#image-hosting" title="Permanent link"></a></h4>
+<p>As mentioned above, images are hosted on Amazon S3 using the plugins &lsquo;WP Offload S3 Lite&rsquo; and &lsquo;Amazon Web Services&rsquo;.  The bucket they are stored in is called &lsquo;urbanzen.com-wp&rsquo;.  No images are stored on the server, and are instead all served from Amazon.</p>
+<h2 id="local-development">Local Development<a class="headerlink" href="#local-development" title="Permanent link"></a></h2>
+<p>Local development is done through a local server setup (ie. MAMP) using the git repository as the root of the setup.
+An example configuration is a MAMP setup with document root set to git folder.
+Database backups are done through the plugin &lsquo;All in One Wordpress Migration&rsquo;. Please only use this plugin to restore the database to your local setup. Click on advanced options, and check every option <em>except</em> &lsquo;Do not export database (sql)&rsquo;  This plugin is also used to move new content to the local setup periodically. For the most part, it should not be used to other way around, so as not to overwrite updates to the live database.</p>
+<h4 id="theme-development-with-timber-twig-advanced-custom-fields">Theme development with Timber / Twig / Advanced Custom Fields<a class="headerlink" href="#theme-development-with-timber-twig-advanced-custom-fields" title="Permanent link"></a></h4>
+<p>Documentation:
+<a href="https://timber.github.io/docs/">https://timber.github.io/docs/</a>
+<a href="https://twig.symfony.com/doc/2.x/">https://twig.symfony.com/doc/2.x/</a>
+<a href="https://www.advancedcustomfields.com/resources/">https://www.advancedcustomfields.com/resources/</a></p>
+<p>The theme is called &lsquo;uz-2017&rsquo; and is located at <code>wp-content/themes/uz-2017</code>.  The theme is built on twig templates using Timber, documentation for twig/Timber is linked above.
+Advanced Custom Fields is used to customize Wordpress pages, documentation for ACF is also linked above.</p>
+<h5 id="theme-dependencies">Theme Dependencies<a class="headerlink" href="#theme-dependencies" title="Permanent link"></a></h5>
+<p>Documentation:
+<a href="https://docs.npmjs.com/">https://docs.npmjs.com/</a></p>
+<p>Theme dependencies are managed through npm, look at <code>package.json</code> in the root for more information on the npm setup.</p>
+<h5 id="scssjs-development">SCSS/JS Development<a class="headerlink" href="#scssjs-development" title="Permanent link"></a></h5>
+<p>Documentation:
+<a href="https://webpack.js.org/guides/">https://webpack.js.org/guides/</a>
+<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">http://sass-lang.com/documentation/file.SASS_REFERENCE.html</a></p>
+<p>SCSS/JS Development is compiled through &lsquo;webpack&rsquo;. The files are located in <code>src/scss</code> and <code>src/js</code>, respectively. 
+The main SCSS file is <code>src/scss/main.scss</code> and it is compiled to <code>wp-content/themes/uz-2017/assets/css/main.css</code>
+The main JS file is <code>src/scss/main.js</code> and it is compiled to <code>wp-content/themes/uz-2017/assets/js/main.js</code></p>
+<p>The files are compiled through webpack with npm.
+This command will watch the src directory for changes using webpack:
+<div class="codehilite"><pre>npm run watch
+</pre></div></p></article></body></html>

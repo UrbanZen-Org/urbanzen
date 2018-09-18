@@ -50,6 +50,8 @@ namespace MABEL_SILITE\Code\Controllers
 				$t = new Tag(round(doubleval($tag->x),4),round(doubleval($tag->y),4));
 				if($tag->id){
 					$product = Woocommerce_Service::get_product($tag->id);
+					if($product === null)
+						continue;
 					$t->link = $product->get_permalink();
 					preg_match( '/src="(.*?)"/', $product->get_image('shop_thumbnail'), $imgurl);
 					$t->thumb = count($imgurl) === 2? $imgurl[1] : null;

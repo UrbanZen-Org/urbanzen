@@ -35,11 +35,40 @@ namespace MABEL_SILITE\Code\Controllers
 			$this->add_ajax_function('mb-siwc-delete-image', $this, 'delete_image', false, true);
 
 			$this->add_ajax_function('mb-siwc-get-product-by-id', $this, 'get_wc_product_by_id', false, true);
+			$this->add_ajax_function('mb-siwc-get-products-by-ids', $this, 'get_wc_products_by_ids', false, true);
 			$this->add_ajax_function('mb-siwc-get-products', $this, 'get_wc_product_by_name', false, true);
 
 			$this->add_script_variable('tagsize',Settings_Manager::get_setting('tagsize'));
 			$this->add_script_variable('iconsize',Settings_Manager::get_setting('iconsize'));
 			$this->add_script_variable('tagicon',Settings_Manager::get_setting('tagicon'));
+		}
+
+		public function get_wc_products_by_ids() {
+			if(empty($_GET['ids'])){
+				echo json_encode(array());
+				wp_die();
+			}
+
+			$is_new = version_compare( WC()->version, '3.0.0','>=') === true;
+
+			$ps = get_posts(array( 'post_type' => 'product', 'post__in' => explode(',',$_GET['ids']) ));
+
+			$products = array();
+
+			foreach ($ps as $p){
+				$product = wc_get_product($p->ID);
+
+				$products[] = array(
+					'name'  => $product->get_title(),
+					'url'   => $product->get_permalink(),
+					'price' => get_woocommerce_currency_symbol() . ($is_new ? wc_get_price_to_display($product) :  $product->get_display_price()),
+					'id' => $product->get_id()
+				);
+
+			}
+
+			echo json_encode($products);
+			wp_die();
 		}
 
 		public function get_wc_product_by_id()
@@ -73,19 +102,14 @@ namespace MABEL_SILITE\Code\Controllers
 
 		private function get_wc_product($pid)
 		{
-			$newway = version_compare( WC()->version, '2.6') == 1;
+			$is_new = version_compare( WC()->version, '3.0.0','>=') === true;
 
-			if($newway){
-				$product = wc_get_product($pid);
-			}else{
-				$pf =  new \WC_Product_Factory();
-				$product = $pf ->get_product($pid);
-			}
+			$product = wc_get_product($pid);
 
 			return array(
 				'name'  => $product->get_title(),
 				'url'   => $product->get_permalink(),
-				'price' => get_woocommerce_currency_symbol() . $product->get_display_price(),
+				'price' => get_woocommerce_currency_symbol() . ($is_new ? wc_get_price_to_display($product) :  $product->get_display_price()),
 				'id' => $product->get_id()
 			);
 		}

@@ -3,7 +3,7 @@
  * Plugin Name: Shoppable Images Lite
  * Plugin URI: https://studiowombat.com/plugin/shoppable-images/
  * Description: Easily add 'shoppable images' (images with hotspots) to your website or store.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Studio Wombat
  * Author URI: https://studiowombat.com/
  * Text Domain: mabel-shoppable-images-lite
@@ -46,7 +46,7 @@ function run_MABEL_SILITE()
 		plugin_dir_url( __FILE__ ),
 		plugin_basename( __FILE__ ),
 		'Shoppable Images Lite',
-		'1.0.2',
+		'1.0.3',
 		'mb-si-lite-settings'
 	);
 	$plugin->run();

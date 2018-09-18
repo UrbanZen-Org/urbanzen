@@ -3,9 +3,9 @@ Contributors: studiowombat,maartenbelmans
 Donate link: https://www.paypal.me/maartenbelmans
 Tags: shoppable,hotspots,woocommerce,linklay, image hotspots
 Requires at least: 3.7
-Tested up to: 4.9.2
+Tested up to: 4.9.6
 Required PHP: 5.4.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 Create interactive 'shoppable' images with click-to-buy tags. Ideal to showcase your products in a different way and drive more traffic.
 
@@ -49,6 +49,9 @@ More info about the premium version [can be found here](https://studiowombat.com
 14. Example of how it could look on your website.
 
 == Changelog ==
+
+= version 1.0.3 =
+ * Enhancement: Better loading of Woo products on the backend.
 
 = version 1.0.2 =
  * Fix: Remove get_display_price in favor of get_price.

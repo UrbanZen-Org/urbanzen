@@ -6,7 +6,10 @@ namespace MABEL_SILITE\Code\Services
 	{
 		public static function get_product($id)
 		{
-			return wc_get_product($id);
+			$product = wc_get_product($id);
+            if($product)
+                return $product;
+            return null;
 		}
 	}
 }

@@ -389,13 +389,14 @@
 			@include respond-min($tablet-portrait)
 			{
 				padding-bottom: 62px;	
+				display: grid;
+				grid-auto-rows: 1fr;
+				grid-template-columns: 50% 50%;
+				grid-column-gap: 18px;
 			}
 			padding-bottom: 20px;
-			display: flex;
-			justify-content: space-between;
-			flex-wrap: wrap;
-			align-items: flex-end;
-			flex-direction: row;
+
+
 			@include respond-min($tablet-portrait)
 			{
 					flex-wrap: nowrap;
@@ -404,7 +405,10 @@
 				
 				@include respond-min($tablet-portrait)
 				{
-					width: calc(50% - 9px);
+					
+				}
+				.image-area{
+					height: 100%;
 				}
 				figure{
 					width: 100%;
@@ -428,7 +432,7 @@
 				
 				@include respond-min($tablet-portrait)
 				{
-					width: calc(50% - 9px);
+					
 				}
 				display: flex;
 				align-items: flex-start;
@@ -436,10 +440,11 @@
 				flex-wrap: wrap;
 			}
 			figure{
-				width: calc(50% - 9px);
+				width: 100%;
 				position: relative;
 				@include respond-min($tablet-portrait)
 				{
+					width: calc(50% - 9px);
 					&:nth-child(3),&:last-child{
 
 						span{

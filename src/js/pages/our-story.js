@@ -10,9 +10,9 @@ var ourStory = {
 
   ready: function(){
 
-    if ($('.page-our-story').length){
+    if ($('.our-story').length){
       var self = this;
-      $('.page-our-story .full-slideshow .slide').each(function(){
+      $('.our-story .full-slideshow .slide').each(function(){
         var $self = $(this);
         imagesLoaded($(this), function(){
           $self.addClass('loaded');
@@ -24,7 +24,7 @@ var ourStory = {
   },
   
   resize:function(){
-    if ($('.page-our-story').length){
+    if ($('.our-story').length){
       // reslick only if it's not slick()
     if ($(window).width() < 768) {
       if ($('.our-story .full-slideshow .slides').hasClass('slick-initialized')) {

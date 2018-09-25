@@ -6,17 +6,23 @@
 		}
 	}
 	.drawer-contents{
-		margin-left: 0!important;
+		//margin-left: 0!important;
 	}
 }
 .our-story{
 	.full-slideshow{
 		.slick-arrow.arrow-left{
-			left: 200px;
+			@include respond-min($tablet-landscape)
+			{
+				//left: 200px;
+			}
 		}
 		.slides{
 			.slide{
 				overflow: hidden;
+				img{
+					display: block!important;
+				}
 			}
 			.slide-info{
 				max-width: 80%;

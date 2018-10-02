@@ -176,6 +176,8 @@
 			position: relative;
 			overflow: hidden;
 			.parallax-wrapper{
+				position: relative;
+				overflow: hidden;
 				padding-top: 0;
 				@include respond-max($tablet-portrait)
 				{

@@ -31,7 +31,7 @@
 		margin: 0 auto;
 		z-index: 1;
 		position: relative;
-		padding: 100px 0;
+		padding: 100px 20px;
 		p{
 			margin-bottom: 2em;
 			font-size: 14px;
@@ -428,7 +428,8 @@
 		bottom: 0;
 		width: 100%;
 		text-align: center;
-		padding-bottom: 5%;
+		padding: 0 20px 5%;
+
 	}
 	.slideshow-title{
 		position: absolute;

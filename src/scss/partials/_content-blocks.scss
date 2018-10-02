@@ -175,7 +175,7 @@
 		.single-image{
 			position: relative;
 			overflow: hidden;
-			&.parallax{
+			&.parallax-wrapper{
 				padding-top: 0;
 				@include respond-max($tablet-portrait)
 				{

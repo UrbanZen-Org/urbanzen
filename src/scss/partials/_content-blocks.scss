@@ -1,15 +1,41 @@
 .content-rows{
+	.content-row{
+		position: relative;
+		&.text-white{
+			color: white;
+			p{
+				color: white;
+			}
+			.cta-button{
+				background: white;
+			}
+		}
+		&.text-black{
+			color: black;
+		}
+		img.row-bg{
+			object-fit:cover;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
 	.richtext{
 		text-align: center;
 		max-width: 700px;
 		margin: 0 auto;
+		z-index: 1;
+		position: relative;
+		padding: 100px 0;
 		p{
 			margin-bottom: 2em;
 			font-size: 14px;
 			line-height: 1.5em;
 		}
 		
-		a{
+		a:not(.cta-button){
 			color: black;
 			display: inline-block;
 			&:after{
@@ -29,6 +55,7 @@
 				}
 			}
 		}
+
 	}
 	.shortcode{
 		span.mb-siwc-tag{
@@ -330,6 +357,12 @@
 // Isotope Images
 .iso-images{
 	margin: 0 15px;
+	&.bg-black{
+		background: black;
+	}
+	&.bg-white{
+		background: white;
+	}
 	&.hidden{
 		visibility: hidden;
 		opacity: 0;
@@ -379,7 +412,7 @@
 			width: 100%;
 		}
 		&:hover{
-			cursor: zoom-in;
+			cursor: default;
 		}
 	}
 }
@@ -387,6 +420,13 @@
 // Centered Slideshow
 .centered-slideshow{
 	position: relative;
+	.overlay-svg{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		padding-bottom: 5%;
+	}
 	.slideshow-title{
 		position: absolute;
 		top: 50%;

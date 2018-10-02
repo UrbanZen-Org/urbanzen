@@ -14,9 +14,15 @@
 						{% if block.down_prompt %}
 							<div class="down-arrow" data-target="#row_{{ loop.index + 1}}">{{ block.down_prompt_text }}</div>
 						{% endif %}
+						{% set svg = block.svg_overlay %}						
+						{% if svg %}
+							<div class="overlay-svg">
+								<img src="{{ svg }}" alt="">
+							</div>
+						{% endif %}
 					</div>
 				{% elseif block.acf_fc_layout == 'isotope_images' %}
-					<div class="iso-images hidden" data-gallery-id="gallery-{{loop.index }}">
+					<div class="iso-images hidden {{ block.bg_color }}" data-gallery-id="gallery-{{loop.index }}">
 						<div class="iso-image-sizer"></div>
 						{% for slide in block.images %}
 							<div class="iso-image {{ slide.alt }}">
@@ -109,9 +115,14 @@
 						{{ function('do_shortcode', block.shortcode_text) }}
 					</div>
 				{% elseif block.acf_fc_layout == 'richtext' %}
-					<div class="richtext">
+					<div class="richtext text-{{ block.text_color }}">
 						{{ block.text }}
+						<a class="cta-button ivory" target="{{block.button_link.target}}" href="{{ block.button_link.url }}">{{ block.button_link.title }}</a>
 					</div>
+
+					{% if block.background_image %}
+						<img class="row-bg" src="{{ block.background_image }}"/>
+					{% endif %}
 				{% endif %}
 			</div>
 	{% endfor %}

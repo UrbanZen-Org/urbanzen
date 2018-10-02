@@ -25,7 +25,7 @@ img:not([src]){
 	padding: 0 20px;
 }
 #content{
-	margin-bottom: 60px;
+	//margin-bottom: 60px;
 	@include respond-max($tablet-landscape) {
 		margin-top: 50px;
 	}

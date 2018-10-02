@@ -10,7 +10,7 @@ if (!class_exists('Timber'))
 }
 
 
-class StudioLab extends TimberSite 
+class UrbanZen extends TimberSite 
 {
 
   function __construct()
@@ -146,7 +146,7 @@ class StudioLab extends TimberSite
 
 }
   
-new StudioLab();
+new UrbanZen();
 
 function register_menus() 
 {
@@ -238,6 +238,17 @@ function change_menus()
 }
 add_filter( 'intermediate_image_sizes', '__return_empty_array', 999 );
 add_action( 'admin_menu', 'change_menus' );
+
+//add SVG to allowed file uploads
+function add_file_types_to_uploads($file_types){
+
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    $file_types = array_merge($file_types, $new_filetypes );
+
+    return $file_types;
+}
+add_action('upload_mimes', 'add_file_types_to_uploads');
 
 function _remove_script_version( $src ){ 
 $parts = explode( '?', $src );  

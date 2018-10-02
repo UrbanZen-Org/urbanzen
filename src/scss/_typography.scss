@@ -18,7 +18,8 @@ h4{
   font-size: 20px;
   font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05em;
+  margin-bottom:  1em;
 }
 p, label, span {
   font-family: 'HelveticaNeueLTStd-Roman','Helvetica Neue Roman', Helvetica, Arial, sans-serif;
@@ -33,6 +34,7 @@ h3, *.h3 {
   letter-spacing: 0.05em;
   text-transform: none;
 }
+
 h5 {
     font-family: 'HelveticaNeueLTStd-Bd', Helvetica, Arial, sans-serif;
     font-size: 16px;

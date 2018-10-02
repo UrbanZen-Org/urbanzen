@@ -2,9 +2,9 @@
 	.content-row{
 		position: relative;
 		&.text-white{
-			color: white;
+			color: white!important;
 			p{
-				color: white;
+				color: white!important;
 			}
 			.cta-button{
 				background: white;

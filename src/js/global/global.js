@@ -4,7 +4,7 @@ var $ = require('jquery');
 var lazysizes = require('lazysizes');
 var unveilhooks = require('unveilhooks');
 var Cookies = require('js-cookie');
-var Parallax = require('scroll-parallax');
+var Parallax = require('simple-parallax-jquery');
 var Isotope = require('isotope-layout');
 var animsition = require('animsition');
 var imagesLoaded = require('imagesloaded');
@@ -63,7 +63,7 @@ var global = {
     this.scrollWatch();
   },
   parallax: function(){
-    var p = new Parallax('.parallax').init();
+    $('.parallax').simpleParallax();
   },
   resize:function(){
     

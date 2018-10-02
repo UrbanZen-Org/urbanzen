@@ -2,7 +2,7 @@
 
 var $ = require('jquery');
 var VimeoPlayer = require('@vimeo/player');
-var Parallax = require('scroll-parallax');
+var Parallax = require('simple-parallax-jquery');
 
 var supersaturday = {
   init: function(){

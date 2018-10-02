@@ -85,11 +85,9 @@
 				{% elseif block.acf_fc_layout == 'single_image' %}
 					<div class="single-image {{ block.full_width ? 'full-width' }}">
 						{{ block.full_width ? '' : '<div class="inner-container">' }}
-						<figure class="{{ block.parallax ? 'parallax' }}-wrapper">
-							<img class="hide-mobile {{ block.parallax ? 'parallax' }}" src="{{ block.image }}"/>
-						</figure>
-							<img class="hide-desktop" src="{{ block.mobile_image }}"/>
+  						<img class="{{ block.parallax ? 'parallax' }} hide-mobile" src="{{ block.image }}"/>
 						
+						<img class="hide-desktop" src="{{ block.mobile_image }}"/>
 						<span class="caption">{{ block.caption }}</span>
 						{{ block.full_width ? '' : '</div>' }}
 					</div>

@@ -179,6 +179,7 @@
 				position: relative;
 				overflow: hidden;
 				padding-top: 0;
+				height: 600px;
 				@include respond-max($tablet-portrait)
 				{
 					height: 400px;

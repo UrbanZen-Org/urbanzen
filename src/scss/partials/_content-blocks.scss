@@ -1,5 +1,8 @@
 .content-rows{
 	.content-row{
+		&.bg-black{
+			background: black;
+		}
 		position: relative;
 		&.text-white{
 			color: white!important;
@@ -360,12 +363,7 @@
 // Isotope Images
 .iso-images{
 	margin: 0 15px;
-	&.bg-black{
-		background: black;
-	}
-	&.bg-white{
-		background: white;
-	}
+	
 	&.hidden{
 		visibility: hidden;
 		opacity: 0;

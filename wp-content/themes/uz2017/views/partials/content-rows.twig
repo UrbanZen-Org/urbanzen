@@ -1,6 +1,6 @@
 <div class="content-rows">
 	{% for block in content_rows %}
-		<div class="content-row" id="row_{{ loop.index }}">
+		<div class="content-row {{ block.black_bg ? 'bg-black' }}" id="row_{{ loop.index }}">
 				{% if block.acf_fc_layout == 'centered_slideshow' %}
 					<div class="centered-slideshow">
 						<div class="slideshow-title">{{ block.title }}</div>
@@ -22,7 +22,7 @@
 						{% endif %}
 					</div>
 				{% elseif block.acf_fc_layout == 'isotope_images' %}
-					<div class="iso-images hidden {{ block.bg_color }}" data-gallery-id="gallery-{{loop.index }}">
+					<div class="iso-images hidden" data-gallery-id="gallery-{{loop.index }}">
 						<div class="iso-image-sizer"></div>
 						{% for slide in block.images %}
 							<div class="iso-image {{ slide.alt }}">

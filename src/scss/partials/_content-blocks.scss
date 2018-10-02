@@ -8,6 +8,9 @@
 			}
 			.cta-button{
 				background: white;
+				&:hover{
+					color: black!important;
+				}
 			}
 		}
 		&.text-black{

@@ -40,6 +40,20 @@
 	</div>
 </div>
 
+<div class="dk-bday">
+	<figure>
+		<picture>
+			<source media="(max-width: 768px)"	srcset="{{ post.dk_birthday_image_mobile }}">
+			<img src="{{ post.dk_birthday_image }}" srcset="{{ post.dk_birthday_image }}">
+		</picture>
+		<figcaption>
+			<img src="{{ post.dk_birthday_overlay_svg }}" alt="">
+		</figcaption>
+	</figure>
+	<a href="{{ post.dk_birthday_button_link.url }}" target="{{ post.dk_birthday_button_link.target }}" class="cta-button ivory">{{ post.dk_birthday_button_link.title }}</a>		
+
+</div>
+
 <div class="happenings">
 	<h2>{{ post.events_title }}</h2>
 	<div class="happening-items">

@@ -623,3 +623,19 @@
 		}
 	}
 }
+
+// DK BDAY
+.dk-bday{
+	figure{
+		position: relative;
+		picture, picture img{
+			width: 100%;
+		}
+		figcaption{
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

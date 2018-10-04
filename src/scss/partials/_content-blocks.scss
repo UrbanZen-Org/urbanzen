@@ -1,5 +1,8 @@
 .content-rows{
 	.content-row{
+		&.no-padding{
+			padding-top: 0;
+		}
 		&.bg-black{
 			background: black;
 		}

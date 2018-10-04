@@ -1,6 +1,6 @@
 <div class="content-rows">
 	{% for block in content_rows %}
-		<div class="content-row {{ block.black_bg ? 'bg-black' }}" id="row_{{ loop.index }}">
+		<div class="content-row {{ block.black_bg ? 'bg-black' }} {{ block.parallax ? 'no-padding' }} {{block.acf_fc_layout }}" id="row_{{ loop.index }}">
 				{% if block.acf_fc_layout == 'centered_slideshow' %}
 					<div class="centered-slideshow">
 						<div class="slideshow-title">{{ block.title }}</div>

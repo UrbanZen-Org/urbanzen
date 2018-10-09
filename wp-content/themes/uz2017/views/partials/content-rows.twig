@@ -1,6 +1,6 @@
 <div class="content-rows">
 	{% for block in content_rows %}
-		<div class="content-row {{ block.black_bg ? 'bg-black' }} {{ block.parallax ? 'no-padding' }} layout-{{block.acf_fc_layout }}" id="row_{{ loop.index }}">
+		<div class="content-row {{ block.parallax ? 'no-padding' }} layout-{{block.acf_fc_layout }}" id="row_{{ loop.index }}">
 				{% if block.acf_fc_layout == 'centered_slideshow' %}
 					<div class="centered-slideshow">
 						<div class="slideshow-title">{{ block.title }}</div>
@@ -61,8 +61,8 @@
 						{% if block.subtitle %}
 							<h4>{{ block.subtitle }}</h4>
 						{% endif %}
-						{% if block.button_text %}
-							<a href="{{ block.button_link.url }}" target="{{ block.button_link.target }}" class="cta-button {{ block.black_background ? 'light' : 'dark' }}">{{ block.button_text}}</a>		
+						{% if block.button_link %}
+							<a href="{{ block.button_link.url }}" target="{{ block.button_link.target }}" class="cta-button {{ block.black_background ? 'light' : 'dark' }}">{{ block.button_link.target }}</a>		
 						{% endif %}
 					</div>
 				{% elseif block.acf_fc_layout == 'video' %}
@@ -118,7 +118,9 @@
 				{% elseif block.acf_fc_layout == 'richtext' %}
 					<div class="richtext text-{{ block.text_color }}">
 						{{ block.text }}
-						<a class="cta-button white" target="{{block.button_link.target}}" href="{{ block.button_link.url }}">{{ block.button_link.title }}</a>
+						{% if block.button_link %}
+							<a class="cta-button white" target="{{block.button_link.target}}" href="{{ block.button_link.url }}">{{ block.button_link.title }}</a>
+						{% endif %}
 					</div>
 
 					{% if block.background_image %}

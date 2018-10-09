@@ -42,6 +42,11 @@ img:not([src]){
 }
 .black-bg{
 	background: black;
+	color: $ivory;
+	p,a,h1,h2,h3,h4,h5{
+		color: $ivory;
+
+	}
 }
 .hide-mobile{
 	@include respond-max($tablet-portrait)

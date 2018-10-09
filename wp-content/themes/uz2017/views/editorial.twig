@@ -1,5 +1,8 @@
 {% extends "base.twig" %}
 {% set body_class = 'page-event' %}
+{%  if post.black_background %}
+	{% set body_class = 'page-event black-bg' %}
+{% endif %}
 {% set content_rows = post.content_rows %}
 
 {% block content %}

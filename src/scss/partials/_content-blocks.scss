@@ -383,7 +383,7 @@
 		{
 			width: 50%;	
 		}
-		@include respond(1200)
+		@include respond($tablet-landscape)
 		{
 			width: 25%;
 		}

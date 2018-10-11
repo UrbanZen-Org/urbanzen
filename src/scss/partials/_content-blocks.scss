@@ -38,6 +38,14 @@
 		z-index: 1;
 		position: relative;
 		padding: 100px 20px;
+		display: flex;
+		align-items: center;
+		&.align-right{
+			justify-content: flex-end;
+		}
+		&.align-left{
+			justify-content: flex-start;
+		}
 		p{
 			margin-bottom: 2em;
 			font-size: 14px;
@@ -485,7 +493,7 @@
 		}
 
 		img{
-
+			
 		}
 
 	}

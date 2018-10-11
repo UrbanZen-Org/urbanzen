@@ -116,11 +116,13 @@
 						{{ function('do_shortcode', block.shortcode_text) }}
 					</div>
 				{% elseif block.acf_fc_layout == 'richtext' %}
-					<div class="richtext text-{{ block.text_color }}">
-						{{ block.text }}
-						{% if block.button_link %}
-							<a class="cta-button white" target="{{block.button_link.target}}" href="{{ block.button_link.url }}">{{ block.button_link.title }}</a>
-						{% endif %}
+					<div class="richtext text-{{ block.text_color }} {{ block.text_position }}">
+						<div class="text-content">
+							{{ block.text }}
+							{% if block.button_link %}
+								<a class="cta-button white" target="{{block.button_link.target}}" href="{{ block.button_link.url }}">{{ block.button_link.title }}</a>
+							{% endif %}
+						</div>
 					</div>
 
 					{% if block.background_image %}

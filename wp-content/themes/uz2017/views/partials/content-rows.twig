@@ -17,7 +17,7 @@
 						{% set svg = block.svg_overlay %}						
 						{% if svg %}
 							<div class="overlay-svg {{ block.svg_position }} {{ block.down_prompt ? 'down-prompt' }}">
-								<object type="image/svg+xml" data="{{ svg }}"></object>
+								<img src="{{ svg }}" alt="">
 							</div>
 						{% endif %}
 					</div>

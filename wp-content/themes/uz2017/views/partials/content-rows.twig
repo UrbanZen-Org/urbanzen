@@ -116,7 +116,7 @@
 						{{ function('do_shortcode', block.shortcode_text) }}
 					</div>
 				{% elseif block.acf_fc_layout == 'richtext' %}
-					<div class="richtext text-{{ block.text_color }} {{ block.text_position }}">
+					<div class="richtext text-{{ block.text_color }} align-{{ block.text_position }}">
 						<div class="text-content">
 							{{ block.text }}
 							{% if block.button_link %}

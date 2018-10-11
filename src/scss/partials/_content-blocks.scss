@@ -8,12 +8,12 @@
 		}
 		position: relative;
 		&.text-white{
-			color: white!important;
+			color: $ivory!important;
 			p{
-				color: white!important;
+				color: $ivory!important;
 			}
 			.cta-button{
-				background: white;
+				background: $ivory;
 				&:hover{
 					color: black!important;
 				}
@@ -225,7 +225,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				color: white;
+				color: $ivory;
 				text-align: center;
 			}
 			.supertitle{
@@ -251,7 +251,7 @@
 					width: 100px;
 					display: block;
 					margin: 0 auto;
-					border-top: 1px solid white;
+					border-top: 1px solid $ivory;
 					padding-bottom: 2em;
 				}
 				margin-top: 2em;
@@ -409,7 +409,7 @@
 			left: 5px;
 			position: absolute;
 			background: rgba(0, 0, 0, 0.6);
-			color: white;
+			color: $ivory;
 			opacity: 0;
 			@include transition((opacity .3s ease-in-out));
 			display: flex;
@@ -505,7 +505,7 @@
 		width: 100%;
 		text-align: center;
 		z-index: 96;
-		color: white;
+		color: $ivory;
 		font-family: 'HelveticaNeueLTStd-LtEx', 'Helvetica Neue Light Extended', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	  line-height: 1em;
 	  letter-spacing: 0.04em;

@@ -169,7 +169,7 @@ var global = {
               columnWidth: '.iso-image-sizer'
             }
           });
-          $('.iso-images').toggleClass('hidden');
+          $('.iso-images').removeClass('hidden');
         });
       });
       

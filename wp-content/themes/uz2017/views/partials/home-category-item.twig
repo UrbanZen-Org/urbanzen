@@ -3,9 +3,11 @@
 	  <img src="{{ category.image }}">				       
 	</picture>
 	<figcaption class="{{ category.caption_position }}">				
-			<p>{{ category.text }}</p>					
-		<a target="{{ category.link.target }}" href="{{ category.link.url }}">
-			{{ category.link.title }}
-		</a>
+			<p>{{ category.text }}</p>
+		{% if category.vimeo_id %}
+			<a class="video-item" data-video-id="{{ category.vimeo_id }}">
+				{{ category.link.title }}
+			</a>
+	{% endif %}
 	</figcaption>			
 </figure>

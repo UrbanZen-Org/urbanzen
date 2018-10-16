@@ -666,7 +666,7 @@ img:not([src]){
 .video-overlay{
 		max-width: 100%;
 		position: fixed;
-		top: 49px;
+		top: 60px;
 		right: 0;
 		bottom: 0;
 		left: 0;
@@ -674,6 +674,9 @@ img:not([src]){
 		visibility: hidden;
 		background-color: black;
 		z-index: 9996;
+		@include respond-min($tablet-portrait) {
+			top: 0;
+		}
 		@include transition((opacity .3s ease-in-out, visibility .3s ease-in-out));
 		&.video-open{
 			visibility: visible;
@@ -705,6 +708,9 @@ img:not([src]){
 				position: relative;
 				padding-bottom: 56.25%; /* 16:9 */
 				height: 0;
+				@include respond-min($tablet-portrait) {
+					width: 90%;
+				}
 				iframe{
 					position: absolute;
 					top: 0;

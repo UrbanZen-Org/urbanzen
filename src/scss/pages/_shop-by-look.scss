@@ -457,5 +457,15 @@
 			text-transform: lowercase;
 			color: #e5ceb2;
 		}
+		a.video-item{
+			position: absolute;
+			bottom: 1em;
+			display: block;
+			margin-top: 2em;
+			color: #e5ceb2;
+			font-size: 14px;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
 	}
 }

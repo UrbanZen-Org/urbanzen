@@ -458,14 +458,19 @@
 			color: #e5ceb2;
 		}
 		a.video-item{
-			position: absolute;
-			bottom: 1em;
+			padding-top: 2em;
 			display: block;
 			margin-top: 2em;
 			color: #e5ceb2;
 			font-size: 14px;
 			text-transform: uppercase;
 			cursor: pointer;
+			@include respond-min($tablet-portrait)
+			{
+				padding-top: 0;
+				position: absolute;
+				bottom: 1em;
+			}
 		}
 	}
 }

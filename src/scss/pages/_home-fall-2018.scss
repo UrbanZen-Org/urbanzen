@@ -320,7 +320,7 @@
 			}
 			@include respond-min($tablet-portrait)
 			{
-				width: 66.667%;
+				width: 100%
 			}
 			figure{	
 				@include respond-min($tablet-portrait)

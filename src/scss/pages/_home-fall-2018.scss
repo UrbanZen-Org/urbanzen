@@ -368,7 +368,11 @@
 				}
 				&.left{
 					left: 0;
-					width: 40%;
+					width: 60%;
+					@include respond-min($tablet-landscape)
+					{
+						width: 40%;
+					}
 				}
 				&.center{
 					left: 0;
@@ -377,7 +381,11 @@
 				}
 				&.right{
 					right: 0;
-					width: 40%;
+					width: 60%;
+					@include respond-min($tablet-landscape)
+					{
+						width: 40%;
+					}
 				}
 			}
 		}

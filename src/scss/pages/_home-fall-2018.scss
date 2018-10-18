@@ -288,7 +288,7 @@
 		}
 	}
 	.home-categories{
-		margin-top: 1em;
+		margin-top: 10px;
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
@@ -315,6 +315,7 @@
 			align-items: flex-start;
 			justify-content: center;
 			flex-wrap: wrap;
+			margin:0 -5px;
 			@include respond-min($tablet-portrait)
 			{
 				flex-wrap: nowrap;
@@ -332,6 +333,7 @@
 		}
 		figure{
 			width: 100%;
+			padding:0 5px;
 			figcaption{
 				position: absolute;
 				top: 0;

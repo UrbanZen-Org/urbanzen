@@ -292,10 +292,10 @@
 		align-items: flex-start;
 		justify-content: center;
 		flex-wrap: wrap;
+		margin-top: 10px;
 		@include respond-min($tablet-portrait)
 		{
 			flex-wrap: nowrap;
-			margin-top: 10px;
 		}
 		.accessories-slider{
 			width: 100%;
@@ -333,7 +333,11 @@
 		}
 		figure{
 			width: 100%;
-			padding:0 5px;
+			padding: 5px 0;
+			@include respond-min($tablet-portrait)
+			{
+				padding:0 5px;
+			}
 			figcaption{
 				position: absolute;
 				top: 0;
@@ -352,7 +356,6 @@
 					line-height: 20px;
 					@include respond-min($tablet-landscape)
 					{
-						
 						line-height: 20px;
 						font-size: 16px;	
 					}

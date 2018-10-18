@@ -287,8 +287,7 @@
 			}
 		}
 	}
-	.home-categories{
-		margin-top: 10px;
+	.home-categories{		
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
@@ -296,6 +295,7 @@
 		@include respond-min($tablet-portrait)
 		{
 			flex-wrap: nowrap;
+			margin-top: 10px;
 		}
 		.accessories-slider{
 			width: 100%;
@@ -315,10 +315,10 @@
 			align-items: flex-start;
 			justify-content: center;
 			flex-wrap: wrap;
-			margin:0 -5px;
 			@include respond-min($tablet-portrait)
 			{
 				flex-wrap: nowrap;
+				margin:0 -5px;
 			}
 			@include respond-min($tablet-portrait)
 			{

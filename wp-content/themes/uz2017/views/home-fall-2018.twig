@@ -54,24 +54,26 @@
 	
 
 </div> #}
-
-<div class="happenings">
-	<h2>{{ post.events_title }}</h2>
-	<div class="happening-items">
-		<div class="featured-happening">
-			{% for event in post.featured_events|slice(0,1) %}
-				{% include 'partials/happening-item.twig' with {'event_class': 'featured'} %}
+{% if post.featured_events | length %}
+	<div class="happenings">
+		<h2>{{ post.events_title }}</h2>
+		<div class="happening-items">
+			<div class="featured-happening">
+				{% for event in post.featured_events|slice(0,1) %}
+					{% include 'partials/happening-item.twig' with {'event_class': 'featured'} %}
+				{% endfor %}
+			</div>
+			<div class="more-happenings">
+			{% for event in post.featured_events|slice(1,99) %}
+				{% include 'partials/happening-item.twig' %}
 			{% endfor %}
+			</div>
 		</div>
-		<div class="more-happenings">
-		{% for event in post.featured_events|slice(1,99) %}
-			{% include 'partials/happening-item.twig' %}
-		{% endfor %}
-		</div>
+		<a class="cta-button inquire-button">Inquire</a>
+		{% include 'partials/event-form.twig' %}
 	</div>
-	<a class="cta-button inquire-button">Inquire</a>
-	{% include 'partials/event-form.twig' %}
-</div>
+{% endif %}
+
 
 <div class="page-callouts">
 	<h2>{{ post.foundation_title }}</h2>

@@ -2,8 +2,12 @@
 {% set body_class = 'page-home-fall-2018 black-bg' %}
 {% set menu_class = 'transparent-bg' %}
 {% set page_class = 'full-width-page' %}
-
+{% set content_rows = post.content_rows %}
+	
 {% block content %}
+{% if content_rows %}
+	{% include 'partials/content-rows.twig' %}
+{% endif %}
 <div class="top-slider">
 	{% for hero in post.hero_images %}
 		<figure>

@@ -6,6 +6,26 @@
 						<div class="slideshow-title">{{ block.title }}</div>
 						<div class="slides">
 						{% for slide in block.images %}
+								<figure>
+									<picture>
+						  			<source media="(max-width: 768px)"	srcset="{{ slide.mobile_image }}">
+						  			<img src="{{ slide.image }}" srcset="{{ slide.image }}">
+									</picture>
+									<figcaption>
+										{% if slide.text %}
+											<span>{{ slide.text }}</span>
+										{% endif %}
+										
+										{% if slide.svg_overlay %}
+											<div class="overlay-svg {{ slide.svg_position }} {{ slide.down_prompt ? 'down-prompt' }}">
+												<img src="{{ slide.svg_overlay }}" alt="">
+											</div>
+										{% endif %}
+										{% if slide.link %}
+											<a class="cta-button ivory" target="{{ slide.link.target }}" href="{{ slide.link.url }}">{{ slide.link.title }}</a>
+										{% endif %}
+									</figcaption>
+								</figure>
 							<div class="slide" style="background-image:url('{{ TimberImage(slide.image).src }}')">				
 								<img class="hide-desktop lazyload" data-src="{{ TimberImage(slide.mobile_image).src }}"/>
 							</div>
@@ -14,13 +34,18 @@
 						{% if block.down_prompt %}
 							<div class="down-arrow" data-target="#row_{{ loop.index + 1}}">{{ block.down_prompt_text }}</div>
 						{% endif %}
-						{% set svg = block.svg_overlay %}						
-						{% if svg %}
-							<div class="overlay-svg {{ block.svg_position }} {{ block.down_prompt ? 'down-prompt' }}">
-								<img src="{{ svg }}" alt="">
-							</div>
-						{% endif %}
+						
 					</div>
+				{% elseif block.acf_fc_layout == "image_text" %}
+					<div class="image-text-block">
+						<div class="image-text-image">
+							<img class="lazyload" data-src="{{ block.image }}">
+						</div>
+						<div class="image-text-text">
+							<h2>{{ block.title }}</h2>
+							<div class="text-content">{{ block.text }}</div>
+						</div>
+					</div>				
 				{% elseif block.acf_fc_layout == 'isotope_images' %}
 					<div class="iso-images hidden" data-gallery-id="gallery-{{loop.index }}">
 						<div class="iso-image-sizer"></div>

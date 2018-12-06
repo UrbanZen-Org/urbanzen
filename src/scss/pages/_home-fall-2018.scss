@@ -164,7 +164,7 @@
 			}	
 		}
 		.menu-logo,.tagline{
-			opacity: 0;
+			opacity: 1;
 			color: #e5ceb2;
 			@include transition((opacity .3s ease-in-out));
 		}

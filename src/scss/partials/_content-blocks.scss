@@ -519,8 +519,12 @@
 		 
 		}
 		.slides{
-			&.full-height{
-				height: 100vh;
+			&.full-height{			
+				height: auto;
+				@include respond($tablet-portrait)
+		  	{
+		  		height: 100vh;
+		  	}
 			}
 			.slick-list,.slick-track{
 				height: 100%;

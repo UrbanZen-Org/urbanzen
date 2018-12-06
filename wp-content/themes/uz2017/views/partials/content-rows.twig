@@ -4,14 +4,14 @@
 				{% if block.acf_fc_layout == 'centered_slideshow' %}
 					<div class="centered-slideshow">
 						<div class="slideshow-title">{{ block.title }}</div>
-						<div class="slides" data-dots="{{ block.dots }}" data-full-height="{{ block.full_height }}">
+						<div class="slides {% if block.full_height %}full-height{% endif %}" data-dots="{{ block.dots }}">
 						{% for slide in block.images %}
 								<figure>
 									{% if slide.video %}
-										<video class="hide-mobile" autoplay loop>
+										<video class="hide-mobile" playsinline autoplay muted loop>
 										  <source src="{{ slide.video_desktop }}" type="video/mp4">							
 										</video>
-										<video class="hide-desktop" autoplay loop>
+										<video class="hide-desktop" playsinline autoplay muted loop>
 										  <source src="{{ slide.video_mobile }}" type="video/mp4">							
 										</video>
 									{% else %}

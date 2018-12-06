@@ -140,9 +140,11 @@ var global = {
     });
   },
   centeredSlideshow : function(){
+
     if ($('.centered-slideshow').length){
       
       $('.centered-slideshow .slides').each(function(){
+        var self = this;
         var options = {
           arrows : true,
           speed: 300,          
@@ -150,6 +152,17 @@ var global = {
           nextArrow: '<div class="slick-arrow arrow-right"></div>',
         };
         
+        $(this).on('init', function(event, slick, currentSlide, nextSlide){
+          var video = $(slick.$slides[0]).find('video');
+          video[0].play();
+        });
+        $(this).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          var prevVideo = $(slick.$slides[nextSlide]).find('video');
+          var video = $(slick.$slides[nextSlide]).find('video');
+          prevVideo[0].pause();
+          video[0].play();
+
+        });
         $(this).slick(options);
       });
       

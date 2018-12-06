@@ -519,7 +519,16 @@
 		 
 		}
 		.slides{
+			&.full-height{
+				height: 100vh;
+			}
+			.slick-list,.slick-track{
+				height: 100%;
+
+			}
 			.slide{
+
+
 				height: 80vh;
 				background-position: center;
 				background-size: cover;
@@ -528,6 +537,8 @@
 					height: auto;
 					background-image: none;
 				}
+				
+
 				img{
 				
 					&.hide-mobile{
@@ -537,6 +548,21 @@
 						}
 					}
 				}
+			}
+		}
+		figure{
+			overflow: hidden;
+			width: 100%;
+			position: relative;
+			video,picture{
+				width: 100%;
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+			figcaption{
+				position: absolute;
+				bottom: 0;
 			}
 		}
 	}

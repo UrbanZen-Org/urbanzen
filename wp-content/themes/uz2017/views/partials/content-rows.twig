@@ -11,9 +11,9 @@
 										<video class="hide-mobile" playsinline autoplay muted loop>
 										  <source src="{{ slide.video_desktop }}" type="video/mp4">							
 										</video>
-										<video class="hide-desktop" playsinline autoplay muted loop>
-										  <source src="{{ slide.video_mobile }}" type="video/mp4">							
-										</video>
+									<picture class="hide-desktop">
+						  			<source media="(max-width: 768px)"	srcset="{{ slide.mobile_gif }}">
+									</picture>
 									{% else %}
 									<picture>
 						  			<source media="(max-width: 768px)"	srcset="{{ slide.mobile_image }}">

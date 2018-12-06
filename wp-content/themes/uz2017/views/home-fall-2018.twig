@@ -3,11 +3,12 @@
 {% set menu_class = 'transparent-bg' %}
 {% set page_class = 'full-width-page' %}
 {% set content_rows = post.content_rows %}
-	
+
 {% block content %}
 {% if content_rows %}
 	{% include 'partials/content-rows.twig' %}
 {% endif %}
+{% if post.hero_images %}
 <div class="top-slider">
 	{% for hero in post.hero_images %}
 		<figure>
@@ -30,6 +31,7 @@
 	{% endfor %}
 	<div class="top-slider-nav slider-dots"></div>
 </div>
+{% endif %}
 
 <div class="home-categories">
 	{# <div class="accessories-slider">

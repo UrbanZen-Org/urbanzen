@@ -4,13 +4,22 @@
 				{% if block.acf_fc_layout == 'centered_slideshow' %}
 					<div class="centered-slideshow">
 						<div class="slideshow-title">{{ block.title }}</div>
-						<div class="slides">
+						<div class="slides" data-dots="{{ block.dots }}" data-full-height="{{ block.full_height }}">
 						{% for slide in block.images %}
 								<figure>
+									{% if slide.video %}
+										<video class="hide-mobile" autoplay loop>
+										  <source src="{{ slide.video_desktop }}" type="video/mp4">							
+										</video>
+										<video class="hide-desktop" autoplay loop>
+										  <source src="{{ slide.video_mobile }}" type="video/mp4">							
+										</video>
+									{% else %}
 									<picture>
 						  			<source media="(max-width: 768px)"	srcset="{{ slide.mobile_image }}">
 						  			<img src="{{ slide.image }}" srcset="{{ slide.image }}">
 									</picture>
+									{% endif %}
 									<figcaption>
 										{% if slide.text %}
 											<span>{{ slide.text }}</span>
@@ -26,11 +35,13 @@
 										{% endif %}
 									</figcaption>
 								</figure>
-							<div class="slide" style="background-image:url('{{ TimberImage(slide.image).src }}')">				
-								<img class="hide-desktop lazyload" data-src="{{ TimberImage(slide.mobile_image).src }}"/>
-							</div>
 						{% endfor %}
 						</div>
+						{% if block.svg_overlay %}
+							<div class="overlay-svg {{ block.svg_position }} {{ block.down_prompt ? 'down-prompt' }}">
+								<img src="{{ block.svg_overlay }}" alt="">
+							</div>
+						{% endif %}
 						{% if block.down_prompt %}
 							<div class="down-arrow" data-target="#row_{{ loop.index + 1}}">{{ block.down_prompt_text }}</div>
 						{% endif %}

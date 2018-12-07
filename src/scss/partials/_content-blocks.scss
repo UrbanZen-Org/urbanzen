@@ -330,6 +330,7 @@
 				flex-direction: row;
 				flex-wrap: no-wrap;
 			}
+
 			.half-image{
 				@include respond-min($tablet-portrait)
 				{
@@ -580,6 +581,7 @@
 
 	// Image Text block
 	.image-text-block{
+		margin-bottom: 30px;
 		@include respond($tablet-portrait) {
 			display: flex;
 			align-items: center;

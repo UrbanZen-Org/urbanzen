@@ -270,7 +270,7 @@
 
 		}
 
-		.two-images{
+		.image-row{
 			
 			@include respond-min($tablet-portrait)
 			{
@@ -278,8 +278,9 @@
 				justify-content: space-between;
 				flex-direction: row;
 				flex-wrap: no-wrap;
+				margin: 0 -10px;
 			}
-			.half-image{
+			.row-image{
 				margin-top: 2em;
 				@include respond-min($tablet-portrait)
 				{
@@ -288,7 +289,7 @@
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					flex-basis: 49%;
+					margin: 0 10px;
 				}
 					text-align: right;
 				h2{

@@ -128,11 +128,11 @@
 						<span class="caption">{{ block.caption }}</span>
 						{{ block.full_width ? '' : '</div>' }}
 					</div>
-				{% elseif block.acf_fc_layout == 'two_images' %}
+				{% elseif block.acf_fc_layout == 'image_row' %}
 					<div class="inner-container">							
-						<div class="two-images">
+						<div class="image-row">
 							{% for image in block.images %}
-								<div class="half-image">
+								<div class="row-image">
 									<div class="image-content">
 										{% if image.title %}
 											<h2>{{ image.title }}</h2>

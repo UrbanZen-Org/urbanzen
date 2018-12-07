@@ -128,7 +128,27 @@
 						<span class="caption">{{ block.caption }}</span>
 						{{ block.full_width ? '' : '</div>' }}
 					</div>
-				{% elseif block.acf_fc_layout == 'image_row' %}
+				{% elseif block.acf_fc_layout == 'two_images' %}
+					<div class="inner-container">							
+						<div class="two-images">
+							{% for image in block.images %}
+								<div class="half-image">
+									<div class="image-content">
+										{% if image.title %}
+											<h2>{{ image.title }}</h2>
+										{% endif %}
+										{% if image.subtitle %}
+											<h4>{{ image.subtitle }}</h4>
+										{% endif %}
+										<img class="lazyload hide-mobile" src="{{ image.image }}">
+										<img class="lazyload hide-desktop" src="{{ image.mobile_image }}">
+										<span class="caption">{{ image.caption }}</span>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					{% elseif block.acf_fc_layout == 'image_row' %}
 					<div class="inner-container">							
 						<div class="image-row">
 							{% for image in block.images %}

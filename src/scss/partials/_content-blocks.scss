@@ -40,6 +40,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		&.black-background{
+			background: black;
+			color: $ivory;
+		}
 		&.align-right{
 			justify-content: flex-end;
 		}
@@ -186,6 +190,9 @@
 			}
 			.cta-button{
 				margin-top: 30px;
+
+			}
+			.rich-text,p{
 
 			}
 		}

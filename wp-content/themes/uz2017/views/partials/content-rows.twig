@@ -97,6 +97,7 @@
 						{% if block.subtitle %}
 							<h4>{{ block.subtitle }}</h4>
 						{% endif %}
+		
 						{% if block.button_link %}
 							<a href="{{ block.button_link.url }}" target="{{ block.button_link.target }}" class="cta-button {{ block.black_background ? 'light' : 'dark' }}">{{ block.button_link.target }}</a>		
 						{% endif %}
@@ -152,7 +153,7 @@
 						{{ function('do_shortcode', block.shortcode_text) }}
 					</div>
 				{% elseif block.acf_fc_layout == 'richtext' %}
-					<div class="richtext text-{{ block.text_color }} align-{{ block.text_position }}">
+					<div class="richtext text-{{ block.text_color }} align-{{ block.text_position }} {{ block.black_background ? 'black-background' }}">
 						<div class="text-content">
 							{{ block.text }}
 							{% if block.button_link %}

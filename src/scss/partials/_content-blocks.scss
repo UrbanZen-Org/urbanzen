@@ -279,8 +279,8 @@
 				flex-wrap: no-wrap;
 				margin: 0 -10px;
 			}
+				margin-bottom: 10px;
 			.row-image{
-				margin-top: 2em;
 				@include respond-min($tablet-portrait)
 				{
 					margin-top: 0;

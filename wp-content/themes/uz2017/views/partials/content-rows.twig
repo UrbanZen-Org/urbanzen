@@ -48,7 +48,7 @@
 						
 					</div>
 				{% elseif block.acf_fc_layout == "image_text" %}
-					<div class="image-text-block">
+					<div class="image-text-block"  {{ block.black_background ? 'black-background' }}>
 						<div class="image-text-image">
 							<img class="lazyload" data-src="{{ block.image }}">
 						</div>
